@@ -1,3 +1,4 @@
+// TODO: Make an actual leaderboard page
 export default function LeaderboardPage() {
   return (
     <div>
