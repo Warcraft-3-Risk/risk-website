@@ -1,3 +1,4 @@
+// TODO: Create a login page that allows users to login to the application
 export default function LoginPage() {
   return (
     <div>

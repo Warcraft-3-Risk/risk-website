@@ -1,3 +1,4 @@
+//TODO: Make an actual forum page
 export default function ForumPage() {
   return (
     <div>
