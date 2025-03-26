@@ -6,7 +6,6 @@ const AdminEditEventPage: React.FC = () => {
     <div>
       <h1>Edit Event</h1>
       <p>Use this page to edit event details.</p>
-      {/* Add form or components for editing event here */}
     </div>
   );
 };
