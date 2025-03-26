@@ -1,0 +1,12 @@
+{
+  "nextLogoAlt": "Next.js logo",
+  "srcFolderText": "src/app/page.tsx",
+  "vercelLogoAlt": "Vercel logomark",
+  "deployNowText": "Deploy now",
+  "readDocsText": "Read our docs",
+  "learnText": "Learn",
+  "examplesText": "Examples",
+  "goToNextJs": "Go to nextjs.org →",
+  "getStartedMessage": "Get started by editing",
+  "saveChangesMessage": "Save and see your changes instantly."
+}
