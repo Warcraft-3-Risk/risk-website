@@ -3,7 +3,7 @@ name: Pull Request Build Check Workflow
 on:
   pull_request:
     branches:
-      - main # or the branch you want to target with the PR
+      - main
     paths:
       - "**/*.js"
       - "**/*.jsx"
