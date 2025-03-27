@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import content from '../../../content/content.json';
 
 const Footer: React.FC = () => {
@@ -12,14 +13,14 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1 text-sm text-gray-300">
               <li>
-                <a href="#about" className="hover:underline">
+                <Link href="/about" className="hover:underline">
                   {content.footer['footer.ServicesText']}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#contact" className="hover:underline">
+                <Link href="/contact" className="hover:underline">
                   {content.footer['footer.ContactText']}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -29,14 +30,14 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1 text-sm text-gray-300">
               <li>
-                <a href="#privacy" className="hover:underline">
+                <Link href="/privacy" className="hover:underline">
                   {content.footer['footer.PrivacyText']}
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#terms" className="hover:underline">
+                <Link href="/terms" className="hover:underline">
                   {content.footer['footer.TermsText']}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
