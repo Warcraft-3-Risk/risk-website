@@ -1,12 +1,31 @@
 {
-  "nextLogoAlt": "Next.js logo",
-  "srcFolderText": "src/app/page.tsx",
-  "vercelLogoAlt": "Vercel logomark",
-  "deployNowText": "Deploy now",
-  "readDocsText": "Read our docs",
-  "learnText": "Learn",
-  "examplesText": "Examples",
-  "goToNextJs": "Go to nextjs.org →",
-  "getStartedMessage": "Get started by editing",
-  "saveChangesMessage": "Save and see your changes instantly."
+  "homepage": {
+    "homepage.NextLogoAlt": "Next.js logo",
+    "homepage.VercelLogoAlt": "Vercel logomark",
+    "homepage.GetStartedMessage": "Get started by editing",
+    "homepage.SaveChangesMessage": "Save and see your changes instantly.",
+    "homepage.SrcFolderText": "src/app/page.tsx",
+    "homepage.DeployNowText": "Deploy now",
+    "homepage.ReadDocsText": "Read our docs",
+    "homepage.LearnText": "Learn",
+    "homepage.ExamplesText": "Examples",
+    "homepage.GoToNextJs": "Go to nextjs.org →"
+  },
+  "navbar": {
+    "navbar.HomeText": "Home",
+    "navbar.ForumText": "Forum",
+    "navbar.LeaderboardText": "Leaderboard",
+    "navbar.AboutText": "About",
+    "navbar.ServicesText": "Services",
+    "navbar.ContactText": "Contact"
+  },
+
+  "footer": {
+    "footer.AboutText": "About",
+    "footer.ServicesText": "Services",
+    "footer.ContactText": "Contact",
+    "footer.LegalText": "Legal",
+    "footer.PrivacyText": "Privacy",
+    "footer.TermsText": "Terms"
+  }
 }
