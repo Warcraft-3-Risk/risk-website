@@ -1,22 +1,22 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import Navbar from "./components/layout/navbar/navbar";
-import Footer from "./components/layout/footer/footer";
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import Navbar from './components/layout/navbar/navbar';
+import Footer from './components/layout/footer/footer';
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Risk Reforged",
-  description: "A Website created for Risk Reforged, in WC3.",
+  title: 'Risk Reforged',
+  description: 'A Website created for Risk Reforged, in WC3.',
 };
 
 export default function RootLayout({
@@ -25,7 +25,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <><html lang="en">
+    <>
+      <html lang="en">
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
@@ -35,6 +36,5 @@ export default function RootLayout({
       </html>
       <Footer></Footer>
     </>
-
   );
 }
