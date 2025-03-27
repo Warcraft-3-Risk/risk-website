@@ -42,17 +42,9 @@ const Footer: React.FC = () => {
             </ul>
           </div>
           <div className="col-span-1 sm:col-span-2 md:col-span-2 text-sm text-gray-400 text-center sm:text-left flex flex-col justify-between">
-            <p>{content.footer['footer.NewsletterPrompt']}</p>
-            <form className="mt-4 flex flex-col sm:flex-row gap-2 max-w-md">
-              <input
-                type="email"
-                placeholder={content.footer['footer.EmailPlaceholder']}
-                className="p-2 rounded text-white w-full"
-              />
-            </form>
             <p className="mt-6 text-xs">
-              &copy; {new Date().getFullYear()} Your Company. All rights
-              reserved.
+              &copy; {new Date().getFullYear()}{' '}
+              {content.footer['footer.CompanyText']}.
             </p>
           </div>
         </div>
