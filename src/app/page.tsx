@@ -96,6 +96,8 @@ export default function Home() {
           />
           {content.goToNextJs}
         </a>
+
+        <h1>Hello world</h1>
       </footer>
     </div>
   );
