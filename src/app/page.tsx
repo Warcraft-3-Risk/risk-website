@@ -1,5 +1,6 @@
 import Image from "next/image";
 import content from "./content/content.json";
+//TODO: Make this more of homepage, with more content and links to other pages
 
 export default function Home() {
   return (
@@ -95,6 +96,8 @@ export default function Home() {
           />
           {content.goToNextJs}
         </a>
+
+        <h1>Hello world</h1>
       </footer>
     </div>
   );
