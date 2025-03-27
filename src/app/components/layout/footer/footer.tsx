@@ -28,9 +28,6 @@ const Footer: React.FC = () => {
                                 placeholder={content.footer["footer.EmailPlaceholder"]}
                                 className="p-2 rounded text-white w-full"
                             />
-                            <button type="submit" className="bg-blue-600 px-4 py-2 rounded hover:bg-blue-500 text-white">
-                                {content.footer["footer.Subscribe"]}
-                            </button>
                         </form>
                         <p className="mt-6 text-xs">&copy; {new Date().getFullYear()} Your Company. All rights reserved.</p>
                     </div>

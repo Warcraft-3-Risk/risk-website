@@ -1,16 +1,4 @@
 {
-  "homepage": {
-    "homepage.NextLogoAlt": "Next.js logo",
-    "homepage.VercelLogoAlt": "Vercel logomark",
-    "homepage.GetStartedMessage": "Get started by editing",
-    "homepage.SaveChangesMessage": "Save and see your changes instantly.",
-    "homepage.SrcFolderText": "src/app/page.tsx",
-    "homepage.DeployNowText": "Deploy now",
-    "homepage.ReadDocsText": "Read our docs",
-    "homepage.LearnText": "Learn",
-    "homepage.ExamplesText": "Examples",
-    "homepage.GoToNextJs": "Go to nextjs.org →"
-  },
   "navbar": {
     "navbar.HomeText": "Home",
     "navbar.ForumText": "Forum",
