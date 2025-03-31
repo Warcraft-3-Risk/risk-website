@@ -1,4 +1,5 @@
-import { createContext, useContext, useState, ReactNode } from "react";
+//TODO: Make this usable in the leaderboard page
+import { createContext, useContext, useState, ReactNode } from 'react';
 
 interface LeaderBoardContextProps {
   filter: string;
@@ -11,17 +12,28 @@ interface LeaderBoardContextProps {
   setItemsPerPage: (count: number) => void;
 }
 
-const LeaderBoardContext = createContext<LeaderBoardContextProps | undefined>(undefined);
+const LeaderBoardContext = createContext<LeaderBoardContextProps | undefined>(
+  undefined,
+);
 
 export const LeaderBoardProvider = ({ children }: { children: ReactNode }) => {
-  const [filter, setFilter] = useState("highest");
-  const [searchQuery, setSearchQuery] = useState("");
+  const [filter, setFilter] = useState('highest');
+  const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(5);
 
   return (
     <LeaderBoardContext.Provider
-      value={{ filter, setFilter, searchQuery, setSearchQuery, currentPage, setCurrentPage, itemsPerPage, setItemsPerPage }}
+      value={{
+        filter,
+        setFilter,
+        searchQuery,
+        setSearchQuery,
+        currentPage,
+        setCurrentPage,
+        itemsPerPage,
+        setItemsPerPage,
+      }}
     >
       {children}
     </LeaderBoardContext.Provider>
@@ -31,7 +43,7 @@ export const LeaderBoardProvider = ({ children }: { children: ReactNode }) => {
 export const useLeaderBoard = () => {
   const context = useContext(LeaderBoardContext);
   if (!context) {
-    throw new Error("useLeaderBoard must be used within a LeaderBoardProvider");
+    throw new Error('useLeaderBoard must be used within a LeaderBoardProvider');
   }
   return context;
 };
