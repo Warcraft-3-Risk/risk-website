@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface PaginationProps {
   currentPage: number;
@@ -8,16 +8,15 @@ interface PaginationProps {
   onItemsPerPageChange: (count: number) => void;
 }
 
-const LeaderBoardPagination: React.FC<PaginationProps> = ({ 
-  currentPage, 
-  totalPages, 
-  itemsPerPage, 
-  onPageChange, 
-  onItemsPerPageChange 
+const LeaderBoardPagination: React.FC<PaginationProps> = ({
+  currentPage,
+  totalPages,
+  itemsPerPage,
+  onPageChange,
+  onItemsPerPageChange,
 }) => {
   return (
     <div className="flex flex-col sm:flex-row items-center justify-between mt-4 space-y-2 sm:space-y-0 sm:space-x-4">
-      {/* Previous Button */}
       <button
         className="p-2 bg-gray-700 text-white rounded-md disabled:opacity-50"
         disabled={currentPage === 1}
@@ -26,12 +25,10 @@ const LeaderBoardPagination: React.FC<PaginationProps> = ({
         Prev
       </button>
 
-      {/* Page Display */}
       <span className="text-white">
         Page {currentPage} of {totalPages}
       </span>
 
-      {/* Next Button */}
       <button
         className="p-2 bg-gray-700 text-white rounded-md disabled:opacity-50"
         disabled={currentPage === totalPages}
@@ -40,7 +37,6 @@ const LeaderBoardPagination: React.FC<PaginationProps> = ({
         Next
       </button>
 
-      {/* Items Per Page Selector */}
       <select
         className="p-2 bg-gray-800 text-white rounded-md"
         value={itemsPerPage}

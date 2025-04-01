@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-const LeaderBoardSearchBar = ({ onSearch }: { onSearch: (query: string) => void }) => {
-  const [query, setQuery] = useState("");
+const LeaderBoardSearchBar = ({
+  onSearch,
+}: {
+  onSearch: (query: string) => void;
+}) => {
+  const [query, setQuery] = useState('');
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
