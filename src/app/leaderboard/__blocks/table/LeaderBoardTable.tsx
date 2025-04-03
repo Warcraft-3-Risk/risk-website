@@ -3,7 +3,7 @@
 'use client';
 
 import React, { useEffect } from 'react';
-
+import content from '../../../content/content.json';
 interface LeaderBoardTableProps {
   filter: string;
   searchQuery: string;
@@ -60,13 +60,21 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
 
   return (
     <div className="p-4 bg-gray-800 text-white rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-2">Leaderboard</h2>
+      <h2 className="text-xl font-bold mb-2">
+        {content.leaderboard['leaderboard.title']}
+      </h2>
       <table className="w-full border-collapse border border-gray-700">
         <thead>
           <tr className="bg-gray-700">
-            <th className="p-2 border border-gray-600">Rank</th>
-            <th className="p-2 border border-gray-600">Player</th>
-            <th className="p-2 border border-gray-600">Score</th>
+            <th className="p-2 border border-gray-600">
+              {content.leaderboard['leaderboard.rank']}
+            </th>
+            <th className="p-2 border border-gray-600">
+              {content.leaderboard['leaderboard.player']}
+            </th>
+            <th className="p-2 border border-gray-600">
+              {content.leaderboard['leaderboard.score']}
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -81,7 +89,7 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
           ) : (
             <tr>
               <td colSpan={3} className="p-4 text-center text-gray-400">
-                No players found
+                {content.leaderboard['leaderboard.nodata']}
               </td>
             </tr>
           )}

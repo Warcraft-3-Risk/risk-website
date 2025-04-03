@@ -27,6 +27,10 @@
     "leaderboard.pagination": "Page",
     "leaderboard.of": "of",
     "leaderboard.valueoption5": "5 per page",
-    "leaderboard.valueoption10": "10 per page"
+    "leaderboard.valueoption10": "10 per page",
+    "leaderboard.rank": "Rank",
+    "leaderboard.player": "Player",
+    "leaderboard.score": "Score",
+    "leaderboard.nodata": "No players found"
   }
 }
