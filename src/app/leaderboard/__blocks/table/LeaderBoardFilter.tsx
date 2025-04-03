@@ -15,13 +15,15 @@ const LeaderBoardFilter = ({
 
   return (
     <div className="mb-4">
-      <label className="mr-2 text-white">
+      <label htmlFor="leaderboard-filter" className="mr-2 text-white">
         {content.leaderboard['leaderboard.sortby']}
       </label>
       <select
+        id="leaderboard-filter"
         value={filter}
         onChange={handleChange}
-        className="p-2 bg-gray-800 text-white rounded-md"
+        className="p-2 bg-gray-800 text-white rounded-md focus:ring-2 focus:ring-blue-500 outline-none"
+        aria-label="Sort leaderboard by"
       >
         <option value="highest">
           {content.leaderboard['leaderboard.highestscore']}

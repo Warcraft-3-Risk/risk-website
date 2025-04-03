@@ -1,9 +1,8 @@
-//TODO Fix so we use the actual data instead of dummy data
-// * Created a isExcerpt prop to show only the top 3 players in the excerpt, let us use it for the homepage *
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import content from '../../../content/content.json';
+
 interface LeaderBoardTableProps {
   filter: string;
   searchQuery: string;
@@ -12,7 +11,7 @@ interface LeaderBoardTableProps {
   onFilteredDataChange?: (count: number) => void;
   isExcerpt?: boolean;
 }
-
+// TODO: Fix so we use the actual data instead of dummy data
 const dummyData = [
   { rank: 1, name: 'Player One', score: 4391 },
   { rank: 2, name: 'Player Two', score: 4215 },
@@ -25,7 +24,7 @@ const dummyData = [
   { rank: 9, name: 'Player Nine', score: 3056 },
   { rank: 10, name: 'Player Ten', score: 2838 },
 ];
-
+// * Created an isExcerpt prop to show only the top 3 players in the excerpt, let us use it for the homepage *
 const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
   filter,
   searchQuery,
@@ -34,33 +33,36 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
   onFilteredDataChange,
   isExcerpt = false,
 }) => {
-  let filteredData = dummyData.filter((player) =>
-    player.name.toLowerCase().includes(searchQuery.toLowerCase()),
-  );
+  const filteredData = useMemo(() => {
+    let data = dummyData.filter((player) =>
+      player.name.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
 
-  if (filter === 'highest') {
-    filteredData = filteredData.sort((a, b) => b.score - a.score);
-  } else if (filter === 'lowest') {
-    filteredData = filteredData.sort((a, b) => a.score - b.score);
-  }
+    if (filter === 'highest') {
+      data = data.slice().sort((a, b) => b.score - a.score);
+    } else if (filter === 'lowest') {
+      data = data.slice().sort((a, b) => a.score - b.score);
+    }
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const paginatedData = filteredData.slice(
-    startIndex,
-    startIndex + itemsPerPage,
-  );
-
-  const excerptData = isExcerpt ? paginatedData.slice(0, 3) : paginatedData; // Only show top 3 for the excerpt
+    return data;
+  }, [filter, searchQuery]);
 
   useEffect(() => {
     if (onFilteredDataChange) {
       onFilteredDataChange(filteredData.length);
     }
-  }, [filteredData.length, onFilteredDataChange]);
+  }, [filteredData, onFilteredDataChange]);
+
+  const excerptData = isExcerpt
+    ? filteredData.slice(0, 3)
+    : filteredData.slice(
+        (currentPage - 1) * itemsPerPage,
+        currentPage * itemsPerPage,
+      );
 
   return (
     <div className="p-4 bg-gray-800 text-white rounded-lg shadow-md">
-      <h2 className="text-xl font-bold mb-2">
+      <h2 className="text-xl font-bold mb-2 text-center">
         {content.leaderboard['leaderboard.title']}
       </h2>
       <table className="w-full border-collapse border border-gray-700">
@@ -88,8 +90,9 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
             ))
           ) : (
             <tr>
-              <td colSpan={3} className="p-4 text-center text-gray-400">
-                {content.leaderboard['leaderboard.nodata']}
+              <td colSpan={3} className="p-4 text-center text-gray-400 italic">
+                {content.leaderboard['leaderboard.nodata'] ||
+                  'No players found 😢'}
               </td>
             </tr>
           )}
