@@ -1,7 +1,8 @@
+//TODO Fix so we use the actual data instead of dummy data
+// * Created a isExcerpt prop to show only the top 3 players in the excerpt, let us use it for the homepage *
 'use client';
 
-import type React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 interface LeaderBoardTableProps {
   filter: string;
@@ -9,6 +10,7 @@ interface LeaderBoardTableProps {
   currentPage: number;
   itemsPerPage: number;
   onFilteredDataChange?: (count: number) => void;
+  isExcerpt?: boolean;
 }
 
 const dummyData = [
@@ -30,6 +32,7 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
   currentPage,
   itemsPerPage,
   onFilteredDataChange,
+  isExcerpt = false,
 }) => {
   let filteredData = dummyData.filter((player) =>
     player.name.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -46,6 +49,8 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
     startIndex,
     startIndex + itemsPerPage,
   );
+
+  const excerptData = isExcerpt ? paginatedData.slice(0, 3) : paginatedData; // Only show top 3 for the excerpt
 
   useEffect(() => {
     if (onFilteredDataChange) {
@@ -65,8 +70,8 @@ const LeaderBoardTable: React.FC<LeaderBoardTableProps> = ({
           </tr>
         </thead>
         <tbody>
-          {paginatedData.length > 0 ? (
-            paginatedData.map((player) => (
+          {excerptData.length > 0 ? (
+            excerptData.map((player) => (
               <tr key={player.rank} className="text-center bg-gray-900">
                 <td className="p-2 border border-gray-600">{player.rank}</td>
                 <td className="p-2 border border-gray-600">{player.name}</td>
