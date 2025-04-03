@@ -10,11 +10,11 @@
 
   "footer": {
     "footer.AboutText": "About",
-    "footer.ServicesText": "Services",
-    "footer.ContactText": "Contact",
-    "footer.LegalText": "Legal",
+    "footer.DiscordText": "Discord",
+    "footer.YouTubeText": "YouTube",
     "footer.PrivacyText": "Privacy",
     "footer.TermsText": "Terms",
+    "footer.ContactText": "Contact",
     "footer.CompanyText": "WC3 - Risk Reforged"
   }
 }

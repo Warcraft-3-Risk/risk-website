@@ -13,8 +13,11 @@ const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-1 text-sm text-gray-300">
               <li>
-                <Link href="/about" className="hover:underline">
-                  {content.footer['footer.ServicesText']}
+                <Link
+                  href="https://discord.gg/wc3risk"
+                  className="hover:underline"
+                >
+                  {content.footer['footer.DiscordText']}
                 </Link>
               </li>
               <li>
@@ -26,7 +29,7 @@ const Footer: React.FC = () => {
           </div>
           <div>
             <h4 className="font-semibold mb-2">
-              {content.footer['footer.LegalText']}
+              {content.footer['footer.YouTubeText']}
             </h4>
             <ul className="space-y-1 text-sm text-gray-300">
               <li>
