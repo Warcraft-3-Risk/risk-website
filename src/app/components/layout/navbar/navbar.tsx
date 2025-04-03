@@ -17,7 +17,7 @@ const Navbar: React.FC = () => {
             href="/tournaments"
             className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
           >
-            {content.navbar['navbar.ForumText']}
+            {content.navbar['navbar.TournamentsText']}
           </Link>
           <Link
             href="/leaderboard"
