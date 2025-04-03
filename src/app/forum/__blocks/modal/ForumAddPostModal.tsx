@@ -1,4 +1,4 @@
-// modal/ForumAddPostModal.tsx
+//TODO Remove literals and refactor this accordingly to fit needs
 import React, { useState } from 'react';
 
 interface ForumAddPostModalProps {

@@ -1,3 +1,5 @@
+//TODO Refactor and remake Forum if need be!
+
 'use client';
 import React, { useState } from 'react';
 import ForumComments from './__blocks/ForumComments';
@@ -45,7 +47,7 @@ const Page: React.FC = () => {
         description="Welcome to our discussion board!"
       />
       <ForumPostButton onClick={handlePostButtonClick} />
-      <ForumRatings initialRating={3} />
+      <ForumRatings initialRating="like" />
       <ForumComments comments={comments} />
 
       <ForumAddPostModal

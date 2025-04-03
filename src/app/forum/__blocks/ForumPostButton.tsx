@@ -1,3 +1,5 @@
+//TODO Remove literals and refactor this accordingly to fit needs
+
 import React from 'react';
 
 interface ForumPostButtonProps {

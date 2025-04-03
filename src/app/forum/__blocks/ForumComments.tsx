@@ -1,3 +1,5 @@
+//TODO Refactor this accordingly to fit needs
+
 import React from 'react';
 
 interface Comment {

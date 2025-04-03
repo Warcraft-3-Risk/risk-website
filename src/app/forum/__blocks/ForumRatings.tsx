@@ -1,28 +1,45 @@
+//TODO Remove literals and refactor this accordingly to fit needs
 import React, { useState } from 'react';
 
 interface ForumRatingsProps {
-  initialRating: number;
+  initialRating: 'like' | 'dislike' | null;
 }
 
 const ForumRatings: React.FC<ForumRatingsProps> = ({ initialRating }) => {
-  const [rating, setRating] = useState(initialRating);
+  const [rating, setRating] = useState<'like' | 'dislike' | null>(
+    initialRating,
+  );
 
-  const handleClick = (newRating: number) => {
-    setRating(newRating);
+  const handleLike = () => {
+    setRating(rating === 'like' ? null : 'like');
+  };
+
+  const handleDislike = () => {
+    setRating(rating === 'dislike' ? null : 'dislike');
   };
 
   return (
-    <div className="flex items-center space-x-2 mt-4">
-      {[1, 2, 3, 4, 5].map((star) => (
-        <span
-          key={star}
-          className={`cursor-pointer text-xl ${star <= rating ? 'text-yellow-400' : 'text-gray-400'}`}
-          onClick={() => handleClick(star)}
-        >
-          ★
-        </span>
-      ))}
-      <p className="ml-2 text-sm text-gray-500">{rating} out of 5 stars</p>
+    <div className="flex items-center space-x-4 mt-4">
+      <button
+        className={`flex items-center space-x-1 px-3 py-1 rounded ${
+          rating === 'like'
+            ? 'bg-green-500 text-white'
+            : 'bg-gray-200 text-gray-700'
+        }`}
+        onClick={handleLike}
+      >
+        👍 <span>Like</span>
+      </button>
+      <button
+        className={`flex items-center space-x-1 px-3 py-1 rounded ${
+          rating === 'dislike'
+            ? 'bg-red-500 text-white'
+            : 'bg-gray-200 text-gray-700'
+        }`}
+        onClick={handleDislike}
+      >
+        👎 <span>Dislike</span>
+      </button>
     </div>
   );
 };
