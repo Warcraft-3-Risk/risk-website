@@ -16,5 +16,15 @@
     "footer.TermsText": "Terms",
     "footer.ContactText": "Contact",
     "footer.CompanyText": "WC3 - Risk Reforged"
+  },
+  "leaderboard": {
+    "leaderboard.title": "Leaderboard",
+    "leaderboard.sortby": "Sort by:",
+    "leaderboard.highestscore": "Highest Score",
+    "leaderboard.lowestscore": "Lowest Score",
+    "leaderboard.points": "Points",
+    "leaderboard.wins": "Wins",
+    "leaderboard.losses": "Losses",
+    "leaderboard.winrate": "Winrate"
   }
 }

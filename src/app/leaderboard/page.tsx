@@ -5,6 +5,7 @@ import LeaderBoardTable from './__blocks/table/LeaderBoardTable';
 import LeaderBoardFilter from './__blocks/table/LeaderBoardFilter';
 import LeaderBoardSearchBar from './__blocks/table/LeaderBoardSearchBar';
 import LeaderBoardPagination from './__blocks/table/LeaderBoardPagination';
+import content from '../content/content.json';
 
 export default function LeaderboardPage() {
   const [filter, setFilter] = useState('highest');
@@ -17,8 +18,9 @@ export default function LeaderboardPage() {
 
   return (
     <div className="p-6 bg-gray-900 text-white min-h-screen">
-      <h1 className="text-3xl font-bold mb-4">Leaderboard</h1>
-      <p className="text-gray-400 mb-6">Welcome to the leaderboard page!</p>
+      <h1 className="text-3xl font-bold mb-4">
+        {content.leaderboard['leaderboard.title']}
+      </h1>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-4">
         <LeaderBoardSearchBar onSearch={setSearchQuery} />

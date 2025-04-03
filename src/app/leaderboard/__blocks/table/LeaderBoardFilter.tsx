@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import content from '../../../content/content.json';
 
 const LeaderBoardFilter = ({
   onFilterChange,
@@ -14,14 +15,20 @@ const LeaderBoardFilter = ({
 
   return (
     <div className="mb-4">
-      <label className="mr-2 text-white">Sort by:</label>
+      <label className="mr-2 text-white">
+        {content.leaderboard['leaderboard.sortby']}
+      </label>
       <select
         value={filter}
         onChange={handleChange}
         className="p-2 bg-gray-800 text-white rounded-md"
       >
-        <option value="highest">Highest Score</option>
-        <option value="lowest">Lowest Score</option>
+        <option value="highest">
+          {content.leaderboard['leaderboard.highestscore']}
+        </option>
+        <option value="lowest">
+          {content.leaderboard['leaderboard.lowestscore']}
+        </option>
       </select>
     </div>
   );
