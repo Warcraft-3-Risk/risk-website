@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
             {content.navbar['navbar.HomeText']}
           </Link>
           <Link
-            href="/forum"
+            href="/tournaments"
             className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
           >
             {content.navbar['navbar.ForumText']}
