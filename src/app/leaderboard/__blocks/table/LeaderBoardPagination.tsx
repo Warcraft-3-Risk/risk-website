@@ -1,5 +1,5 @@
 import React from 'react';
-
+import content from '../../../content/content.json';
 interface PaginationProps {
   currentPage: number;
   totalPages: number;
@@ -22,11 +22,12 @@ const LeaderBoardPagination: React.FC<PaginationProps> = ({
         disabled={currentPage === 1}
         onClick={() => onPageChange(currentPage - 1)}
       >
-        Prev
+        {content.leaderboard['leaderboard.previous']}
       </button>
 
       <span className="text-white">
-        Page {currentPage} of {totalPages}
+        {content.leaderboard['leaderboard.pagination']} {currentPage}{' '}
+        {content.leaderboard['leaderboard.of']} {totalPages}
       </span>
 
       <button
@@ -34,7 +35,7 @@ const LeaderBoardPagination: React.FC<PaginationProps> = ({
         disabled={currentPage === totalPages}
         onClick={() => onPageChange(currentPage + 1)}
       >
-        Next
+        {content.leaderboard['leaderboard.next']}
       </button>
 
       <select
@@ -42,8 +43,12 @@ const LeaderBoardPagination: React.FC<PaginationProps> = ({
         value={itemsPerPage}
         onChange={(e) => onItemsPerPageChange(Number(e.target.value))}
       >
-        <option value={5}>5 per page</option>
-        <option value={10}>10 per page</option>
+        <option value={5}>
+          {content.leaderboard['leaderboard.valueoption5']}
+        </option>
+        <option value={10}>
+          {content.leaderboard['leaderboard.valueoption10']}
+        </option>
       </select>
     </div>
   );

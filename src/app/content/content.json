@@ -22,9 +22,11 @@
     "leaderboard.sortby": "Sort by:",
     "leaderboard.highestscore": "Highest Score",
     "leaderboard.lowestscore": "Lowest Score",
-    "leaderboard.points": "Points",
-    "leaderboard.wins": "Wins",
-    "leaderboard.losses": "Losses",
-    "leaderboard.winrate": "Winrate"
+    "leaderboard.previous": "Prev",
+    "leaderboard.next": "Next",
+    "leaderboard.pagination": "Page",
+    "leaderboard.of": "of",
+    "leaderboard.valueoption5": "5 per page",
+    "leaderboard.valueoption10": "10 per page"
   }
 }
