@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
           <div>
             <h4 className="font-semibold mb-2">
-              {content.footer['footer.AboutText']}
+              {content.footer.footer.AboutText}
             </h4>
             <ul className="space-y-1 text-sm text-gray-300">
               <li>
