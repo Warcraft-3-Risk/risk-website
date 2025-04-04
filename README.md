@@ -17,43 +17,36 @@ Follow these steps to get the project up and running locally:
    git clone https://github.com/Warcraft-3-Risk/risk-website.git
    
    cd your-repo-name
+   
 3. Install Dependencies
    Make sure you have Node.js (v18 or above) installed.
+
 
 Then install the packages:
 
 ```bash
-Copy
-Edit
 npm install
-
-# or
-
-yarn install 3. Run the Development Server
-bash
-Copy
-Edit
+```
+3. Run the Development Server
+```bash
 npm run dev
-
+```
 # or
 
-yarn dev
+```bash
 Visit http://localhost:3000 in your browser to see the app.
+```
 
 4. Build for Production
    To create an optimized production build:
 
-bash
-Copy
-Edit
+```bash
 npm run build
 npm start
 ⚙️ Environment Variables
-Make Ask for the .env config:
-
-bash
-Copy
-Edit
+Ask for the .env config:
+```
+```bash
 cp .env.example .env.local
 Update the values as needed (e.g., API URLs, secrets, keys).
 ```
