@@ -37,7 +37,7 @@ src/
 When creating a new page:
 
 1. **Create a folder** under `app/` matching the route name.
-   - Example: `src/app/leaderboards/`
+   - Example: `src/app/leaderboard/`
 2. Inside that folder:
    - `page.tsx` — the actual page component
    - `__blocks/` — all components used _only_ for this page
