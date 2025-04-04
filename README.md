@@ -1,7 +1,3 @@
-Certainly! Below is the updated README with the **Husky and pre-commit hooks** section included. This should provide a clear explanation for your teammates on how and why they are used in your project.
-
----
-
 # 🏫 School Project — Frontend Architecture (Next.js + React)
 
 Welcome to the codebase! This project is built using **Next.js** with **React** and structured in a way that encourages modular, scalable, and maintainable code.
