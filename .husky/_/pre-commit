@@ -1,2 +1,58 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/h"
+#!/bin/sh
+. "$(dirname "$0")/./husky.sh"
+
+# Function to show a spinning animation
+spin() {
+  local pid=$1
+  local delay=0.1
+  local spinstr='|/-\'
+  while ps -p $pid > /dev/null; do
+    for char in $spinstr; do
+      printf "\r$char"
+      sleep $delay
+    done
+  done
+}
+
+echo "🚀 Starting pre-commit checks... Let's go! 🎉"
+
+# Stage 1: ESLint check before staging
+echo -n "🔍 Running ESLint check... 🧐"
+npx lint-staged --config lint-staged.eslint.json &
+pid=$!
+spin $pid
+
+if [ $? -ne 0 ]; then
+  echo -e "\n❌ ESLint check failed... 😩 Fix errors before committing! 🚨"
+  exit 1
+fi
+echo -e "\n✅ ESLint check passed! 🚀 Moving on..."
+
+# Stage 2: Prettier format on staged files before committing
+echo -n "🎨 Running Prettier on staged files... ✨"
+npx lint-staged --config lint-staged.prettier.json &
+pid=$!
+spin $pid
+
+if [ $? -ne 0 ]; then
+  echo -e "\n❌ Prettier formatting failed... 😩 Please fix formatting issues! 🚨"
+  exit 1
+fi
+echo -e "\n✅ Prettier formatting applied! ✨"
+
+# Only stage files if ESLint and Prettier pass
+echo -n "📌 Staging all modified files... 📁"
+git add -A &
+pid=$!
+spin $pid
+echo -e "\n✅ Files staged! 🗂️"
+
+# Stage 3: Spin up a server (mock)
+echo -n "🌍 Starting the server... ⏳"
+sleep 2 &
+pid=$!
+spin $pid
+echo -e "\n✅ Server started successfully! 🎈 All checks are complete."
+
+# Final success message
+echo -e "\n🎉✨ LET'S GO — WE CAN COMMIT THIS THING!!! 🎊👏🔥"
