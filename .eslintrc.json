@@ -1,51 +1,51 @@
 {
-    "extends": [
-      "eslint:recommended",
-      "plugin:react/recommended",
-      "plugin:@typescript-eslint/recommended",
-      "plugin:prettier/recommended"
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "max-lines": ["error", 150],
+    "max-lines-per-function": [
+      "error",
+      { "max": 200, "skipBlankLines": true, "skipComments": true }
     ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-      "ecmaVersion": 2020,
-      "sourceType": "module",
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "plugins": ["react", "@typescript-eslint", "prettier"],
-    "rules": {
-      "max-lines": ["error", 150],
-      "max-lines-per-function": [
-        "error",
-        { "max": 200, "skipBlankLines": true, "skipComments": true }
-      ],
-      "prettier/prettier": "error",
-  
-      "class-name-casing": ["error", "always"],
-  
-      "naming-convention": [
-        "error",
-        {
-          "selector": "class",
-          "format": ["PascalCase"],
-          "modifiers": ["requiresQuotes"]
-        }
-      ],
-  
-      "filenames/match-regex": ["error", "^[a-z0-9-]+$", true]
-    },
-    "overrides": [
+    "prettier/prettier": "error",
+
+    "class-name-casing": ["error", "always"],
+
+    "naming-convention": [
+      "error",
       {
-        "files": ["*.ts", "*.tsx"],
-        "rules": {
-          "@typescript-eslint/explicit-module-boundary-types": "warn",
-          "max-lines": ["error", 200],
-          "react/jsx-closing-bracket-location": [
-            "warn",
-            { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
-          ]
-        }
+        "selector": "class",
+        "format": ["PascalCase"],
+        "modifiers": ["requiresQuotes"]
       }
-    ]
-  }
+    ],
+
+    "filenames/match-regex": ["error", "^[a-z0-9-]+$", true]
+  },
+  "overrides": [
+    {
+      "files": ["*.ts", "*.tsx"],
+      "rules": {
+        "@typescript-eslint/explicit-module-boundary-types": "warn",
+        "max-lines": ["error", 200],
+        "react/jsx-closing-bracket-location": [
+          "warn",
+          { "selfClosing": "tag-aligned", "nonEmpty": "after-props" }
+        ]
+      }
+    }
+  ]
+}

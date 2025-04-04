@@ -6,13 +6,13 @@ on:
       - main
       - development
     paths:
-      - "**/*.js"
-      - "**/*.jsx"
-      - "**/*.ts"
-      - "**/*.tsx"
-      - "**/*.json"
-      - "**/*.css"
-      - "**/*.scss"
+      - '**/*.js'
+      - '**/*.jsx'
+      - '**/*.ts'
+      - '**/*.tsx'
+      - '**/*.json'
+      - '**/*.css'
+      - '**/*.scss'
 
 jobs:
   build-and-install:
@@ -24,7 +24,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
 
       - name: Cache npm dependencies
         uses: actions/cache@v4
