@@ -14,9 +14,10 @@ Follow these steps to get the project up and running locally:
    bash
    Copy
    Edit
-   git clone https://github.com/your-username/your-repo-name.git
+   git clone https://github.com/Warcraft-3-Risk/risk-website.git
+   
    cd your-repo-name
-2. Install Dependencies
+3. Install Dependencies
    Make sure you have Node.js (v18 or above) installed.
 
 Then install the packages:
