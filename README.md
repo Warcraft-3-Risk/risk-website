@@ -6,6 +6,59 @@ If you're new or unsure how things are laid out, read through this before jumpin
 
 ---
 
+# 🛠️ Getting Started (Running the App)
+
+Follow these steps to get the project up and running locally:
+
+1. Clone the Repository
+   bash
+   Copy
+   Edit
+   git clone https://github.com/your-username/your-repo-name.git
+   cd your-repo-name
+2. Install Dependencies
+   Make sure you have Node.js (v18 or above) installed.
+
+Then install the packages:
+
+```bash
+Copy
+Edit
+npm install
+
+# or
+
+yarn install 3. Run the Development Server
+bash
+Copy
+Edit
+npm run dev
+
+# or
+
+yarn dev
+Visit http://localhost:3000 in your browser to see the app.
+
+4. Build for Production
+   To create an optimized production build:
+
+bash
+Copy
+Edit
+npm run build
+npm start
+⚙️ Environment Variables
+Make Ask for the .env config:
+
+bash
+Copy
+Edit
+cp .env.example .env.local
+Update the values as needed (e.g., API URLs, secrets, keys).
+```
+
+---
+
 ## 🗂️ Project Structure
 
 ```bash
