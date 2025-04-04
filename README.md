@@ -1,37 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏫 School Project — Frontend Architecture (Next.js + React)
 
-## Getting Started
+Welcome to the codebase! This project is built using **Next.js** with **React** and structured in a way that encourages modular, scalable, and maintainable code.
 
-First, run the development server:
+If you're new or unsure how things are laid out, read through this before jumping in 🙌
+
+---
+
+## 🗂️ Project Structure
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+src/
+├── app/
+│   ├── [route]/               # Pages (like leaderboards, dashboard, etc.)
+│   │   ├── __blocks/          # Page-specific components
+│   │   ├── context/           # Page-specific context providers
+│   │   └── page.tsx           # The actual page users will see
+│   ├── core/                  # Shared logic and setup
+│   │   ├── constants/         # Constant values used app-wide
+│   │   ├── hooks/             # Custom React hooks
+│   │   ├── middleware/        # Middleware logic if any
+│   │   ├── scss/              # SCSS for animations & reusable styles
+│   │   ├── services/          # API logic or business logic
+│   │   ├── types/             # TypeScript type definitions
+│   │   └── utils/             # Utility functions/helpers
+│   ├── components/
+│   │   ├── ui/                # Reusable UI components (Buttons, Modals, etc.)
+│   │   └── layout/            # Global layout components (Navbar, Footer, etc.)
+│   └── content/
+│       └── content.json       # Centralized text/literals (copy for the app)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 How Pages Are Structured
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+When creating a new page:
 
-## Learn More
+1. **Create a folder** under `app/` matching the route name.
+   - Example: `src/app/leaderboards/`
+2. Inside that folder:
+   - `page.tsx` — the actual page component
+   - `__blocks/` — all components used _only_ for this page
+   - `context/` — any React context related to this page (if needed)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔗 Imports & Aliases
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+We use **`@/`** to refer to the project root.  
+This keeps imports clean and consistent:
 
-## Deploy on Vercel
+✅ Good:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```ts
+import Header from '@/app/components/layout/Header';
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# risk-website
+❌ Not ideal:
+
+```ts
+import Header from '../../../../components/layout/Header';
+```
+
+---
+
+## 🧰 What’s in `core/`
+
+Everything inside `core/` is **shared logic** across the app:
+
+- `constants/` — values like colors, breakpoints, app settings
+- `hooks/` — custom React hooks (like useModal, useFetch)
+- `middleware/` — for route protection or auth
+- `scss/` — global styles, animations, and reusable SCSS
+- `services/` — anything like API calls or external logic
+- `types/` — TypeScript types/interfaces
+- `utils/` — helper functions
+
+---
+
+## 🌐 Components
+
+Global components live in:
+
+- `components/ui/` — small, reusable UI pieces (buttons, cards)
+- `components/layout/` — higher-level layout pieces (navbars, sidebars)
+
+If a component is **only** used on one page, put it in that page's `__blocks/`.
+
+---
+
+## 📝 Content & Localization
+
+All strings and literals (headings, labels, etc.) live in:
+
+```bash
+src/app/content/content.json
+```
+
+This keeps things centralized and easy to update in one place.
+
+---
+
+## 🚀 Tech Stack
+
+- **Framework:** [Next.js](https://nextjs.org/)
+- **Frontend:** React + TypeScript
+- **Styling:** SCSS (for animations and custom styling)
+- **State Management:** React Context (per page)
+- **Project Structure:** Modular with aliasing (`@/`)
+
+---
+
+## 🤔 Questions?
+
+Start by checking the folder that matches your page/feature.  
+Still stuck? Ping the group — but read this first 😉.
+
+---
