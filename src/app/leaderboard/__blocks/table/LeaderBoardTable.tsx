@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useEffect, useMemo } from 'react';
-import content from '../../../content/content.json';
+import content from '@/app/content/content.json';
 
 interface LeaderBoardTableProps {
   filter: string;

@@ -1,6 +1,6 @@
 'use client';
-import TournamentHeader from './__blocks/TournamentHeader';
-import TournamentCalendar from './__blocks/calendar/TournamentCalendar';
+import TournamentHeader from '@/app/tournaments/__blocks/TournamentHeader';
+import TournamentCalendar from '@/app/tournaments/__blocks/calendar/TournamentCalendar';
 
 const TournamentPage = () => {
   return (

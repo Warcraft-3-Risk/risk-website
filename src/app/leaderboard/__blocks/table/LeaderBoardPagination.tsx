@@ -1,5 +1,5 @@
 import React from 'react';
-import content from '../../../content/content.json';
+import content from '@/app/content/content.json';
 
 interface PaginationProps {
   currentPage: number;

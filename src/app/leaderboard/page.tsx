@@ -1,11 +1,11 @@
 'use client';
 
 import { useState } from 'react';
-import LeaderBoardTable from './__blocks/table/LeaderBoardTable';
-import LeaderBoardFilter from './__blocks/table/LeaderBoardFilter';
-import LeaderBoardSearchBar from './__blocks/table/LeaderBoardSearchBar';
-import LeaderBoardPagination from './__blocks/table/LeaderBoardPagination';
-import content from '../content/content.json';
+import LeaderBoardTable from '@/app/leaderboard/__blocks/table/LeaderBoardTable';
+import LeaderBoardFilter from '@/app/leaderboard/__blocks/table/LeaderBoardFilter';
+import LeaderBoardSearchBar from '@/app/leaderboard/__blocks/table/LeaderBoardSearchBar';
+import LeaderBoardPagination from '@/app/leaderboard/__blocks/table/LeaderBoardPagination';
+import content from '@/app/content/content.json';
 
 export default function LeaderboardPage() {
   const [filter, setFilter] = useState('highest');
