@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import content from '@/app/content/content.json';
+import content from '@/app/data/content.json';
 
 const Footer: React.FC = () => {
   return (
