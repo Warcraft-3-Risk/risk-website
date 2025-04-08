@@ -129,20 +129,3 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
-html,
-body {
-  transition:
-    background-color 0.3s ease,
-    color 0.3s ease;
-}
-
-body {
-  background-color: white;
-  color: black;
-}
-
-.dark body {
-  background-color: #171717;
-  color: white;
-}

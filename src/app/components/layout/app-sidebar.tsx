@@ -1,52 +1,114 @@
+'use client';
+
+import {
+  Home,
+  FileText,
+  Users,
+  Settings,
+  Newspaper,
+  Shield,
+  Library,
+} from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
   SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarFooter,
+  SidebarSeparator,
 } from '@/app/components/ui/shadcn/sidebar';
 
-const items = [
+const mainNavItems = [
   {
     title: 'Home',
-    url: '/',
-    icon: '',
+    icon: Home,
+    href: '/',
+    isActive: true,
   },
   {
-    title: 'How to Play',
-    url: '/how-to',
-    icon: '',
-  },
-  {
-    title: 'Calendar',
-    url: '/calendar',
-    icon: '',
+    title: 'News and Events',
+    icon: Newspaper,
+    href: '/news-and-events',
   },
   {
     title: 'Stand Alone',
-    url: '/stand-alone',
-    icon: '',
+    icon: Shield,
+    href: '/stand-alone',
   },
   {
-    title: 'About us',
-    url: '/about',
-    icon: '',
+    title: 'How To Play',
+    icon: Library,
+    href: '/how-to',
+  },
+];
+
+const resourcesNavItems = [
+  {
+    title: 'Documentation',
+    icon: FileText,
+    href: '/docs',
+  },
+  {
+    title: 'Community',
+    icon: Users,
+    href: '/community',
+  },
+  {
+    title: 'Settings',
+    icon: Settings,
+    href: '/settings',
   },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar>
+    <Sidebar variant="inset" className="border-r">
+      <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
+        <div className="flex items-center gap-2 py-2">
+          <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold">
+            RR
+          </div>
+          <span className="text-xl font-bold">Risk Reforged</span>
+        </div>
+      </SidebarHeader>
+
+      <SidebarSeparator />
       <SidebarContent>
         <SidebarGroup>
+          <SidebarGroupLabel>Main</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
+              {mainNavItems.map((item) => (
                 <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild>
-                    <a href={item.url}>
+                  <SidebarMenuButton
+                    asChild
+                    isActive={item.isActive}
+                    tooltip={item.title}
+                  >
+                    <a href={item.href}>
+                      <item.icon className="h-4 w-4" />
+                      <span>{item.title}</span>
+                    </a>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Resources</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              {resourcesNavItems.map((item) => (
+                <SidebarMenuItem key={item.title}>
+                  <SidebarMenuButton asChild tooltip={item.title}>
+                    <a href={item.href}>
+                      <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
                     </a>
                   </SidebarMenuButton>
@@ -56,6 +118,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter className="p-4"></SidebarFooter>
     </Sidebar>
   );
 }

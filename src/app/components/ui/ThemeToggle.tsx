@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { toast } from 'sonner';
 import { Switch } from './shadcn/switch';
 
 export function ThemeToggle() {
@@ -21,6 +22,11 @@ export function ThemeToggle() {
     setIsDark(checked);
     document.documentElement.classList.toggle('dark', checked);
     localStorage.setItem('theme', checked ? 'dark' : 'light');
+
+    toast.success(`Theme changed to ${checked ? 'dark' : 'light'} mode`, {
+      description: `Your preference has been saved.`,
+      icon: checked ? '🌙' : '☀️',
+    });
   };
 
   return (
