@@ -1,5 +1,5 @@
 import React from 'react';
-
+//TODO: Add content to the leaderboard page
 const LeaderboardPage: React.FC = () => {
   return (
     <div>
