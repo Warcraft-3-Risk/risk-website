@@ -3,7 +3,7 @@
 import * as React from 'react';
 import { Slot } from '@radix-ui/react-slot';
 import { VariantProps, cva } from 'class-variance-authority';
-import { PanelLeftIcon, Sheet } from 'lucide-react';
+import { PanelLeftIcon } from 'lucide-react';
 
 import { useIsMobile } from '@/hooks/use-mobile';
 import { cn } from '@/lib/utils';
@@ -21,6 +21,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetDescription,
+  SheetShad,
 } from './sheet';
 import { Skeleton } from './skeleton';
 
@@ -181,7 +182,7 @@ function Sidebar({
 
   if (isMobile) {
     return (
-      <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
+      <SheetShad open={openMobile} onOpenChange={setOpenMobile} {...props}>
         <SheetContent
           data-sidebar="sidebar"
           data-slot="sidebar"
@@ -200,7 +201,7 @@ function Sidebar({
           </SheetHeader>
           <div className="flex h-full w-full flex-col">{children}</div>
         </SheetContent>
-      </Sheet>
+      </SheetShad>
     );
   }
 

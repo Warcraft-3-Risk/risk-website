@@ -4,8 +4,11 @@ import './globals.css';
 
 import { AppSidebar } from '@/app/components/layout/app-sidebar';
 import Footer from '@/app/components/layout/footer';
-import { Navbar } from '@/app/components/layout/navbar';
-import { SidebarProvider } from './components/ui/shadcn/sidebar';
+import {
+  SidebarProvider,
+  SidebarTrigger,
+} from './components/ui/shadcn/sidebar';
+import { Navbar } from './components/layout/Navbar';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,6 +37,9 @@ export default function RootLayout({
       >
         <SidebarProvider>
           <AppSidebar />
+          <div className="lg:hidden">
+            <SidebarTrigger />
+          </div>
           <main className="flex-1 min-h-screen flex flex-col">
             <Navbar />
             {children}
