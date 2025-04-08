@@ -6,7 +6,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@/app/components/ui/sidebar';
+} from '@/app/components/ui/shadcn/sidebar';
 
 const items = [
   {
