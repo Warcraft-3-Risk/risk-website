@@ -23,5 +23,10 @@
     "leaderboard.player": "Player",
     "leaderboard.score": "Score",
     "leaderboard.nodata": "No players found"
+  },
+  "notfound": {
+    "notfound.title": "You've been mislead!",
+    "notfound.text": "I'm sorry you've gone all this way for nothing",
+    "notfound.back": "Travel back home"
   }
 }

@@ -1,13 +1,12 @@
 'use client';
-
 import {
   Home,
-  FileText,
   Users,
   Settings,
   Newspaper,
   Shield,
   Library,
+  Headset,
 } from 'lucide-react';
 import {
   Sidebar,
@@ -49,9 +48,9 @@ const mainNavItems = [
 
 const resourcesNavItems = [
   {
-    title: 'Documentation',
-    icon: FileText,
-    href: '/docs',
+    title: 'Discord',
+    icon: Headset,
+    href: 'https://discord.com/invite/wc3risk',
   },
   {
     title: 'Community',
@@ -67,7 +66,7 @@ const resourcesNavItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="border-r">
+    <Sidebar variant="inset" className="">
       <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
         <div className="flex items-center gap-2 py-2">
           <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold">
@@ -101,7 +100,7 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
         <SidebarGroup>
-          <SidebarGroupLabel>Resources</SidebarGroupLabel>
+          <SidebarGroupLabel>Links</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {resourcesNavItems.map((item) => (
