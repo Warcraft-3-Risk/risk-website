@@ -25,7 +25,7 @@ export function ThemeToggle() {
 
     toast.success(
       checked ? 'Welcome to the Dark Side 🌙' : 'Welcome to the Bright Side ☀️',
-      {},
+      { duration: 1500, className: 'swoop-toast' },
     );
   };
 

@@ -7,6 +7,7 @@ import {
   Shield,
   Library,
   Headset,
+  Trophy,
 } from 'lucide-react';
 import {
   Sidebar,
@@ -43,6 +44,11 @@ const mainNavItems = [
     title: 'How To Play',
     icon: Library,
     href: '/how-to',
+  },
+  {
+    title: 'Tournaments',
+    icon: Trophy,
+    href: '/tournaments',
   },
 ];
 

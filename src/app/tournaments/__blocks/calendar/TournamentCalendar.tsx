@@ -32,7 +32,9 @@ const TournamentCalendar = () => {
 
   return (
     <div className="mt-6">
-      <h2 className="text-2xl font-semibold">Tournament Calendar</h2>
+      <h2 className="text-2xl font-semibold text-black dark:text-white">
+        Tournament Calendar
+      </h2>
 
       <div className="mt-4 flex justify-center">
         <Calendar

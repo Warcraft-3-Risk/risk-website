@@ -53,7 +53,7 @@ export default function RootLayout({
                 <Footer />
               </div>
             </div>
-            <Toaster richColors closeButton position="bottom-right" />
+            <Toaster richColors closeButton position="top-right" />
           </ThemeProvider>
         </SidebarProvider>
       </body>

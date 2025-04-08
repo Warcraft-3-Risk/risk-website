@@ -28,5 +28,11 @@
     "notfound.title": "You've been mislead!",
     "notfound.text": "I'm sorry you've gone all this way for nothing",
     "notfound.back": "Travel back home"
+  },
+  "standalone": {
+    "standalone.title": "STAND ALONE",
+    "standalone.text": "This is a showcase and a trailer for the game that is currently in development!",
+    "standalone.button": "Wanna see more?",
+    "standalone.click": "Click here"
   }
 }
