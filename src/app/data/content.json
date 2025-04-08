@@ -1,13 +1,4 @@
 {
-  "navbar": {
-    "navbar.HomeText": "Home",
-    "navbar.TournamentsText": "Tournaments",
-    "navbar.LeaderboardText": "Leaderboard",
-    "navbar.AboutText": "About",
-    "navbar.ServicesText": "Services",
-    "navbar.LearnText": "Learn About The Game"
-  },
-
   "footer": {
     "footer.AboutText": "About",
     "footer.DiscordText": "Discord",
