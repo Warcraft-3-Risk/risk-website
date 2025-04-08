@@ -25,9 +25,7 @@ export function ThemeToggle() {
 
     toast.success(
       checked ? 'Welcome to the Dark Side 🌙' : 'Welcome to the Bright Side ☀️',
-      {
-        description: `Your preference has been saved.`,
-      },
+      {},
     );
   };
 

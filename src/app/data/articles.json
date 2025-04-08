@@ -1,16 +1,16 @@
 [
   {
     "id": 1,
-    "title": "",
-    "author": "",
-    "tags": [],
-    "text": ""
+    "title": "NEW PATCH NOTES",
+    "author": "Microhive",
+    "tags": ["Update", "Patch Notes", "Game"],
+    "text": "The latest patch notes have been released, bringing a host of new features and bug fixes to enhance your gaming experience. Check out the details below to see what's new and improved."
   },
   {
     "id": 2,
-    "title": "",
-    "author": "",
-    "tags": [""],
-    "text": ""
+    "title": "Upcoming Tournament this friday!",
+    "author": "Poomonky",
+    "tags": ["Tournament", "Event", "Game"],
+    "text": "Join us for an exciting tournament this Friday! Compete against the best players and show off your skills. Prizes await the top contenders, so don't miss out on this opportunity to shine."
   }
 ]
