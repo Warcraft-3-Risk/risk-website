@@ -1,6 +1,6 @@
 'use client';
 
-import { ThemeToggle } from '../ui/ThemeToggle';
+import { ThemeToggle } from '@/app/components/layout/ThemeToggle';
 
 export function Navbar() {
   return (

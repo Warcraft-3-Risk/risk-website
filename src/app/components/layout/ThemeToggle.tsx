@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { toast } from 'sonner';
-import { Switch } from './shadcn/switch';
+import { Switch } from '@/app/components/ui/shadcn/switch';
 
 export function ThemeToggle() {
   const [isDark, setIsDark] = useState(false);
@@ -23,10 +23,12 @@ export function ThemeToggle() {
     document.documentElement.classList.toggle('dark', checked);
     localStorage.setItem('theme', checked ? 'dark' : 'light');
 
-    toast.success(`Theme changed to ${checked ? 'dark' : 'light'} mode`, {
-      description: `Your preference has been saved.`,
-      icon: checked ? '🌙' : '☀️',
-    });
+    toast.success(
+      checked ? 'Welcome to the Dark Side 🌙' : 'Welcome to the Bright Side ☀️',
+      {
+        description: `Your preference has been saved.`,
+      },
+    );
   };
 
   return (
