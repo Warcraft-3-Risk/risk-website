@@ -3,7 +3,7 @@ import TournamentHeader from '@/app/tournaments/__blocks/TournamentHeader';
 import { Calendar } from '@/app/components/ui/shadcn/calendar';
 import React from 'react';
 
-//TODO: This is the tournament page, which will show the tournament calendar and the tournament header.
+//TODO: Make this showcase dates and data of the tournaments including other events.
 const TournamentPage = () => {
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   return (
