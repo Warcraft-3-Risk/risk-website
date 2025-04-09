@@ -34,5 +34,9 @@
     "standalone.text": "This is a showcase and a trailer for the game that is currently in development!",
     "standalone.button": "Wanna see more?",
     "standalone.click": "Click here"
+  },
+  "linksection": {
+    "linksection.title": "Meet The Community!",
+    "linksection.text": "Join the Risk Reforged Family"
   }
 }
