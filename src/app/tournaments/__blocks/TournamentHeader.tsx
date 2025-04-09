@@ -1,4 +1,3 @@
-// src/app/tournaments/__blocks/TournamentHeader.tsx
 const TournamentHeader = () => {
   return (
     <header className="bg-white dark:bg-black text-black dark:text-white py-4 px-6 rounded-md shadow-md mb-8">
