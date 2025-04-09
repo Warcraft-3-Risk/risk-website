@@ -8,6 +8,10 @@
     "footer.ContactText": "Contact",
     "footer.CompanyText": "WC3 - Risk Reforged"
   },
+  "home": {
+    "home.title": "Welcome to Risk Reforged",
+    "home.text": "A strategic game of conquest and diplomacy in Warcraft III"
+  },
   "leaderboard": {
     "leaderboard.title": "Leaderboard",
     "leaderboard.sortby": "Sort by:",

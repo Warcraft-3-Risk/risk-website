@@ -19,5 +19,26 @@
     "author": "thabooch",
     "tags": [" Community -", " Website - ", " Game"],
     "text": "We are considering launching a dedicated website for our community. This platform will serve as a hub for news, updates, and discussions, bringing everyone closer together. Our goal is to create a space where players can share their experiences, provide feedback, and stay informed about the latest developments in the game. The website will feature forums for discussions, a blog for patch notes and announcements, and a gallery for showcasing community creations. Additionally, we plan to include a section for guides and tips to help players improve their skills. We want to hear your thoughts on this idea! What features would you like to see? Your input will help shape the future of this platform and ensure it meets the needs of our amazing community."
+  },
+  {
+    "id": 4,
+    "title": "Double XP Weekend Incoming!",
+    "author": "Microhive",
+    "tags": ["Event -", " Bonus -", " Game"],
+    "text": "We're thrilled to announce a Double XP Weekend! Starting this Saturday, all players will earn twice the experience points in all game modes. This is the perfect opportunity to level up your character, unlock new gear, and show off your skills. Don't miss out – the event runs from Saturday 12:00 PM to Sunday 11:59 PM!"
+  },
+  {
+    "id": 5,
+    "title": "Community Art Showcase #1",
+    "author": "thabooch",
+    "tags": ["Community -", " Art -", " Spotlight"],
+    "text": "We’re incredibly proud of the creative talent in our community. In our first Community Art Showcase, we’re highlighting some amazing fan creations submitted over the past month. From character designs to map concepts, your creativity knows no bounds. Check out the gallery in our Discord or submit your own for the next feature!"
+  },
+  {
+    "id": 6,
+    "title": "Developer Q&A Recap",
+    "author": "Poomonky",
+    "tags": ["Q&A -", " Developer -", " Community"],
+    "text": "Last week’s live Q&A with the developers was a blast! We covered everything from balance updates to future content plans. If you missed it, we’ve compiled a full recap including top questions and answers. Read on to find out what’s coming next and how your feedback is shaping development."
   }
 ]
