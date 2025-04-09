@@ -42,6 +42,7 @@
   "newsandevents": {
     "newsandevents.title": "News & Events",
     "newsandevents.text": "View all news →",
-    "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!"
+    "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
+    "newsandevents.loading": "Loading..."
   }
 }

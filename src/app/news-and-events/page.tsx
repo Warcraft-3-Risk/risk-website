@@ -1,38 +1,13 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import content from '@/app/data/content.json';
 import ArticleItem from '@/app/news-and-events/__blocks/ArticleItem';
 import LoadingSpinner from '@/app/news-and-events/__blocks/LoadingSpinner';
-
-interface Article {
-  id: number;
-  title: string;
-  tags: string;
-  author: string;
-  text: string;
-}
+import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 
 const NewsAndEventsPage = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      try {
-        //TODO: Fix this when we use firebase
-        const response = await fetch('/api/articles');
-        const data = await response.json();
-        setArticles(data);
-      } catch (error) {
-        console.error('Failed to load articles:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchArticles();
-  }, []);
+  const { articles, loading } = useNews();
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
@@ -52,7 +27,7 @@ const NewsAndEventsPage = () => {
                 author={author}
                 tags={tags}
                 text={text}
-                id={0}
+                id={id}
               />
             ))}
           </ul>
