@@ -34,5 +34,10 @@
     "standalone.text": "This is a showcase and a trailer for the game that is currently in development!",
     "standalone.button": "Wanna see more?",
     "standalone.click": "Click here"
+  },
+  "newsandevents": {
+    "newsandevents.title": "News & Events",
+    "newsandevents.text": "View all news →",
+    "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!"
   }
 }
