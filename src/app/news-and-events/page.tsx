@@ -20,10 +20,11 @@ const NewsAndEventsPage = () => {
           <LoadingSpinner />
         ) : articles.length > 0 ? (
           <ul>
-            {articles.map(({ id, title, author, text, tags }) => (
+            {articles.map(({ id, title, author, text, tags, publishedAt }) => (
               <ArticleItem
                 key={id}
                 title={title}
+                publishedAt={publishedAt}
                 author={author}
                 tags={tags}
                 text={text}

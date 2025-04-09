@@ -11,6 +11,7 @@ import React, {
 interface Article {
   id: number;
   title: string;
+  publishedAt: string;
   tags: string;
   author: string;
   text: string;
@@ -54,7 +55,6 @@ export const NewsProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-// Optional helper hook
 export const useNews = () => {
   const context = useContext(NewsContext);
   if (!context) {
