@@ -8,7 +8,7 @@ import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 
 const NewsAndEventsPage = () => {
   const { articles, loading } = useNews();
-
+  // Fetching the 3 most recent articles from the articles.json file.
   const sortedArticles = [...articles]
     .sort(
       (a, b) =>
