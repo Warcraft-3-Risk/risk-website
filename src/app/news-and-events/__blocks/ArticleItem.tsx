@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown } from 'lucide-react'; // Assuming you're using lucide-react or similar
+import { ChevronDown } from 'lucide-react';
 
 interface Article {
   id: number;
@@ -12,7 +12,7 @@ interface Article {
 
 const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
-  const excerpt = text.length > 200 ? text.substring(0, 200) + '...' : text;
+  const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
