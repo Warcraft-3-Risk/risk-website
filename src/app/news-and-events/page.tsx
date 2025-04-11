@@ -9,6 +9,13 @@ import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 const NewsAndEventsPage = () => {
   const { articles, loading } = useNews();
 
+  const sortedArticles = [...articles]
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, 3);
+
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
       <div className="max-w-4xl mx-auto">
@@ -18,19 +25,21 @@ const NewsAndEventsPage = () => {
 
         {loading ? (
           <LoadingSpinner />
-        ) : articles.length > 0 ? (
+        ) : sortedArticles.length > 0 ? (
           <ul>
-            {articles.map(({ id, title, author, text, tags, publishedAt }) => (
-              <ArticleItem
-                key={id}
-                title={title}
-                publishedAt={publishedAt}
-                author={author}
-                tags={tags}
-                text={text}
-                id={id}
-              />
-            ))}
+            {sortedArticles.map(
+              ({ id, title, author, text, tags, publishedAt }) => (
+                <ArticleItem
+                  key={id}
+                  title={title}
+                  publishedAt={publishedAt}
+                  author={author}
+                  tags={tags}
+                  text={text}
+                  id={id}
+                />
+              ),
+            )}
           </ul>
         ) : (
           <p className="text-gray-600 dark:text-gray-400">

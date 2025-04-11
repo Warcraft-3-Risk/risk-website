@@ -1,5 +1,5 @@
-import NewsAndEventsSection from '@/app/components/layout/sections/NewsAndEventsSection';
-
+// import NewsAndEventsSection from '@/app/components/layout/sections/NewsAndEventsSection';
+//TODO: For now the excerpt from the NewsAndEventsSection is commented out since we don't know the use yet
 export default function Home() {
   return (
     <div className="flex flex-col gap-8 p-8">
@@ -12,7 +12,7 @@ export default function Home() {
         </p>
       </section>
 
-      <NewsAndEventsSection />
+      {/* <NewsAndEventsSection /> */}
     </div>
   );
 }
