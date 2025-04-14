@@ -9,7 +9,7 @@ interface Article {
   tags: string;
   text: string;
 }
-//Decides word length of card excerpt
+// Decides word length of card excerpt
 const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
   const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
