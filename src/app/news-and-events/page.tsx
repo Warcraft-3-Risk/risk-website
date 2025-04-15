@@ -1,54 +1,44 @@
 'use client';
 
-import React from 'react';
-import content from '@/app/data/content.json';
-import ArticleItem from '@/app/news-and-events/__blocks/ArticleItem';
-import LoadingSpinner from '@/app/news-and-events/__blocks/LoadingSpinner';
-import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
+import { useState, useEffect } from 'react';
+import articlesData from '@/app/data/articles.json';
+import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSection';
+import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
+import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';
 
-const NewsAndEventsPage = () => {
-  const { articles, loading } = useNews();
-  // Fetching the 3 most recent articles from the articles.json file.
-  const sortedArticles = [...articles]
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    )
-    .slice(0, 3);
+interface Article {
+  id: number;
+  title: string;
+  publishedAt: string;
+  author: string;
+  tags: string[];
+  text: string;
+}
+
+export default function HomePage() {
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setArticles(articlesData);
+      } catch (error) {
+        console.error('Error loading articles:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, []);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
-      <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold text-black dark:text-white mb-6 justify-center flex">
-          {content.newsandevents['newsandevents.title']}
-        </h1>
-
-        {loading ? (
-          <LoadingSpinner />
-        ) : sortedArticles.length > 0 ? (
-          <ul>
-            {sortedArticles.map(
-              ({ id, title, author, text, tags, publishedAt }) => (
-                <ArticleItem
-                  key={id}
-                  title={title}
-                  publishedAt={publishedAt}
-                  author={author}
-                  tags={tags}
-                  text={text}
-                  id={id}
-                />
-              ),
-            )}
-          </ul>
-        ) : (
-          <p className="text-gray-600 dark:text-gray-400">
-            {content.newsandevents['newsandevents.nodata']}
-          </p>
-        )}
-      </div>
+    <div className="min-h-screen">
+      <HeroSection />
+      <LeaderBoardSection loading={loading} />
+      <NewsSection loading={loading} articles={articles} />
     </div>
   );
-};
-
-export default NewsAndEventsPage;
+}

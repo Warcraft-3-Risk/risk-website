@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+'use client';
+
+import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 
 interface Article {
@@ -9,7 +11,7 @@ interface Article {
   tags: string;
   text: string;
 }
-// Decides word length of card excerpt
+
 const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
   const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
@@ -28,7 +30,7 @@ const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
               aria-label="Toggle article"
             >
               <ChevronDown
-                className={`h-6 w-6 transform transition-transform duration-300 text-black ${
+                className={`h-6 w-6 transform transition-transform duration-300 text-white ${
                   expanded ? 'rotate-180' : ''
                 }`}
               />
@@ -43,7 +45,7 @@ const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
             {tags}
           </p>
 
-          <div className="text-gray-100 transition-all duration-300 ease-in-out w-[800px]">
+          <div className="text-gray-100 transition-all duration-300 ease-in-out max-w-full overflow-hidden">
             {expanded ? text : excerpt}
           </div>
         </div>
