@@ -43,12 +43,12 @@ const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
             {tags}
           </p>
 
-          <div className="text-gray-100 transition-all duration-300 ease-in-out w-[500px]">
+          <div className="text-gray-100 transition-all duration-300 ease-in-out w-[800px]">
             {expanded ? text : excerpt}
           </div>
         </div>
 
-        <div className="absolute right-[-4rem] top-0 h-full w-1/3 bg-[#F7ECD9] transform -skew-x-12 origin-right" />
+        <div className="absolute right-0 top-0 h-full w-3/12 bg-[#F7ECD9] [clip-path:polygon(100%_0,0%_0,100%_100%)]" />
       </div>
     </li>
   );

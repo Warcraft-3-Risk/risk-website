@@ -18,7 +18,7 @@ const NewsAndEventsPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <h1 className="text-6xl font-bold text-black dark:text-white mb-6 justify-center flex">
           {content.newsandevents['newsandevents.title']}
         </h1>
