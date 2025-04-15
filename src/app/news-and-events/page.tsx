@@ -5,6 +5,7 @@ import articlesData from '@/app/data/articles.json';
 import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSection';
 import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
 import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';
+import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
 
 interface Article {
   id: number;
@@ -39,6 +40,7 @@ export default function HomePage() {
       <HeroSection />
       <LeaderBoardSection loading={loading} />
       <NewsSection loading={loading} articles={articles} />
+      <CommunitySection />
     </div>
   );
 }

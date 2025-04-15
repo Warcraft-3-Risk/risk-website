@@ -15,7 +15,7 @@ interface NewsSectionProps {
 }
 
 export default function NewsSection({ articles, loading }: NewsSectionProps) {
-  const latestArticle = articles[0]; // Get the first article only
+  const latestArticle = articles[0];
 
   return (
     <section className="bg-[#F7ECD9] py-12 px-6">
@@ -24,9 +24,6 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
           <h2 className="text-4xl font-bold text-[#0C2A46] mb-4 md:mb-0">
             NEWS
           </h2>
-          <div className="text-right">
-            <p className="font-semibold">Tournament | 23-05-2025</p>
-          </div>
         </div>
 
         {loading ? (
@@ -36,7 +33,7 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
             <p className="text-gray-700 mb-6">{latestArticle.text}</p>
             <div className="flex justify-end">
               <a
-                href="/news"
+                href="news-and-events/articles"
                 className="bg-[#0C2A46] text-white px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
               >
                 View more
