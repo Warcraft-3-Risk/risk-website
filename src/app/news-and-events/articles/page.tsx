@@ -5,15 +5,19 @@ import content from '@/app/data/content.json';
 import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import ArticleItem from './components/ArticleItem';
+import { Button } from '@/app/components/ui/shadcn/button';
+import Link from 'next/link';
 
 const NewsPage = () => {
   const { articles, loading } = useNews();
 
-  // Sort all articles by published date (descending)
-  const sortedArticles = [...articles].sort(
-    (a, b) =>
-      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-  );
+  // Sort all articles by published date (descending) and take the top 3
+  const sortedArticles = [...articles]
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
@@ -40,9 +44,14 @@ const NewsPage = () => {
           </ul>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
-            {content.newsandevents['newsandevents.nodata']}
+            {content.newssection['newssection.title']}
           </p>
         )}
+        <div className="flex justify-end">
+          <Button className="bg-[#f9c701]">
+            <Link href="/news-and-events">Read more</Link>
+          </Button>
+        </div>
       </div>
     </div>
   );
