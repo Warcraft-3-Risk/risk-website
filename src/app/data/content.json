@@ -45,7 +45,7 @@
     "standalone.click": "Click here"
   },
   "newsandevents": {
-    "newsandevents.title": "NEWS",
+    "newsandevents.title": "NEWS & EVENTS",
     "newsandevents.text": "View all news →",
     "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
     "newsandevents.loading": "Loading..."
