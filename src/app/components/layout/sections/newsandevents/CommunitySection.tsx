@@ -1,15 +1,16 @@
 import React from 'react';
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 
 const CommunitySection: React.FC = () => {
   return (
     <section className="bg-[#0C2A46] py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
-          Meet Our Community
+          {content.communitysection['communitysection.title']}
         </h2>
         <p className="text-center text-white mb-8">
-          Join the Risk Forged Family!
+          {content.communitysection['communitysection.subtitle']}
         </p>
 
         <div className="flex justify-center gap-8">
@@ -21,7 +22,7 @@ const CommunitySection: React.FC = () => {
           >
             <Image
               src="/images/Discord.svg"
-              alt="Discord"
+              alt={content.communitysection['communitysection.discordAlt']}
               width={48}
               height={48}
             />
@@ -34,7 +35,7 @@ const CommunitySection: React.FC = () => {
           >
             <Image
               src="/images/Youtube.webp"
-              alt="YouTube"
+              alt={content.communitysection['communitysection.youtubeAlt']}
               width={48}
               height={48}
             />
@@ -47,7 +48,7 @@ const CommunitySection: React.FC = () => {
           >
             <Image
               src="/images/twitch-tile.svg"
-              alt="Twitch"
+              alt={content.communitysection['communitysection.twitchAlt']}
               width={48}
               height={48}
             />

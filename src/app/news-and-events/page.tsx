@@ -6,6 +6,8 @@ import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSect
 import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
 import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';
 import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import WatchUsSection from '@/app/components/layout/sections/newsandevents/WatchUsSection';
+import SpecialMentionsSection from '@/app/components/layout/sections/newsandevents/SpecialMentionsSection';
 
 interface Article {
   id: number;
@@ -41,6 +43,8 @@ export default function HomePage() {
       <LeaderBoardSection loading={loading} />
       <NewsSection loading={loading} articles={articles} />
       <CommunitySection />
+      <WatchUsSection />
+      <SpecialMentionsSection />
     </div>
   );
 }

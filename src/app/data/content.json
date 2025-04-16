@@ -28,6 +28,11 @@
     "leaderboard.score": "Score",
     "leaderboard.nodata": "No players found"
   },
+  "leaderboardsection": {
+    "leaderboardsection.title": "LEADER BOARDS",
+    "leaderboardsection.description": "Top players and their achievements in our competitive gaming community",
+    "leaderboardsection.viewmore": "View more"
+  },
   "notfound": {
     "notfound.title": "You've been mislead!",
     "notfound.text": "I'm sorry you've gone all this way for nothing",
@@ -44,5 +49,30 @@
     "newsandevents.text": "View all news →",
     "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
     "newsandevents.loading": "Loading..."
+  },
+  "newssection": {
+    "newssection.title": "NEWS",
+    "newssection.viewmore": "View more",
+    "newssection.none": "No news available at the moment."
+  },
+  "communitysection": {
+    "communitysection.title": "Meet Our Community",
+    "communitysection.subtitle": "Join the Risk Forged Family!",
+    "communitysection.discordAlt": "Discord",
+    "communitysection.youtubeAlt": "YouTube",
+    "communitysection.twitchAlt": "Twitch"
+  },
+  "specialmentions": {
+    "specialmentions.title": "Special Mentions",
+    "specialmentions.subtitle": "KNOWN PLAYERS",
+    "specialmentions.player1": "Easters Twitch",
+    "specialmentions.player2": "Soxus Twitch",
+    "specialmentions.player3": "Bokuz Twitch"
+  },
+  "watchus": {
+    "watchus.title": "WATCH OUR TOURNAMENTS",
+    "watchus.subtitle": "CATCH US LIVE",
+    "watchus.description": "Tune in our official YouTube and Twitch channels for weekly tournament streams packed with excitement and entertainment.",
+    "watchus.liveTagline": "WE GO LIVE EVERY WEEK"
   }
 }

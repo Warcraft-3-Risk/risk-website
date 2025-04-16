@@ -1,4 +1,5 @@
 import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
+import content from '@/app/data/content.json';
 
 interface Article {
   id: number;
@@ -18,11 +19,11 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
   const latestArticle = articles[0];
 
   return (
-    <section className="bg-[#F7ECD9] py-12 px-6">
+    <section className="bg-[#efe5c7] py-12 px-6">
       <div className="container mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-8">
+        <div className="flex justify-end flex-col md:flex-row items-end mb-8">
           <h2 className="text-4xl font-bold text-[#0C2A46] mb-4 md:mb-0">
-            NEWS
+            {content.newssection['newssection.title']}
           </h2>
         </div>
 
@@ -34,14 +35,16 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
             <div className="flex justify-end">
               <a
                 href="news-and-events/articles"
-                className="bg-[#0C2A46] text-white px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
+                className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
               >
-                View more
+                {content.newssection['newssection.viewmore']}
               </a>
             </div>
           </div>
         ) : (
-          <p className="text-gray-600">No news available at the moment.</p>
+          <p className="text-gray-600">
+            {content.newssection['newssection.none']}
+          </p>
         )}
       </div>
     </section>
