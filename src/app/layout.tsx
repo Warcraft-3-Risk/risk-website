@@ -5,8 +5,8 @@ import { SidebarTrigger } from '@/app/components/ui/shadcn/sidebar';
 
 import { AppSidebar } from '@/app/components/layout/app-sidebar';
 import Footer from '@/app/components/layout/footer';
-import { SidebarProvider } from './components/ui/shadcn/sidebar';
-import { Navbar } from './components/layout/Navbar';
+import { SidebarProvider } from '@/app/components/ui/shadcn/sidebar';
+import { Navbar } from '@/app/components/layout/Navbar';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
 
