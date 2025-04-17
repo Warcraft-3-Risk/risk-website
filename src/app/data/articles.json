@@ -2,15 +2,49 @@
   {
     "id": 1,
     "title": "NEW PATCH NOTES",
+    "publishedAt": "2025-04-08T10:30:00Z",
     "author": "Microhive",
-    "tags": ["Update", "Patch Notes", "Game"],
+    "tags": ["Update - ", " Patch Notes -", " Game"],
     "text": "The latest patch notes have been released, bringing a host of new features and bug fixes to enhance your gaming experience. Check out the details below to see what's new and improved.\n\n- New Features:\n  1. Added a new multiplayer mode: Battle Royale.\n  2. Introduced seasonal rewards for players who complete specific in-game challenges.\n\n- Bug Fixes:\n  1. Fixed an issue where some players were unable to join certain lobbies.\n  2. Resolved a bug causing character models to glitch during cutscenes.\n  3. Fixed audio desync issue in certain environments.\n\n- Improvements:\n  1. Improved matchmaking times in ranked modes.\n  2. Optimized graphics for smoother performance on lower-end systems.\n\nWe hope you enjoy the new updates! Stay tuned for more improvements in future patches."
   },
   {
     "id": 2,
     "title": "Upcoming Tournament this friday!",
+    "publishedAt": "2025-04-05T14:00:00Z",
     "author": "Poomonky",
-    "tags": ["Tournament", "Event", "Game"],
+    "tags": ["Tournament -", " Event -", " Game"],
     "text": "Join us for an exciting tournament this Friday! Compete against the best players and show off your skills. Prizes await the top contenders, so don't miss out on this opportunity to shine."
+  },
+  {
+    "id": 3,
+    "title": "Possible Website for the community",
+    "publishedAt": "2025-04-01T09:00:00Z",
+    "author": "thabooch",
+    "tags": [" Community -", " Website - ", " Game"],
+    "text": "We are considering launching a dedicated website for our community. This platform will serve as a hub for news, updates, and discussions, bringing everyone closer together. Our goal is to create a space where players can share their experiences, provide feedback, and stay informed about the latest developments in the game. The website will feature forums for discussions, a blog for patch notes and announcements, and a gallery for showcasing community creations. Additionally, we plan to include a section for guides and tips to help players improve their skills. We want to hear your thoughts on this idea! What features would you like to see? Your input will help shape the future of this platform and ensure it meets the needs of our amazing community."
+  },
+  {
+    "id": 4,
+    "title": "Double XP Weekend Incoming!",
+    "publishedAt": "2025-03-29T12:00:00Z",
+    "author": "Microhive",
+    "tags": ["Event -", " Bonus -", " Game"],
+    "text": "We're thrilled to announce a Double XP Weekend! Starting this Saturday, all players will earn twice the experience points in all game modes. This is the perfect opportunity to level up your character, unlock new gear, and show off your skills. Don't miss out – the event runs from Saturday 12:00 PM to Sunday 11:59 PM!"
+  },
+  {
+    "id": 5,
+    "title": "Community Art Showcase #1",
+    "publishedAt": "2025-03-20T16:45:00Z",
+    "author": "thabooch",
+    "tags": ["Community -", " Art -", " Spotlight"],
+    "text": "We’re incredibly proud of the creative talent in our community. In our first Community Art Showcase, we’re highlighting some amazing fan creations submitted over the past month. From character designs to map concepts, your creativity knows no bounds. Check out the gallery in our Discord or submit your own for the next feature!"
+  },
+  {
+    "id": 6,
+    "title": "Developer Q&A Recap",
+    "publishedAt": "2025-03-15T18:30:00Z",
+    "author": "Poomonky",
+    "tags": ["Q&A -", " Developer -", " Community"],
+    "text": "Last week’s live Q&A with the developers was a blast! We covered everything from balance updates to future content plans. If you missed it, we’ve compiled a full recap including top questions and answers. Read on to find out what’s coming next and how your feedback is shaping development."
   }
 ]
