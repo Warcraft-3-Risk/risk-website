@@ -7,6 +7,7 @@ import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
+import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 
 const NewsPage = () => {
   const { articles, loading } = useNews();
@@ -52,6 +53,9 @@ const NewsPage = () => {
             <Link href="/news-and-events">Read more</Link>
           </Button>
         </div>
+      </div>
+      <div className="container mx-auto p-4">
+        <TournamentCalendar />
       </div>
     </div>
   );
