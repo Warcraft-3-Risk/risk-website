@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "Patch Notes 1.0.1",
+    "publishedAt": "2023-10-05T00:00:00Z",
+    "author": "Development Team",
+    "tags": ["Feature ", " Fix ", " Update "],
+    "text": "Version 1.0.1 brings exciting updates to the game:\n\n- Features:\n  1. Added new map layout for enhanced gameplay experience.\n\n- Fixes:\n  1. Resolved an issue where players could not join multiplayer lobbies.\n\n- Updates:\n  1. Improved AI behavior for better challenge in single-player mode."
+  },
+  {
+    "id": 2,
+    "title": "Patch Notes 1.0.0",
+    "publishedAt": "2023-09-30T00:00:00Z",
+    "author": "Development Team",
+    "tags": ["Release "],
+    "text": "Version 1.0.0 marks the initial release of the game:\n\n- Release:\n  1. Initial release of the game with core features and multiplayer support."
+  }
+]
