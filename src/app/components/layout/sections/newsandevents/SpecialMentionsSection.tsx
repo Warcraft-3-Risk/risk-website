@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
+import '@/core/SCSS/base/_vars.scss';
 
 const SpecialMentionsSection: React.FC = () => {
   return (
