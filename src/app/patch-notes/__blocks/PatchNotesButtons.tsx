@@ -20,7 +20,9 @@ const PatchNotesButtons = ({
       <Button
         className="PlayNowButton"
         variant="PlayNowButton"
-        onClick={() => router.push('https://yourgameurl.com')}
+        onClick={() =>
+          router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+        }
       >
         PLAY NOW
       </Button>

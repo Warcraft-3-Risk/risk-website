@@ -71,8 +71,8 @@ export default function PatchReleaseNotes({
               </span>
 
               <div className="themed-text ml-4 mt-2 whitespace-pre-line text-sm">
-                {release.body?.slice(0, 500) || 'No description provided.'}
-                {release.body && release.body.length > 500 && '...'}
+                {release.body?.slice(0, 800) || 'No description provided.'}
+                {release.body && release.body.length > 800 && '...'}
               </div>
 
               <a
