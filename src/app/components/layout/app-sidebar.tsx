@@ -50,6 +50,11 @@ const mainNavItems = [
     icon: Trophy,
     href: '/tournaments',
   },
+  {
+    title: 'About us',
+    icon: Users,
+    href: '/about-us',
+  },
 ];
 
 const resourcesNavItems = [

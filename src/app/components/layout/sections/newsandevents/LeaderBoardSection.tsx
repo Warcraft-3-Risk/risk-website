@@ -1,4 +1,4 @@
-import LeaderBoardTable from '@/app/news-and-events/__blocks/leaderboard/LeaderBoardTable';
+import LeaderBoardTable from '@/app/components/layout/sections/leaderboard/LeaderBoardTable';
 import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import content from '@/app/data/content.json';
 
