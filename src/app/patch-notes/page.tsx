@@ -65,27 +65,28 @@ const PatchNotesPage = () => {
             <p className="text-center text-lg mt-10">Loading patch notes...</p>
           ) : (
             patchNotes.map((patch) => (
-              <div
-                key={patch.id}
-                className="mb-10 p-6 border border-gray-300 rounded-lg bg-white shadow"
-              >
-                <h2 className="text-2xl font-bold">
-                  {patch.title}{' '}
-                  <span className="text-gray-500 text-sm font-normal">
-                    ({new Date(patch.publishedAt).toDateString()})
-                  </span>
-                </h2>
-                <p className="text-sm text-gray-600 mb-2">By {patch.author}</p>
-                <div>{renderPatchText(patch.text)}</div>
-                <div className="mt-2">
-                  {patch.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="inline-block bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 mr-2 rounded"
-                    >
-                      {tag}
+              <div key={patch.id} className="mb-10 p-12">
+                <div className="sandborder p-2">
+                  <h2 className="text-2xl font-bold">
+                    {patch.title}{' '}
+                    <span className="text-gray-500 text-sm font-normal">
+                      ({new Date(patch.publishedAt).toDateString()})
                     </span>
-                  ))}
+                  </h2>
+                  <p className="text-sm text-gray-600 mb-2">
+                    By {patch.author}
+                  </p>
+                  <div>{renderPatchText(patch.text)}</div>
+                  <div className="mt-2">
+                    {patch.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="inline-block bg-gray-200 text-gray-800 text-xs font-medium px-2 py-1 mr-2 rounded"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))
