@@ -12,27 +12,86 @@
 
 .carousel-container {
   position: relative;
-  width: 400px;
-  height: 225px;
+  width: 100%;
+  max-width: 800px; // or any width you want for the embed
+  height: 450px; // match 16:9 ratio for larger display
+  margin: 0 auto;
   overflow: hidden;
+  border-radius: 8px;
 
   .background-embed {
     position: absolute;
-    inset: 0;
-    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    filter: blur(10px);
-    z-index: -1;
-    opacity: 0.5;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    filter: blur(15px) brightness(0.5);
+    opacity: 0;
+    z-index: 0;
+    pointer-events: none;
 
     &.active {
-      opacity: 0;
-      z-index: 0;
-      filter: none;
+      opacity: 1;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
     }
   }
 
   .foreground-embed {
+    position: relative;
     display: flex;
+    height: 100%; // ✅ this is important
     transition: transform 0.5s ease-in-out;
+    z-index: 1;
+  
+    > div {
+      min-width: 100%;
+      height: 100%; // ✅ make sure the slide container fills the height
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+.button-next,
+.button-prev {
+  position: absolute;
+  z-index: 10;
+  color: $cta-yellow;
+  background-color: black;
+  // background-color: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem; /* Adjust padding as needed */
+  border-radius: 0.25rem;
+  transition: background-opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.button-next {
+  right: 0.5rem; /* Adjust for small screens */
+  @media (min-width: 640px) {
+    right: 1.5rem; /* Adjust for larger screens */
+  }
+}
+
+.button-prev {
+  left: 0.5rem; /* Adjust for small screens */
+  @media (min-width: 640px) {
+    left: 1.5rem; /* Adjust for larger screens */
   }
 }
