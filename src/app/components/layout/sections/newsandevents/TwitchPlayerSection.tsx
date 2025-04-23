@@ -19,7 +19,6 @@ const TwitchPlayerSection: React.FC = () => {
   return (
     <section className="Section_Background">
       <div className="relative mt-8 flex justify-center items-center">
-        {/* Prev Button */}
         <button
           onClick={prevSlide}
           className="button-prev"
@@ -28,9 +27,7 @@ const TwitchPlayerSection: React.FC = () => {
           <span className="arrow-left" aria-hidden="true">‹</span>
         </button>
 
-        {/* Carousel Container */}
         <div className="carousel-container">
-          {/* Background Embeds */}
           <div className="background-embed active">
             <iframe
               src={`https://player.twitch.tv/?channel=${channels[current]}&parent=localhost&autoplay=false`}
@@ -40,7 +37,6 @@ const TwitchPlayerSection: React.FC = () => {
             ></iframe>
           </div>
 
-          {/* Foreground Embed */}
           <div className="foreground-embed" style={{ transform: `translateX(-${current * 100}%)` }}>
           {channels.map((channel, index) => (
             <div key={index} className="w-full h-full flex justify-center items-center">
@@ -54,7 +50,6 @@ const TwitchPlayerSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Next Button */}
         <button
           onClick={nextSlide}
           className="button-next"
