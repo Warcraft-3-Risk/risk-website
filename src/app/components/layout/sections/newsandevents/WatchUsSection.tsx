@@ -1,12 +1,14 @@
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
+import '@/core/SCSS/base/_vars.scss';
+import '@/core/SCSS/base/layout/l-newsandevents.scss';
 
 const WatchUsSection: React.FC = () => {
   return (
-    <section className="bg-gray-300 text-white py-16">
+    <section className="WatchUs_Block bg-gray-300 py-16">
       <div className="container mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold justify-start flex">
+        <h2 className="WatchUs_Text text-4xl font-bold justify-start flex">
           {content.watchus['watchus.title']}
         </h2>
         <p className="text-lg flex justify-start">
