@@ -51,9 +51,9 @@ const mainNavItems = [
     href: '/tournaments',
   },
   {
-    title: 'Streamers',
+    title: 'About us',
     icon: Users,
-    href: '/streamers',
+    href: '/about-us',
   },
 ];
 
