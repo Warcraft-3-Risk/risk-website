@@ -31,7 +31,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
             <p className="text-gray-700 mb-6">{latestArticle.text}</p>
             <div className="flex justify-end">
               <Link
-                href="news-and-events"
+                href="/news-and-events"
                 className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
               >
                 {content.newssection['newssection.viewmore']}
