@@ -3,7 +3,8 @@
 .titletext {
   font-family: 'titleFont', sans-serif;
   font-weight: lighter;
-  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 0px 0px 5px rgb(0, 1, 48);
+  text-transform: uppercase;
 }
 
 .patchnotestextyellow {
@@ -58,4 +59,8 @@
   .themed-border {
     border: 2px solid $background-sand;
   }
+}
+
+.ctabuttons {
+  margin-right: 13%;
 }

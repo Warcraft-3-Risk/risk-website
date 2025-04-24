@@ -17,7 +17,7 @@ export default function PatchNotesHeader() {
       </div>
 
       <h1 className="titletext text-[#f9c701] text-8xl font-bold z-10 relative text-center">
-        PATCH NOTES
+        patch notes
       </h1>
     </div>
   );

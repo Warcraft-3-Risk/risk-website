@@ -16,8 +16,8 @@ const PatchNotesButtons = ({
   const router = useRouter();
 
   return (
-    <div className="flex flex-col items-end gap-4 mt-10 w-full">
-      <div className="flex gap-4 justify-end w-full">
+    <div className="flex flex-row items-end gap-4 mt-10 w-full">
+      <div className="ctabuttons flex gap-4 justify-end w-full">
         <Button
           className="PlayNowButton"
           variant="PlayNowButton"
