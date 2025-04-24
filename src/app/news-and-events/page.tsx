@@ -2,18 +2,15 @@
 
 import React from 'react';
 import content from '@/app/data/content.json';
-import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
-import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
+import articlesData from '@/app/data/articles.json';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 
 const NewsPage = () => {
-  const { articles, loading } = useNews();
-
-  // Sort all articles by published date (descending) and take the top 3
-  const sortedArticles = [...articles]
+  // Sort articles by published date descending
+  const sortedArticles = [...articlesData]
     .sort(
       (a, b) =>
         new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
@@ -27,9 +24,7 @@ const NewsPage = () => {
           {content.newsandevents['newsandevents.title']}
         </h1>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : sortedArticles.length > 0 ? (
+        {sortedArticles.length > 0 ? (
           <ul className="space-y-6">
             {sortedArticles.map((article) => (
               <ArticleItem
@@ -38,7 +33,7 @@ const NewsPage = () => {
                 title={article.title}
                 publishedAt={article.publishedAt}
                 author={article.author}
-                tags={article.tags}
+                tags={article.tags.join(', ')}
                 text={article.text}
               />
             ))}

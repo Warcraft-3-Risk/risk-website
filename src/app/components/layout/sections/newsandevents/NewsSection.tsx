@@ -1,4 +1,3 @@
-import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import content from '@/app/data/content.json';
 
 interface Article {
@@ -12,10 +11,9 @@ interface Article {
 
 interface NewsSectionProps {
   articles: Article[];
-  loading: boolean;
 }
 
-export default function NewsSection({ articles, loading }: NewsSectionProps) {
+export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles[0];
 
   return (
@@ -27,9 +25,7 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
           </h2>
         </div>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : latestArticle ? (
+        {latestArticle ? (
           <div className="mb-8">
             <p className="text-gray-700 mb-6">{latestArticle.text}</p>
             <div className="flex justify-end">
