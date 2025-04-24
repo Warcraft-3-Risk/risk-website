@@ -1,10 +1,19 @@
 //TODO: Add more color variants of the same colors
-$background-blue: #1b3449; 
-$cta-blue: #0e7689; 
-$cta-yellow: #f9c701; 
-$background-sand: #efe5c7; 
+$background-blue: #1b3449;
+$cta-blue: #0e7689;
+$cta-yellow: #f9c701;
+$background-sand: #efe5c7;
+$blue-hover: #088ca3;
+$yellow-hover: #ffe26d;
 
-
+@font-face {
+  font-family: 'titleFont';
+  src: url('/fonts/friz-quadrata-regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'textFont';
+  src: url('/fonts/Montserrat.ttf') format('truetype');
+}
 // $white: #ffffff;
 // $black: #000000;
 // $gray-100: #f8f9fa;
@@ -17,40 +26,36 @@ $background-sand: #efe5c7;
 // $gray-800: #343a40;
 // $gray-900: #212529;
 
-
-// $accent-color-1: #ff6f61; 
-// $accent-color-2: #6f42c1; 
-// $accent-color-3: #20c997; 
-// $accent-color-4: #fd7e14; 
-
+// $accent-color-1: #ff6f61;
+// $accent-color-2: #6f42c1;
+// $accent-color-3: #20c997;
+// $accent-color-4: #fd7e14;
 
 // $background-light: #f8f9fa;
 // $background-dark: #343a40;
 
-
 // $text-light: #f8f9fa;
 // $text-dark: #212529;
-
 
 // $border-color: #dee2e6;
 // $shadow-color: rgba(0, 0, 0, 0.15);
 
-// $extended-color-1: #ff5733; 
+// $extended-color-1: #ff5733;
 // $extended-color-1-light: #ff8a66;
 // $extended-color-1-dark: #cc4629;
 
-// $extended-color-2: #33c1ff; 
+// $extended-color-2: #33c1ff;
 // $extended-color-2-light: #66d4ff;
 // $extended-color-2-dark: #2999cc;
 
-// $extended-color-3: #33ff57; 
+// $extended-color-3: #33ff57;
 // $extended-color-3-light: #66ff85;
 // $extended-color-3-dark: #29cc46;
 
-// $extended-color-4: #ff33a1; 
+// $extended-color-4: #ff33a1;
 // $extended-color-4-light: #ff66b8;
 // $extended-color-4-dark: #cc2981;
 
-// $extended-color-5: #ffd633; 
+// $extended-color-5: #ffd633;
 // $extended-color-5-light: #ffe066;
 // $extended-color-5-dark: #ccaa29;

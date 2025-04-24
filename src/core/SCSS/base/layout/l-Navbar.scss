@@ -1,0 +1,6 @@
+@import '../vars.scss';
+
+.navbg {
+  background-color: rgba($background-blue, 0.2);
+  backdrop-filter: blur(10px);
+}

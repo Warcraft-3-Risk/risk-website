@@ -55,6 +55,11 @@ const mainNavItems = [
     icon: Users,
     href: '/about-us',
   },
+  {
+    title: 'Patch Notes',
+    icon: Newspaper,
+    href: '/patch-notes',
+  },
 ];
 
 const resourcesNavItems = [
