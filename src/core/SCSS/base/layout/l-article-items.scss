@@ -2,5 +2,14 @@
 
 .triangle {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 63% 100%);
-  border-bottom: 10px solid $background-blue;
+}
+
+.sandborder {
+  border: 1px solid $background-sand;
+}
+
+.newsbox {
+  background-color: $background-blue;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 1200px;
 }

@@ -20,8 +20,8 @@ const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
   return (
-    <li className="relative bg-[#1b3449] text-white rounded-lg overflow-hidden mb-6 shadow-lg">
-      <div className="flex flex-col md:flex-row">
+    <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
+      <div className="sandborder flex flex-col md:flex-row border-8">
         <div className="p-6 flex-1 z-10 relative">
           <div className="flex items-center justify-between">
             <h2 className="text-2xl font-bold mb-1">{title}</h2>

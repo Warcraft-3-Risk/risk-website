@@ -1,17 +1,17 @@
 'use client';
 
 import React from 'react';
-import content from '@/app/data/content.json';
 import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
-import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
-import ArticleItem from './components/ArticleItem';
+import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
+import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
+import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 
 const NewsPage = () => {
-  const { articles, loading } = useNews();
+  const { articles } = useNews();
 
-  // Sort all articles by published date (descending) and take the top 3
+  // Sort articles by published date descending
   const sortedArticles = [...articles]
     .sort(
       (a, b) =>
@@ -20,15 +20,13 @@ const NewsPage = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
+    <div className="background min-h-screen p-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold text-black dark:text-white mb-6 flex justify-center">
-          {content.newsandevents['newsandevents.title']}
+        <h1 className="titletext text-6xl font-bold mb-6 flex justify-center">
+          News and Events
         </h1>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : sortedArticles.length > 0 ? (
+        {sortedArticles.length > 0 ? (
           <ul className="space-y-6">
             {sortedArticles.map((article) => (
               <ArticleItem
@@ -37,21 +35,31 @@ const NewsPage = () => {
                 title={article.title}
                 publishedAt={article.publishedAt}
                 author={article.author}
-                tags={article.tags}
+                tags={article.tags.join(', ')}
                 text={article.text}
               />
             ))}
           </ul>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
-            {content.newssection['newssection.title']}
+            No articles available.
           </p>
         )}
-        <div className="flex justify-end">
-          <Button className="bg-[#f9c701]">
-            <Link href="/news-and-events">Read more</Link>
+        <div className="flex justify-end space-x-4">
+          <Button className="PlayNowButton">
+            <p>
+              <Link href="/play-now">Play Now</Link>
+            </p>
+          </Button>
+          <Button className="ReadMoreButton">
+            <p>
+              <Link href="/news-and-events">Read more</Link>
+            </p>
           </Button>
         </div>
+      </div>
+      <div className="container mx-auto p-4">
+        <TournamentCalendar />
       </div>
     </div>
   );
