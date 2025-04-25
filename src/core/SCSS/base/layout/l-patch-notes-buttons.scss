@@ -1,6 +1,8 @@
 @import '../vars.scss';
 
 .PlayNowButton {
+  width: 170px;
+  height: 50px;
   background-color: $cta-blue;
   font-family: titleFont, sans-serif;
   color: $background-sand;
@@ -13,6 +15,8 @@
 }
 
 .ReadMoreButton {
+  width: 170px;
+  height: 50px;
   background-color: $cta-yellow;
   font-family: titleFont, sans-serif;
   color: $background-blue;
