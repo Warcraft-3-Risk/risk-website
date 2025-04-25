@@ -1,0 +1,6 @@
+@import '../vars.scss';
+
+.triangle {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 63% 100%);
+  border-bottom: 10px solid $background-blue;
+}
