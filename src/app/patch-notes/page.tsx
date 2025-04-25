@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import PatchReleaseNotes from '@/app/patch-notes/__blocks/PatchReleaseNotes';
 import PatchNotesHeader from '@/app/patch-notes/__blocks/PatchNotesHeader';
+import CommunitySection from '../components/layout/sections/newsandevents/CommunitySection';
 
 export default function Page() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -19,6 +20,9 @@ export default function Page() {
           isExpanded={isExpanded}
           onToggleExpanded={handleToggleExpanded}
         />
+        <div className="communitybackground">
+          <CommunitySection />
+        </div>
       </div>
     </div>
   );
