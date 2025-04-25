@@ -7,6 +7,7 @@ import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
+import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 
 const NewsPage = () => {
   // Sort articles by published date descending
@@ -18,9 +19,9 @@ const NewsPage = () => {
     .slice(0, 3);
 
   return (
-    <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
+    <div className="background min-h-screen p-4">
       <div className="max-w-7xl mx-auto">
-        <h1 className="text-6xl font-bold text-black dark:text-white mb-6 flex justify-center">
+        <h1 className="titletext text-6xl font-bold mb-6 flex justify-center">
           {content.newsandevents['newsandevents.title']}
         </h1>
 
@@ -43,9 +44,16 @@ const NewsPage = () => {
             {content.newssection['newssection.title']}
           </p>
         )}
-        <div className="flex justify-end">
-          <Button className="bg-[#f9c701]">
-            <Link href="/news-and-events">Read more</Link>
+        <div className="flex justify-end space-x-4">
+          <Button className="PlayNowButton">
+            <p>
+              <Link href="/play-now">Play Now</Link>
+            </p>
+          </Button>
+          <Button className="ReadMoreButton">
+            <p>
+              <Link href="/news-and-events">Read more</Link>
+            </p>
           </Button>
         </div>
       </div>
