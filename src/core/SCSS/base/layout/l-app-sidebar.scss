@@ -11,3 +11,9 @@
   bottom: 0;
   z-index: -1;
 }
+
+.sidebar-content {
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+}
