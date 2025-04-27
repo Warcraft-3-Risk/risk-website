@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import Image from 'next/image';
 import '@/core/SCSS/base/layout/l-article-items.scss';
 
 interface Article {
@@ -13,7 +14,7 @@ interface Article {
   text: string;
 }
 
-const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
+const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
   const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
 
@@ -21,37 +22,43 @@ const ArticleItem = ({ title, author, text, tags, publishedAt }: Article) => {
 
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
-      <div className="sandborder flex flex-col md:flex-row border-8">
+      <div className="sandborder flex flex-col-reverse md:flex-row border-8">
         <div className="p-6 flex-1 z-10 relative">
           <div className="flex items-center justify-between">
-            <h2 className="text-2xl font-bold mb-1">{title}</h2>
-            <button
-              onClick={toggleExpanded}
-              className="text-white transition-transform"
-              aria-label="Toggle article"
-            >
-              <ChevronDown
-                className={`h-6 w-6 transform transition-transform duration-300 text-white ${
-                  expanded ? 'rotate-180' : ''
-                }`}
-              />
-            </button>
+            <h2 className="title text-2xl font-bold mb-1">{title}</h2>
+          </div>
+          <div className="flex flex-row items-center mb-5">
+            <p className="flavortext text-xs uppercase mr-4">{tags}</p>
+            <p className="flavortext text-sm font-medium">
+              {new Date(publishedAt).toLocaleDateString()}
+            </p>
           </div>
 
-          <p className="text-sm text-gray-300 italic mb-2">By {author}</p>
-          <p className="text-sm text-gray-300 mb-4 font-medium">
-            Published on {new Date(publishedAt).toLocaleDateString()}
-          </p>
-          <p className="text-xs text-yellow-300 mb-2 uppercase tracking-wide">
-            {tags}
-          </p>
-
-          <div className="text-gray-100 transition-all duration-300 ease-in-out max-w-[800px] overflow-hidden">
+          <div className="maintext transition-all duration-300 ease-in-out max-w-[800px] overflow-hidden">
             {expanded ? text : excerpt}
           </div>
         </div>
 
-        <div className="triangle absolute right-0 top-0 h-full w-4/12 bg-[#F7ECD9]" />
+        <div className="triangle relative h-[200px] md:h-auto w-full md:w-4/12">
+          <Image
+            src="/images/testimage2.jpg"
+            alt="Description of image"
+            layout="fill"
+            objectFit="cover"
+            className="rounded-none"
+          />
+          <button
+            onClick={toggleExpanded}
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-28"
+            aria-label="Toggle article"
+          >
+            <ChevronDown
+              className={`h-6 w-6 transform transition-transform duration-300 text-[#f9c701] ${
+                expanded ? 'rotate-180' : ''
+              }`}
+            />
+          </button>
+        </div>
       </div>
     </li>
   );

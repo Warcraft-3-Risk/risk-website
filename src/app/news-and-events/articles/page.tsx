@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
@@ -10,14 +10,16 @@ import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 
 const NewsPage = () => {
   const { articles } = useNews();
+  const [showAll, setShowAll] = useState(false); // 👈 new state!
 
-  // Sort articles by published date descending
-  const sortedArticles = [...articles]
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    )
-    .slice(0, 3);
+  const sortedArticles = [...articles].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+
+  const articlesToDisplay = showAll
+    ? sortedArticles
+    : sortedArticles.slice(0, 3);
 
   return (
     <div className="background min-h-screen p-4">
@@ -26,9 +28,9 @@ const NewsPage = () => {
           News and Events
         </h1>
 
-        {sortedArticles.length > 0 ? (
+        {articlesToDisplay.length > 0 ? (
           <ul className="space-y-6">
-            {sortedArticles.map((article) => (
+            {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
                 id={article.id}
@@ -45,19 +47,20 @@ const NewsPage = () => {
             No articles available.
           </p>
         )}
-        <div className="flex justify-end space-x-4">
-          <Button className="PlayNowButton">
-            <p>
+
+        {articles.length > 3 && (
+          <div className="flex justify-end space-x-4 mt-8">
+            <Button className="PlayNowButton">
               <Link href="/play-now">Play Now</Link>
-            </p>
-          </Button>
-          <Button className="ReadMoreButton">
-            <p>
-              <Link href="/news-and-events">Read more</Link>
-            </p>
-          </Button>
-        </div>
+            </Button>
+
+            <Button className="ReadMoreButton" onClick={() => setShowAll(true)}>
+              Read more
+            </Button>
+          </div>
+        )}
       </div>
+
       <div className="container mx-auto p-4">
         <TournamentCalendar />
       </div>

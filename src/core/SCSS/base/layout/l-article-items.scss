@@ -13,3 +13,21 @@
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   width: 1200px;
 }
+
+.title {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+
+.maintext {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+}
+
+.flavortext {
+  font-family: 'textFont', sans-serif;
+  text-transform: uppercase;
+  color: $background-sand;
+}

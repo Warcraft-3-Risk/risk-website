@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import content from '@/app/data/content.json';
 import articlesData from '@/app/data/articles.json';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
@@ -11,21 +11,25 @@ import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 
 const NewsPage = () => {
-  // Sort articles by published date descending
-  const sortedArticles = [...articlesData]
-    .sort(
-      (a, b) =>
-        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
-    )
-    .slice(0, 3);
+  const [showAll, setShowAll] = useState(false);
 
+  // Sort articles by published date descending
+  const sortedArticles = [...articlesData].sort(
+    (a, b) =>
+      new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+  );
+
+  const articlesToDisplay = showAll
+    ? sortedArticles
+    : sortedArticles.slice(0, 3);
   return (
     <>
       <div className="background min-h-screen p-4">
         <NewsAndEventsHeader />
-        {sortedArticles.length > 0 ? (
+
+        {articlesToDisplay.length > 0 ? (
           <ul className="space-y-6 flex flex-col items-center justify-center mb-10">
-            {sortedArticles.map((article) => (
+            {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
                 id={article.id}
@@ -36,17 +40,22 @@ const NewsPage = () => {
                 text={article.text}
               />
             ))}
+
             <div className="ctabuttons flex justify-end space-x-4 w-full">
               <Button className="PlayNowButton">
                 <p>
                   <Link href="/play-now">Play Now</Link>
                 </p>
               </Button>
-              <Button className="ReadMoreButton">
-                <p>
-                  <Link href="/news-and-events">Read more</Link>
-                </p>
-              </Button>
+
+              {articlesData.length > 3 && (
+                <Button
+                  className="ReadMoreButton"
+                  onClick={() => setShowAll(!showAll)}
+                >
+                  <p>{showAll ? 'Show Less' : 'Read More'}</p>
+                </Button>
+              )}
             </div>
           </ul>
         ) : (
@@ -55,6 +64,7 @@ const NewsPage = () => {
           </p>
         )}
       </div>
+
       <div className="container mx-auto p-4">
         <TournamentCalendar />
       </div>
