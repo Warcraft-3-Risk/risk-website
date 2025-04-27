@@ -28,7 +28,7 @@ const NewsPage = () => {
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <ul className="space-y-6 flex flex-col items-center justify-center mb-10">
+          <ul className="space-y-6 flex flex-col items-end justify-end mb-10">
             {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
@@ -41,7 +41,7 @@ const NewsPage = () => {
               />
             ))}
 
-            <div className="ctabuttons flex justify-end space-x-4 w-full">
+            <div className="ctabuttons flex justify-end items-end space-x-4 w-fit">
               <Button className="PlayNowButton">
                 <p>
                   <Link href="/play-now">Play Now</Link>
