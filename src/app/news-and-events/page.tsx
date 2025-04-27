@@ -9,6 +9,7 @@ import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
+import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -63,6 +64,13 @@ const NewsPage = () => {
             {content.newssection['newssection.title']}
           </p>
         )}
+        <div>
+          <div className="container mx-auto p-4">
+            <h2>
+              <NewsAndEventsFlavour />
+            </h2>
+          </div>
+        </div>
       </div>
 
       <div className="container mx-auto p-4">
