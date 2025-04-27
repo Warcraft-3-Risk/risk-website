@@ -1,4 +1,5 @@
 import content from '@/app/data/content.json';
+import Link from 'next/link';
 
 interface Article {
   id: number;
@@ -29,12 +30,12 @@ export default function NewsSection({ articles }: NewsSectionProps) {
           <div className="mb-8">
             <p className="text-gray-700 mb-6">{latestArticle.text}</p>
             <div className="flex justify-end">
-              <a
-                href="news-and-events"
+              <Link
+                href="/news-and-events"
                 className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
               >
                 {content.newssection['newssection.viewmore']}
-              </a>
+              </Link>
             </div>
           </div>
         ) : (

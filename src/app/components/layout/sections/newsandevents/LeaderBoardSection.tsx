@@ -1,5 +1,6 @@
 import LeaderBoardTable from '@/app/components/layout/sections/leaderboard/LeaderBoardTable';
 import content from '@/app/data/content.json';
+import Link from 'next/link';
 
 export default function LeaderBoardSection() {
   return (
@@ -15,12 +16,12 @@ export default function LeaderBoardSection() {
         <div>
           <LeaderBoardTable />
           <div className="flex justify-end mt-6">
-            <a
+            <Link
               href="/leaderboards"
               className="bg-yellow-500 text-black px-4 py-2 font-medium hover:bg-yellow-600 transition-colors"
             >
               {content.leaderboardsection['leaderboardsection.viewmore']}
-            </a>
+            </Link>
           </div>
         </div>
       </div>

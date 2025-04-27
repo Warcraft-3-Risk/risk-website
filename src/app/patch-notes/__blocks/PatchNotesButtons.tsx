@@ -16,23 +16,25 @@ const PatchNotesButtons = ({
   const router = useRouter();
 
   return (
-    <div className="flex gap-4 mt-10 justify-end">
-      <Button
-        className="PlayNowButton"
-        variant="PlayNowButton"
-        onClick={() =>
-          router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-        }
-      >
-        PLAY NOW
-      </Button>
-      <Button
-        className="ReadMoreButton"
-        variant="ReadMoreButton"
-        onClick={onToggleExpanded}
-      >
-        {isExpanded ? 'SHOW LESS' : 'READ MORE'}
-      </Button>
+    <div className="flex flex-row items-end gap-4 mt-10 w-full">
+      <div className="ctabuttons flex gap-4 justify-end w-full">
+        <Button
+          className="PlayNowButton"
+          variant="PlayNowButton"
+          onClick={() =>
+            router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+          }
+        >
+          PLAY NOW
+        </Button>
+        <Button
+          className="ReadMoreButton"
+          variant="ReadMoreButton"
+          onClick={onToggleExpanded}
+        >
+          {isExpanded ? 'SHOW LESS' : 'READ MORE'}
+        </Button>
+      </div>
     </div>
   );
 };

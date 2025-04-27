@@ -1,0 +1,33 @@
+@import '../vars.scss';
+
+.triangle {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 63% 100%);
+}
+
+.sandborder {
+  border: 1px solid $background-sand;
+}
+
+.newsbox {
+  background-color: $background-blue;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 1500px;
+}
+
+.title {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+
+.maintext {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+}
+
+.flavortext {
+  font-family: 'textFont', sans-serif;
+  text-transform: uppercase;
+  color: $background-sand;
+}
