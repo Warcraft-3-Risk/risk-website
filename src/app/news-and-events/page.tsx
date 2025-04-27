@@ -1,42 +1,59 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import content from '@/app/data/content.json';
 import articlesData from '@/app/data/articles.json';
+import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
+import { Button } from '@/app/components/ui/shadcn/button';
+import Link from 'next/link';
+import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 
-const NewsAndEventsPage = () => {
-  const [articles] = useState(articlesData);
+const NewsPage = () => {
+  // Sort articles by published date descending
+  const sortedArticles = [...articlesData]
+    .sort(
+      (a, b) =>
+        new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
+    )
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gray-100 dark:bg-neutral-800 p-4">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-black dark:text-white mb-6">
-          News and Events
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-6xl font-bold text-black dark:text-white mb-6 flex justify-center">
+          {content.newsandevents['newsandevents.title']}
         </h1>
-        {articles.length > 0 ? (
-          <ul>
-            {articles.map((article) => (
-              <li key={article.id} className="mb-4">
-                <h2 className="text-xl font-semibold text-black dark:text-white">
-                  {article.title}
-                </h2>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-                  By {article.author}
-                </p>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {article.text}
-                </p>
-              </li>
+
+        {sortedArticles.length > 0 ? (
+          <ul className="space-y-6">
+            {sortedArticles.map((article) => (
+              <ArticleItem
+                key={article.id}
+                id={article.id}
+                title={article.title}
+                publishedAt={article.publishedAt}
+                author={article.author}
+                tags={article.tags.join(', ')}
+                text={article.text}
+              />
             ))}
           </ul>
         ) : (
-          <p className="text-gray-600 dark:text-gray-400">
-            Stay tuned for the latest news and upcoming events. Check back soon
-            for updates!
+          <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
+            {content.newssection['newssection.title']}
           </p>
         )}
+        <div className="flex justify-end">
+          <Button className="bg-[#f9c701]">
+            <Link href="/news-and-events">Read more</Link>
+          </Button>
+        </div>
+      </div>
+      <div className="container mx-auto p-4">
+        <TournamentCalendar />
       </div>
     </div>
   );
 };
 
-export default NewsAndEventsPage;
+export default NewsPage;

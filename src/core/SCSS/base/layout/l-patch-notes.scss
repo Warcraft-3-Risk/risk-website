@@ -1,0 +1,61 @@
+@import '../vars.scss';
+
+.titletext {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+}
+
+.patchnotestextyellow {
+  font-family: 'textFont', serif;
+  color: $cta-yellow;
+}
+
+.patchnotestextsand {
+  font-family: 'textFont', serif;
+  color: $background-sand;
+}
+
+.background {
+  background-color: $background-blue;
+}
+
+// Yellow Theme
+.yellow-theme {
+  .titletext {
+    color: $cta-yellow;
+  }
+
+  .themed-text {
+    color: $cta-yellow;
+    font-family: 'textFont', serif;
+  }
+
+  .themed-icon {
+    color: $cta-yellow;
+  }
+
+  .themed-border {
+    border: 2px solid $cta-yellow;
+  }
+}
+
+// Sand Theme
+.sand-theme {
+  .titletext {
+    color: $background-sand;
+  }
+
+  .themed-text {
+    color: $background-sand;
+    font-family: 'textFont', serif;
+  }
+
+  .themed-icon {
+    color: $background-sand;
+  }
+
+  .themed-border {
+    border: 2px solid $background-sand;
+  }
+}

@@ -22,7 +22,7 @@ import {
   SidebarFooter,
   SidebarSeparator,
 } from '@/app/components/ui/shadcn/sidebar';
-
+import Link from 'next/link';
 const mainNavItems = [
   {
     title: 'Home',
@@ -49,6 +49,16 @@ const mainNavItems = [
     title: 'Tournaments',
     icon: Trophy,
     href: '/tournaments',
+  },
+  {
+    title: 'About us',
+    icon: Users,
+    href: '/about-us',
+  },
+  {
+    title: 'Patch Notes',
+    icon: Newspaper,
+    href: '/patch-notes',
   },
 ];
 
@@ -95,10 +105,10 @@ export function AppSidebar() {
                     isActive={item.isActive}
                     tooltip={item.title}
                   >
-                    <a href={item.href}>
+                    <Link href={item.href}>
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}

@@ -1,18 +1,51 @@
-import NewsAndEventsSection from '@/app/components/layout/sections/NewsAndEventsSection';
+'use client';
 
-export default function Home() {
+import { useState, useEffect } from 'react';
+import articlesData from '@/app/data/articles.json';
+
+// import '@/core/SCSS/base/_reset.scss';
+
+import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSection';
+import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
+import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';
+import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import WatchUsSection from '@/app/components/layout/sections/newsandevents/WatchUsSection';
+import SpecialMentionsSection from '@/app/components/layout/sections/newsandevents/SpecialMentionsSection';
+
+interface Article {
+  id: number;
+  title: string;
+  publishedAt: string;
+  author: string;
+  tags: string[];
+  text: string;
+}
+
+export default function HomePage() {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        setArticles(articlesData);
+      } catch (error) {
+        console.error('Error loading articles:', error);
+      } finally {
+      }
+    };
+
+    loadData();
+  }, []);
+
   return (
-    <div className="flex flex-col gap-8 p-8">
-      <section className="space-y-4">
-        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">
-          Welcome to Risk Reforged
-        </h1>
-        <p className="text-muted-foreground text-lg">
-          A strategic game of conquest and diplomacy in Warcraft III
-        </p>
-      </section>
-
-      <NewsAndEventsSection />
+    <div className="min-h-screen">
+      <HeroSection />
+      <LeaderBoardSection />
+      <NewsSection articles={articles} />
+      <CommunitySection />
+      <WatchUsSection />
+      <SpecialMentionsSection />
     </div>
   );
 }
