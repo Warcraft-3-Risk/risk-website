@@ -1,4 +1,3 @@
-'use client';
 import {
   Home,
   Users,
@@ -23,6 +22,9 @@ import {
   SidebarSeparator,
 } from '@/app/components/ui/shadcn/sidebar';
 import Link from 'next/link';
+import Image from 'next/image';
+import '@/core/SCSS/base/layout/l-app-sidebar.scss';
+
 const mainNavItems = [
   {
     title: 'Home',
@@ -82,15 +84,19 @@ const resourcesNavItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="">
-      <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
-        <div className="flex items-center gap-2 py-2">
-          <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold">
-            RR
-          </div>
-          <span className="text-xl font-bold">Risk Reforged</span>
-        </div>
-      </SidebarHeader>
+    <Sidebar variant="inset" className="sidebar-tower">
+      <div className="background-wrapper">
+        <Image
+          src="/images/castletower.webp"
+          alt="Castle Tower Background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={80}
+          priority
+        />
+      </div>
+      <SidebarHeader className="flex flex-col gap-2 px-4 py-2"></SidebarHeader>
 
       <SidebarSeparator />
       <SidebarContent>

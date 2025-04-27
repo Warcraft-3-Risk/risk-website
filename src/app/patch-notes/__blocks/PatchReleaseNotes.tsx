@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { CircleAlert } from 'lucide-react';
+import PatchNotesButtons from '@/app/patch-notes/__blocks/PatchNotesButtons';
 import '@/core/SCSS/base/layout/l-patch-notes.scss';
 
 type Release = {
@@ -15,14 +16,16 @@ type Release = {
 
 interface PatchReleaseNotesProps {
   isExpanded: boolean;
+  onToggleExpanded: () => void;
 }
 
 export default function PatchReleaseNotes({
   isExpanded,
+  onToggleExpanded,
 }: PatchReleaseNotesProps) {
   const [releases, setReleases] = useState<Release[]>([]);
   const [loading, setLoading] = useState(true);
-  //Fethcing Client side for Firebase Hosting
+
   useEffect(() => {
     const fetchReleases = async () => {
       try {
@@ -77,7 +80,7 @@ export default function PatchReleaseNotes({
               </div>
 
               <span className="themed-text m-2 sm:m-3 inline-block text-xs font-medium px-2 py-1">
-                Released on {new Date(release.created_at).toDateString()}
+                {new Date(release.created_at).toDateString()}
               </span>
 
               <div className="themed-text ml-2 sm:ml-4 mt-2 whitespace-pre-line text-sm sm:text-base">
@@ -97,6 +100,10 @@ export default function PatchReleaseNotes({
           </div>
         );
       })}
+      <PatchNotesButtons
+        isExpanded={isExpanded}
+        onToggleExpanded={onToggleExpanded}
+      />
     </div>
   );
 }
