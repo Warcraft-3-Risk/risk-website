@@ -49,11 +49,11 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
           />
           <button
             onClick={toggleExpanded}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-28"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-52 pb-24"
             aria-label="Toggle article"
           >
             <ChevronDown
-              className={`h-6 w-6 transform transition-transform duration-300 text-[#f9c701] ${
+              className={`h-16 w-16 transform transition-transform duration-300 text-[#f9c701] ${
                 expanded ? 'rotate-180' : ''
               }`}
             />

@@ -22,11 +22,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
     ],
-    "/stand-alone/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/stand-alone/page.js"
-    ],
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
