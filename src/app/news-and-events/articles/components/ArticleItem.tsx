@@ -43,9 +43,9 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
           <Image
             src="/images/testimage2.jpg"
             alt="Description of image"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-none"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="rounded-none object-cover"
           />
           <button
             onClick={toggleExpanded}

@@ -11,7 +11,8 @@
 .newsbox {
   background-color: $background-blue;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 1300px;
+  max-width: 1300px;
+  width: 100%;
 }
 
 .title {
@@ -30,4 +31,48 @@
   font-family: 'textFont', sans-serif;
   text-transform: uppercase;
   color: $background-sand;
+}
+
+@media (max-width: 768px) {
+  .newsbox {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .sandborder {
+    flex-direction: column; // stacked on mobile
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .maintext {
+    font-size: 1rem;
+  }
+
+  .flavortext {
+    font-size: 0.8rem;
+  }
+
+  .triangle {
+    height: 150px; // Smaller image height
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .maintext {
+    font-size: 0.9rem;
+  }
+
+  .newsbox {
+    width: 95%;
+  }
+  .triangle {
+    height: 120px;
+  }
 }
