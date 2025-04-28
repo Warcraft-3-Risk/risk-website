@@ -23,7 +23,6 @@ interface Article {
 
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
@@ -33,7 +32,6 @@ export default function HomePage() {
       } catch (error) {
         console.error('Error loading articles:', error);
       } finally {
-        setLoading(false);
       }
     };
 
@@ -43,8 +41,8 @@ export default function HomePage() {
   return (
     <div className="min-h-screen">
       <HeroSection />
-      <LeaderBoardSection loading={loading} />
-      <NewsSection loading={loading} articles={articles} />
+      <LeaderBoardSection />
+      <NewsSection articles={articles} />
       <CommunitySection />
       <WatchUsSection />
       <SpecialMentionsSection />

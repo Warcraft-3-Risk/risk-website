@@ -1,8 +1,8 @@
 import LeaderBoardTable from '@/app/components/layout/sections/leaderboard/LeaderBoardTable';
-import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import content from '@/app/data/content.json';
+import Link from 'next/link';
 
-export default function LeaderBoardSection({ loading }: { loading: boolean }) {
+export default function LeaderBoardSection() {
   return (
     <section className="bg-[#0C2A46] text-white py-12 px-6">
       <div className="container mx-auto">
@@ -13,21 +13,17 @@ export default function LeaderBoardSection({ loading }: { loading: boolean }) {
           {content.leaderboardsection['leaderboardsection.description']}
         </p>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : (
-          <div>
-            <LeaderBoardTable />
-            <div className="flex justify-end mt-6">
-              <a
-                href="/leaderboards"
-                className="bg-yellow-500 text-black px-4 py-2 font-medium hover:bg-yellow-600 transition-colors"
-              >
-                {content.leaderboardsection['leaderboardsection.viewmore']}
-              </a>
-            </div>
+        <div>
+          <LeaderBoardTable />
+          <div className="flex justify-end mt-6">
+            <Link
+              href="/leaderboards"
+              className="bg-yellow-500 text-black px-4 py-2 font-medium hover:bg-yellow-600 transition-colors"
+            >
+              {content.leaderboardsection['leaderboardsection.viewmore']}
+            </Link>
           </div>
-        )}
+        </div>
       </div>
     </section>
   );

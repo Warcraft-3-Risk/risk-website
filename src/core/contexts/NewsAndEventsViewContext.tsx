@@ -1,57 +1,29 @@
 'use client';
 
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
+import articlesData from '@/app/data/articles.json';
 
 interface Article {
   id: number;
   title: string;
   publishedAt: string;
-  tags: string;
+  tags: string[];
   author: string;
   text: string;
 }
 
 interface NewsContextProps {
   articles: Article[];
-  loading: boolean;
-  refreshArticles: () => void;
 }
 
 const NewsContext = createContext<NewsContextProps | undefined>(undefined);
 
 export const NewsProvider = ({ children }: { children: ReactNode }) => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-
-  const fetchArticles = async () => {
-    setLoading(true);
-    try {
-      const response = await fetch('/api/articles');
-      const data = await response.json();
-      setArticles(data);
-    } catch (error) {
-      console.error('Failed to load articles:', error);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  // Use the static articles data
+  const articles = [...articlesData];
 
   return (
-    <NewsContext.Provider
-      value={{ articles, loading, refreshArticles: fetchArticles }}
-    >
-      {children}
-    </NewsContext.Provider>
+    <NewsContext.Provider value={{ articles }}>{children}</NewsContext.Provider>
   );
 };
 

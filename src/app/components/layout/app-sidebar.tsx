@@ -1,4 +1,3 @@
-'use client';
 import {
   Home,
   Users,
@@ -22,39 +21,18 @@ import {
   SidebarFooter,
   SidebarSeparator,
 } from '@/app/components/ui/shadcn/sidebar';
+import Link from 'next/link';
+import Image from 'next/image';
+import '@/core/SCSS/base/layout/l-app-sidebar.scss';
 
 const mainNavItems = [
-  {
-    title: 'Home',
-    icon: Home,
-    href: '/',
-    isActive: true,
-  },
-  {
-    title: 'News and Events',
-    icon: Newspaper,
-    href: '/news-and-events',
-  },
-  {
-    title: 'Stand Alone',
-    icon: Shield,
-    href: '/stand-alone',
-  },
-  {
-    title: 'How To Play',
-    icon: Library,
-    href: '/how-to',
-  },
-  {
-    title: 'Tournaments',
-    icon: Trophy,
-    href: '/tournaments',
-  },
-  {
-    title: 'About us',
-    icon: Users,
-    href: '/about-us',
-  },
+  { title: 'Home', icon: Home, href: '/', isActive: true },
+  { title: 'News and Events', icon: Newspaper, href: '/news-and-events' },
+  { title: 'Stand Alone', icon: Shield, href: '/stand-alone' },
+  { title: 'How To Play', icon: Library, href: '/how-to' },
+  { title: 'Tournaments', icon: Trophy, href: '/tournaments' },
+  { title: 'About us', icon: Users, href: '/about-us' },
+  { title: 'Patch Notes', icon: Newspaper, href: '/patch-notes' },
 ];
 
 const resourcesNavItems = [
@@ -63,32 +41,30 @@ const resourcesNavItems = [
     icon: Headset,
     href: 'https://discord.com/invite/wc3risk',
   },
-  {
-    title: 'Community',
-    icon: Users,
-    href: '/community',
-  },
-  {
-    title: 'Settings',
-    icon: Settings,
-    href: '/settings',
-  },
+  { title: 'Community', icon: Users, href: '/community' },
+  { title: 'Settings', icon: Settings, href: '/settings' },
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="">
-      <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
-        <div className="flex items-center gap-2 py-2">
-          <div className="h-8 w-8 rounded-md bg-primary flex items-center justify-center text-primary-foreground font-bold">
-            RR
-          </div>
-          <span className="text-xl font-bold">Risk Reforged</span>
-        </div>
-      </SidebarHeader>
+    <Sidebar variant="inset" className="sidebar-tower">
+      <div className="background-wrapper">
+        <Image
+          src="/images/castletower.webp"
+          alt="Castle Tower Background"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="center"
+          quality={80}
+          priority
+        />
+      </div>
+
+      <SidebarHeader className="flex flex-col gap-2 px-4 py-2"></SidebarHeader>
 
       <SidebarSeparator />
-      <SidebarContent>
+
+      <SidebarContent className="sidebar-content">
         <SidebarGroup>
           <SidebarGroupLabel>Main</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -100,16 +76,17 @@ export function AppSidebar() {
                     isActive={item.isActive}
                     tooltip={item.title}
                   >
-                    <a href={item.href}>
+                    <Link href={item.href}>
                       <item.icon className="h-4 w-4" />
                       <span>{item.title}</span>
-                    </a>
+                    </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+
         <SidebarGroup>
           <SidebarGroupLabel>Links</SidebarGroupLabel>
           <SidebarGroupContent>
@@ -128,6 +105,8 @@ export function AppSidebar() {
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+
+      {/* Sidebar Footer */}
       <SidebarFooter className="p-4"></SidebarFooter>
     </Sidebar>
   );

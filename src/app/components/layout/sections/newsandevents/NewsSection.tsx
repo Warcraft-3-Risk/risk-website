@@ -1,5 +1,5 @@
-import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 import content from '@/app/data/content.json';
+import Link from 'next/link';
 
 interface Article {
   id: number;
@@ -12,10 +12,9 @@ interface Article {
 
 interface NewsSectionProps {
   articles: Article[];
-  loading: boolean;
 }
 
-export default function NewsSection({ articles, loading }: NewsSectionProps) {
+export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles[0];
 
   return (
@@ -27,18 +26,16 @@ export default function NewsSection({ articles, loading }: NewsSectionProps) {
           </h2>
         </div>
 
-        {loading ? (
-          <LoadingSpinner />
-        ) : latestArticle ? (
+        {latestArticle ? (
           <div className="mb-8">
             <p className="text-gray-700 mb-6">{latestArticle.text}</p>
             <div className="flex justify-end">
-              <a
-                href="news-and-events"
+              <Link
+                href="/news-and-events"
                 className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
               >
                 {content.newssection['newssection.viewmore']}
-              </a>
+              </Link>
             </div>
           </div>
         ) : (

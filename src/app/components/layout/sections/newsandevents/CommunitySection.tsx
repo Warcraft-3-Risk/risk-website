@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
+import '@/core/SCSS/base/layout/l-community-section.scss';
 
 const CommunitySection: React.FC = () => {
   return (
-    <section className="bg-[#0C2A46] py-12">
+    <section className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center text-yellow-500 mb-6">
           {content.communitysection['communitysection.title']}
@@ -51,6 +52,7 @@ const CommunitySection: React.FC = () => {
               alt={content.communitysection['communitysection.twitchAlt']}
               width={48}
               height={48}
+              className="cta-icons"
             />
           </a>
         </div>
