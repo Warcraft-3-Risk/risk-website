@@ -23,7 +23,7 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
       <div className="sandborder flex flex-col-reverse md:flex-row border-8">
-        <div className="p-6 flex-1 z-10 relative">
+        <div className="p-6 flex-1 z-1 relative">
           <div className="flex items-center justify-between">
             <h2 className="title text-2xl font-bold mb-1">{title}</h2>
           </div>

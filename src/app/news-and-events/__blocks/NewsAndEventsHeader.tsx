@@ -16,7 +16,7 @@ const NewsAndEventsHeader: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-b from-transparent to-[#1b3449]" />
       </div>
 
-      <h1 className="titletext text-[#f9c701] text-6xl font-bold z-10 relative text-center">
+      <h1 className="titletext text-[#f9c701] text-6xl font-bold z-1 relative text-center">
         News and Events
       </h1>
     </div>
