@@ -28,8 +28,8 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
             <h2 className="title text-2xl font-bold mb-1">{title}</h2>
           </div>
           <div className="flex flex-row items-center mb-5">
-            <p className="flavortext text-xs uppercase mr-4">{tags}</p>
-            <p className="flavortext text-sm font-medium">
+            <p className="flavortextyellow text-xs uppercase mr-4">{tags}</p>
+            <p className="flavortext text-xs font-medium">
               {new Date(publishedAt).toLocaleDateString()}
             </p>
           </div>
@@ -49,11 +49,11 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
           />
           <button
             onClick={toggleExpanded}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-44 pb-24"
+            className="expand-btn"
             aria-label="Toggle article"
           >
             <ChevronDown
-              className={`h-16 w-16 transform transition-transform duration-300 text-[#f9c701] ${
+              className={`h-8 w-8 transition-transform duration-300 ${
                 expanded ? 'rotate-180' : ''
               }`}
             />

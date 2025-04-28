@@ -32,6 +32,40 @@
   text-transform: uppercase;
   color: $background-sand;
 }
+.flavortextyellow {
+  font-family: 'textFont', sans-serif;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+.expand-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: $background-blue;
+  color: $cta-yellow;
+  border: 2px solid $cta-yellow;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    background-color: lighten($background-blue, 5%);
+    transform: scale(1.05);
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: $cta-yellow;
+  }
+}
 
 @media (max-width: 768px) {
   .newsbox {
