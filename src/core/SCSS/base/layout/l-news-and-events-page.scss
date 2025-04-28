@@ -63,3 +63,10 @@
   text-transform: uppercase;
   color: $cta-yellow;
 }
+
+.ctabuttons {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  gap: 20px;
+}
