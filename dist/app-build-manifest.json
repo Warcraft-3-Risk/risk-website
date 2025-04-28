@@ -11,22 +11,21 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/patch-notes/page": [
+    "/leaderboards/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/patch-notes/page.css",
-      "static/chunks/app/patch-notes/page.js"
+      "static/chunks/app/leaderboards/page.js"
     ],
-    "/news-and-events/layout": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/news-and-events/layout.js"
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ],
-    "/news-and-events/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/news-and-events/page.css",
-      "static/chunks/app/news-and-events/page.js"
+      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
