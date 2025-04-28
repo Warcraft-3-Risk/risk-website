@@ -145,20 +145,29 @@
   font-family: titleFont, sans-serif;
 }
 
+.discord-button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1.5rem;
+}
+
+.discord-text {
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  color: $background-sand;
+  font-family: textFont, sans-serif;
+}
+
 .tournament-list {
   list-style-type: none;
   color: $background-sand;
   font-family: textFont, sans-serif;
-
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-wrap: balanced;
 }
-
-// .day-content {
-//   display: flex;
-//   flex-direction: row; /* Stack date and icon vertically */
-//   align-items: center; /* Center content horizontally */
-//   justify-content: center; /* Center content vertically */
-//   gap: 0.5rem; /* Add spacing between the date and the icon */
-// }
 
 .no-tournaments {
   font-family: textFont, sans-serif;
