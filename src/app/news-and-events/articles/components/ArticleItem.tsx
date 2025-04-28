@@ -16,7 +16,7 @@ interface Article {
 
 const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
-  const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
+  const excerpt = text.length > 250 ? text.substring(0, 250) + '...' : text;
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 

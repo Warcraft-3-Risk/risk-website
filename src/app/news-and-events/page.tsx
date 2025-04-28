@@ -29,7 +29,7 @@ const NewsPage = () => {
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <ul className="space-y-6 flex flex-col items-center justify-center mb-10 w-full">
+          <ul className="space-y-6 flex flex-col items-center justify-center mb-10 w-full p-6">
             {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
