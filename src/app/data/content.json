@@ -48,7 +48,9 @@
     "newsandevents.title": "NEWS & EVENTS",
     "newsandevents.text": "View all news →",
     "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
-    "newsandevents.loading": "Loading..."
+    "newsandevents.loading": "Loading...",
+    "newsandevents.flavourtitle": "COMMAND THE BATTLEFIELD — ON SCHEDULE",
+    "newsandevents.flavourtext": "Strategy begins with knowing when and where. Don't just play - command with foresight. Follow our community calender for livestreams, tournaments and all upcoming events."
   },
   "newssection": {
     "newssection.title": "NEWS",
