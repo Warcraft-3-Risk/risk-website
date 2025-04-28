@@ -1,0 +1,165 @@
+@import '../vars.scss';
+
+.tournament-calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  padding: 1.5rem;
+  background-color: $background-blue;
+}
+
+.calendar-container {
+  padding: 1.5rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: $cta-yellow;
+  font-family: titleFont, sans-serif;
+}
+
+.month-nav {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: $cta-yellow;
+  font-family: textFont, sans-serif;
+
+  &:hover {
+    color: $cta-blue;
+  }
+}
+
+.day-text {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  max-width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: $cta-blue;
+  font-family: textFont, sans-serif;
+}
+
+.week-days {
+  font-weight: 500;
+  color: $cta-yellow;
+  font-family: textFont, sans-serif;
+}
+
+.empty-day {
+  height: 2.5rem;
+}
+
+.calendar-dates {
+  height: 7.5rem;
+  width: 10rem;
+  display: flex;
+  justify-content: end;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  background-color: $background-sand;
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-right: 5px;
+
+  &:hover {
+    background-color: $yellow-hover;
+  }
+}
+
+.tournament-date {
+  background-color: $cta-yellow;
+  color: $background-blue;
+
+  &:hover {
+    background-color: $yellow-hover;
+  }
+}
+
+.selected-date {
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-background {
+  position: fixed;
+  inset: 0;
+  background-color: $background-blue;
+  opacity: 0.5;
+}
+
+.modal-container {
+  background-color: $background-blue;
+  border-radius: 0.5rem; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  padding: 1.5rem; 
+  z-index: 10;
+  max-width: 24rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  color: $cta-yellow;
+  cursor: pointer;
+  font-size: 1.5rem;
+
+  &:hover {
+    color: $yellow-hover;
+  }
+}
+
+.modal-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: $cta-yellow;
+  font-family: titleFont, sans-serif;
+}
+
+.tournament-list {
+  list-style-type: none;
+  color: $background-sand;
+  font-family: textFont, sans-serif;
+
+}
+
+// .day-content {
+//   display: flex;
+//   flex-direction: row; /* Stack date and icon vertically */
+//   align-items: center; /* Center content horizontally */
+//   justify-content: center; /* Center content vertically */
+//   gap: 0.5rem; /* Add spacing between the date and the icon */
+// }
+
+.no-tournaments {
+  font-family: textFont, sans-serif;
+}
