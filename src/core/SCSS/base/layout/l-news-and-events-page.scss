@@ -53,9 +53,21 @@
   border: 1px solid $background-sand;
 }
 
+.flavourtext {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+  max-width: 1000px;
+}
+
+.flavourtitle {
+  font-family: 'titleFont', sans-serif;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+
 .ctabuttons {
   display: flex;
-  align-items: center;
-  margin-right: 26%;
-  margin-bottom: 5%;
+  justify-content: end;
+  align-items: end;
+  gap: 15px;
 }

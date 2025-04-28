@@ -9,6 +9,7 @@ import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
+import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -28,7 +29,7 @@ const NewsPage = () => {
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <ul className="space-y-6 flex flex-col items-center justify-center mb-10">
+          <ul className="space-y-6 flex flex-col items-center justify-center mb-10 w-full p-6">
             {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
@@ -41,7 +42,7 @@ const NewsPage = () => {
               />
             ))}
 
-            <div className="ctabuttons flex justify-end space-x-4 w-full">
+            <div className="ctabuttons flex justify-end items-end w-full">
               <Button className="PlayNowButton">
                 <p>
                   <Link href="/play-now">Play Now</Link>
@@ -63,9 +64,16 @@ const NewsPage = () => {
             {content.newssection['newssection.title']}
           </p>
         )}
+        <div>
+          <div className="container p-4">
+            <h2>
+              <NewsAndEventsFlavour />
+            </h2>
+          </div>
+        </div>
       </div>
 
-      <div className="container mx-auto p-4">
+      <div className="container p-4">
         <TournamentCalendar />
       </div>
     </>

@@ -16,14 +16,14 @@ interface Article {
 
 const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
   const [expanded, setExpanded] = useState(false);
-  const excerpt = text.length > 100 ? text.substring(0, 100) + '...' : text;
+  const excerpt = text.length > 250 ? text.substring(0, 250) + '...' : text;
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
       <div className="sandborder flex flex-col-reverse md:flex-row border-8">
-        <div className="p-6 flex-1 z-10 relative">
+        <div className="p-6 flex-1 z-1 relative">
           <div className="flex items-center justify-between">
             <h2 className="title text-2xl font-bold mb-1">{title}</h2>
           </div>
@@ -43,13 +43,13 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
           <Image
             src="/images/testimage2.jpg"
             alt="Description of image"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-none"
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="rounded-none object-cover"
           />
           <button
             onClick={toggleExpanded}
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-52 pb-24"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-[#f9c701] ml-44 pb-24"
             aria-label="Toggle article"
           >
             <ChevronDown
