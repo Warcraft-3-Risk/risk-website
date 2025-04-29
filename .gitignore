@@ -19,7 +19,10 @@
 
 # production
 /build
-/dist/
+dist/
+*.pack.gz
+trace
+
 
 # misc
 .DS_Store
@@ -40,6 +43,7 @@ yarn-error.log*
 
 # firebase 
 /.cache
+/cache/
 
 # typescript
 *.tsbuildinfo
