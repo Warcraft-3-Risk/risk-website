@@ -1,21 +1,20 @@
 {
   "pages": {
-    "/layout": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/layout.css",
-      "static/chunks/app/layout.js"
-    ],
     "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-    "/patch-notes/page": [
+    "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/patch-notes/page.css",
-      "static/chunks/app/patch-notes/page.js"
+      "static/chunks/app/_not-found/page.js"
+    ],
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
     ],
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
@@ -27,11 +26,6 @@
       "static/chunks/main-app.js",
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
     ]
   }
 }
