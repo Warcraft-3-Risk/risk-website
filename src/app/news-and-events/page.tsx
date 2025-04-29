@@ -46,7 +46,7 @@ const NewsPage = () => {
               ))}
             </ul>
 
-            <ul className="flex flex-col md:hidden space-y-6 items-center justify-center">
+            <ul className="flex md:hidden flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItemMobile
                   key={article.id}

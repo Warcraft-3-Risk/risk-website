@@ -11,7 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-<<<<<<< HEAD
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -23,19 +22,12 @@
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
     ],
-    "/about-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about-us/page.js"
-    ],
     "/patch-notes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/patch-notes/page.css",
       "static/chunks/app/patch-notes/page.js"
     ],
-=======
->>>>>>> 3f0dbb2260d26727983d59a92a431a828bda7ed6
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
