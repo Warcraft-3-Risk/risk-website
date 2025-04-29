@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
+import '@/core/SCSS/base/layout/l-leaderboard.scss';
 
 const LeaderBoardTable: React.FC = () => {
   const topLeaders = [...dummyData].sort((a, b) => b.elo - a.elo).slice(0, 5);
@@ -32,7 +33,7 @@ const LeaderBoardTable: React.FC = () => {
               className="border-b border-gray-700 hover:bg-[#0a2239] transition-colors"
             >
               <td className="py-3 px-6">{index + 1}</td>
-              <td className="py-3 px-6 font-medium">{leader.username}</td>
+              <td className="player-name">{leader.username}</td>
               <td className="py-3 px-6">{leader.score}</td>
               <td className="py-3 px-6">{leader.wins}</td>
               <td className="py-3 px-6">{leader.losses}</td>
