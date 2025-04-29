@@ -3,17 +3,23 @@ import React from 'react';
 import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
 
 const LeaderBoardTable: React.FC = () => {
-  // Sort the dummy data by ELO in descending order
   const sortedData = [...dummyData].sort((a, b) => b.elo - a.elo);
+
+  const calculateWinRate = (wins: number, losses: number): string => {
+    const total = wins + losses;
+    return total === 0 ? '0%' : `${Math.round((wins / total) * 100)}%`;
+  };
 
   return (
     <div className="overflow-x-auto w-full">
       <table className="w-full text-white">
-        <thead className="">
+        <thead>
           <tr>
             <th className="px-6 py-4 text-left font-semibold">#</th>
             <th className="px-6 py-4 text-left font-semibold">Player</th>
             <th className="px-6 py-4 text-left font-semibold">Score</th>
+            <th className="px-6 py-4 text-left font-semibold">Wins</th>
+            <th className="px-6 py-4 text-left font-semibold">Losses</th>
             <th className="px-6 py-4 text-left font-semibold">Win Rate</th>
             <th className="px-6 py-4 text-left font-semibold">Gold</th>
             <th className="px-6 py-4 text-left font-semibold">ELO</th>
@@ -28,7 +34,11 @@ const LeaderBoardTable: React.FC = () => {
               <td className="px-6 py-4">{index + 1}</td>
               <td className="px-6 py-4">{item.username}</td>
               <td className="px-6 py-4">{item.score}</td>
-              <td className="px-6 py-4">{item.winRate}</td>
+              <td className="px-6 py-4">{item.wins}</td>
+              <td className="px-6 py-4">{item.losses}</td>
+              <td className="px-6 py-4">
+                {calculateWinRate(item.wins, item.losses)}
+              </td>
               <td className="px-6 py-4">{item.gold}</td>
               <td className="px-6 py-4">{item.elo}</td>
             </tr>
