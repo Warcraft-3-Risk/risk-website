@@ -4,13 +4,12 @@ import React, { useState } from 'react';
 import content from '@/app/data/content.json';
 import articlesData from '@/app/data/articles.json';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
-import { Button } from '@/app/components/ui/shadcn/button';
-import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
+import CTAButton from '@/app/components/ui/CTAButtons';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -42,21 +41,18 @@ const NewsPage = () => {
                 text={article.text}
               />
             ))}
-
             <div className="ctabuttons flex justify-end items-end w-full">
-              <Button className="PlayNowButton">
-                <p>
-                  <Link href="/play-now">Play Now</Link>
-                </p>
-              </Button>
+              <CTAButton variant="play" href="/play-now">
+                Play Now
+              </CTAButton>
 
               {articlesData.length > 3 && (
-                <Button
-                  className="ReadMoreButton"
+                <CTAButton
+                  variant="readmore"
                   onClick={() => setShowAll(!showAll)}
                 >
-                  <p>{showAll ? 'Show Less' : 'Read More'}</p>
-                </Button>
+                  {showAll ? 'Show Less' : 'Read More'}
+                </CTAButton>
               )}
             </div>
           </ul>
