@@ -1,8 +1,7 @@
 'use client';
 
-import { Button } from '@/app/components/ui/shadcn/button';
+import CTAButton from '@/app/components/ui/CTAButtons';
 import { useRouter } from 'next/navigation';
-import '@/core/SCSS/base/layout/l-patch-notes-buttons.scss';
 
 interface PatchNotesButtonsProps {
   onToggleExpanded: () => void;
@@ -16,25 +15,18 @@ const PatchNotesButtons = ({
   const router = useRouter();
 
   return (
-    <div className="flex flex-row items-end gap-4 mt-10 w-full">
-      <div className="ctabuttons flex gap-4 justify-end w-full">
-        <Button
-          className="PlayNowButton"
-          variant="PlayNowButton"
-          onClick={() =>
-            router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-          }
-        >
-          PLAY NOW
-        </Button>
-        <Button
-          className="ReadMoreButton"
-          variant="ReadMoreButton"
-          onClick={onToggleExpanded}
-        >
-          {isExpanded ? 'SHOW LESS' : 'READ MORE'}
-        </Button>
-      </div>
+    <div className="ctabuttons flex gap-4 justify-end w-full mt-10">
+      <CTAButton
+        variant="play"
+        onClick={() =>
+          router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+        }
+      >
+        PLAY NOW
+      </CTAButton>
+      <CTAButton variant="readmore" onClick={onToggleExpanded}>
+        {isExpanded ? 'SHOW LESS' : 'READ MORE'}
+      </CTAButton>
     </div>
   );
 };

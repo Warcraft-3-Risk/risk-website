@@ -2,8 +2,9 @@
 
 import { useEffect, useState } from 'react';
 import { CircleAlert } from 'lucide-react';
-import PatchNotesButtons from '@/app/patch-notes/__blocks/PatchNotesButtons';
 import '@/core/SCSS/base/layout/l-patch-notes.scss';
+import CTAButton from '@/app/components/ui/CTAButtons';
+import router from 'next/router';
 
 type Release = {
   id: number;
@@ -100,10 +101,19 @@ export default function PatchReleaseNotes({
           </div>
         );
       })}
-      <PatchNotesButtons
-        isExpanded={isExpanded}
-        onToggleExpanded={onToggleExpanded}
-      />
+      <div className="ctabuttons flex gap-4 justify-end w-full mt-10">
+        <CTAButton
+          variant="play"
+          onClick={() =>
+            router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
+          }
+        >
+          PLAY NOW
+        </CTAButton>
+        <CTAButton variant="readmore" onClick={onToggleExpanded}>
+          {isExpanded ? 'SHOW LESS' : 'READ MORE'}
+        </CTAButton>
+      </div>
     </div>
   );
 }

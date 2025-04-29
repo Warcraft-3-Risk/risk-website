@@ -1,26 +1,58 @@
 import React, { useState } from 'react';
 import { getTournamentDatesForMonth } from '@/core/hooks/leaderboard/useLeaderboardData';
+import Modal from '@/app/components/layout/Modal';
+import 'react-calendar/dist/Calendar.css';
+import '@/core/SCSS/base/layout/l-calendar.scss';
+
+interface Tournament {
+  date: string;
+  name: string;
+  time: string;
+}
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const TournamentCalendar: React.FC = () => {
+  const tournaments: Tournament[] = [
+    { date: '2025-04-10', name: 'Spring Open 2025', time: '21:00:00' },
+    { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
+    { date: '2025-04-11', name: 'Spring Casual Tournament', time: '20:00:00' },
+  ];
+
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [tournamentsOnDate, setTournamentsOnDate] = useState<Tournament[]>([]);
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-  const today = new Date();
-  const year = today.getFullYear();
-  const month = today.getMonth();
-  const firstDayOfMonth = new Date(year, month, 1);
-  const lastDayOfMonth = new Date(year, month + 1, 0);
+  const formatDate = (date: Date) => date.toISOString().split('T')[0];
 
-  const tournamentDates = getTournamentDatesForMonth(year, month);
+  const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+  const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
+
+  const tournamentDates = getTournamentDatesForMonth(currentYear, currentMonth);
 
   const daysInMonth = Array.from(
     { length: lastDayOfMonth.getDate() },
-    (_, i) => new Date(year, month, i + 1),
+    (_, i) => new Date(currentYear, currentMonth, i + 1),
   );
+
+  const convertToUserTimeZone = (date: string, time: string) => {
+    const utcDateTime = new Date(`${date}T${time}Z`);
+    return utcDateTime.toLocaleString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZoneName: 'short',
+    });
+  };
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
+    const formattedDate = formatDate(date);
+
+    const filteredTournaments = tournaments.filter(
+      (tournament) => tournament.date === formattedDate,
+    );
+    setTournamentsOnDate(filteredTournaments);
   };
 
   const isTournamentDate = (date: Date) => {
@@ -28,20 +60,45 @@ const TournamentCalendar: React.FC = () => {
     return tournamentDates.includes(dateString);
   };
 
+  const handlePreviousMonth = () => {
+    if (currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear((prevYear) => prevYear - 1);
+    } else {
+      setCurrentMonth((prevMonth) => prevMonth - 1);
+    }
+  };
+
+  const handleNextMonth = () => {
+    if (currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear((prevYear) => prevYear + 1);
+    } else {
+      setCurrentMonth((prevMonth) => prevMonth + 1);
+    }
+  };
+
   return (
-    <div className="p-6 bg-white rounded-xl shadow-md max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-center mb-6 text-blue-700">
-        Tournament Calendar
-      </h2>
-      <div className="grid grid-cols-7 gap-2 text-center">
+    <div className="calendar-container">
+      <div className="calendar-header">
+        <button onClick={handlePreviousMonth} className="month-nav">
+          &lt;
+        </button>
+        <h2>{firstDayOfMonth.toLocaleString('default', { month: 'long' })}</h2>
+        <button onClick={handleNextMonth} className="month-nav">
+          &gt;
+        </button>
+      </div>
+
+      <div className="day-text">
         {daysOfWeek.map((day) => (
-          <div key={day} className="font-medium text-blue-800">
+          <div key={day} className="week-days">
             {day}
           </div>
         ))}
 
         {Array.from({ length: firstDayOfMonth.getDay() }).map((_, i) => (
-          <div key={`empty-${i}`} className="h-10"></div>
+          <div key={`empty-${i}`} className="empty-day"></div>
         ))}
 
         {daysInMonth.map((date) => {
@@ -53,11 +110,9 @@ const TournamentCalendar: React.FC = () => {
             <div
               key={date.toISOString()}
               onClick={() => handleDateClick(date)}
-              className={`h-10 flex items-center justify-center rounded-lg cursor-pointer transition-colors ${
-                isTourDate
-                  ? 'bg-blue-500 text-white hover:bg-blue-600'
-                  : 'bg-gray-100 hover:bg-gray-200'
-              } ${isSelected ? 'ring-2 ring-blue-600' : ''}`}
+              className={`calendar-dates ${isTourDate ? 'tournament-date' : ''} ${
+                isSelected ? 'selected-date' : ''
+              }`}
             >
               {date.getDate()}
             </div>
@@ -66,20 +121,25 @@ const TournamentCalendar: React.FC = () => {
       </div>
 
       {selectedDate && (
-        <div className="mt-6 text-center">
-          <p className="text-lg text-black font-medium">
-            {selectedDate.toDateString()}
-          </p>
-          <p
-            className={`text-md mt-1 font-semibold ${
-              isTournamentDate(selectedDate) ? 'text-green-600' : 'text-red-500'
-            }`}
-          >
-            {isTournamentDate(selectedDate)
-              ? 'Tournament Day!'
-              : 'No Tournament'}
-          </p>
-        </div>
+        <Modal onClose={() => setSelectedDate(null)}>
+          <h3 className="modal-header">
+            Tournaments on {selectedDate.toLocaleDateString()}
+          </h3>
+          {tournamentsOnDate.length > 0 ? (
+            <ul className="tournament-list">
+              {tournamentsOnDate.map((tournament, index) => (
+                <li key={index}>
+                  {tournament.name} -{' '}
+                  {convertToUserTimeZone(tournament.date, tournament.time)}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="no-tournaments">
+              No tournaments scheduled for this day.
+            </p>
+          )}
+        </Modal>
       )}
     </div>
   );

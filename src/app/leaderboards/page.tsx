@@ -1,13 +1,32 @@
+'use client';
 import React from 'react';
+
+import LeaderBoardHeader from '@/app/leaderboards/__blocks/LeaderBoardHeader';
+import LeaderBoardPagination from '@/app/leaderboards/__blocks/LeaderBoardPagination';
+import LeaderBoardTable from './__blocks/LeaderBoardTable';
 
 const LeaderboardsPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">Leaderboards</h1>
-      <p className="text-lg text-gray-600">
-        Welcome to the leaderboards! Check back soon for updates.
-      </p>
-    </div>
+    <section className="bg-[#0C2A46] text-white py-12 px-6 min-h-screen w-full">
+      <div className="container w-full flex flex-col items-center">
+        <LeaderBoardHeader />
+
+        <div className="w-full max-w-5xl rounded-lg p-6">
+          <LeaderBoardTable />
+        </div>
+
+        {/* Pagination */}
+        <div className="flex justify-center mt-8">
+          <LeaderBoardPagination
+            currentPage={1}
+            totalPages={5}
+            onPageChange={(page) => {
+              console.log('Go to page:', page);
+            }}
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 

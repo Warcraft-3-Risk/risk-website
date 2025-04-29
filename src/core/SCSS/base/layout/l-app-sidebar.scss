@@ -1,25 +1,39 @@
 @import '../vars.scss';
 
 .sidebar-tower {
-  position: relative;
-  height: 100vh;
-}
-
-.background-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-.sidebar-content {
-  position: relative;
-  z-index: 1;
-  overflow-y: auto;
-}
-
-.triggerbackground {
   background-color: $background-blue;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/castletower.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+
+  [data-sidebar='group-label'] {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  [data-sidebar='menu-button'] {
+    color: white;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &[data-active='true'] {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-weight: bold;
+    }
+  }
+
+  [data-sidebar='separator'] {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
 }

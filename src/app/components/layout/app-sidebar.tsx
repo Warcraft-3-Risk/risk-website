@@ -1,13 +1,4 @@
-import {
-  Home,
-  Users,
-  Settings,
-  Newspaper,
-  Shield,
-  Library,
-  Headset,
-  Trophy,
-} from 'lucide-react';
+import { Home, Users, Newspaper, Shield, Library, Trophy } from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -18,11 +9,10 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarFooter,
   SidebarSeparator,
+  SidebarRail,
 } from '@/app/components/ui/shadcn/sidebar';
 import Link from 'next/link';
-// import Image from 'next/image';
 import '@/core/SCSS/base/layout/l-app-sidebar.scss';
 
 const mainNavItems = [
@@ -35,32 +25,12 @@ const mainNavItems = [
   { title: 'Patch Notes', icon: Newspaper, href: '/patch-notes' },
 ];
 
-const resourcesNavItems = [
-  {
-    title: 'Discord',
-    icon: Headset,
-    href: 'https://discord.com/invite/wc3risk',
-  },
-  { title: 'Community', icon: Users, href: '/community' },
-  { title: 'Settings', icon: Settings, href: '/settings' },
-];
-
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="sidebar-tower">
-      <div className="background-wrapper">
-        {/* <Image
-          src="/images/castletower.webp"
-          alt="Castle Tower Background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
-          quality={80}
-          priority
-        /> */}
-      </div>
-
-      <SidebarHeader className="flex flex-col gap-2 px-4 py-2"></SidebarHeader>
+    <Sidebar variant="inset" className="sidebar-tower flex justify-center">
+      <SidebarHeader className="flex flex-col">
+        <div className="flex items-center justify-center"></div>
+      </SidebarHeader>
 
       <SidebarSeparator />
 
@@ -88,26 +58,13 @@ export function AppSidebar() {
         </SidebarGroup>
 
         <SidebarGroup>
-          <SidebarGroupLabel>Links</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {resourcesNavItems.map((item) => (
-                <SidebarMenuItem key={item.title}>
-                  <SidebarMenuButton asChild tooltip={item.title}>
-                    <a href={item.href}>
-                      <item.icon className="h-4 w-4" />
-                      <span>{item.title}</span>
-                    </a>
-                  </SidebarMenuButton>
-                </SidebarMenuItem>
-              ))}
-            </SidebarMenu>
+            <SidebarMenu></SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
-      {/* Sidebar Footer */}
-      <SidebarFooter className="p-4"></SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   );
 }
