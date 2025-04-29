@@ -7,6 +7,7 @@ import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import ArticleItemMobile from '@/app/news-and-events/articles/components/ArticleItemMobile';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
+import '@/core/SCSS/base/layout/l-calendar.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 import CTAButton from '@/app/components/ui/CTAButtons';
@@ -90,7 +91,7 @@ const NewsPage = () => {
         </div>
       </div>
 
-      <div className="container p-4">
+      <div className="tournament-calendar">
         <TournamentCalendar />
       </div>
     </>
