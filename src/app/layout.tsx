@@ -9,6 +9,7 @@ import { SidebarProvider } from '@/app/components/ui/shadcn/sidebar';
 import { Navbar } from '@/app/components/layout/Navbar';
 import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
+import '@/core/SCSS/base/layout/l-app-sidebar.scss';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -46,7 +47,7 @@ export default function RootLayout({
               <AppSidebar />
               <div className="flex flex-col flex-1">
                 <Navbar />
-                <div className="lg:hidden ">
+                <div className="triggerbackground lg:hidden ">
                   <SidebarTrigger />
                 </div>
                 <main className="flex-1">{children}</main>

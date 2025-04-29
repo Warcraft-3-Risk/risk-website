@@ -6,12 +6,13 @@
 
 .sandborder {
   border: 1px solid $background-sand;
+  min-height: 220px;
 }
 
 .newsbox {
   background-color: $background-blue;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  width: 1300px;
+  width: 100%;
 }
 
 .title {
@@ -30,4 +31,82 @@
   font-family: 'textFont', sans-serif;
   text-transform: uppercase;
   color: $background-sand;
+}
+.flavortextyellow {
+  font-family: 'textFont', sans-serif;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+.expand-btn {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  background-color: $background-blue;
+  color: $cta-yellow;
+  border: 2px solid $cta-yellow;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+
+  &:hover {
+    background-color: lighten($background-blue, 5%);
+    transform: scale(1.05);
+  }
+
+  svg {
+    width: 32px;
+    height: 32px;
+    color: $cta-yellow;
+  }
+}
+
+@media (max-width: 768px) {
+  .newsbox {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .sandborder {
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .maintext {
+    font-size: 1rem;
+  }
+
+  .flavortext {
+    font-size: 0.8rem;
+  }
+
+  .triangle {
+    height: 150px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .maintext {
+    font-size: 0.9rem;
+  }
+
+  .newsbox {
+    width: 95%;
+  }
+  .triangle {
+    height: 120px;
+  }
 }

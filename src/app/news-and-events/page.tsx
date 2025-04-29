@@ -30,7 +30,7 @@ const NewsPage = () => {
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <ul className="space-y-6 flex flex-col items-center justify-center mb-10">
+          <ul className="space-y-6 flex flex-col items-center justify-center mb-10 w-full p-6">
             {articlesToDisplay.map((article) => (
               <ArticleItem
                 key={article.id}
@@ -66,7 +66,7 @@ const NewsPage = () => {
           </p>
         )}
         <div>
-          <div className="container mx-auto p-4">
+          <div className="container p-4">
             <h2>
               <NewsAndEventsFlavour />
             </h2>

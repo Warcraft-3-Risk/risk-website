@@ -22,7 +22,7 @@ import {
   SidebarSeparator,
 } from '@/app/components/ui/shadcn/sidebar';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import '@/core/SCSS/base/layout/l-app-sidebar.scss';
 
 const mainNavItems = [
@@ -49,7 +49,7 @@ export function AppSidebar() {
   return (
     <Sidebar variant="inset" className="sidebar-tower">
       <div className="background-wrapper">
-        <Image
+        {/* <Image
           src="/images/castletower.webp"
           alt="Castle Tower Background"
           layout="fill"
@@ -57,7 +57,7 @@ export function AppSidebar() {
           objectPosition="center"
           quality={80}
           priority
-        />
+        /> */}
       </div>
 
       <SidebarHeader className="flex flex-col gap-2 px-4 py-2"></SidebarHeader>

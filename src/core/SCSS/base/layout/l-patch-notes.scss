@@ -17,6 +17,10 @@
   color: $background-sand;
 }
 
+.releasebox {
+  width: 100%;
+}
+
 .background {
   background-color: $background-blue;
 }
@@ -59,8 +63,4 @@
   .themed-border {
     border: 2px solid $background-sand;
   }
-}
-
-.ctabuttons {
-  margin-right: 13%;
 }

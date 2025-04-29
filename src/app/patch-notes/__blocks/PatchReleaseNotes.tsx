@@ -69,7 +69,7 @@ export default function PatchReleaseNotes({
         return (
           <div
             key={release.id}
-            className={`p-4 sm:p-6 w-full sm:w-3/4 ${variantClass} mb-4`}
+            className={`releasebox w-full sm:w-3/4 ${variantClass} mb-16`}
           >
             <div className="p-2 themed-border">
               <div className="spurgt flex lg:flex-row sm:flex-row sm:items-center gap-4 sm:gap-10">
