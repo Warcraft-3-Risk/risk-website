@@ -9,8 +9,8 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarFooter,
   SidebarSeparator,
+  SidebarRail,
 } from '@/app/components/ui/shadcn/sidebar';
 import Link from 'next/link';
 import '@/core/SCSS/base/layout/l-app-sidebar.scss';
@@ -27,8 +27,13 @@ const mainNavItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar variant="inset" className="sidebar-tower relative">
-      <SidebarHeader className="flex flex-col gap-2 px-4 py-2"></SidebarHeader>
+    <Sidebar
+      variant="inset"
+      className="sidebar-tower flex justify-center bg-cover"
+    >
+      <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
+        <div className="flex items-center justify-center py-4"></div>
+      </SidebarHeader>
 
       <SidebarSeparator />
 
@@ -62,8 +67,7 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      {/* Sidebar Footer */}
-      <SidebarFooter className="p-4"></SidebarFooter>
+      <SidebarRail />
     </Sidebar>
   );
 }
