@@ -13,7 +13,7 @@ const LeaderBoardTable: React.FC = () => {
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full bg-[#0C2A46] text-white">
+      <table className="LeaderboardTable min-w-full text-white">
         <thead>
           <tr className="border-b border-gray-700 text-yellow-500 uppercase text-sm leading-normal">
             <th className="py-3 px-6 text-left">Rank</th>
@@ -33,7 +33,7 @@ const LeaderBoardTable: React.FC = () => {
               className="border-b border-gray-700 hover:bg-[#0a2239] transition-colors"
             >
               <td className="py-3 px-6">{index + 1}</td>
-              <td className="player-name">{leader.username}</td>
+              <td className="player-name py-3 px-6">{leader.username}</td>
               <td className="py-3 px-6">{leader.score}</td>
               <td className="py-3 px-6">{leader.wins}</td>
               <td className="py-3 px-6">{leader.losses}</td>

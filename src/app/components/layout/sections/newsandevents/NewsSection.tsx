@@ -1,5 +1,6 @@
 import content from '@/app/data/content.json';
 import Link from 'next/link';
+import '@/core/SCSS/base/sections/s-news-section.scss';
 
 interface Article {
   id: number;
@@ -18,7 +19,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles[0];
 
   return (
-    <section className="bg-[#efe5c7] py-12 px-6">
+    <section className="NewsSection py-12 px-6">
       <div className="container mx-auto">
         <div className="flex justify-end flex-col md:flex-row items-end mb-8">
           <h2 className="text-4xl font-bold text-[#0C2A46] mb-4 md:mb-0">

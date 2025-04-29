@@ -1,8 +1,9 @@
 import Image from 'next/image';
+import '@/core/SCSS/base/sections/s-hero-section.scss';
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full h-[400px] bg-[#0C2A46]">
+    <section className="HeroSection relative w-full h-[400px]">
       <div className="relative w-full h-full">
         <Image
           src="/placeholder.svg?height=400&width=1200"

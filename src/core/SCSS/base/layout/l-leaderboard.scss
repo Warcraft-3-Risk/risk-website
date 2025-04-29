@@ -1,10 +1,13 @@
 @import '../vars.scss';
 
+.LeaderboardTable {
+  background: $background-blue;
+}
+
 .player-name {
   font-weight: 700;
   font-size: 0.875rem;
   // color: $color-white;
-  text-align: center;
   margin-top: 0.5rem;
 
   @media (min-width: 768px) and (max-width: 1024px) {
