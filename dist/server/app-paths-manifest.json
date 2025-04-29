@@ -1,5 +1,3 @@
 {
-  "/page": "app/page.js",
-  "/leaderboards/page": "app/leaderboards/page.js",
-  "/news-and-events/page": "app/news-and-events/page.js"
+  "/leaderboards/page": "app/leaderboards/page.js"
 }
