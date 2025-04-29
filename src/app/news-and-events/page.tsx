@@ -32,7 +32,6 @@ const NewsPage = () => {
 
         {articlesToDisplay.length > 0 ? (
           <div className="mb-10 w-full p-6">
-            {/* Desktop View */}
             <ul className="hidden md:flex flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItem
@@ -47,7 +46,6 @@ const NewsPage = () => {
               ))}
             </ul>
 
-            {/* Mobile View */}
             <ul className="flex flex-col md:hidden space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItemMobile
@@ -62,7 +60,6 @@ const NewsPage = () => {
               ))}
             </ul>
 
-            {/* CTA Buttons */}
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
                 Play Now
