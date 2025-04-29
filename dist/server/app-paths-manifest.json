@@ -1,6 +1,10 @@
 {
+<<<<<<< HEAD
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/leaderboards/page": "app/leaderboards/page.js",
   "/page": "app/page.js",
   "/_not-found/page": "app/_not-found/page.js"
+=======
+  "/page": "app/page.js"
+>>>>>>> f90e910a9a26ced66ebb0f0ae7fc6d861c78f5b5
 }
