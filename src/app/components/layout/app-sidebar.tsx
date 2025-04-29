@@ -27,12 +27,9 @@ const mainNavItems = [
 
 export function AppSidebar() {
   return (
-    <Sidebar
-      variant="inset"
-      className="sidebar-tower flex justify-center bg-cover"
-    >
-      <SidebarHeader className="flex flex-col gap-2 px-4 py-2">
-        <div className="flex items-center justify-center py-4"></div>
+    <Sidebar variant="inset" className="sidebar-tower flex justify-center">
+      <SidebarHeader className="flex flex-col">
+        <div className="flex items-center justify-center"></div>
       </SidebarHeader>
 
       <SidebarSeparator />
