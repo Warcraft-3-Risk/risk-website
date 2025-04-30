@@ -25,7 +25,7 @@ const NewsPage = () => {
     : sortedArticles.slice(0, 3);
   return (
     <>
-      <div className="background min-h-screen p-4">
+      <div className="news-page-container background min-h-screen">
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
