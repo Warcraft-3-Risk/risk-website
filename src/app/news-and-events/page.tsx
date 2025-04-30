@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import content from '@/app/data/content.json';
 import articlesData from '@/app/data/articles.json';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
+import ArticleItemMobile from '@/app/news-and-events/articles/components/ArticleItemMobile';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
@@ -23,25 +24,43 @@ const NewsPage = () => {
   const articlesToDisplay = showAll
     ? sortedArticles
     : sortedArticles.slice(0, 3);
+
   return (
     <>
       <div className="background min-h-screen p-4">
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <ul className="space-y-6 flex flex-col items-center justify-center mb-10 w-full p-6">
-            {articlesToDisplay.map((article) => (
-              <ArticleItem
-                key={article.id}
-                id={article.id}
-                title={article.title}
-                publishedAt={article.publishedAt}
-                author={article.author}
-                tags={article.tags.join(', ')}
-                text={article.text}
-              />
-            ))}
-            <div className="ctabuttons flex justify-end items-end w-full">
+          <div className="mb-10 w-full p-6">
+            <ul className="hidden md:flex flex-col space-y-6 items-center justify-center">
+              {articlesToDisplay.map((article) => (
+                <ArticleItem
+                  key={article.id}
+                  id={article.id}
+                  title={article.title}
+                  publishedAt={article.publishedAt}
+                  author={article.author}
+                  tags={article.tags.join(', ')}
+                  text={article.text}
+                />
+              ))}
+            </ul>
+
+            <ul className="flex md:hidden flex-col space-y-6 items-center justify-center">
+              {articlesToDisplay.map((article) => (
+                <ArticleItemMobile
+                  key={article.id}
+                  id={article.id}
+                  title={article.title}
+                  publishedAt={article.publishedAt}
+                  author={article.author}
+                  tags={article.tags.join(', ')}
+                  text={article.text}
+                />
+              ))}
+            </ul>
+
+            <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
                 Play Now
               </CTAButton>
@@ -55,18 +74,17 @@ const NewsPage = () => {
                 </CTAButton>
               )}
             </div>
-          </ul>
+          </div>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
             {content.newssection['newssection.title']}
           </p>
         )}
-        <div>
-          <div className="container p-4">
-            <h2>
-              <NewsAndEventsFlavour />
-            </h2>
-          </div>
+
+        <div className="container p-4">
+          <h2>
+            <NewsAndEventsFlavour />
+          </h2>
         </div>
       </div>
 
