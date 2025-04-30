@@ -16,6 +16,19 @@ const segments = [
     title: 'CAPTURING YOUR FIRST COUNTRY',
     description:
       'In order to win, you have to capture countries! Countries consist of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
+    video: true,
+    videoUrl: '/videos/KEKW.mp4',
+  },
+  {
+    title: 'CAPTURING CITIES AND PORTS',
+    description:
+      'Cities and ports are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many cities and ports as possible!',
+    imageUrl: '/images/testimage.jpg',
+  },
+  {
+    title: 'CAPTURING COUNTRIES',
+    description:
+      'Countries are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many countries as possible!',
     imageUrl: '/images/testimage.jpg',
   },
   {

@@ -1,6 +1,4 @@
-// components/Segment.tsx
 import React from 'react';
-import { PlayIcon } from 'lucide-react';
 import Image from 'next/image';
 
 type SegmentProps = {
@@ -10,6 +8,7 @@ type SegmentProps = {
   note?: string;
   imageUrl?: string;
   video?: boolean;
+  videoUrl?: string;
 };
 
 const Segment: React.FC<SegmentProps> = ({
@@ -19,14 +18,21 @@ const Segment: React.FC<SegmentProps> = ({
   note,
   imageUrl,
   video,
+  videoUrl,
 }) => {
   const isEven = index % 2 === 0;
 
   return (
     <div
-      className={`segmentbg text-white px-6 py-10 flex flex-col md:flex-row ${!isEven ? 'md:flex-row-reverse' : ''}`}
+      className={`segmentbg text-white px-6 py-10 flex flex-col md:flex-row ${
+        !isEven ? 'md:flex-row-reverse' : ''
+      }`}
     >
-      <div className="md:w-1/2 space-y-4 flex flex-col justify-center z-20 relative">
+      <div
+        className={`md:w-1/2 space-y-4 flex flex-col justify-center z-20 relative ${
+          isEven ? 'text-left md:items-start' : 'text-right md:items-end'
+        }`}
+      >
         <h2 className="segmenttitle text-2xl font-bold">{title}</h2>
         <p className="segmenttext text-sm">{description}</p>
         {note && <p className="segmenttext text-sm">{note}</p>}
@@ -34,12 +40,15 @@ const Segment: React.FC<SegmentProps> = ({
 
       <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center items-center relative">
         <div className="relative w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
-          {video ? (
-            <div className="absolute inset-0 z-20 flex items-center justify-center">
-              <button className="w-16 h-16 bg-yellow-400 rounded-full flex items-center justify-center shadow-lg">
-                <PlayIcon className="text-black w-8 h-8" />
-              </button>
-            </div>
+          {video && videoUrl ? (
+            <video
+              src={videoUrl}
+              className="absolute inset-0 w-full h-full object-cover z-0"
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
           ) : imageUrl ? (
             <Image
               src={imageUrl}
