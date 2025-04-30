@@ -1,5 +1,3 @@
 {
-  "/how-to/game-guide/page": "app/how-to/game-guide/page.js",
-  "/leaderboards/page": "app/leaderboards/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/how-to/game-guide/page": "app/how-to/game-guide/page.js"
 }

@@ -16,17 +16,6 @@
       "static/chunks/main-app.js",
       "static/css/app/how-to/game-guide/page.css",
       "static/chunks/app/how-to/game-guide/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-    "/leaderboards/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/leaderboards/page.css",
-      "static/chunks/app/leaderboards/page.js"
     ]
   }
 }

@@ -17,7 +17,7 @@ const segments = [
     description:
       'In order to win, you have to capture countries! Countries consist of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     video: true,
-    videoUrl: '/videos/KEKW.mp4',
+    videoUrl: '/videos/tacc.mp4',
   },
   {
     title: 'CAPTURING CITIES AND PORTS',
