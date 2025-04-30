@@ -11,6 +11,7 @@ import '@/core/SCSS/base/layout/l-calendar.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 import CTAButton from '@/app/components/ui/CTAButtons';
+import TournamentCalendarMobile from '@/app/components/layout/sections/calendar/TournamentCalendarMobile';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -88,8 +89,14 @@ const NewsPage = () => {
         </div>
       </div>
 
-      <div className="tournament-calendar">
-        <TournamentCalendar />
+      <div className="tournament-calendar px-4 mb-10">
+        <div className="hidden md:block">
+          <TournamentCalendar />
+        </div>
+
+        <div className="block md:hidden">
+          <TournamentCalendarMobile />
+        </div>
       </div>
     </>
   );

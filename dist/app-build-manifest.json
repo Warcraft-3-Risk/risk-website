@@ -11,27 +11,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-<<<<<<< HEAD
-    "/leaderboards/page": [
-=======
-<<<<<<< Updated upstream
-=======
-    "/page": [
->>>>>>> WAR-CU-86c2vxnwt_Create-News-Page
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/leaderboards/page.css",
-      "static/chunks/app/leaderboards/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -43,13 +22,6 @@
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
     ],
-    "/leaderboards/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/leaderboards/page.js"
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -60,10 +32,12 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
+    ],
+    "/leaderboards/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/leaderboards/page.css",
+      "static/chunks/app/leaderboards/page.js"
     ]
   }
 }
