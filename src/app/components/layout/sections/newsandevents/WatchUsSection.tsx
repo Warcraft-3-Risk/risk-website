@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/_vars.scss';
-import '@/core/SCSS/base/layout/l-newsandevents.scss';
+import '@/core/SCSS/base/sections/s-newsandevents.scss';
 
 const WatchUsSection: React.FC = () => {
   return (
