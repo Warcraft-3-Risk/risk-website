@@ -1,3 +1,6 @@
 {
+  "/leaderboards/page": "app/leaderboards/page.js",
+  "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/news-and-events/page": "app/news-and-events/page.js"
 }
