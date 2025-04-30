@@ -47,7 +47,7 @@ export default function RootLayout({
               <AppSidebar />
               <div className="flex flex-col flex-1">
                 <Navbar />
-                <div className="triggerbackground lg:hidden ">
+                <div className="triggerbackground lg:hidden">
                   <SidebarTrigger />
                 </div>
                 <main className="flex-1">{children}</main>

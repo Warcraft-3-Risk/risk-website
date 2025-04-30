@@ -16,7 +16,7 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const TournamentCalendar: React.FC = () => {
   const tournaments: Tournament[] = [
     { date: '2025-04-10', name: 'Spring Open 2025', time: '21:00:00' },
-    { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00'},
+    { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
     { date: '2025-04-11', name: 'Spring Casual Tournament', time: '20:00:00' },
   ];
 
@@ -37,14 +37,14 @@ const TournamentCalendar: React.FC = () => {
     (_, i) => new Date(currentYear, currentMonth, i + 1),
   );
 
-  const convertToUserTimeZone =(date: string, time: string) => {
+  const convertToUserTimeZone = (date: string, time: string) => {
     const utcDateTime = new Date(`${date}T${time}Z`);
     return utcDateTime.toLocaleString('en-US', {
       hour: '2-digit',
       minute: '2-digit',
       timeZoneName: 'short',
     });
-  }
+  };
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
@@ -85,9 +85,7 @@ const TournamentCalendar: React.FC = () => {
         <button onClick={handlePreviousMonth} className="month-nav">
           &lt;
         </button>
-        <h2>
-          {firstDayOfMonth.toLocaleString('default', { month: 'long' })}
-        </h2>
+        <h2>{firstDayOfMonth.toLocaleString('default', { month: 'long' })}</h2>
         <button onClick={handleNextMonth} className="month-nav">
           &gt;
         </button>
@@ -132,12 +130,15 @@ const TournamentCalendar: React.FC = () => {
             <ul className="tournament-list">
               {tournamentsOnDate.map((tournament, index) => (
                 <li key={index}>
-                  {tournament.name} - {convertToUserTimeZone(tournament.date, tournament.time)}
+                  {tournament.name} -{' '}
+                  {convertToUserTimeZone(tournament.date, tournament.time)}
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="no-tournaments">No tournaments scheduled for this day.</p>
+            <p className="no-tournaments">
+              No tournaments scheduled for this day.
+            </p>
           )}
         </Modal>
       )}

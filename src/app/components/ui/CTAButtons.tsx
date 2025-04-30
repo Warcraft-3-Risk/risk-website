@@ -6,15 +6,17 @@ import Link from 'next/link';
 import '@/core/SCSS/base/components/_buttons.scss';
 
 interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: 'play' | 'readmore';
+  variant: 'play' | 'readmore' | 'pagination';
   href?: string;
   children: React.ReactNode;
+  className?: string;
 }
 
 const CTAButton: React.FC<CTAButtonProps> = ({
   variant,
   href,
   children,
+  className,
   ...props
 }) => {
   const baseClass =
@@ -22,10 +24,14 @@ const CTAButton: React.FC<CTAButtonProps> = ({
       ? 'PlayNowButton'
       : variant === 'readmore'
         ? 'ReadMoreButton'
-        : '';
+        : variant === 'pagination'
+          ? 'PaginationButton'
+          : '';
+
+  const combinedClass = cn(baseClass, className);
 
   const content = (
-    <button className={cn(baseClass)} {...props}>
+    <button className={combinedClass} {...props}>
       <p>{children}</p>
     </button>
   );

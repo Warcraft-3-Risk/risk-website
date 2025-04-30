@@ -11,6 +11,17 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
+    "/news-and-events/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/news-and-events/layout.js"
+    ],
+    "/news-and-events/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/news-and-events/page.css",
+      "static/chunks/app/news-and-events/page.js"
+    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -22,6 +33,7 @@
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
     ],
+<<<<<<< HEAD
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -32,6 +44,13 @@
       "static/chunks/main-app.js",
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
+=======
+    "/leaderboards/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/leaderboards/page.css",
+      "static/chunks/app/leaderboards/page.js"
+>>>>>>> origin/development
     ]
   }
 }
