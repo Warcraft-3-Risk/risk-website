@@ -3,8 +3,6 @@
 import { useState, useEffect } from 'react';
 import articlesData from '@/app/data/articles.json';
 
-// import '@/core/SCSS/base/_reset.scss';
-
 import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSection';
 import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
 import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';

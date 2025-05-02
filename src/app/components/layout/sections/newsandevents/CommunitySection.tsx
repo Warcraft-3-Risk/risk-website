@@ -5,7 +5,7 @@ import '@/core/SCSS/base/layout/l-community-section.scss';
 
 const CommunitySection: React.FC = () => {
   return (
-    <section className="py-12">
+    <section className="bgblue py-12">
       <div className="container mx-auto px-4">
         <h2 className="communitytitle text-3xl font-bold text-center text-yellow-500 mb-6">
           {content.communitysection['communitysection.title']}
