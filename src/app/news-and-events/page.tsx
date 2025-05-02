@@ -8,6 +8,7 @@ import ArticleItemMobile from '@/app/news-and-events/articles/components/Article
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
+// import '@/core/SCSS/base/mobile/m-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 import CTAButton from '@/app/components/ui/CTAButtons';
@@ -28,7 +29,7 @@ const NewsPage = () => {
 
   return (
     <>
-      <div className="background min-h-screen p-4">
+      <div className="news-page-container background min-h-screen">
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
