@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
-import '@/core/SCSS/base/layout/l-community-section.scss';
+import '@/core/SCSS/base/sections/s-community-section.scss';
 
 const CommunitySection: React.FC = () => {
   return (

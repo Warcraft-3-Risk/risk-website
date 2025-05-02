@@ -1,5 +1,5 @@
 import React from 'react';
-import '@/core/SCSS/base/layout/l-leaderboard-header.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-header.scss';
 import content from '@/app/data/content.json';
 
 const LeaderBoardHeader: React.FC = () => {

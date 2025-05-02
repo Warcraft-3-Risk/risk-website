@@ -5,7 +5,6 @@ import {
   Newspaper,
   Shield,
   Library,
-  Trophy,
 } from 'lucide-react';
 import {
   Sidebar,
@@ -35,7 +34,6 @@ const mainNavItems = [
   { title: 'Home', icon: Home, href: '/', isActive: true },
   { title: 'News and Events', icon: Newspaper, href: '/news-and-events' },
   { title: 'Stand Alone', icon: Shield, href: '/stand-alone' },
-  { title: 'Tournaments', icon: Trophy, href: '/tournaments' },
   { title: 'About us', icon: Users, href: '/about-us' },
   { title: 'Patch Notes', icon: Newspaper, href: '/patch-notes' },
 ];

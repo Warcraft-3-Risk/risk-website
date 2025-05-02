@@ -1,6 +1,6 @@
 import LeaderBoardTable from '@/app/components/layout/sections/leaderboard/LeaderBoardTable';
 import content from '@/app/data/content.json';
-import '@/core/SCSS/base/layout/l-leaderboard-section.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-section.scss';
 import CTAButton from '@/app/components/ui/CTAButtons';
 
 export default function LeaderBoardSection() {

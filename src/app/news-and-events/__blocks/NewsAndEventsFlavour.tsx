@@ -1,6 +1,6 @@
 import React from 'react';
 import content from '@/app/data/content.json';
-import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
+import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
 
 const NewsAndEventsFlavour: React.FC = () => {
   return (

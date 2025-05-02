@@ -1,7 +1,7 @@
 import React from 'react';
 import { LeaderboardEntry } from '@/app/leaderboards/__blocks/dummydata';
 import Image from 'next/image';
-import '@/core/SCSS/base/layout/l-leaderboard-table.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 
 interface Props {
   currentItems: LeaderboardEntry[];

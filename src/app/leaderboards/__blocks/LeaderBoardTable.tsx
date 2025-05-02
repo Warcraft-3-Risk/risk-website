@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
 import LeaderBoardPagination from './LeaderBoardPagination';
 import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTableMobile';
-import '@/core/SCSS/base/layout/l-leaderboard-table.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 import content from '@/app/data/content.json';
 
 const ITEMS_PER_PAGE = 10;

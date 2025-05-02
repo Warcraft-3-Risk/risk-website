@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
-import '@/core/SCSS/base/layout/l-leaderboard.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard.scss';
 
 const LeaderBoardTable: React.FC = () => {
   const topLeaders = [...dummyData].sort((a, b) => b.elo - a.elo).slice(0, 5);
