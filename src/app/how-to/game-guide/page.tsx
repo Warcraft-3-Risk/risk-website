@@ -1,3 +1,5 @@
+import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import GameGuideFooter from './__blocks/GameGuideFooter';
 import GameGuideHeader from './__blocks/GameGuideHeader';
 import GameGuideSubTitle from './__blocks/GameGuideSubTitle';
 import Segment from '@/app/components/layout/sections/segment/Segment';
@@ -20,27 +22,33 @@ const segments = [
     videoUrl: '/videos/tacc.mp4',
   },
   {
-    title: 'CAPTURING CITIES AND PORTS',
+    title: 'CAPTURING YOUR FIRST COUNTRY',
     description:
-      'Cities and ports are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many cities and ports as possible!',
+      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     imageUrl: '/images/testimage.jpg',
   },
   {
-    title: 'CAPTURING COUNTRIES',
+    title: 'YOUR FIRST PAYCHECK',
     description:
-      'Countries are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many countries as possible!',
+      'To gain income you need to control a whole country at the end of a turn. You can see the timer both the timer (Clock icon) and the turn counter (Hourglass icon) to the right of your gold. You will always have a base income of 4 gold each turn, but you can increase this by capturing more countries!',
     imageUrl: '/images/testimage.jpg',
   },
   {
-    title: 'CAPTURING CITIES AND PORTS',
+    title: 'EXPANDING FOR BEGINNERS',
     description:
-      'Cities and ports are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many cities and ports as possible!',
+      'It is best to start with smaller countries to gain income quickly. Start with 2 or 3 city/port countries. Try to expand in a way that will keep your countries connected.',
     imageUrl: '/images/testimage.jpg',
   },
   {
-    title: 'CAPTURING COUNTRIES',
+    title: 'FREE SPAWNS',
     description:
-      'Countries are the most important part of the game. They are the only way to increase your influence, and they are also the only way to train units. Make sure to capture as many countries as possible!',
+      'Every country that you own will give you free riflemen at the start of a new turn. These will be created at campfires and may be rallied. Each country will only spawn a limited number of units at any given point in time, so make sure to use prioritize them first during combat.',
+    imageUrl: '/images/testimage.jpg',
+  },
+  {
+    title: 'DIPLOMACTY IS KING!',
+    description:
+      'Chat is essential in Risk, make sure to use it and read it. Diplomacy is key. Make sure to peace other players, but also be ready to be backstabbed when you are vulnerable.',
     imageUrl: '/images/testimage.jpg',
   },
 ];
@@ -53,6 +61,8 @@ export default function GameGuide() {
       {segments.map((segment, index) => (
         <Segment key={index} index={index} {...segment} />
       ))}
+      <GameGuideFooter />
+      <CommunitySection />
     </div>
   );
 }

@@ -19,13 +19,6 @@ const GameGuideSubTitle: React.FC = () => {
           time!
         </p>
       </div>
-      <div className="game-guide-essential space-y-4">
-        <p className="game-guide-essential-text pb-20">
-          Chat is essential in Risk, make sure to use it and read it. Diplomacy
-          is key. Make sure to peace other players, but also be ready to be
-          backstabbed when you are vulnerable.
-        </p>
-      </div>
     </section>
   );
 };

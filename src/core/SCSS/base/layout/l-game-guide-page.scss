@@ -75,12 +75,22 @@
   text-transform: uppercase;
   color: $cta-yellow;
   text-align: center;
-  margin-bottom: 16px;
+  margin-top: 10%;
+  margin-bottom: 10%;
 }
 .segmenttext {
   font-family: 'textFont', sans-serif;
   color: $background-sand;
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.5;
   max-width: 800px;
+  margin-bottom: 10%;
+  text-wrap: balance;
+}
+
+.game-guide-footer {
+  font-family: 'titleFont', sans-serif;
+  color: $cta-yellow;
+  text-transform: uppercase;
+  line-height: 1.5;
 }

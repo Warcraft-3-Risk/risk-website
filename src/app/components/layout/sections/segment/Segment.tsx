@@ -24,22 +24,22 @@ const Segment: React.FC<SegmentProps> = ({
 
   return (
     <div
-      className={`segmentbg text-white px-6 py-10 flex flex-col md:flex-row ${
+      className={`segmentbg text-white flex flex-col md:flex-row ${
         !isEven ? 'md:flex-row-reverse' : ''
       }`}
     >
       <div
-        className={`md:w-1/2 space-y-4 flex flex-col justify-center z-20 relative ${
+        className={`md:w-1/2 space-y-4 flex flex-col justify-center z-20 relative pr-5 ${
           isEven ? 'text-left md:items-start' : 'text-right md:items-end'
         }`}
       >
-        <h2 className="segmenttitle text-2xl font-bold">{title}</h2>
-        <p className="segmenttext text-sm">{description}</p>
-        {note && <p className="segmenttext text-sm">{note}</p>}
+        <h2 className="segmenttitle text-5xl font-bold">{title}</h2>
+        <p className="segmenttext">{description}</p>
+        {note && <p className="segmenttext text-md">{note}</p>}
       </div>
 
-      <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center items-center relative">
-        <div className="relative w-full max-w-xl aspect-video rounded-lg shadow-lg overflow-hidden">
+      <div className="md:w-1/2 mt-6 md:mt-0 flex justify-center items-center relative w-full">
+        <div className="relative w-full h-full shadow-lg overflow-hidden">
           {video && videoUrl ? (
             <video
               src={videoUrl}
