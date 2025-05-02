@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import '@/core/SCSS/base/_vars.scss';
-import '@/core/SCSS/base/layout/l-newsandevents.scss';
+import '@/core/SCSS/base/sections/s-newsandevents.scss';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
