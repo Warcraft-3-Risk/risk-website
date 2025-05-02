@@ -90,10 +90,6 @@ const NewsPage = () => {
         </div>
       </div>
 
-<<<<<<< HEAD
-      <div className="tournament-calendar hidden">
-        <TournamentCalendar />
-=======
       <div className="tournament-calendar px-4 mb-10">
         <div className="hidden md:block">
           <TournamentCalendar />
@@ -102,7 +98,6 @@ const NewsPage = () => {
         <div className="block md:hidden">
           <TournamentCalendarMobile />
         </div>
->>>>>>> origin/development
       </div>
     </>
   );
