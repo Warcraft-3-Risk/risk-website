@@ -1,5 +1,6 @@
 import React from 'react';
 import CTAButton from '@/app/components/ui/CTAButtons';
+import content from '@/app/data/content.json';
 
 interface LeaderBoardPaginationProps {
   currentPage: number;
@@ -32,11 +33,12 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
         disabled={currentPage === 1}
         className={currentPage === 1 ? 'is-disabled' : 'is-enabled'}
       >
-        Previous
+        {content.leaderboards['leaderboardsection.previous']}
       </CTAButton>
 
       <span className="text-white font-semibold">
-        Page {currentPage} of {totalPages}
+        {content.leaderboards['leaderboardsection.pagination']} {currentPage}{' '}
+        {content.leaderboards['leaderboardsection.of']} {totalPages}
       </span>
 
       <CTAButton
@@ -45,7 +47,7 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
         disabled={currentPage === totalPages}
         className={currentPage === totalPages ? 'is-disabled' : 'is-enabled'}
       >
-        Next
+        {content.leaderboards['leaderboardsection.next']}
       </CTAButton>
     </div>
   );

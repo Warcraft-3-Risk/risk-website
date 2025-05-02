@@ -8,7 +8,6 @@ import ArticleItemMobile from '@/app/news-and-events/articles/components/Article
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
-// import '@/core/SCSS/base/mobile/m-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 import CTAButton from '@/app/components/ui/CTAButtons';
@@ -64,7 +63,7 @@ const NewsPage = () => {
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
-                Play Now
+                {content.newsandevents['newsandevents.button.play']}
               </CTAButton>
 
               {articlesData.length > 3 && (

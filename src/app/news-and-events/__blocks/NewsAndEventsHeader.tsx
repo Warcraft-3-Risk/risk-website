@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 
 const NewsAndEventsHeader: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const NewsAndEventsHeader: React.FC = () => {
       </div>
 
       <h1 className="titletext text-[#f9c701] text-6xl font-bold z-1 relative text-center">
-        News and Events
+        {content.newsandevents['newsandevents.title']}
       </h1>
     </div>
   );

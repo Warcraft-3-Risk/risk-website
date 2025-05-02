@@ -3,6 +3,7 @@ import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
 import LeaderBoardPagination from './LeaderBoardPagination';
 import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTableMobile';
 import '@/core/SCSS/base/layout/l-leaderboard-table.scss';
+import content from '@/app/data/content.json';
 
 const ITEMS_PER_PAGE = 10;
 
@@ -32,25 +33,25 @@ const LeaderBoardTable: React.FC = () => {
             <thead>
               <tr>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  #
+                  {content.leaderboards['leaderboardsection.rank']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Player
+                  {content.leaderboards['leaderboardsection.player']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  ELO
+                  {content.leaderboards['leaderboardsection.elo']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Score
+                  {content.leaderboards['leaderboardsection.score']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Wins
+                  {content.leaderboards['leaderboardsection.wins']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Losses
+                  {content.leaderboards['leaderboardsection.losses']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Win Rate
+                  {content.leaderboards['leaderboardsection.winrate']}
                 </th>
               </tr>
             </thead>

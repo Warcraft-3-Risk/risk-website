@@ -8,10 +8,10 @@ export default function LeaderBoardSection() {
     <section className="leaderboardbackground text-white py-12 px-6">
       <div className="container mx-auto">
         <h2 className="lbtitle text-4xl font-bold mb-4">
-          {content.leaderboardsection['leaderboardsection.title']}
+          {content.leaderboards['leaderboardsection.title']}
         </h2>
         <p className="description mb-8">
-          {content.leaderboardsection['leaderboardsection.description']}
+          {content.leaderboards['leaderboardsection.description']}
         </p>
 
         <div>
@@ -22,7 +22,7 @@ export default function LeaderBoardSection() {
               className="bg-yellow-500 text-black px-4 py-2 font-medium hover:bg-yellow-600 transition-colors"
               variant={'readmore'}
             >
-              {content.leaderboardsection['leaderboardsection.viewmore']}
+              {content.leaderboards['leaderboardsection.viewmore']}
             </CTAButton>
           </div>
         </div>

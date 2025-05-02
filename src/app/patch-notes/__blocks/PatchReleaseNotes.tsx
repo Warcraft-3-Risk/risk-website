@@ -5,7 +5,7 @@ import { CircleAlert } from 'lucide-react';
 import '@/core/SCSS/base/layout/l-patch-notes.scss';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import router from 'next/router';
-
+import content from '@/app/data/content.json';
 type Release = {
   id: number;
   name: string;
@@ -58,7 +58,11 @@ export default function PatchReleaseNotes({
   const visibleReleases = isExpanded ? releases : releases.slice(0, 3);
 
   if (loading) {
-    return <p className="text-center text-lg mt-10">Loading releases...</p>;
+    return (
+      <p className="text-center text-lg mt-10">
+        {content.patchnotes['patchreleasenotes.loading']}
+      </p>
+    );
   }
 
   return (
@@ -95,7 +99,7 @@ export default function PatchReleaseNotes({
                 rel="noopener noreferrer"
                 className="text-blue-500 mt-3 inline-block text-sm sm:text-base"
               >
-                View on GitHub →
+                {content.patchnotes['patchreleasenotes.github']}
               </a>
             </div>
           </div>
@@ -108,7 +112,7 @@ export default function PatchReleaseNotes({
             router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
           }
         >
-          PLAY NOW
+          {content.patchnotes['patchreleasenotes.button.play']}
         </CTAButton>
         <CTAButton variant="readmore" onClick={onToggleExpanded}>
           {isExpanded ? 'SHOW LESS' : 'READ MORE'}
