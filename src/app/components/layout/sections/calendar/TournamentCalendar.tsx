@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { getTournamentDatesForMonth } from '@/core/hooks/leaderboard/useLeaderboardData';
-// import TournamentMobileCalendar from '@/app/components/layout/sections/calendar/TournamentMobileCalendar';
+import { getTournamentDates } from '@/core/hooks/leaderboard/useLeaderboardData';
+import { convertToUserTimeZone, formatDate } from '@/core/utils/dateUtils';
 import Modal from '@/app/components/layout/Modal';
 import 'react-calendar/dist/Calendar.css';
 import '@/core/SCSS/base/layout/l-calendar.scss';
@@ -15,9 +15,10 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
 const TournamentCalendar: React.FC = () => {
   const tournaments: Tournament[] = [
-    { date: '2025-04-10', name: 'Spring Open 2025', time: '21:00:00' },
+    { date: '2025-04-30', name: 'Spring Open 2025', time: '21:00:00' },
+    { date: '2025-05-02', name: 'Spring Open 2025', time: '21:00:00' },
     { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
-    { date: '2025-04-11', name: 'Spring Casual Tournament', time: '20:00:00' },
+    { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
   ];
 
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
@@ -25,26 +26,15 @@ const TournamentCalendar: React.FC = () => {
   const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
   const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
-  const formatDate = (date: Date) => date.toISOString().split('T')[0];
-
   const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
   const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
 
-  const tournamentDates = getTournamentDatesForMonth(currentYear, currentMonth);
+  const tournamentDates = getTournamentDates(tournaments);
 
   const daysInMonth = Array.from(
     { length: lastDayOfMonth.getDate() },
-    (_, i) => new Date(currentYear, currentMonth, i + 1),
+    (_, i) => new Date(Date.UTC(currentYear, currentMonth, i + 1)),
   );
-
-  const convertToUserTimeZone = (date: string, time: string) => {
-    const utcDateTime = new Date(`${date}T${time}Z`);
-    return utcDateTime.toLocaleString('en-US', {
-      hour: '2-digit',
-      minute: '2-digit',
-      timeZoneName: 'short',
-    });
-  };
 
   const handleDateClick = (date: Date) => {
     setSelectedDate(date);
@@ -57,8 +47,7 @@ const TournamentCalendar: React.FC = () => {
   };
 
   const isTournamentDate = (date: Date) => {
-    const dateString = date.toISOString().split('T')[0];
-    return tournamentDates.includes(dateString);
+    return tournamentDates.includes(formatDate(date));
   };
 
   const handlePreviousMonth = () => {
@@ -145,10 +134,5 @@ const TournamentCalendar: React.FC = () => {
     </div>
   );
 };
-
-      {/* Mobile Cards */}
-      // <div className="block md:hidden">
-      //   <TournamentMobileCalendar/>
-      // </div>
 
 export default TournamentCalendar;
