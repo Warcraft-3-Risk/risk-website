@@ -1,7 +1,3 @@
-Certainly! Here is an updated version of the README based on the changes you provided. I've integrated the details about React, TypeScript, Next.js, Tailwind, SCSS, and the folder structure you mentioned.
-
----
-
 # 🏫 School Project — Frontend Architecture (Next.js + React)
 
 Welcome to the codebase! This project is built using **Next.js** with **React** and **TypeScript** and is styled using **Tailwind CSS** and **SCSS**. The project is structured in a way that encourages modular, scalable, and maintainable code.
