@@ -1,11 +1,6 @@
 import CTAButton from '@/app/components/ui/CTAButtons';
 import content from '@/app/data/content.json';
-<<<<<<< HEAD
-import Link from 'next/link';
-import '@/core/SCSS/base/sections/s-news-section.scss';
-=======
 import '@/core/SCSS/base/layout/l-news-and-events-section.scss';
->>>>>>> origin/development
 
 interface Article {
   id: number;
