@@ -1,3 +1,4 @@
 {
+  "/leaderboards/page": "app/leaderboards/page.js",
   "/page": "app/page.js"
 }
