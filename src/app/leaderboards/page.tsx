@@ -3,10 +3,11 @@ import React from 'react';
 
 import LeaderBoardHeader from '@/app/leaderboards/__blocks/LeaderBoardHeader';
 import LeaderBoardTable from './__blocks/LeaderBoardTable';
+import '@/core/SCSS/base/layout/l-leaderboard-page.scss';
 
 const LeaderboardsPage = () => {
   return (
-    <section className="bg-[#0C2A46] text-white py-12 px-6 min-h-screen w-full">
+    <section className="backgroundblue text-white py-12 px-6 min-h-screen w-full">
       <div className="container w-full flex flex-col items-center">
         <LeaderBoardHeader />
 

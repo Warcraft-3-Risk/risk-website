@@ -1,4 +1,12 @@
-import { Home, Users, Newspaper, Shield, Library, Trophy } from 'lucide-react';
+import {
+  ChevronDown,
+  Home,
+  Users,
+  Newspaper,
+  Shield,
+  Library,
+  Trophy,
+} from 'lucide-react';
 import {
   Sidebar,
   SidebarContent,
@@ -9,9 +17,17 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuSub,
+  SidebarMenuSubButton,
+  SidebarMenuSubItem,
   SidebarSeparator,
   SidebarRail,
 } from '@/app/components/ui/shadcn/sidebar';
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from '@/app/components/ui/shadcn/collapsible';
 import Link from 'next/link';
 import '@/core/SCSS/base/layout/l-app-sidebar.scss';
 
@@ -19,10 +35,15 @@ const mainNavItems = [
   { title: 'Home', icon: Home, href: '/', isActive: true },
   { title: 'News and Events', icon: Newspaper, href: '/news-and-events' },
   { title: 'Stand Alone', icon: Shield, href: '/stand-alone' },
-  { title: 'How To Play', icon: Library, href: '/how-to' },
   { title: 'Tournaments', icon: Trophy, href: '/tournaments' },
   { title: 'About us', icon: Users, href: '/about-us' },
   { title: 'Patch Notes', icon: Newspaper, href: '/patch-notes' },
+];
+
+const howToPlayItems = [
+  { title: 'Game Guide', href: '/how-to/game-guide' },
+  { title: 'Advanced Techniques', href: '/how-to/advanced-techniques' },
+  { title: 'Game Mechanics', href: '/how-to/game-mechanics' },
 ];
 
 export function AppSidebar() {
@@ -53,6 +74,29 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+
+              <Collapsible className="group/collapsible w-full">
+                <SidebarMenuItem>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton>
+                      <Library className="h-4 w-4" />
+                      <span>How To Play</span>
+                      <ChevronDown className="ml-auto h-4 w-4 transition-transform group-data-[state=open]/collapsible:rotate-180" />
+                    </SidebarMenuButton>
+                  </CollapsibleTrigger>
+                  <CollapsibleContent>
+                    <SidebarMenuSub>
+                      {howToPlayItems.map((item) => (
+                        <SidebarMenuSubItem key={item.title}>
+                          <SidebarMenuSubButton asChild>
+                            <Link href={item.href}>{item.title}</Link>
+                          </SidebarMenuSubButton>
+                        </SidebarMenuSubItem>
+                      ))}
+                    </SidebarMenuSub>
+                  </CollapsibleContent>
+                </SidebarMenuItem>
+              </Collapsible>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
