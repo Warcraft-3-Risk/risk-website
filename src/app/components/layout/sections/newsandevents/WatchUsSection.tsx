@@ -25,13 +25,13 @@ const WatchUsSection: React.FC = () => {
             src="/images/YouTube_Symbol_gule.webp"
             alt="YouTube"
             width={76}
-            height={60}
+            height={76}
           />
           <Image
             src="/images/twitch-gule.webp"
             alt="Twitch"
-            width={60}
-            height={60}
+            width={76}
+            height={76}
           />
         </div>
       </div>
