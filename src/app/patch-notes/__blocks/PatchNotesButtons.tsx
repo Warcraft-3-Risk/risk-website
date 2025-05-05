@@ -2,6 +2,7 @@
 
 import CTAButton from '@/app/components/ui/CTAButtons';
 import { useRouter } from 'next/navigation';
+import content from '@/app/data/content.json';
 
 interface PatchNotesButtonsProps {
   onToggleExpanded: () => void;
@@ -22,7 +23,7 @@ const PatchNotesButtons = ({
           router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
         }
       >
-        PLAY NOW
+        {content.patchnotes['patchreleasenotes.button.play']}
       </CTAButton>
       <CTAButton variant="readmore" onClick={onToggleExpanded}>
         {isExpanded ? 'SHOW LESS' : 'READ MORE'}

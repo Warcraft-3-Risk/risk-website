@@ -6,11 +6,11 @@ import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
-import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
+import '@/core/SCSS/base/layout/page/l-news-and-events-page.scss';
 
 const NewsPage = () => {
   const { articles } = useNews();
-  const [showAll, setShowAll] = useState(false); // 👈 new state!
+  const [showAll, setShowAll] = useState(false);
 
   const sortedArticles = [...articles].sort(
     (a, b) =>

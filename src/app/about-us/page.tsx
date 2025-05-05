@@ -1,5 +1,9 @@
 import React from 'react';
 
+//TODO Make about us page, with the design made in mind
+//In your __blocks folder, that is where side relevant components go, like the header and footer etc.
+//If necessary, you can import any additional components or styles here - Create a SCSS file for the about us page and import it here
+
 const AboutPage = () => {
   return (
     <div className="p-8 font-sans">

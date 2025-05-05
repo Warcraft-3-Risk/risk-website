@@ -1,0 +1,96 @@
+@import '../../vars.scss';
+
+.bluebackground {
+  background-color: $background-blue;
+  color: $background-sand;
+}
+
+.backgroundimg {
+  background-image: url('/images/gameguide.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+
+.gameguidetitle {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.game-guide-section {
+  //   max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-guide-title {
+  font-family: 'titleFont', sans-serif;
+  max-width: 500px;
+  text-align: left;
+  margin-bottom: 16px;
+  color: $cta-yellow;
+}
+
+.game-guide-text {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 800px;
+}
+
+.game-guide-description {
+  margin-bottom: 16px;
+}
+
+.game-guide-following {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.game-guide-essential {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.game-guide-essential-text {
+  color: $background-sand;
+}
+
+.segmentbg {
+  background-color: $background-blue;
+  border-bottom: 1px solid $background-sand;
+  border-top: 1px solid $background-sand;
+}
+
+.segmenttitle {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  text-align: center;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+.segmenttext {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-bottom: 10%;
+  text-wrap: balance;
+}
+
+.game-guide-footer {
+  font-family: 'titleFont', sans-serif;
+  color: $cta-yellow;
+  text-transform: uppercase;
+  line-height: 1.5;
+}

@@ -1,0 +1,41 @@
+@import '../../vars.scss';
+
+.leaderboardbackground {
+  background-color: $background-blue;
+  color: $background-sand;
+}
+
+.lbtitle {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  margin-bottom: 16px;
+}
+
+.description {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.tagtitles {
+  font-family: 'titleFont', sans-serif;
+  font-weight: lighter;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  margin-bottom: 16px;
+}
+
+.herobg {
+  background-color: $background-blue;
+}
+
+.scoretext {
+  font-family: 'textFont', sans-serif;
+  color: $background-sand;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}

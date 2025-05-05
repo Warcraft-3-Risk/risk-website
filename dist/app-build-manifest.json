@@ -17,16 +17,13 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-<<<<<<< HEAD
-    "/leaderboards/page": [
-=======
-    "/_not-found/page": [
+    "/patch-notes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
+      "static/css/app/patch-notes/page.css",
+      "static/chunks/app/patch-notes/page.js"
     ],
     "/news-and-events/layout": [
->>>>>>> cf52db6d1f9a174fef0cece6f2908ec5883808bb
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/news-and-events/layout.js"
