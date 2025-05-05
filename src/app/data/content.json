@@ -46,8 +46,7 @@
     "communitysection.twitchAlt": "Twitch"
   },
   "specialmentions": {
-    "specialmentions.title": "Special Mentions",
-    "specialmentions.subtitle": "KNOWN PLAYERS",
+    "specialmentions.title": "Current Livestreams",
     "specialmentions.player1": "Easters Twitch",
     "specialmentions.player2": "Soxus Twitch",
     "specialmentions.player3": "Bokuz Twitch"
@@ -84,7 +83,8 @@
     "leaderboardsection.score": "Score",
     "leaderboardsection.wins": "Wins",
     "leaderboardsection.losses": "Losses",
-    "leaderboardsection.winrate": "Win Rate"
+    "leaderboardsection.winrate": "Win Rate",
+    "leaderboardsection.sigma": "Sigma"
   },
   "gameguide": {
     "gameguide.title": "GAME GUIDE",
