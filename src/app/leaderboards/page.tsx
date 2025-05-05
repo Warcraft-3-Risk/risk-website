@@ -3,7 +3,7 @@ import React from 'react';
 
 import LeaderBoardHeader from '@/app/leaderboards/__blocks/LeaderBoardHeader';
 import LeaderBoardTable from './__blocks/LeaderBoardTable';
-import '@/core/SCSS/base/layout/l-leaderboard-page.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-page.scss';
 
 const LeaderboardsPage = () => {
   return (

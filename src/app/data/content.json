@@ -12,27 +12,7 @@
     "home.title": "Welcome to Risk Reforged",
     "home.text": "A strategic game of conquest and diplomacy in Warcraft III"
   },
-  "leaderboard": {
-    "leaderboard.title": "Leaderboard",
-    "leaderboard.sortby": "Sort by:",
-    "leaderboard.highestscore": "Highest Score",
-    "leaderboard.lowestscore": "Lowest Score",
-    "leaderboard.previous": "Prev",
-    "leaderboard.next": "Next",
-    "leaderboard.pagination": "Page",
-    "leaderboard.of": "of",
-    "leaderboard.valueoption5": "5 per page",
-    "leaderboard.valueoption10": "10 per page",
-    "leaderboard.rank": "Rank",
-    "leaderboard.player": "Player",
-    "leaderboard.score": "Score",
-    "leaderboard.nodata": "No players found"
-  },
-  "leaderboardsection": {
-    "leaderboardsection.title": "LEADER BOARDS",
-    "leaderboardsection.description": "Top players and their achievements in our competitive gaming community",
-    "leaderboardsection.viewmore": "View more"
-  },
+
   "notfound": {
     "notfound.title": "You've been mislead!",
     "notfound.text": "I'm sorry you've gone all this way for nothing",
@@ -50,6 +30,7 @@
     "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
     "newsandevents.loading": "Loading...",
     "newsandevents.flavourtitle": "COMMAND THE BATTLEFIELD — ON SCHEDULE",
+    "newsandevents.button.play": "PLAY NOW",
     "newsandevents.flavourtext": "Strategy begins with knowing when and where. Don't just play - command with foresight. Follow our community calender for livestreams, tournaments and all upcoming events."
   },
   "newssection": {
@@ -76,5 +57,43 @@
     "watchus.subtitle": "CATCH US LIVE",
     "watchus.description": "Tune in our official YouTube and Twitch channels for weekly tournament streams packed with excitement and entertainment.",
     "watchus.liveTagline": "WE GO LIVE EVERY WEEK"
+  },
+  "patchnotes": {
+    "patchreleasenotes.title": "PATCH RELEASE NOTES",
+    "patchreleasenotes.subtitle": "Latest Updates",
+    "patchreleasenotes.viewmore": "View more",
+    "patchreleasenotes.nodata": "No patch notes available at the moment.",
+    "patchreleasenotes.button.play": "PLAY NOW",
+    "patchreleasenotes.github": "View on GitHub →",
+    "patchreleasenotes.loading": "loading..."
+  },
+  "leaderboards": {
+    "leaderboardsection.title": "LEADER BOARDS",
+    "leaderboardsection.description": "Check out the top players and their rankings.",
+    "leaderboardsection.viewmore": "View more",
+    "leaderboardsection.nodata": "No players found",
+    "leaderboardsection.loading": "Loading...",
+    "leaderboardsection.sortby": "Sort by:",
+    "leaderboardsection.next": "Next",
+    "leaderboardsection.previous": "Prev",
+    "leaderboardsection.pagination": "Page",
+    "leaderboardsection.of": "of",
+    "leaderboardsection.rank": "#",
+    "leaderboardsection.player": "Player",
+    "leaderboardsection.elo": "ELO",
+    "leaderboardsection.score": "Score",
+    "leaderboardsection.wins": "Wins",
+    "leaderboardsection.losses": "Losses",
+    "leaderboardsection.winrate": "Win Rate"
+  },
+  "gameguide": {
+    "gameguide.title": "GAME GUIDE",
+    "gameguide.subtitle": "Learn the game",
+    "gameguide.description": "Explore our comprehensive game guide to master the art of strategy and tactics.",
+    "gameguide.viewmore": "View more",
+    "gameguide.footer": "Join the community for more tips and tricks",
+    "gameguide.howtoplay": "HOW TO PLAY",
+    "gameguide.intro": "Risk Reforged is a game about conquering cities and ports across Europe. Win conditions vary depending on what game mode has been chosen, but what is common among all modes is that you have to capture 60% of all cities.",
+    "gameguide.followup": "The following sections will help you familiarise yourself with the basic concepts and help you get on your way to dominate Europe in no time!"
   }
 }

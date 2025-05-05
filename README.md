@@ -1,8 +1,8 @@
 # 🏫 School Project — Frontend Architecture (Next.js + React)
 
-Welcome to the codebase! This project is built using **Next.js** with **React** and structured in a way that encourages modular, scalable, and maintainable code.
+Welcome to the codebase! This project is built using **Next.js** with **React** and **TypeScript** and is styled using **Tailwind CSS** and **SCSS**. The project is structured in a way that encourages modular, scalable, and maintainable code.
 
-If you're new or unsure how things are laid out, read through this before jumping in 🙌
+If you're new to the project or unsure how things are organized, read through this guide before diving in. 🙌
 
 ---
 
@@ -10,46 +10,52 @@ If you're new or unsure how things are laid out, read through this before jumpin
 
 Follow these steps to get the project up and running locally:
 
-1. Clone the Repository
-   bash
-   Copy
-   Edit
+1. **Clone the Repository**
+
+   ```bash
    git clone https://github.com/Warcraft-3-Risk/risk-website.git
-   
    cd your-repo-name
-   
-3. Install Dependencies
-   Make sure you have Node.js (v18 or above) installed.
+   ```
 
+2. **Install Dependencies**
 
-Then install the packages:
+   Make sure you have Node.js (v18 or above) installed. Then install the necessary packages:
 
-```bash
-npm install
-```
-3. Run the Development Server
-```bash
-npm run dev
-```
-# or
+   ```bash
+   npm install
+   ```
 
-```bash
-Visit http://localhost:3000 in your browser to see the app.
-```
+3. **Run the Development Server**
 
-4. Build for Production
+   To start the app in development mode:
+
+   ```bash
+   npm run dev
+   ```
+
+   Visit [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+
+4. **Build for Production**
+
    To create an optimized production build:
 
-```bash
-npm run build
-npm start
-⚙️ Environment Variables
-Ask for the .env config:
-```
+   ```bash
+   npm run build
+   npm start
+   ```
+
+---
+
+## ⚙️ Environment Variables
+
+**ASK FOR IT**
+Make sure to configure the environment variables for your local setup. Copy the `.env.example` file to `.env.local`:
+
 ```bash
 cp .env.example .env.local
-Update the values as needed (e.g., API URLs, secrets, keys).
 ```
+
+Update the values in `.env.local` as needed (e.g., API URLs, secrets, keys).
 
 ---
 
@@ -62,19 +68,20 @@ src/
 │   │   ├── __blocks/          # Page-specific components
 │   │   ├── context/           # Page-specific context providers
 │   │   └── page.tsx           # The actual page users will see
-│   ├── core/                  # Shared logic and setup
-│   │   ├── constants/         # Constant values used app-wide
-│   │   ├── hooks/             # Custom React hooks
-│   │   ├── middleware/        # Middleware logic if any
-│   │   ├── scss/              # SCSS for animations & reusable styles
-│   │   ├── services/          # API logic or business logic
-│   │   ├── types/             # TypeScript type definitions
-│   │   └── utils/             # Utility functions/helpers
 │   ├── components/
 │   │   ├── ui/                # Reusable UI components (Buttons, Modals, etc.)
 │   │   └── layout/            # Global layout components (Navbar, Footer, etc.)
-│   └── content/
-│       └── content.json       # Centralized text/literals (copy for the app)
+│   ├── content/
+│   │   └── content.json       # Centralized text/literals (copy for the app)
+│   └── core/
+│       ├── constants/         # Constant values used app-wide
+│       ├── hooks/             # Custom React hooks
+│       ├── middleware/        # Middleware logic if any
+│       ├── scss/              # SCSS for animations & reusable styles
+│       ├── services/          # API logic or business logic
+│       ├── types/             # TypeScript type definitions
+│       └── utils/             # Utility functions/helpers
+└── public/                    # Static assets (images, etc.)
 ```
 
 ---
@@ -84,26 +91,33 @@ src/
 When creating a new page:
 
 1. **Create a folder** under `app/` matching the route name.
+
    - Example: `src/app/leaderboard/`
-2. Inside that folder:
-   - `page.tsx` — the actual page component
-   - `__blocks/` — all components used _only_ for this page
-   - `context/` — any React context related to this page (if needed)
+
+2. Inside that folder, structure the content as follows:
+
+   - `page.tsx` — The actual page component
+   - `__blocks/` — All components used **only** for this page. Example:
+
+     - `LeaderBoardHeader.tsx`
+     - `LeaderBoardTable.tsx`
+     - `LeaderBoardPagination.tsx`
+
+   - `context/` — Any React context related to this page (if needed)
 
 ---
 
 ## 🔗 Imports & Aliases
 
-We use **`@/`** to refer to the project root.  
-This keeps imports clean and consistent:
+We use **`@/`** to refer to the project root. This ensures imports remain clean and consistent:
 
-✅ Good:
+✅ **Good Import**:
 
 ```ts
 import Header from '@/app/components/layout/Header';
 ```
 
-❌ Not ideal:
+❌ **Not Ideal Import**:
 
 ```ts
 import Header from '../../../../components/layout/Header';
@@ -113,38 +127,65 @@ import Header from '../../../../components/layout/Header';
 
 ## 🧰 What’s in `core/`
 
-Everything inside `core/` is **shared logic** across the app:
+Everything inside the `core/` folder is **shared logic** across the app:
 
-- `constants/` — values like colors, breakpoints, app settings
-- `hooks/` — custom React hooks (like useModal, useFetch)
-- `middleware/` — for route protection or auth
-- `scss/` — global styles, animations, and reusable SCSS
-- `services/` — anything like API calls or external logic
-- `types/` — TypeScript types/interfaces
-- `utils/` — helper functions
+- **`constants/`** — Values like colors, breakpoints, app settings.
+- **`hooks/`** — Custom React hooks (e.g., `useModal`, `useFetch`).
+- **`middleware/`** — For route protection or authentication.
+- **`scss/`** — Global styles, animations, and reusable SCSS files.
+- **`services/`** — API logic, business logic, or external integrations.
+- **`types/`** — TypeScript types/interfaces.
+- **`utils/`** — Helper functions or utility functions.
 
 ---
 
 ## 🌐 Components
 
-Global components live in:
+We have two main component directories:
 
-- `components/ui/` — small, reusable UI pieces (buttons, cards)
-- `components/layout/` — higher-level layout pieces (navbars, sidebars)
+- **`components/ui/`** — Reusable UI components (e.g., buttons, modals, cards).
+- **`components/layout/`** — Global layout components (e.g., Navbar, Footer).
 
-If a component is **only** used on one page, put it in that page's `__blocks/`.
+For components that are **only** used on a specific page, place them in the corresponding `__blocks/` directory inside that page’s folder.
+
+---
+
+## 📜 SCSS Structure
+
+Our SCSS files are organized in the following way:
+
+```bash
+scss/
+├── base/
+│   └── _vars.scss            # Variables for the app
+├── components/               # SCSS specific to individual components
+├── layout/                   # Layout-related SCSS (header, footer, etc.)
+└── sections/                 # Section-specific styles (e.g., leaderboard, dashboard)
+```
+
+**Important Notes:**
+
+- The only file used inside the **`base/`** folder is `_vars.scss`, which contains the app-wide variants (colors, breakpoints, etc.).
+- **Section-specific styles** are prefixed with `s-`, **page-specific styles** are prefixed with `p-`, **layout styles** are prefixed with `l-`, and **leaderboard styles** are prefixed with `l-` inside the leaderboard folder.
+
+Example:
+
+- **`s-`** for sections like `s-leaderboard.scss`.
+- **`p-`** for page-specific styling like `p-dashboard.scss`.
+- **`l-`** for layout styling like `l-header.scss`.
+- **`l-`** for leaderboard-specific styles like `l-leaderboard.scss`.
 
 ---
 
 ## 📝 Content & Localization
 
-All strings and literals (headings, labels, etc.) live in:
+All string literals, headings, labels, and other textual content are located in:
 
 ```bash
 src/app/content/content.json
 ```
 
-This keeps things centralized and easy to update in one place.
+This keeps the content centralized, making it easier to update and manage. Localization is handled through this structure, and any changes to text should be made here.
 
 ---
 
@@ -152,7 +193,7 @@ This keeps things centralized and easy to update in one place.
 
 - **Framework:** [Next.js](https://nextjs.org/)
 - **Frontend:** React + TypeScript
-- **Styling:** SCSS (for animations and custom styling)
+- **Styling:** Tailwind CSS + SCSS (for custom styling and animations)
 - **State Management:** React Context (per page)
 - **Project Structure:** Modular with aliasing (`@/`)
 
@@ -160,77 +201,27 @@ This keeps things centralized and easy to update in one place.
 
 ## 🧰 Husky & Pre-commit Hooks
 
-To maintain **consistent code quality** and avoid common issues (like syntax errors, missed formatting, or forgotten linting), we use **Husky** to run **pre-commit hooks**.
-
-### What Are Pre-commit Hooks?
-
-Pre-commit hooks are scripts that automatically run **before** you commit changes to the repository. In our case, they ensure:
-
-- **ESLint** runs to check code for linting errors (stylistic and functional issues).
-- **Prettier** formats the code consistently.
-- We can also run other checks like tests or type checks if needed.
-
-These hooks help us maintain **consistent code quality** across all developers and **prevent issues** in our codebase.
-
----
+To maintain **consistent code quality** and avoid common issues like syntax errors, missed formatting, or forgotten linting, we use **Husky** to run **pre-commit hooks**.
 
 ### Why Use Husky and Pre-commit Hooks?
 
-1. **Consistency**  
-   Pre-commit hooks ensure that no matter who is committing the code, it follows the same **style guide**, **linting rules**, and **formatting**. This keeps our codebase clean and prevents "style drift" as everyone adheres to the same rules.
+1. **Consistency**: Ensures code adheres to style guide and linting rules.
+2. **Automation**: Automatically formats and checks code before commits.
+3. **Prevents Broken Code**: Stops broken code from being committed (e.g., syntax errors, improper formatting).
+4. **Keeps the Repo Clean**: Ensures every commit is in a valid state.
 
-2. **Automation**  
-   Instead of having to manually run linting or formatting commands before each commit, Husky does it automatically. This saves time and reduces human error.
-
-3. **Prevents Broken Code**  
-   Pre-commit hooks check for things like:
-
-   - Syntax errors
-   - Incorrect formatting (spaces, indentation, line breaks)
-   - Missing semi-colons or other common mistakes
-     If the checks fail, the commit will be stopped, and you'll be notified of the issue, **preventing broken code** from entering the project.
-
-4. **Keeps the Repo Clean**  
-   Every commit should be in a **valid state**. With Husky, we make sure that every commit is clean, well-formatted, and error-free, so the repo stays consistent and usable for all team members.
-
----
-
-### How Does It Work?
-
-When you make a commit:
-
-1. Husky runs the configured pre-commit hook(s) (e.g., linting, formatting).
-2. If everything passes, the commit goes through.
-3. If there are issues (like a linting error or incorrect format), the commit is blocked, and you'll need to fix the issues before committing.
-
-### Common Checks We Run:
-
-- **Linting** — ESLint ensures there are no syntax or logic errors, and that the code follows the project's coding standards.
-- **Formatting** — Prettier makes sure the code is consistently formatted, with proper spacing, indentation, and other stylistic aspects.
-
----
-
-### Husky Setup in Our Project
-
-Husky is set up to automatically trigger these checks before every commit. You don’t need to manually trigger anything, as Husky runs the checks for you. Here's how it's configured:
-
-1. **ESLint** — This will check for any code quality or style issues.
-2. **Prettier** — This will format the code automatically to follow the same style.
-3. **Git Hooks** — These hooks are configured in the `.husky/` folder and run on Git events (like `pre-commit`).
-
-### Example Workflow with Husky:
+### Workflow:
 
 1. You write your code.
 2. You attempt to make a commit.
-3. Husky runs the pre-commit checks.
-   - If there's an issue (e.g., ESLint warning or Prettier formatting issue), the commit is stopped, and you're prompted to fix it.
-4. Once all checks pass, your commit goes through, ensuring the code is clean and consistent.
+3. Husky runs the pre-commit checks (e.g., linting, formatting).
+4. If there are issues (e.g., linting errors, formatting issues), the commit is blocked, and you're prompted to fix them.
+5. Once all checks pass, your commit goes through.
 
 ---
 
 ## 🤔 Questions?
 
-Start by checking the folder that matches your page/feature.  
-Still stuck? Ping the group — but read this first 😉.
+If you're unsure about something, check the folder that corresponds to your page or feature. Still stuck? Ask the team — but be sure to check this guide first 😉.
 
 ---

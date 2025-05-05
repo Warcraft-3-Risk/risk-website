@@ -4,7 +4,7 @@ import GameGuideFooter from './__blocks/GameGuideFooter';
 import GameGuideHeader from './__blocks/GameGuideHeader';
 import GameGuideSubTitle from './__blocks/GameGuideSubTitle';
 
-import '@/core/SCSS/base/layout/l-game-guide-page.scss';
+import '@/core/SCSS/base/layout/page/p-game-guide-page.scss';
 
 const segments = [
   {
