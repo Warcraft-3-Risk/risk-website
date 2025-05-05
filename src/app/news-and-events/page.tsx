@@ -16,7 +16,6 @@ import TournamentCalendarMobile from '@/app/components/layout/sections/calendar/
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
 
-  // Sort articles by published date descending
   const sortedArticles = [...articlesData].sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),

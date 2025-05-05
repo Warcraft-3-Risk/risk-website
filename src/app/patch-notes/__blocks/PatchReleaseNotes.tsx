@@ -6,14 +6,8 @@ import '@/core/SCSS/base/layout/l-patch-notes.scss';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import router from 'next/router';
 import content from '@/app/data/content.json';
-type Release = {
-  id: number;
-  name: string;
-  tag_name: string;
-  body: string;
-  html_url: string;
-  created_at: string;
-};
+import { fetchGithubReleases, Release } from '@/core/utils/githubReleases';
+import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
 
 interface PatchReleaseNotesProps {
   isExpanded: boolean;
@@ -28,40 +22,22 @@ export default function PatchReleaseNotes({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchReleases = async () => {
-      try {
-        const res = await fetch(
-          'https://api.github.com/repos/Warcraft-3-Risk/wc3-risk-system/releases',
-          {
-            headers: {
-              Accept: 'application/vnd.github+json',
-            },
-          },
-        );
-
-        const data = await res.json();
-        const sorted = [...data].sort(
-          (a, b) =>
-            new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-        );
-        setReleases(sorted);
-      } catch (err) {
-        console.error('Failed to fetch releases:', err);
-      } finally {
-        setLoading(false);
-      }
+    const getReleases = async () => {
+      const data = await fetchGithubReleases();
+      setReleases(data);
+      setLoading(false);
     };
 
-    fetchReleases();
+    getReleases();
   }, []);
 
   const visibleReleases = isExpanded ? releases : releases.slice(0, 3);
 
   if (loading) {
     return (
-      <p className="text-center text-lg mt-10">
-        {content.patchnotes['patchreleasenotes.loading']}
-      </p>
+      <div className="flex justify-center items-center min-h-screen">
+        <LoadingSpinner />
+      </div>
     );
   }
 
