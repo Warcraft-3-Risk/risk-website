@@ -20,28 +20,26 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
   video,
   videoUrl,
 }) => {
-  const isEven = index % 2 === 0;
+  const isEven = index % 2 !== 0;
 
   return (
     <div
-      className={`segmentbg text-white flex flex-col md:flex-row ${
+      className={`segment-reverse-bg text-white flex flex-col md:flex-row ${
         !isEven ? 'md:flex-row-reverse' : ''
       }`}
     >
       <div
-        className={`w-full md:w-1/2 space-y-4 flex flex-col justify-center z-20 relative px-5 py-6 text-center md:text-left ${
+        className={`w-full md:w-1/2 space-y-4 flex flex-col z-20 relative md:text-left ${
           isEven ? 'md:items-start' : 'md:items-end'
         }`}
       >
-        <h2 className="standalone-segment-title text-4xl md:text-5xl font-bold">
-          {title}
-        </h2>
-        <p className="standalone-segment-text">{description}</p>
+        <h2 className="stand-alone-list-segment-title">{title}</h2>
+        <p className="stand-alone-segment-text">{description}</p>
         {note && <p className="standalone-segment-text text-md">{note}</p>}
       </div>
 
-      <div className="w-full md:w-1/2 flex justify-center items-center relative">
-        <div className="relative w-full h-64 md:h-full shadow-lg overflow-hidden">
+      <div className="w-full md:w-1/2 relative">
+        <div className="relative w-full h-64 md:h-full overflow-hidden">
           {video && videoUrl ? (
             <video
               src={videoUrl}
