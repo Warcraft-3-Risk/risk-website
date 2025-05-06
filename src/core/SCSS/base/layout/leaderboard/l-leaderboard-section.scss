@@ -3,6 +3,9 @@
 .leaderboardbackground {
   background-color: $background-blue;
   color: $background-sand;
+  @media screen and (max-width: 768px) {
+    padding-left: 15px;
+  }
 }
 
 .lbtitle {

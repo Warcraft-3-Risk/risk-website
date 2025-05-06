@@ -6,7 +6,6 @@ import './globals.css';
 import BurgerMenu from '@/app/components/layout/BurgerMenu';
 import { Navbar } from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/footer';
-import { ThemeProvider } from 'next-themes';
 import { Toaster } from 'sonner';
 import { Home, Newspaper, Users } from 'lucide-react';
 
@@ -32,8 +31,23 @@ const navItems = [
     icon: <Newspaper className="w-4 h-4" />,
   },
   {
+    title: 'Patch Notes',
+    href: '/patch-notes',
+    icon: <Newspaper className="w-4 h-4" />,
+  },
+  {
     title: 'About Us',
     href: '/about-us',
+    icon: <Users className="w-4 h-4" />,
+  },
+  {
+    title: 'Stand Alone',
+    href: '/stand-alone',
+    icon: <Users className="w-4 h-4" />,
+  },
+  {
+    title: 'Game Guide',
+    href: '/how-to/game-guide',
     icon: <Users className="w-4 h-4" />,
   },
 ];
@@ -53,24 +67,21 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className="flex min-h-screen w-full flex-col">
+        <div className="relative min-h-screen">
+          <div className="fixed top-0 left-0 h-full w-64 z-40 hidden md:block">
             <BurgerMenu items={navItems} />
-
-            <div className="flex flex-col flex-1">
-              <Navbar />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
           </div>
 
-          <Toaster richColors closeButton position="top-right" />
-        </ThemeProvider>
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-1 md:ml-64">
+              {children}
+              <Footer />
+            </main>
+          </div>
+        </div>
+
+        <Toaster richColors closeButton position="top-right" />
       </body>
     </html>
   );
