@@ -5,9 +5,7 @@ const StandAloneHeader: React.FC = () => {
     <header className="backgroundimg relative bg-cover bg-center h-64">
       <div className="absolute inset-0 "></div>
       <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="gameguidetitle text-7xl font-bold">
-          Stand Alone Project
-        </h1>
+        <h1 className="standalone-header-title">Stand Alone</h1>
       </div>
       <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-b from-transparent to-[#1b3449]"></div>
     </header>

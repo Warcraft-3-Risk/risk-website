@@ -3,56 +3,74 @@ import React from 'react';
 
 const StandAloneSubTitle: React.FC = () => {
   return (
-    <section className="standalone-section flex flex-col items-start space-y-6">
-      <h2 className="standalone-title text-4xl font-bold">
+    <section className="standalone-section">
+      <h2 className="standalone-title">
         The evolution of classic rts begins now
       </h2>
-      <div className="standalone-text space-y-4">
+      <div className="standalone-text">
         <p className="standalone-description">
-          Risk Reforged is a game about conquering cities and ports across
-          Europe. Win conditions vary depending on what game mode has been
-          chosen, but what is common among all modes is that you have to capture
-          60% of all cities
+          The legacy of one of WarCraft III’s most iconic custom maps is being
+          reborn. Bigger. Smarter. Stand-alone. <br /> <br />
+          Welcome to Stand Alone, a simplified, yet fiercely competitive
+          real-time strategy (RTS) game inspired by the legendary Risk map from
+          WarCraft III — and built from the ground up as a dedicated multiplayer
+          experience. Set during the turbulent age of the <br />
+          Napoleonic Wars, this is a battlefield where tactics, trust, and
+          timing mean everything.
         </p>
       </div>
-      <div className="standalone-following space-y-4">
+      <div className="standalone-following">
         <p>
-          The following sections will help you familiarise yourself with the
-          basic concepts and help you get on your way to dominate Europe in no
-          time!
+          Support us now on Kickstarter and help bring Stand Alone to life — a
+          new home for the RTS community, forged in strategy and fire.
         </p>
         {/* Icons section */}
       </div>
-      <div className="standalone-icons w-full flex items-center flex-row md:flex-row md:items-center justify-around">
-        <div className="icon-item flex items-center space-x-2">
-          <Image
-            src="#"
-            alt="Icon 1"
-            className="w-8 h-8"
-            width={32}
-            height={32}
-          />
-          <span>Icon 1</span>
+      <div className="standalone-icons">
+        <div className="icon-item">
+          <a
+            href="https://www.patreon.com/posts/107482929?pr=true"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/patreon-gul.webp"
+              alt="Icon 1"
+              className="patreon-icon"
+              width={32}
+              height={32}
+            />
+          </a>
         </div>
-        <div className="icon-item flex items-center space-x-2">
-          <Image
-            src="#"
-            alt="Icon 2"
-            className="w-8 h-8"
-            width={32}
-            height={32}
-          />
-          <span>Icon 2</span>
+        <div className="icon-item">
+          <a
+            href="https://www.patreon.com/posts/kickstarter-113889244"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/kickstarter-gul.webp"
+              alt="Icon 2"
+              className="kickstarter-icon"
+              width={256}
+              height={256}
+            />
+          </a>
         </div>
-        <div className="icon-item flex items-center space-x-2">
-          <Image
-            src="#"
-            width={32}
-            height={32}
-            alt="Icon 3"
-            className="w-8 h-8"
-          />
-          <span>Icon 3</span>
+        <div className="icon-item">
+          <a
+            href="https://discord.gg/wc3risk"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              src="/images/Discord.svg"
+              width={32}
+              height={32}
+              alt="Icon 3"
+              className="discord-icon"
+            />
+          </a>
         </div>
       </div>
     </section>

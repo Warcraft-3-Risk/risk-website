@@ -1,0 +1,95 @@
+@import '@/core/SCSS/base/_vars.scss';
+
+.bluebackground {
+  background: $background-blue;
+}
+
+.backgroundimg {
+  background-image: url('/images/gameguide.jpg');
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
+
+.standalone-header-title {
+  font-family: titleFont, sans-serif;
+  font-size: 5.25rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.standalone-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1rem 4rem;
+  padding: 2rem;
+  background: $background-blue;
+}
+
+.standalone-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.25rem;
+  text-transform: uppercase;
+  width: 65%;
+  color: $cta-yellow;
+}
+
+.standalone-description {
+  font-family: textFont, sans-serif;
+  font-size: 2rem;
+  width: 100%;
+}
+
+.standalone-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: textFont, sans-serif;
+}
+
+.standalone-following {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: textFont, sans-serif;
+  font-size: 2rem;
+  color: $cta-yellow;
+}
+
+.standalone-icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .kickstarter-icon {
+    width: 24rem;
+    height: 12rem;
+  }
+
+  .discord-icon {
+    width: 6rem;
+    height: 6rem;
+  }
+
+  .patreon-icon {
+    width: 5rem;
+    height: 6rem;
+  }
+}

@@ -1,3 +1,5 @@
 {
-  "/stand-alone/page": "app/stand-alone/page.js"
+  "/page": "app/page.js",
+  "/stand-alone/page": "app/stand-alone/page.js",
+  "/how-to/game-guide/page": "app/how-to/game-guide/page.js"
 }
