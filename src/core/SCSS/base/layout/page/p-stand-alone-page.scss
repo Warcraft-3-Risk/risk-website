@@ -18,6 +18,7 @@
   color: $cta-yellow;
   margin: 0 auto;
   padding: 2rem 0;
+  text-shadow: 3px 3px 4px $background-blue;
 }
 
 .standalone-section {
@@ -73,6 +74,58 @@
   }
 }
 
+.stand-alone-list-segment {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  margin: 1rem 0;
+  background: $background-blue;
+  border-top: 2px solid $background-sand;
+  border-bottom: 2px solid $background-sand;
+  padding-left: 3.25rem;
+
+  &-title {
+    font-family: titleFont, sans-serif;
+    font-size: 3.25rem;
+    text-transform: uppercase;
+    width: 70%;
+    color: $cta-yellow;
+    padding: 2.5rem 0;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 7.5rem;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+
+  &-text {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+    font-family: textFont, sans-serif;
+    font-size: 1.3rem;
+    color: $background-sand;
+    text-wrap: pretty;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: -0.45em;
+      font-size: 7rem;
+      color: $cta-yellow;
+      line-height: 1;
+    }
+  }
+}
+
 .icon-item {
   display: flex;
   align-items: center;
@@ -81,15 +134,33 @@
   .kickstarter-icon {
     width: 24rem;
     height: 12rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .discord-icon {
     width: 6rem;
     height: 6rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 
   .patreon-icon {
     width: 5rem;
     height: 6rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
   }
 }
