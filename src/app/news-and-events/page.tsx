@@ -6,9 +6,8 @@ import articlesData from '@/app/data/articles.json';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import ArticleItemMobile from '@/app/news-and-events/articles/components/ArticleItemMobile';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
-import '@/core/SCSS/base/layout/l-news-and-events-page.scss';
+import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
-// import '@/core/SCSS/base/mobile/m-news-and-events-page.scss';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
 import CTAButton from '@/app/components/ui/CTAButtons';
@@ -17,7 +16,6 @@ import TournamentCalendarMobile from '@/app/components/layout/sections/calendar/
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
 
-  // Sort articles by published date descending
   const sortedArticles = [...articlesData].sort(
     (a, b) =>
       new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime(),
@@ -64,7 +62,7 @@ const NewsPage = () => {
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
-                Play Now
+                {content.newsandevents['newsandevents.button.play']}
               </CTAButton>
 
               {articlesData.length > 3 && (

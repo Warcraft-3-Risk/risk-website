@@ -10,10 +10,12 @@ const TwitchPlayerSection: React.FC = () => {
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? channels.length - 1 : prev - 1));
   };
-  
+
   const nextSlide = () => {
     setCurrent((prev) => (prev === channels.length - 1 ? 0 : prev + 1));
   };
+  //* fix?: This value could stay like this hardcoded, or we make it a .env file later on. For better practice
+  const parentDomain = 'risk-reforged.web.app';
 
   // TODO: Carousel slider functionality
   return (
@@ -24,37 +26,41 @@ const TwitchPlayerSection: React.FC = () => {
           className="button-prev"
           aria-label="Previous"
         >
-          <span className="arrow-left" aria-hidden="true">‹</span>
+          <span className="arrow-left" aria-hidden="true">
+            ‹
+          </span>
         </button>
 
         <div className="carousel-container">
           <div className="background-embed active">
             <iframe
-              src={`https://player.twitch.tv/?channel=${channels[current]}&parent=localhost&autoplay=false`}
+              src={`https://player.twitch.tv/?channel=${channels[current]}&parent=${parentDomain}&autoplay=false`}
               width="100%"
               height="100%"
               allowFullScreen
             ></iframe>
           </div>
 
-          <div className="foreground-embed" style={{ transform: `translateX(-${current * 100}%)` }}>
-          {channels.map((channel, index) => (
-            <div key={index} className="w-full h-full flex justify-center items-center">
-              <iframe
-                src={`https://player.twitch.tv/?channel=${channel}&parent=localhost&autoplay=false`}
-                className="w-full h-full"
-                allowFullScreen
-              ></iframe>
-            </div>
-          ))}
+          <div
+            className="foreground-embed"
+            style={{ transform: `translateX(-${current * 100}%)` }}
+          >
+            {channels.map((channel, index) => (
+              <div
+                key={index}
+                className="w-full h-full flex justify-center items-center"
+              >
+                <iframe
+                  src={`https://player.twitch.tv/?channel=${channel}&parent=${parentDomain}&autoplay=false`}
+                  className="w-full h-full"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            ))}
           </div>
         </div>
 
-        <button
-          onClick={nextSlide}
-          className="button-next"
-          aria-label="Next"
-        >
+        <button onClick={nextSlide} className="button-next" aria-label="Next">
           ›
         </button>
       </div>

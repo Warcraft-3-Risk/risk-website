@@ -1,10 +1,12 @@
 'use client';
+
 import React from 'react';
-import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
-import '@/core/SCSS/base/layout/l-leaderboard.scss';
+import { useLeaderboardData } from '@/core/utils/UseRealLeaderboard';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard.scss';
+import content from '@/app/data/content.json';
 
 const LeaderBoardTable: React.FC = () => {
-  const topLeaders = [...dummyData].sort((a, b) => b.elo - a.elo).slice(0, 5);
+  const topLeaders = useLeaderboardData(5); // Fetch top 5 by elo
 
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;
@@ -16,14 +18,27 @@ const LeaderBoardTable: React.FC = () => {
       <table className="LeaderboardTable min-w-full text-white">
         <thead>
           <tr className="tagtitles border-b border-gray-700 text-yellow-500 uppercase text-sm leading-normal">
-            <th className="py-3 px-6 text-left">Rank</th>
-            <th className="py-3 px-6 text-left">Name</th>
-            <th className="py-3 px-6 text-left">ELO</th>
-            <th className="py-3 px-6 text-left">Score</th>
-            <th className="py-3 px-6 text-left">Wins</th>
-            <th className="py-3 px-6 text-left">Losses</th>
-            <th className="py-3 px-6 text-left">Win Rate</th>
-            <th className="py-3 px-6 text-left">Gold</th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.rank']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.player']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.elo']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.wins']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.losses']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.winrate']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.sigma']}
+            </th>
           </tr>
         </thead>
         <tbody className="text-gray-200 text-sm">
@@ -35,13 +50,14 @@ const LeaderBoardTable: React.FC = () => {
               <td className="py-3 px-6">{index + 1}</td>
               <td className="py-3 px-6 font-medium">{leader.username}</td>
               <td className="py-3 px-6">{leader.elo}</td>
-              <td className="py-3 px-6">{leader.score}</td>
               <td className="py-3 px-6">{leader.wins}</td>
               <td className="py-3 px-6">{leader.losses}</td>
               <td className="py-3 px-6">
                 {calculateWinRate(leader.wins, leader.losses)}
               </td>
-              <td className="py-3 px-6">{leader.gold}</td>
+              <td className="py-3 px-6">
+                <td>{leader.sigma?.toFixed(2)}</td>
+              </td>
             </tr>
           ))}
         </tbody>

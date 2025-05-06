@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 
 export default function PatchNotesHeader() {
   return (
@@ -17,7 +18,7 @@ export default function PatchNotesHeader() {
       </div>
 
       <h1 className="titletext text-[#f9c701] text-8xl font-bold z-10 relative text-center">
-        patch notes
+        {content.patchnotes['patchreleasenotes.title']}
       </h1>
     </div>
   );

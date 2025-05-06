@@ -1,0 +1,21 @@
+@import '../_vars.scss';
+
+.backgroundburger {
+  background-image: url('/images/castletower.webp');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  padding-right: 16%;
+}
+
+.backgroundburger a {
+  color: white;
+}
+
+.backgroundburger a:hover {
+  color: #ffd700;
+}

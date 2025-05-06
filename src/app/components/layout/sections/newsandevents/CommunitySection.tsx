@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
-import '@/core/SCSS/base/layout/l-community-section.scss';
+import '@/core/SCSS/base/sections/s-community-section.scss';
 
 const CommunitySection: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ const CommunitySection: React.FC = () => {
           {content.communitysection['communitysection.subtitle']}
         </p>
 
-        <div className="flex justify-center gap-28">
+        <div className="flex flex-wrap justify-center items-center gap-10">
           <a
             href="https://discord.com/invite/your-server"
             target="_blank"

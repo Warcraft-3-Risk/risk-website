@@ -1,19 +1,21 @@
+'use client';
+
 import React, { useState } from 'react';
-import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
+import { useLeaderboardData } from '@/core/utils/UseRealLeaderboard';
 import LeaderBoardPagination from './LeaderBoardPagination';
 import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTableMobile';
-import '@/core/SCSS/base/layout/l-leaderboard-table.scss';
+import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
+import content from '@/app/data/content.json';
 
 const ITEMS_PER_PAGE = 10;
 
 const LeaderBoardTable: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
+  const allLeaders = useLeaderboardData();
 
-  const sortedData = [...dummyData].sort((a, b) => b.elo - a.elo);
-  const totalPages = Math.ceil(sortedData.length / ITEMS_PER_PAGE);
-
+  const totalPages = Math.ceil(allLeaders.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = sortedData.slice(
+  const currentItems = allLeaders.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE,
   );
@@ -25,32 +27,31 @@ const LeaderBoardTable: React.FC = () => {
 
   return (
     <>
-      {/* Desktop Table */}
       <div className="hidden md:block">
         <div className="tablecontainer overflow-x-auto w-full">
           <table className="sandborder w-full text-white">
             <thead>
               <tr>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  #
+                  {content.leaderboards['leaderboardsection.rank']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Player
+                  {content.leaderboards['leaderboardsection.player']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  ELO
+                  {content.leaderboards['leaderboardsection.elo']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Score
+                  {content.leaderboards['leaderboardsection.wins']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Wins
+                  {content.leaderboards['leaderboardsection.losses']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Losses
+                  {content.leaderboards['leaderboardsection.winrate']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  Win Rate
+                  {content.leaderboards['leaderboardsection.sigma']}
                 </th>
               </tr>
             </thead>
@@ -64,13 +65,15 @@ const LeaderBoardTable: React.FC = () => {
                     {startIndex + index + 1}
                   </td>
                   <td className="contexttext px-6 py-4">{item.username}</td>
-                  <td className="contexttext px-6 py-4">{item.elo}</td>
-                  <td className="contexttext px-6 py-4">{item.score}</td>
+                  <td className="contexttext px-6 py-4">
+                    {item.elo.toFixed(2)}
+                  </td>
                   <td className="contexttext px-6 py-4">{item.wins}</td>
                   <td className="contexttext px-6 py-4">{item.losses}</td>
                   <td className="contexttext px-6 py-4">
                     {calculateWinRate(item.wins, item.losses)}
                   </td>
+                  <td>{item.sigma?.toFixed(2)}</td>
                 </tr>
               ))}
             </tbody>
@@ -78,12 +81,11 @@ const LeaderBoardTable: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Cards */}
       <div className="block md:hidden">
         <LeaderboardTableMobile
-          currentItems={currentItems}
           startIndex={startIndex}
           calculateWinRate={calculateWinRate}
+          currentItems={currentItems}
         />
       </div>
 
