@@ -1,4 +1,3 @@
-import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
 import SegmentReverse from '@/app/components/layout/sections/segment/SegmentReverse';
 import StandAloneFooter from '@/app/stand-alone/__blocks/StandAloneFooter';
 import StandAloneHeader from '@/app/stand-alone/__blocks/StandAloneHeader';
@@ -9,10 +8,21 @@ import '@/core/SCSS/base/layout/page/p-stand-alone-page.scss';
 
 const segments = [
   {
-    title: 'STARTING OUT',
+    title: '16-24 Players. One Massive European Map. No Safe Zone.',
     description:
-      'Once the host of the game has chosen a game mode, you will be assigned random cities and ports across European countries. Look at the minimap to quickly get an idea of what cities you own. Your cities are indicated by white dots.',
-    note: '*For Capitals game mode you will have to pick a city as your starting point, in addition to your randomly assigned cities and ports.',
+      'Conquer historic cities, dominate key terrain, and lead your nation to glory. Every match feels like a grand campaign, with the simplicity to jump in and the depth to keep you mastering it for years.',
+    imageUrl: '/images/testimage.jpg',
+  },
+  {
+    title: 'Gold is King. Diplomacy is Queen. Victory is Earned.',
+    description:
+      'Command troops, manage your economy, and outmaneuver your rivals on a map that never plays the same way twice. Will you wage war, buy peace, or play both sides?',
+    imageUrl: '/images/testimage.jpg',
+  },
+  {
+    title: 'Built for the Community. Inspired by a Classic.',
+    description:
+      'This isn’t just another RTS — it’s a love letter to the golden age of custom maps and strategy gaming. Stand Alone is for the players who remember the thrill of staying up till 3AM in a 12-player standoff, waiting for someone to flinch. Now we’re building a standalone version of that magic — with no limitations.',
     imageUrl: '/images/testimage.jpg',
   },
 ];
@@ -27,7 +37,6 @@ export default function StandAlonePage() {
         <SegmentReverse key={index} index={index} {...segment} />
       ))}
       <StandAloneFooter />
-      <CommunitySection />
     </div>
   );
 }

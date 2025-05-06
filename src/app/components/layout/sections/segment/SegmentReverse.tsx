@@ -1,3 +1,4 @@
+import '@/core/SCSS/base/layout/page/p-stand-alone-page.scss';
 import Image from 'next/image';
 import React from 'react';
 
@@ -23,27 +24,21 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
   const isEven = index % 2 !== 0;
 
   return (
-    <div
-      className={`segment-reverse-bg text-white flex flex-col md:flex-row ${
-        !isEven ? 'md:flex-row-reverse' : ''
-      }`}
-    >
+    <div className={`segment-container ${!isEven ? 'reverse' : ''}`}>
       <div
-        className={`w-full md:w-1/2 space-y-4 flex flex-col z-20 relative md:text-left ${
-          isEven ? 'md:items-start' : 'md:items-end'
-        }`}
+        className={`segment-content ${isEven ? 'align-right' : 'align-left'}`}
       >
-        <h2 className="stand-alone-list-segment-title">{title}</h2>
-        <p className="stand-alone-segment-text">{description}</p>
-        {note && <p className="standalone-segment-text text-md">{note}</p>}
+        <h2 className="segment-title">{title}</h2>
+        <p className="segment-description">{description}</p>
+        {note && <p className="segment-note">{note}</p>}
       </div>
 
-      <div className="w-full md:w-1/2 relative">
-        <div className="relative w-full h-64 md:h-full overflow-hidden">
+      <div className="segment-media-wrapper">
+        <div className="segment-media">
           {video && videoUrl ? (
             <video
               src={videoUrl}
-              className="absolute inset-0 w-full h-full object-cover z-0"
+              className="segment-video"
               autoPlay
               muted
               loop
@@ -54,17 +49,11 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
               src={imageUrl}
               alt="Segment visual"
               fill
-              className="object-cover z-0"
+              className="segment-image"
             />
           ) : null}
 
-          <div
-            className={`absolute inset-0 w-full h-full z-10 ${
-              isEven
-                ? 'bg-gradient-to-l from-transparent to-[#1b3449]'
-                : 'bg-gradient-to-r from-transparent to-[#1b3449]'
-            }`}
-          />
+          <div className={`segment-gradient ${isEven ? 'left' : 'right'}`} />
         </div>
       </div>
     </div>
