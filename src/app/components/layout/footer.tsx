@@ -1,8 +1,8 @@
-import React from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, ShieldCheck, FileText } from 'lucide-react';
 import '@/core/SCSS/base/sections/s-footer-section.scss';
+import { FileText, Mail, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/patreon-glue.webp" alt="Patreon" />{' '}
+                  <IconImage src="/images/patreon-gul.webp" alt="Patreon" />{' '}
                   Patreon
                 </Link>
               </li>

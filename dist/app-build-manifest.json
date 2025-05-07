@@ -11,38 +11,23 @@
       "static/chunks/main-app.js",
       "static/chunks/app/not-found.js"
     ],
-<<<<<<< HEAD
-=======
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> origin/main
-    "/stand-alone/page": [
+    "/how-to/units-page/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/stand-alone/page.css",
-      "static/chunks/app/stand-alone/page.js"
-<<<<<<< HEAD
+      "static/css/app/how-to/units-page/page.css",
+      "static/chunks/app/how-to/units-page/page.js"
     ],
     "/_not-found/page": [
-=======
-=======
-    "/leaderboards/page": [
-=======
-    "/_not-found/page": [
->>>>>>> WAR-CU-86c39urrg_Responsiv-layout-pa-hjemmeside
->>>>>>> origin/main
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
     ],
-<<<<<<< HEAD
-=======
     "/patch-notes/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -59,32 +44,6 @@
       "static/chunks/main-app.js",
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
-    ],
-    "/about-us/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/about-us/page.js"
-    ],
->>>>>>> origin/main
-    "/how-to/game-guide/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/how-to/game-guide/page.css",
-      "static/chunks/app/how-to/game-guide/page.js"
-<<<<<<< HEAD
-    ],
-    "/how-to/units-page/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-<<<<<<< HEAD
-      "static/css/app/how-to/units-page/page.css",
-      "static/chunks/app/how-to/units-page/page.js"
-=======
-      "static/chunks/app/about-us/page.js"
->>>>>>> origin/development
-=======
->>>>>>> WAR-CU-86c39urrg_Responsiv-layout-pa-hjemmeside
->>>>>>> origin/main
     ]
   }
 }
