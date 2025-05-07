@@ -1,29 +1,33 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from '@/core/api/firebase';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import '@/core/SCSS/base/sections/s-hero-section.scss';
 
+import SmartVideo from '@/app/components/media/SmartVideo';
+
 export default function HeroSection() {
+  const [isMuted, setIsMuted] = useState(true);
+  const [hasEnded, setHasEnded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoURL, setVideoURL] = useState<string>('');
-  const [isMuted, setIsMuted] = useState<boolean>(true);
-  const [hasEnded, setHasEnded] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchVideo = async () => {
-      try {
-        const storageRef = ref(storage, 'video/RiskReforged_commercial.mp4');
-        const url = await getDownloadURL(storageRef);
-        setVideoURL(url);
-      } catch (error) {
-        console.error('Failed to fetch video:', error);
-      }
-    };
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 },
+    );
 
-    fetchVideo();
+    const section = document.querySelector('.HeroSection');
+    if (section) observer.observe(section);
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleMute = () => {
@@ -31,10 +35,6 @@ export default function HeroSection() {
     if (videoRef.current) {
       videoRef.current.muted = !videoRef.current.muted;
     }
-  };
-
-  const handleVideoEnd = () => {
-    setHasEnded(true);
   };
 
   const handleReplay = () => {
@@ -46,26 +46,27 @@ export default function HeroSection() {
   };
 
   return (
-    <section className="HeroSection relative w-full">
+    <section className="HeroSection relative w-full min-h-[400px]">
       <div className="herobg relative w-full">
-        {videoURL && (
-          <video
+        {isInView && (
+          <SmartVideo
             ref={videoRef}
-            src={videoURL}
-            className="object-cover w-full h-full absolute top-0 left-0 z-0"
+            path="video/RiskReforged_commercial.mp4"
             autoPlay
             muted={isMuted}
-            playsInline
-            controls={false}
             loop={false}
-            onEnded={handleVideoEnd}
+            className="object-cover w-full h-full absolute top-0 left-0 z-0"
+            preload="metadata"
+            onEnded={() => setHasEnded(true)}
+            controls={false}
+            poster="/images/hero-poster.jpg"
           />
         )}
 
         <CTAButton
           variant="play"
           onClick={toggleMute}
-          className="absolute z-10 bottom-4 right-4 bg-black/50 text-white px-3 py-1 rounded"
+          className="absolute z-10 bottom-4 right-4"
         >
           {isMuted ? 'Unmute' : 'Mute'}
         </CTAButton>
@@ -74,7 +75,7 @@ export default function HeroSection() {
           <CTAButton
             variant="readmore"
             onClick={handleReplay}
-            className="absolute z-10 bottom-4 left-4 bg-black/50 text-white px-3 py-1 rounded"
+            className="absolute z-10 bottom-4 left-4"
           >
             Replay
           </CTAButton>
