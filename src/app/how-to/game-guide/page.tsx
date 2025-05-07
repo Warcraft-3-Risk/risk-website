@@ -1,8 +1,8 @@
 import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import Segment from '@/app/components/layout/sections/segment/Segment';
 import GameGuideFooter from './__blocks/GameGuideFooter';
 import GameGuideHeader from './__blocks/GameGuideHeader';
 import GameGuideSubTitle from './__blocks/GameGuideSubTitle';
-import Segment from '@/app/components/layout/sections/segment/Segment';
 
 import '@/core/SCSS/base/layout/page/p-game-guide-page.scss';
 

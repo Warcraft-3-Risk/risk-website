@@ -17,6 +17,13 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
+<<<<<<< HEAD
+    "/stand-alone/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/stand-alone/page.css",
+      "static/chunks/app/stand-alone/page.js"
+=======
     "/leaderboards/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -60,6 +67,7 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/about-us/page.js"
+>>>>>>> origin/development
     ]
   }
 }
