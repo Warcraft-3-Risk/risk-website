@@ -20,6 +20,29 @@
     border: 1px solid $background-sand;
   }
 }
+.ExternalLinkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $cta-yellow;
+  color: $background-blue;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-family: 'titleFont', sans-serif;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $yellow-hover;
+    color: $background-blue;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
 
 .ReadMoreButton {
   width: 150px;
