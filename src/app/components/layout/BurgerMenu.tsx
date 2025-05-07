@@ -22,13 +22,14 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
   return (
     <>
-      <button
-        onClick={handleToggle}
-        className="fixed top-4 left-4 z-50 p-2 rounded-md bg-gray-800 text-white md:hidden"
-      >
-        <Menu className="h-6 w-6" />
-      </button>
-
+      <div className="burgerbox">
+        <button
+          onClick={handleToggle}
+          className="buttonbg fixed top-2 left-4 z-50 p-2 rounded-md text-white md:hidden"
+        >
+          <Menu className="h-6 w-6" />
+        </button>
+      </div>
       <div
         className={cn(
           'fixed inset-0 z-40 bg-black bg-opacity-40 transition-opacity md:hidden',
@@ -54,7 +55,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           </button>
         </div>
 
-        <nav className="flex mt-[20rem] flex-col gap-4">
+        <nav className="flex mt-[25rem] flex-col gap-4">
           {items.map((item) => (
             <Link
               key={item.title}

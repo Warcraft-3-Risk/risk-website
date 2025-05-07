@@ -73,9 +73,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div className="relative min-h-screen">
-          <div className="fixed top-0 left-0 h-full w-64 z-40 hidden md:block">
-            <BurgerMenu items={navItems} />
-          </div>
+          <BurgerMenu items={navItems} />
 
           <div className="flex flex-col min-h-screen">
             <Navbar />

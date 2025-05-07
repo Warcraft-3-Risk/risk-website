@@ -6,7 +6,7 @@ import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
 import Link from 'next/link';
 import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
-import '@/core/SCSS/base/layout/page/l-news-and-events-page.scss';
+import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
 
 const NewsPage = () => {
   const { articles } = useNews();
