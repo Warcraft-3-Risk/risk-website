@@ -1,3 +1,4 @@
 {
+  "/page": "app/page.js",
   "/stand-alone/page": "app/stand-alone/page.js"
 }
