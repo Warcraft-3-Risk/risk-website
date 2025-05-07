@@ -24,7 +24,6 @@ const StandAloneSubTitle: React.FC = () => {
           Support us now on Kickstarter and help bring Stand Alone to life — a
           new home for the RTS community, forged in strategy and fire.
         </p>
-        {/* Icons section */}
       </div>
       <div className="standalone-icons">
         <div className="icon-item">
