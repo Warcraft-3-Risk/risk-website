@@ -1,0 +1,12 @@
+@import '../../_vars.scss';
+
+.units-page-background {
+  background-color: $background-blue;
+}
+
+.units-page-hero {
+  background-image: url('/images/gameguide.jpg');
+  background-size: cover;
+  height: 50vh;
+  width: 100%;
+}
