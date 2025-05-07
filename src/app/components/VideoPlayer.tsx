@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from '@/core/api/firebase'; // adjust if your firebase init is elsewhere
+import { storage } from '@/core/api/firebase';
 
 interface VideoPlayerProps {
   videoName: string;
@@ -34,7 +34,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   }
 
   return (
-    <video width={width} height={height} controls>
+    <video width={width} height={height} controls preload="metadata">
       <source src={videoURL} type="video/mp4" />
       Your browser does not support the video tag.
     </video>

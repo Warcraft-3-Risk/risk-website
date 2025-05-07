@@ -10,6 +10,7 @@ export default function HeroSection() {
   const [isMuted, setIsMuted] = useState(true);
   const [hasEnded, setHasEnded] = useState(false);
   const [isInView, setIsInView] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -43,6 +44,14 @@ export default function HeroSection() {
       videoRef.current.play();
     }
     setHasEnded(false);
+    setIsPlaying(true);
+  };
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    }
   };
 
   return (
@@ -52,15 +61,25 @@ export default function HeroSection() {
           <SmartVideo
             ref={videoRef}
             path="video/RiskReforged_commercial.mp4"
-            autoPlay
             muted={isMuted}
             loop={false}
             className="object-cover w-full h-full absolute top-0 left-0 z-0"
-            preload="metadata"
+            preload="metadata" // Only load the metadata initially
             onEnded={() => setHasEnded(true)}
             controls={false}
             poster="/images/hero-poster.jpg"
           />
+        )}
+
+        {/* Play Button */}
+        {!isPlaying && (
+          <CTAButton
+            variant="play"
+            onClick={handlePlay}
+            className="absolute z-10 bottom-4 left-4"
+          >
+            Play Video
+          </CTAButton>
         )}
 
         <CTAButton
