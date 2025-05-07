@@ -1,35 +1,15 @@
 {
   "pages": {
-    "/not-found": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/not-found.js"
-    ],
-<<<<<<< HEAD
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
-    ],
     "/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/patch-notes/page": [
+    "/not-found": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/patch-notes/page.css",
-      "static/chunks/app/patch-notes/page.js"
-    ],
-=======
->>>>>>> WAR-CU-86c39urrg_Responsiv-layout-pa-hjemmeside
-    "/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/page.css",
-      "static/chunks/app/page.js"
+      "static/chunks/app/not-found.js"
     ],
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
@@ -41,15 +21,12 @@
       "static/chunks/main-app.js",
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
-<<<<<<< HEAD
-=======
     ],
-    "/patch-notes/page": [
+    "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/css/app/patch-notes/page.css",
-      "static/chunks/app/patch-notes/page.js"
->>>>>>> WAR-CU-86c39urrg_Responsiv-layout-pa-hjemmeside
+      "static/css/app/page.css",
+      "static/chunks/app/page.js"
     ]
   }
 }
