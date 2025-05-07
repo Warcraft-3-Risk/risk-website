@@ -1,11 +1,12 @@
 'use client';
+
 import React from 'react';
-import { dummyData } from '@/app/leaderboards/__blocks/dummydata';
+import { useLeaderboardData } from '@/core/utils/UseRealLeaderboard';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard.scss';
 import content from '@/app/data/content.json';
 
 const LeaderBoardTable: React.FC = () => {
-  const topLeaders = [...dummyData].sort((a, b) => b.elo - a.elo).slice(0, 5);
+  const topLeaders = useLeaderboardData(5); // Fetch top 5 by elo
 
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;
@@ -27,9 +28,6 @@ const LeaderBoardTable: React.FC = () => {
               {content.leaderboards['leaderboardsection.elo']}
             </th>
             <th className="headertable px-6 py-4 text-left font-semibold">
-              {content.leaderboards['leaderboardsection.score']}
-            </th>
-            <th className="headertable px-6 py-4 text-left font-semibold">
               {content.leaderboards['leaderboardsection.wins']}
             </th>
             <th className="headertable px-6 py-4 text-left font-semibold">
@@ -37,6 +35,9 @@ const LeaderBoardTable: React.FC = () => {
             </th>
             <th className="headertable px-6 py-4 text-left font-semibold">
               {content.leaderboards['leaderboardsection.winrate']}
+            </th>
+            <th className="headertable px-6 py-4 text-left font-semibold">
+              {content.leaderboards['leaderboardsection.sigma']}
             </th>
           </tr>
         </thead>
@@ -49,13 +50,14 @@ const LeaderBoardTable: React.FC = () => {
               <td className="py-3 px-6">{index + 1}</td>
               <td className="py-3 px-6 font-medium">{leader.username}</td>
               <td className="py-3 px-6">{leader.elo}</td>
-              <td className="py-3 px-6">{leader.score}</td>
               <td className="py-3 px-6">{leader.wins}</td>
               <td className="py-3 px-6">{leader.losses}</td>
               <td className="py-3 px-6">
                 {calculateWinRate(leader.wins, leader.losses)}
               </td>
-              <td className="py-3 px-6">{leader.gold}</td>
+              <td className="py-3 px-6">
+                <td>{leader.sigma?.toFixed(2)}</td>
+              </td>
             </tr>
           ))}
         </tbody>

@@ -9,12 +9,9 @@ const SpecialMentionsSection: React.FC = () => {
   return (
     <section className="Section_Background">
       <div className="container mx-auto px-4">
-        <h2 className="text-7xl font-bold text-center">
+        <h2 className="titletext text-7xl font-bold text-center">
           {content.specialmentions['specialmentions.title']}
         </h2>
-        <h4 className="text-2xl font-bold text-center">
-          {content.specialmentions['specialmentions.subtitle']}
-        </h4>
       </div>
       <div className="flex justify-center space-x-[100px] mt-8 text-center">
         <TwitchPlayerSection />

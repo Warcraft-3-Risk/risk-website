@@ -21,7 +21,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
   return (
     <section className="NewsSection py-12 px-6">
       <div className="container mx-auto">
-        <div className="flex justify-end flex-col md:flex-row items-end mb-8">
+        <div className="flex justify-end flex-col md:flex-row items-center mb-8">
           <h2 className="naetitle text-4xl font-bold mb-4 md:mb-0">
             {content.newssection['newssection.title']}
           </h2>

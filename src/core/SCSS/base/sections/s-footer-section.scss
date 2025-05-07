@@ -1,0 +1,54 @@
+@import '../vars.scss';
+
+.footer {
+  background-color: $footer-background;
+  padding: 2rem 1rem;
+
+  h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: $cta-yellow;
+    font-family: 'titleFont', sans-serif;
+    text-transform: uppercase;
+  }
+
+  &__text,
+  .footertext {
+    font-family: 'textFont', sans-serif;
+    font-size: 0.8rem;
+    color: $background-sand;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+
+      a,
+      .footer__link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: $background-sand;
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        svg,
+        img,
+        .footer__icon {
+          width: 24px;
+          height: 24px;
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}

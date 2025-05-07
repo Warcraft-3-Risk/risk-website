@@ -1,15 +1,13 @@
+import React from 'react';
 import { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
-import { SidebarTrigger } from '@/app/components/ui/shadcn/sidebar';
 
-import { AppSidebar } from '@/app/components/layout/app-sidebar';
-import Footer from '@/app/components/layout/footer';
-import { SidebarProvider } from '@/app/components/ui/shadcn/sidebar';
+import BurgerMenu from '@/app/components/layout/BurgerMenu';
 import { Navbar } from '@/app/components/layout/Navbar';
-import { ThemeProvider } from 'next-themes';
+import Footer from '@/app/components/layout/footer';
 import { Toaster } from 'sonner';
-import '@/core/SCSS/base/layout/l-app-sidebar.scss';
+import { Home, Newspaper, Users } from 'lucide-react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,6 +18,39 @@ const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
   subsets: ['latin'],
 });
+
+const navItems = [
+  {
+    title: 'Home',
+    href: '/',
+    icon: <Home className="w-4 h-4" />,
+  },
+  {
+    title: 'News and Events',
+    href: '/news-and-events',
+    icon: <Newspaper className="w-4 h-4" />,
+  },
+  {
+    title: 'Patch Notes',
+    href: '/patch-notes',
+    icon: <Newspaper className="w-4 h-4" />,
+  },
+  {
+    title: 'About Us',
+    href: '/about-us',
+    icon: <Users className="w-4 h-4" />,
+  },
+  {
+    title: 'Stand Alone',
+    href: '/stand-alone',
+    icon: <Users className="w-4 h-4" />,
+  },
+  {
+    title: 'Game Guide',
+    href: '/how-to/game-guide',
+    icon: <Users className="w-4 h-4" />,
+  },
+];
 
 export const metadata: Metadata = {
   title: 'Risk Reforged',
@@ -32,31 +63,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SidebarProvider>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <div className="flex min-h-screen w-full">
-              <AppSidebar />
-              <div className="flex flex-col flex-1">
-                <Navbar />
-                <div className="triggerbackground lg:hidden">
-                  <SidebarTrigger />
-                </div>
-                <main className="flex-1">{children}</main>
-                <Footer />
-              </div>
-            </div>
-            <Toaster richColors closeButton position="top-right" />
-          </ThemeProvider>
-        </SidebarProvider>
+        <div className="relative min-h-screen">
+          <div className="fixed top-0 left-0 h-full w-64 z-40 hidden md:block">
+            <BurgerMenu items={navItems} />
+          </div>
+
+          <div className="flex flex-col min-h-screen">
+            <Navbar />
+            <main className="flex-1 md:ml-64">
+              {children}
+              <Footer />
+            </main>
+          </div>
+        </div>
+
+        <Toaster richColors closeButton position="top-right" />
       </body>
     </html>
   );

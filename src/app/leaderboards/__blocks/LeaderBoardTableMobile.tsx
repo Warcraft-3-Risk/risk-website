@@ -1,5 +1,5 @@
 import React from 'react';
-import { LeaderboardEntry } from '@/app/leaderboards/__blocks/dummydata';
+import { LeaderboardEntry } from '@/core/utils/UseRealLeaderboard';
 import Image from 'next/image';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 
@@ -38,10 +38,10 @@ const LeaderboardTableMobile: React.FC<Props> = ({
           </div>
 
           <div className="cardtext grid grid-cols-2 gap-y-1 mt-2 text-xs">
-            <div>Score: {item.score}</div>
             <div>Wins: {item.wins}</div>
             <div>Losses: {item.losses}</div>
             <div>Win Rate: {calculateWinRate(item.wins, item.losses)}</div>
+            <div>Sigma: {item.sigma?.toFixed(2)}</div>
           </div>
         </div>
       ))}

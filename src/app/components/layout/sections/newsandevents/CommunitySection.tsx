@@ -14,7 +14,7 @@ const CommunitySection: React.FC = () => {
           {content.communitysection['communitysection.subtitle']}
         </p>
 
-        <div className="flex justify-center gap-28">
+        <div className="flex flex-wrap justify-center items-center gap-10">
           <a
             href="https://discord.com/invite/your-server"
             target="_blank"
