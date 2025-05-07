@@ -57,12 +57,20 @@
   font-family: 'textFont', sans-serif;
   color: $background-sand;
   max-width: 1000px;
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
 .flavourtitle {
   font-family: 'titleFont', sans-serif;
   text-transform: uppercase;
   color: $cta-yellow;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    text-wrap: pretty;
+  }
 }
 
 .ctabuttons {
