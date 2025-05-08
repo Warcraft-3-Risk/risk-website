@@ -10,6 +10,10 @@
   top: 0;
   left: 0;
   background-color: $background-blue;
+
+  @media screen and (max-width: 768px) {
+    background-color: transparent;
+  }
 }
 
 .backgroundburger a {
@@ -22,4 +26,5 @@
 
 .buttonbg {
   background-color: $background-blue;
+  z-index: 100;
 }
