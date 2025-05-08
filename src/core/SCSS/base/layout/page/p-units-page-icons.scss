@@ -1,27 +1,35 @@
+.units-page-navigation-city-icon {
+  background-image: url('/images/icons/City_icon.webp');
+}
+
+.units-page-navigation-port-icon {
+  background-image: url('/images/icons/Port_icon.webp');
+}
+
 .units-page-navigation-forest-icon {
-  &.icon-infantry {
-    background-image: url('/icons/infantry.svg');
+  &.icon-rifleman {
+    background-image: url('/images/icons/Rifleman_icon.webp');
   }
-  &.icon-archers {
-    background-image: url('/icons/archers.svg');
+  &.icon-medic {
+    background-image: url('/images/icons/Medic_icon.webp');
   }
-  &.icon-cavalry {
-    background-image: url('/icons/cavalry.svg');
+  &.icon-mortar {
+    background-image: url('/images/icons/Mortar_icon.webp');
   }
-  &.icon-catapult {
-    background-image: url('/icons/catapult.svg');
+  &.icon-roarer {
+    background-image: url('/images/icons/Roarer_icon.webp');
   }
-  &.icon-spearmen {
-    background-image: url('/icons/spearmen.svg');
+  &.icon-knight {
+    background-image: url('/images/icons/Knight_icon.webp');
   }
-  &.icon-scouts {
-    background-image: url('/icons/scouts.svg');
+  &.icon-general {
+    background-image: url('/images/icons/General_icon.webp');
   }
-  &.icon-trireme {
-    background-image: url('/icons/trireme.svg');
+  &.icon-artillery {
+    background-image: url('/images/icons/Artillery_icon.webp');
   }
-  &.icon-galleon {
-    background-image: url('/icons/galleon.svg');
+  &.icon-tank {
+    background-image: url('/images/icons/Tank_icon.webp');
   }
   &.icon-submarine {
     background-image: url('/icons/submarine.svg');

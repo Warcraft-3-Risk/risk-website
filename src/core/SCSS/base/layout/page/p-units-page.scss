@@ -6,7 +6,7 @@
 }
 
 .units-page-hero {
-  background-image: url('/images/gameguide.jpg');
+  background-image: url('/images/Units-header.jpg');
   background-size: cover;
   height: 50vh;
   width: 100%;
@@ -26,7 +26,6 @@
   font-size: 1.5rem;
   font-family: textFont, sans-serif;
   text-align: center;
-  // border-bottom: 2px solid $background-sand;
 
   a {
     color: $cta-yellow;
@@ -39,21 +38,26 @@
 
   a.active {
     color: $background-sand;
-
-    .units-page-navigation-city-icon,
-    .units-page-navigation-port-icon,
-    .units-page-navigation-forest-icon {
-      background-color: $background-sand;
-    }
+    text-decoration: underline;
+    text-shadow: 0 0 2px $background-sand;
   }
 }
 
-.units-page-navigation-type ul,
 .units-page-navigation-unit ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
+  padding: 0;
+  margin: 2rem 0;
+  list-style: none;
+}
+
+.units-page-navigation-type ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10rem;
   padding: 0;
   margin: 2rem 0;
   list-style: none;
@@ -69,14 +73,26 @@
   width: 100px;
   text-align: center;
 
-  .units-page-navigation-forest-icon,
-  .units-page-navigation-city-icon,
-  .units-page-navigation-port-icon {
-    width: 50px;
-    height: 50px;
+  .units-page-navigation-forest-icon {
+    width: 65px;
+    height: 65px;
     margin-bottom: 0.5rem;
-    background-color: $cta-yellow;
-    border-radius: 50%;
+    background-size: cover;
+  }
+
+  .units-page-navigation-city-icon {
+    width: 150px;
+    height: 150px;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-size: cover;
+  }
+
+  .units-page-navigation-port-icon {
+    width: 120px;
+    height: 150px;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
     background-size: cover;
   }
 }
@@ -93,7 +109,7 @@
 
   h1 {
     font-family: titleFont, sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     text-transform: uppercase;
     color: $cta-yellow;
     margin: 0 auto;
@@ -101,7 +117,7 @@
 
   h2 {
     font-family: titleFont, sans-serif;
-    font-size: 4rem;
+    font-size: 3.5rem;
     text-transform: uppercase;
     color: $cta-yellow;
     margin: 0 auto;
@@ -127,41 +143,18 @@
   justify-content: center;
   align-items: center;
   margin-bottom: 2rem;
-  background-color: $cta-blue;
   border-radius: 50%;
-  border: 3px solid $cta-yellow;
-  width: 300px;
-  height: 300px;
+  border: 2px solid $cta-yellow;
+  width: 350px;
+  height: 350px;
 
   img {
     transition: transform 0.7s ease-in-out;
+    position: relative;
+    left: 25px;
 
     &:hover {
       transform: scale(1.35);
     }
-  }
-}
-
-.units-page-panel-image-wrapper {
-  position: relative;
-  width: 350px;
-  height: 350px;
-
-  .units-page-panel-ring {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transform: rotate(220deg); // Start from top
-    z-index: 1;
-  }
-
-  .units-page-panel-image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    position: relative;
-    z-index: 2;
   }
 }

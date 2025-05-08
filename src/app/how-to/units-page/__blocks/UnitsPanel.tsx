@@ -33,27 +33,13 @@ const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
       </div>
       <div className="units-page-panel-image-container">
         {unit.image && (
-          // <div className="units-page-panel-image-wrapper">
-          //   <svg className="units-page-panel-ring" viewBox="0 0 100 100">
-          //     <circle
-          //       cx="50"
-          //       cy="50"
-          //       r="50"
-          //       stroke="#FFD700"
-          //       strokeWidth="4"
-          //       fill="none"
-          //       strokeDasharray="75"
-          //       strokeLinecap="round"
-          //     />
-          //   </svg>
           <Image
             src={unit.image}
             alt={unit.name}
             className="units-page-panel-image"
-            width={250}
-            height={250}
+            width={300}
+            height={300}
           />
-          // </div>
         )}
       </div>
     </div>
