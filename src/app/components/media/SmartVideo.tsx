@@ -69,6 +69,6 @@ const SmartVideo = forwardRef<HTMLVideoElement, SmartVideoProps>(
   },
 );
 
-SmartVideo.displayName = 'SmartVideo'; // Required for forwardRef components
+SmartVideo.displayName = 'SmartVideo';
 
 export default SmartVideo;

@@ -17,10 +17,7 @@ export default function HeroSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsInView(true);
-          observer.disconnect();
-        }
+        setIsInView(entry.isIntersecting);
       },
       { threshold: 0.3 },
     );
@@ -64,14 +61,13 @@ export default function HeroSection() {
             muted={isMuted}
             loop={false}
             className="object-cover w-full h-full absolute top-0 left-0 z-0"
-            preload="metadata" // Only load the metadata initially
+            preload="metadata"
             onEnded={() => setHasEnded(true)}
             controls={false}
-            poster="/images/hero-poster.jpg"
+            poster="/images/testhero.jpg"
           />
         )}
 
-        {/* Play Button */}
         {!isPlaying && (
           <CTAButton
             variant="play"

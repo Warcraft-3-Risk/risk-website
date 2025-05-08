@@ -110,7 +110,6 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Copyright */}
           <div className="footer__column footertext text-sm">
             <p>&copy; {year} Risk Reforged. All rights reserved.</p>
           </div>
