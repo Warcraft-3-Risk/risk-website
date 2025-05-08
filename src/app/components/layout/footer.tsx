@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/patreon-glue.webp" alt="Patreon" />{' '}
+                  <IconImage src="/images/patreon-gul.webp" alt="Patreon" />{' '}
                   Patreon
                 </Link>
               </li>
