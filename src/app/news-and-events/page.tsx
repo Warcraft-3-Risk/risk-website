@@ -93,7 +93,7 @@ const NewsPage = () => {
           <TournamentCalendar />
         </div>
 
-        <div className="block md:hidden">
+        <div className="block md:hidden w-full">
           <TournamentCalendarMobile />
         </div>
       </div>
