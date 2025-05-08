@@ -69,14 +69,15 @@ export default function PatchReleaseNotes({
                 {release.body && release.body.length > 800 && '...'}
               </div>
 
-              <a
+              <CTAButton
+                variant="externalLink"
                 href={release.html_url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-500 mt-3 inline-block text-sm sm:text-base"
+                className="mt-3 inline-block text-sm sm:text-base"
               >
                 {content.patchnotes['patchreleasenotes.github']}
-              </a>
+              </CTAButton>
             </div>
           </div>
         );

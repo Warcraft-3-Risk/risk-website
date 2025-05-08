@@ -20,27 +20,24 @@ const TournamentCalendarMobile: React.FC = () => {
     { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
   ];
 
-  const getWeekHeading = () => {
-    const today = new Date();
-    const thisWeekStart = getMonday(today);
-  
-    const diffInMs = currentWeekStart.getTime() - thisWeekStart.getTime();
-    const differenceInWeeks = Math.round(diffInMs / (7 * 24 * 60 * 60 * 1000));
-  
-    if (differenceInWeeks === 0) return 'This Week';
-    if (differenceInWeeks === -1) return 'Last Week';
-    if (differenceInWeeks === 1) return 'Next Week';
-  
-    return differenceInWeeks > 0
-      ? `In ${differenceInWeeks} Weeks`
-      : `${Math.abs(differenceInWeeks)} Weeks Ago`;
+  const getISOWeekNumber = (date: Date) => {
+    const tempDate = new Date(
+      Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()),
+    );
+    const dayNum = tempDate.getUTCDay() || 7;
+    tempDate.setUTCDate(tempDate.getUTCDate() + 4 - dayNum);
+    const yearStart = new Date(Date.UTC(tempDate.getUTCFullYear(), 0, 1));
+    const weekNo = Math.ceil(((+tempDate - +yearStart) / 86400000 + 1) / 7);
+    return weekNo;
   };
 
   const today = new Date();
 
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [tournamentsOnDate, setTournamentsOnDate] = useState<Tournament[]>([]);
-  const [currentWeekStart, setCurrentWeekStart] = useState<Date>(getMonday(today));
+  const [currentWeekStart, setCurrentWeekStart] = useState<Date>(
+    getMonday(today),
+  );
 
   const formatDate = (date: Date) => date.toISOString().split('T')[0];
 
@@ -76,40 +73,44 @@ const TournamentCalendarMobile: React.FC = () => {
 
   return (
     <div className="calendar-mobile-container">
-      
-
-    <div className="week-changer">
-      <button onClick={handlePreviousWeek} className="week-nav">
-        &lt;
-      </button>
-      <h2>{getWeekHeading()}</h2>
-      <button onClick={handleNextWeek} className="week-nav">
-        &gt;
-      </button>
-    </div>
+      <div className="week-changer">
+        <button
+          onClick={handlePreviousWeek}
+          className="week-nav"
+          aria-label="Previous Week"
+        >
+          &lt;
+        </button>
+        <h2>Week {getISOWeekNumber(currentWeekStart)}</h2>
+        <button
+          onClick={handleNextWeek}
+          className="week-nav"
+          aria-label="Next Week"
+        >
+          &gt;
+        </button>
+      </div>
 
       <div className="days-container">
         {daysOfWeek.map((date) => {
           const isToday = formatDate(date) === formatDate(today);
           const isSelected =
             selectedDate && formatDate(date) === formatDate(selectedDate);
-            const isTour = isTournamentDate(date);
+          const isTour = isTournamentDate(date);
 
           return (
             <div
               key={date.toISOString()}
               onClick={() => handleDateClick(date)}
-              className={`day ${
-                isSelected ? 'selected' : ''
-              } ${isToday ? 'today' : ''}`}
+              className={`day ${isSelected ? 'selected' : ''} ${isToday ? 'today' : ''}`}
+              role="button"
+              aria-label={`Select ${date.toLocaleDateString()}`}
             >
               <div className="weekday">
                 {date.toLocaleDateString(undefined, { weekday: 'short' })}
               </div>
               <div className="date">{date.getDate()}</div>
-              {isTour && (
-                <div className="tournament-indicator" />
-              )}
+              {isTour && <div className="tournament-indicator" />}
             </div>
           );
         })}
