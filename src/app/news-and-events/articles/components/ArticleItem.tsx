@@ -12,13 +12,16 @@ interface Article {
   author: string;
   tags: string;
   text: string;
+  imageUrl: string;
 }
 
-const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
+const ArticleItem = ({ title, text, tags, publishedAt, imageUrl }: Article) => {
   const [expanded, setExpanded] = useState(false);
   const excerpt = text.length > 250 ? text.substring(0, 250) + '...' : text;
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
+
+  console.log('Image URL: ', imageUrl); // Debugging line
 
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
@@ -38,27 +41,28 @@ const ArticleItem = ({ title, text, tags, publishedAt }: Article) => {
             {expanded ? text : excerpt}
           </div>
         </div>
-
-        <div className="triangle relative h-[200px] md:h-auto w-full md:w-4/12">
-          <Image
-            src="/images/testimage2.jpg"
-            alt="Description of image"
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="rounded-none object-cover"
-          />
-          <button
-            onClick={toggleExpanded}
-            className="expand-btn"
-            aria-label="Toggle article"
-          >
-            <ChevronDown
-              className={`h-8 w-8 transition-transform duration-300 ${
-                expanded ? 'rotate-180' : ''
-              }`}
+        {imageUrl && (
+          <div className="triangle relative h-[200px] md:h-auto w-full md:w-4/12">
+            <Image
+              src={imageUrl}
+              alt="Description of image"
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="rounded-none object-cover"
             />
-          </button>
-        </div>
+            <button
+              onClick={toggleExpanded}
+              className="expand-btn"
+              aria-label="Toggle article"
+            >
+              <ChevronDown
+                className={`h-8 w-8 transition-transform duration-300 ${
+                  expanded ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+          </div>
+        )}
       </div>
     </li>
   );
