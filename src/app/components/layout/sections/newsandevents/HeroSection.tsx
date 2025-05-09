@@ -39,7 +39,7 @@ export default function HeroSection() {
             priority
             width={1920}
             height={1080}
-            src="/images/testhero.jpg"
+            src="/images/youtube_img.webp"
             alt="Hero Poster"
             className="absolute top-0 left-0 w-full h-full object-cover z-0"
           />

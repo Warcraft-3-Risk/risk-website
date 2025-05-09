@@ -1,6 +1,4 @@
 {
-  "/page": "app/page.js",
-  "/leaderboards/page": "app/leaderboards/page.js",
-  "/how-to/game-guide/page": "app/how-to/game-guide/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js"
 }
