@@ -21,7 +21,7 @@ interface NewsSectionProps {
 
 export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles.length > 0 ? articles[0] : null;
-
+  const newsSection = content.newssection;
   if (!articles || articles.length === 0) {
     return (
       <section className="NewsSection py-12 px-6">
@@ -39,7 +39,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
       <div className="container mx-auto">
         <div className="flex justify-end flex-col md:flex-row items-center mb-8">
           <h2 className="naetitle text-4xl font-bold mb-4 md:mb-0">
-            {content.newssection['newssection.title']}
+            {newsSection['newssection.title']}
           </h2>
         </div>
 
@@ -86,7 +86,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
             className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"
             variant={'readmore'}
           >
-            {content.newssection['newssection.viewmore']}
+            {newsSection['newssection.viewmore']}
           </CTAButton>
         </div>
       </div>

@@ -25,6 +25,8 @@ const LeaderBoardTable: React.FC = () => {
     return total === 0 ? '0%' : `${Math.round((wins / total) * 100)}%`;
   };
 
+  const leaderboardContent = content.leaderboards;
+
   return (
     <>
       <div className="hidden md:block">
@@ -33,25 +35,25 @@ const LeaderBoardTable: React.FC = () => {
             <thead>
               <tr>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.rank']}
+                  {leaderboardContent['leaderboardsection.rank']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.player']}
+                  {leaderboardContent['leaderboardsection.player']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.elo']}
+                  {leaderboardContent['leaderboardsection.elo']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.wins']}
+                  {leaderboardContent['leaderboardsection.wins']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.losses']}
+                  {leaderboardContent['leaderboardsection.losses']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.winrate']}
+                  {leaderboardContent['leaderboardsection.winrate']}
                 </th>
                 <th className="headertable px-6 py-4 text-left font-semibold">
-                  {content.leaderboards['leaderboardsection.sigma']}
+                  {leaderboardContent['leaderboardsection.sigma']}
                 </th>
               </tr>
             </thead>
@@ -73,7 +75,9 @@ const LeaderBoardTable: React.FC = () => {
                   <td className="contexttext px-6 py-4">
                     {calculateWinRate(item.wins, item.losses)}
                   </td>
-                  <td>{item.sigma?.toFixed(2)}</td>
+                  <td className="contexttext px-6 py-4">
+                    {item.sigma?.toFixed(2)}
+                  </td>
                 </tr>
               ))}
             </tbody>

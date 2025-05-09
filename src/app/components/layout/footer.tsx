@@ -7,6 +7,7 @@ import { Mail, ShieldCheck, FileText } from 'lucide-react';
 import '@/core/SCSS/base/sections/s-footer-section.scss';
 import '@/core/SCSS/base/layout/l-calendar.scss';
 import Modal from './Modal';
+import content from '@/app/data/content.json';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
@@ -35,17 +36,15 @@ const Footer: React.FC = () => {
       className="footer__icon"
     />
   );
+  const footerContent = content.footer;
 
   return (
     <footer className="footer py-12 px-6 w-full">
       <div className="mx-auto w-full px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
           <div className="footer__column space-y-3">
-            <h4 className="text-lg font-semibold">Risk Reforged</h4>
-            <p className="footertext text-sm">
-              A community-driven Warcraft III project preserving and advancing
-              custom maps.
-            </p>
+            <h4 className="text-lg font-semibold">{footerContent.title}</h4>
+            <p className="footertext text-sm">{footerContent.description}</p>
           </div>
           <div className="footer__column">
             <h4 className="text-lg font-semibold mb-3">Links</h4>
