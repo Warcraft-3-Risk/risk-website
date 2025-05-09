@@ -6,7 +6,7 @@ export default function PatchNotesHeader() {
     <div className="relative w-full h-[300px] flex items-center justify-center mb-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/testimage.webp"
+          src="/images/patch_notes_hero.webp"
           alt="Background"
           fill
           style={{ objectFit: 'cover' }}
