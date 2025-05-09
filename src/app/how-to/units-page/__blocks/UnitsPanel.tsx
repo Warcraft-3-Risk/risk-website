@@ -1,11 +1,15 @@
 import React from 'react';
 
-import '@/core/SCSS/base/layout/page/p-units-page.scss';
+import '@/core/SCSS/base/layout/page/units-page/p-units-page-images.scss';
+import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import Image from 'next/image';
 
 interface UnitPanelProps {
   unitId: string | null;
-  data: Record<string, { name: string; description: string; image?: string }>;
+  data: Record<
+    string,
+    { name: string; description: string; image?: string; imageClass?: string }
+  >;
 }
 
 const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
@@ -31,12 +35,13 @@ const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
         <h2 className="units-page-panel-title">{unit.name}</h2>
         <p className="units-page-panel-description">{unit.description}</p>
       </div>
+
       <div className="units-page-panel-image-container">
         {unit.image && (
           <Image
             src={unit.image}
             alt={unit.name}
-            className="units-page-panel-image"
+            className={unit.imageClass}
             width={300}
             height={300}
           />

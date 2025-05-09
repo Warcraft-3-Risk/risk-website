@@ -1,10 +1,17 @@
 'use client';
 
-import { landUnits, seaUnits, unitDescriptions } from '@/app/data/units';
-import '@/core/SCSS/base/layout/page/p-units-page-icons.scss';
-import '@/core/SCSS/base/layout/page/p-units-page.scss';
+import {
+  landUnits,
+  seaUnits,
+  unitDescriptions,
+  unitSkills,
+  unitStats,
+} from '@/app/data/units';
+import '@/core/SCSS/base/layout/page/units-page/p-units-page-icons.scss';
+import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import React, { useState } from 'react';
 import UnitsPanel from './UnitsPanel';
+import UnitsStats from './UnitsStats';
 
 const UnitsNavigation: React.FC = () => {
   const [activeType, setActiveType] = useState<'type1' | 'type2'>('type1');
@@ -72,6 +79,11 @@ const UnitsNavigation: React.FC = () => {
       </nav>
 
       <UnitsPanel unitId={activeUnit} data={unitDescriptions} />
+      <UnitsStats
+        unitId={activeUnit}
+        statsData={unitStats}
+        skillsData={unitSkills}
+      />
     </>
   );
 };

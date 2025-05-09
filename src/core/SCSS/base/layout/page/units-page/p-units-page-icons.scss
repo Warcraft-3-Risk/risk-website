@@ -1,0 +1,46 @@
+.units-page-navigation-city-icon {
+  background-image: url('/images/icons/City_icon.webp');
+}
+
+.units-page-navigation-port-icon {
+  background-image: url('/images/icons/Port_icon.webp');
+}
+
+.units-page-navigation-forest-icon {
+  &.icon-rifleman {
+    background-image: url('/images/icons/Rifleman_icon.webp');
+  }
+  &.icon-medic {
+    background-image: url('/images/icons/Medic_icon.webp');
+  }
+  &.icon-mortar {
+    background-image: url('/images/icons/Mortar_icon.webp');
+  }
+  &.icon-roarer {
+    background-image: url('/images/icons/Roarer_icon.webp');
+  }
+  &.icon-knight {
+    background-image: url('/images/icons/Knight_icon.webp');
+  }
+  &.icon-general {
+    background-image: url('/images/icons/General_icon.webp');
+  }
+  &.icon-artillery {
+    background-image: url('/images/icons/Artillery_icon.webp');
+  }
+  &.icon-tank {
+    background-image: url('/images/icons/Tank_icon.webp');
+  }
+  &.icon-submarine {
+    background-image: url('/icons/submarine.svg');
+  }
+  &.icon-frigate {
+    background-image: url('/icons/frigate.svg');
+  }
+  &.icon-destroyer {
+    background-image: url('/icons/destroyer.svg');
+  }
+  &.icon-carrier {
+    background-image: url('/icons/carrier.svg');
+  }
+}

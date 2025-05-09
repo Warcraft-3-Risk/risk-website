@@ -1,0 +1,35 @@
+@import '../../../_vars.scss';
+
+.units-page-panel-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 50%;
+  border: 2px solid $cta-yellow;
+  width: 350px;
+  height: 350px;
+
+  .units-page-panel-rifleman-image {
+    position: relative;
+    left: 25px;
+  }
+
+  .units-page-panel-roarer-image {
+    position: relative;
+    right: 40px;
+  }
+
+  .units-page-panel-knight-image {
+    position: relative;
+    right: 55px;
+  }
+
+  img {
+    transition: transform 0.7s ease-in-out;
+
+    &:hover {
+      transform: scale(1.35);
+    }
+  }
+}
