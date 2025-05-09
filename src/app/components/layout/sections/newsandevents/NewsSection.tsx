@@ -26,9 +26,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
     return (
       <section className="NewsSection py-12 px-6">
         <div className="container mx-auto">
-          <p className="text-gray-600">
-            {content.newssection['newssection.none']}
-          </p>
+          <p className="text-gray-600">{newsSection['newssection.none']}</p>
         </div>
       </section>
     );

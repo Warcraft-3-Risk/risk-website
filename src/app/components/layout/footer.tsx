@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
 import React, { useState } from 'react';
@@ -17,11 +18,42 @@ const Footer: React.FC = () => {
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const openModal = (title: string, content: React.ReactNode) => {
+  // Extract footer content and modal content from content.json
+  const footerContent = content.footer;
+  const footerModals = content.footerModals;
+
+  const openModal = (modalType: 'contact' | 'privacy' | 'terms' | 'faq') => {
+    const modalData = footerModals[modalType];
+    const modalTitle = modalData.title;
+    const modalBody = modalData.content.map((item: any, index: number) => {
+      if (item.type === 'link') {
+        return (
+          <p key={index}>
+            <strong>{item.prefix}</strong>{' '}
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.label}
+            </a>
+          </p>
+        );
+      }
+      if (item.type === 'section') {
+        return (
+          <div key={index}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        );
+      }
+      if (item.type === 'paragraph') {
+        return <p key={index}>{item.text}</p>;
+      }
+      return null;
+    });
+
     setModalContent(
       <>
-        <h2 className="modal-header">{title}</h2>
-        <div className="footertext">{content}</div>
+        <h2 className="modal-header">{modalTitle}</h2>
+        <div className="footertext">{modalBody}</div>
       </>,
     );
     setIsModalOpen(true);
@@ -36,7 +68,6 @@ const Footer: React.FC = () => {
       className="footer__icon"
     />
   );
-  const footerContent = content.footer;
 
   return (
     <footer className="footer py-12 px-6 w-full">
@@ -46,161 +77,43 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold">{footerContent.title}</h4>
             <p className="footertext text-sm">{footerContent.description}</p>
           </div>
+
           <div className="footer__column">
-            <h4 className="text-lg font-semibold mb-3">Links</h4>
+            <h4 className="text-lg font-semibold mb-3">
+              {footerContent['links.title']}
+            </h4>
             <ul className="text-sm space-y-2">
               <li
                 className="cursor-pointer footer__link"
-                onClick={() =>
-                  openModal(
-                    'Contact',
-                    <>
-                      <p>
-                        You can reach the Risk Reforged team through the
-                        following channels:
-                      </p>
-                      <ul>
-                        <li>
-                          <strong>Discord:</strong>{' '}
-                          <a
-                            href="https://discord.gg/wc3risk"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#f9c701] hover:underline p-1"
-                          >
-                            Join our community
-                          </a>
-                        </li>
-                      </ul>
-                      <p>
-                        We&apos;re happy to help with bug reports, suggestions,
-                        or collaboration opportunities.
-                      </p>
-                    </>,
-                  )
-                }
+                onClick={() => openModal('contact')}
               >
-                <Mail /> Contact
+                <Mail /> {footerContent['links.contact']}
               </li>
               <li
                 className="cursor-pointer footer__link"
-                onClick={() =>
-                  openModal(
-                    'Privacy Policy',
-                    <>
-                      <p>
-                        <strong>Effective Date:</strong> May 7, 2025
-                      </p>
-                      <h3>
-                        <strong>1. Information We Collect</strong>
-                      </h3>
-                      <p>
-                        We do not collect personal data unless explicitly
-                        provided by you (e.g., through email or Discord).
-                      </p>
-                      <h3>
-                        <strong>2. Third-Party Services</strong>
-                      </h3>
-                      <p>
-                        This site may link to external platforms (Discord,
-                        Patreon, etc.). Please refer to their respective
-                        policies for data handling.
-                      </p>
-                      <h3>
-                        <strong>3. Cookies</strong>
-                      </h3>
-                      <p>
-                        We may use essential cookies for basic functionality. We
-                        do not use tracking cookies or analytics tools that
-                        collect personally identifiable data.
-                      </p>
-                    </>,
-                  )
-                }
+                onClick={() => openModal('privacy')}
               >
-                <ShieldCheck /> Privacy Policy
+                <ShieldCheck /> {footerContent['links.privacy']}
               </li>
               <li
                 className="cursor-pointer footer__link"
-                onClick={() =>
-                  openModal(
-                    'Terms of Service',
-                    <>
-                      <p>
-                        <strong>Effective Date:</strong> May 7, 2025
-                      </p>
-                      <p>
-                        Welcome to Risk Reforged. By accessing or using our
-                        website or services, you agree to be bound by the
-                        following Terms of Service.
-                      </p>
-                      <h3>1. Use of the Website</h3>
-                      <p>
-                        You agree to use the website only for lawful purposes.
-                        Do not engage in any activity that could damage or
-                        impair the site.
-                      </p>
-                      <h3>2. Intellectual Property</h3>
-                      <p>
-                        All content is the property of its respective creators.
-                        Risk Reforged respects Blizzard Entertainment’s rights
-                        and does not claim ownership over Warcraft III assets.
-                      </p>
-                    </>,
-                  )
-                }
+                onClick={() => openModal('terms')}
               >
-                <FileText /> Terms of Service
+                <FileText /> {footerContent['links.terms']}
               </li>
-
               <li
                 className="cursor-pointer footer__link"
-                onClick={() =>
-                  openModal(
-                    'FAQ',
-                    <>
-                      <h3>
-                        <strong>What is Risk Reforged?</strong>
-                      </h3>
-                      <p>
-                        Risk Reforged is a community-driven project to maintain
-                        and expand the Risk map genre within Warcraft III.
-                      </p>
-                      <h3>
-                        <strong>How can I contribute?</strong>
-                      </h3>
-                      <p>
-                        Join our
-                        <a
-                          href="https://discord.gg/wc3risk"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#f9c701] hover:underline p-1"
-                        >
-                          Discord
-                        </a>
-                        to collaborate, test, and share ideas.
-                      </p>
-                      <h3>
-                        <strong>
-                          Is this project affiliated with Blizzard?
-                        </strong>
-                      </h3>
-                      <p>
-                        No. This is a fan-made project and is not affiliated
-                        with or endorsed by Blizzard Entertainment.
-                      </p>
-                    </>,
-                  )
-                }
+                onClick={() => openModal('faq')}
               >
-                <FileText /> FAQ
+                <FileText /> {footerContent['links.faq']}
               </li>
             </ul>
           </div>
 
           <div className="footer__column">
-            <h4 className="text-lg font-semibold mb-3">Social</h4>
+            <h4 className="text-lg font-semibold mb-3">
+              {footerContent['social.title']}
+            </h4>
             <ul className="text-sm space-y-2">
               <li>
                 <Link
@@ -209,7 +122,11 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/Discord.svg" alt="Discord" /> Discord
+                  <IconImage
+                    src="/images/Discord.svg"
+                    alt={footerContent['social.discord']}
+                  />{' '}
+                  {footerContent['social.discord']}
                 </Link>
               </li>
               <li>
@@ -219,8 +136,11 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/patreon-gul.webp" alt="Patreon" />{' '}
-                  Patreon
+                  <IconImage
+                    src="/images/patreon-gul.webp"
+                    alt={footerContent['social.patreon']}
+                  />{' '}
+                  {footerContent['social.patreon']}
                 </Link>
               </li>
               <li>
@@ -232,9 +152,9 @@ const Footer: React.FC = () => {
                 >
                   <IconImage
                     src="/images/Youtube_Symbol_gule.webp"
-                    alt="YouTube"
+                    alt={footerContent['social.youtube']}
                   />{' '}
-                  YouTube
+                  {footerContent['social.youtube']}
                 </Link>
               </li>
               <li>
@@ -244,15 +164,20 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/twitch-gule.webp" alt="Twitch" />{' '}
-                  Twitch
+                  <IconImage
+                    src="/images/twitch-gule.webp"
+                    alt={footerContent['social.twitch']}
+                  />{' '}
+                  {footerContent['social.twitch']}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div className="footer__column footertext text-sm">
-            <p>&copy; {year} Risk Reforged. All rights reserved.</p>
+            <p>
+              &copy; {year} {footerContent['copyright']}
+            </p>
           </div>
         </div>
       </div>

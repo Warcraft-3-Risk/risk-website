@@ -134,5 +134,80 @@
     "social.youtube": "YouTube",
     "social.twitch": "Twitch",
     "copyright": "All rights reserved."
+  },
+  "footerModals": {
+    "contact": {
+      "title": "Contact",
+      "content": [
+        "You can reach the Risk Reforged team through the following channels:",
+        {
+          "type": "link",
+          "label": "Join our community",
+          "href": "https://discord.gg/wc3risk",
+          "prefix": "Discord:"
+        },
+        "We're happy to help with bug reports, suggestions, or collaboration opportunities."
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": [
+        {
+          "type": "section",
+          "title": "1. Information We Collect",
+          "text": "We do not collect personal data unless explicitly provided by you (e.g., through email or Discord)."
+        },
+        {
+          "type": "section",
+          "title": "2. Third-Party Services",
+          "text": "This site may link to external platforms (Discord, Patreon, etc.). Please refer to their respective policies for data handling."
+        },
+        {
+          "type": "section",
+          "title": "3. Cookies",
+          "text": "We may use essential cookies for basic functionality. We do not use tracking cookies or analytics tools that collect personally identifiable data."
+        }
+      ],
+      "effectiveTitle": "Effective Date",
+      "effectiveDate": "May 7, 2025"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Welcome to Risk Reforged. By accessing or using our website or services, you agree to be bound by the following Terms of Service."
+        },
+        {
+          "type": "section",
+          "title": "1. Use of the Website",
+          "text": "You agree to use the website only for lawful purposes. Do not engage in any activity that could damage or impair the site."
+        },
+        {
+          "type": "section",
+          "title": "2. Intellectual Property",
+          "text": "All content is the property of its respective creators. Risk Reforged respects Blizzard Entertainment’s rights and does not claim ownership over Warcraft III assets."
+        }
+      ],
+      "effectiveDate": "May 7, 2025"
+    },
+    "faq": {
+      "title": "FAQ",
+      "content": [
+        {
+          "question": "What is Risk Reforged?",
+          "answer": "Risk Reforged is a community-driven project to maintain and expand the Risk map genre within Warcraft III."
+        },
+        {
+          "question": "How can I contribute?",
+          "answer": "Join our Discord to collaborate, test, and share ideas.",
+          "link": { "href": "https://discord.gg/wc3risk", "label": "Discord" }
+        },
+        {
+          "question": "Is this project affiliated with Blizzard?",
+          "answer": "No. This is a fan-made project and is not affiliated with or endorsed by Blizzard Entertainment."
+        }
+      ]
+    }
   }
 }

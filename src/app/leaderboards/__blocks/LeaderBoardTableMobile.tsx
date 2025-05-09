@@ -15,7 +15,7 @@ const LeaderboardTableMobile: React.FC<Props> = ({
   startIndex,
   calculateWinRate,
 }) => {
-  const labels = content.leaderboardmobile; // Now using the new mobile-specific section
+  const labels = content.leaderboardmobile;
 
   return (
     <div className="space-y-2">
