@@ -1,5 +1,5 @@
 @import '../vars.scss';
-// Main Tournament Calendar Styles
+
 .tournament-calendar {
   display: flex;
   flex-direction: column;
@@ -9,6 +9,7 @@
   max-width: 100%;
   margin: auto;
   background-color: $background-blue;
+  padding-bottom: 50px;
 }
 
 .calendar-container {

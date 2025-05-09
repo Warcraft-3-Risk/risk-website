@@ -1,18 +1,13 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import '@/core/SCSS/base/sections/s-hero-section.scss';
-
-import SmartVideo from '@/app/components/media/SmartVideo';
+import Image from 'next/image';
 
 export default function HeroSection() {
-  const [isMuted, setIsMuted] = useState(true);
-  const [hasEnded, setHasEnded] = useState(false);
   const [isInView, setIsInView] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showVideo, setShowVideo] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,71 +23,35 @@ export default function HeroSection() {
     return () => observer.disconnect();
   }, []);
 
-  const toggleMute = () => {
-    setIsMuted((prev) => !prev);
-    if (videoRef.current) {
-      videoRef.current.muted = !videoRef.current.muted;
-    }
-  };
-
-  const handleReplay = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = 0;
-      videoRef.current.play();
-    }
-    setHasEnded(false);
-    setIsPlaying(true);
-  };
-
-  const handlePlay = () => {
-    if (videoRef.current) {
-      videoRef.current.play();
-      setIsPlaying(true);
-    }
-  };
-
   return (
     <section className="HeroSection relative w-full min-h-[400px]">
-      <div className="herobg relative w-full">
-        {isInView && (
-          <SmartVideo
-            ref={videoRef}
-            path="video/RiskReforged_commercial.mp4"
-            muted={isMuted}
-            loop={false}
-            className="object-cover w-full h-full absolute top-0 left-0 z-0"
-            preload="metadata"
-            onEnded={() => setHasEnded(true)}
-            controls={false}
-            poster="/images/testhero.jpg"
+      <div className="herobg relative w-full aspect-video">
+        {isInView && showVideo ? (
+          <iframe
+            className="absolute top-0 left-0 w-full h-full z-0"
+            src="https://www.youtube.com/embed/mZabLiyguSU?autoplay=1&mute=1&rel=0&modestbranding=1&playsinline=1&showinfo=0"
+            title="RiskReforged Commercial"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        ) : (
+          <Image
+            priority
+            width={1920}
+            height={1080}
+            src="/images/youtube_img.webp"
+            alt="Hero Poster"
+            className="absolute top-0 left-0 w-full h-full object-cover z-0"
           />
         )}
 
-        {!isPlaying && (
+        {!showVideo && (
           <CTAButton
             variant="play"
-            onClick={handlePlay}
+            onClick={() => setShowVideo(true)}
             className="absolute z-10 bottom-4 left-4"
           >
             Play Video
-          </CTAButton>
-        )}
-
-        <CTAButton
-          variant="play"
-          onClick={toggleMute}
-          className="absolute z-10 bottom-4 right-4"
-        >
-          {isMuted ? 'Unmute' : 'Mute'}
-        </CTAButton>
-
-        {hasEnded && (
-          <CTAButton
-            variant="readmore"
-            onClick={handleReplay}
-            className="absolute z-10 bottom-4 left-4"
-          >
-            Replay
           </CTAButton>
         )}
       </div>

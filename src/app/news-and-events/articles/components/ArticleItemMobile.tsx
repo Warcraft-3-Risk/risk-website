@@ -12,9 +12,16 @@ interface Article {
   author: string;
   tags: string;
   text: string;
+  imageUrl: string;
 }
 
-const ArticleItemMobile = ({ title, text, tags, publishedAt }: Article) => {
+const ArticleItemMobile = ({
+  title,
+  text,
+  tags,
+  publishedAt,
+  imageUrl,
+}: Article) => {
   const [expanded, setExpanded] = useState(false);
   const excerpt = text.length > 150 ? text.substring(0, 150) + '...' : text;
 
@@ -24,13 +31,15 @@ const ArticleItemMobile = ({ title, text, tags, publishedAt }: Article) => {
     <li className="newsbox relative text-white overflow-hidden mb-8 rounded-lg md:hidden">
       <div className="sandborder flex flex-col border-8">
         <div className="relative h-48 w-full">
-          <Image
-            src="/images/testimage2.jpg"
-            alt="Article image"
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
+          {imageUrl && (
+            <Image
+              src={imageUrl}
+              alt="Article image"
+              fill
+              sizes="100vw"
+              className="object-cover rounded-t-lg"
+            />
+          )}
           <button
             onClick={toggleExpanded}
             className="expand-btn absolute bottom-2 right-2 z-10 bg-black bg-opacity-50 rounded-full p-1"

@@ -35,6 +35,7 @@ const NewsPage = () => {
             <ul className="hidden md:flex flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItem
+                  imageUrl={article.imageUrl}
                   key={article.id}
                   id={article.id}
                   title={article.title}
@@ -49,6 +50,7 @@ const NewsPage = () => {
             <ul className="flex md:hidden flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItemMobile
+                  imageUrl={article.imageUrl}
                   key={article.id}
                   id={article.id}
                   title={article.title}

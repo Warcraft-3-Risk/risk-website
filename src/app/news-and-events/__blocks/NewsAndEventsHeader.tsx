@@ -7,7 +7,7 @@ const NewsAndEventsHeader: React.FC = () => {
     <div className="relative w-full h-[300px] flex items-center justify-center mb-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/testimage.webp"
+          src="/images/News_hero_img.webp"
           alt="News and Events Background"
           fill
           style={{ objectFit: 'cover' }}
