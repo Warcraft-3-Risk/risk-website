@@ -58,7 +58,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
       {/* Sidebar */}
       <div
         className={cn(
-          'backgroundburger h-screen w-64 p-4 text-white pl-[23px]',
+          'backgroundburger h-screen w-64 p-4 text-white',
           'flex flex-col gap-4 transition-transform duration-300 ease-in-out',
           'fixed top-0 left-0 touch-none overflow-y-auto',
           isOpen ? 'translate-x-0 z-50' : '-translate-x-full z-50',

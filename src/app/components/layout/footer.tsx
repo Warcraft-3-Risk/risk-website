@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Mail, ShieldCheck, FileText } from 'lucide-react';
 import '@/core/SCSS/base/sections/s-footer-section.scss';
+import '@/core/SCSS/base/layout/l-calendar.scss';
 import Modal from './Modal';
 
 const Footer: React.FC = () => {

@@ -1,26 +1,22 @@
 @import '../vars.scss';
 
 .NewsSection {
-  background-color: $background-sand;
+  background-color: $background-blue;
 }
 
 .naetitle {
   font-family: 'titleFont', sans-serif;
   font-weight: lighter;
   text-transform: uppercase;
-  color: $background-blue;
+  color: $cta-yellow;
   text-align: center;
   margin-bottom: 16px;
 }
 
 .latestarticle {
   font-family: 'textFont', sans-serif;
-  color: $background-blue;
+  color: $cta-blue;
   font-size: 1rem;
   line-height: 1.5;
   margin-bottom: 16px;
-}
-
-.NewsSection {
-  background-color: $background-sand;
 }
