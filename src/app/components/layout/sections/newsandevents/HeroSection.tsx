@@ -49,7 +49,7 @@ export default function HeroSection() {
   };
 
   const getYouTubeSrc = () => {
-    return `https://www.youtube.com/embed/mZabLiyguSU?autoplay=1&mute=${isMuted ? 1 : 0}&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`;
+    return `https://www.youtube.com/embed/mZabLiyguSU?autoplay=1&mute=${isMuted ? 1 : 0}&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&showinfo=0&controls=0`;
   };
 
   return (
