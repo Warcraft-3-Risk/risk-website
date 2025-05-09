@@ -55,7 +55,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           </button>
         </div>
 
-        <nav className="flex mt-[25rem] flex-col gap-4">
+        <nav className="flex mt-[16rem] flex-col gap-4">
           {items.map((item) => (
             <Link
               key={item.title}
