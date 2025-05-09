@@ -32,10 +32,10 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
       </div>
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-black bg-opacity-40 transition-opacity md:hidden',
+          'fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
           isOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none',
+            ? 'opacity-100 pointer-events-auto z-40'
+            : 'opacity-0 pointer-events-none z-0',
         )}
         onClick={handleToggle}
       />
@@ -51,7 +51,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
       >
         <div className="flex justify-end p-4 md:hidden">
           <button onClick={handleToggle}>
-            <X className="h-6 w-6 text-white" />
+            <X className="h-8 w-8 text-[#f9c701]" />
           </button>
         </div>
 

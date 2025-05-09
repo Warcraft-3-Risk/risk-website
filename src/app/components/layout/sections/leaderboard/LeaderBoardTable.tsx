@@ -55,9 +55,7 @@ const LeaderBoardTable: React.FC = () => {
               <td className="py-3 px-6">
                 {calculateWinRate(leader.wins, leader.losses)}
               </td>
-              <td className="py-3 px-6">
-                <td>{leader.sigma?.toFixed(2)}</td>
-              </td>
+              <td className="py-3 px-6">{leader.sigma?.toFixed(2)}</td>
             </tr>
           ))}
         </tbody>

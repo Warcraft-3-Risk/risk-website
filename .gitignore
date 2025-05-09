@@ -22,8 +22,6 @@
 dist/
 *.pack.gz
 trace
-
-
 # misc
 .DS_Store
 *.pem
@@ -37,6 +35,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.local*
 
 # vercel
 .vercel
@@ -44,6 +43,7 @@ yarn-error.log*
 # firebase 
 /.cache
 /cache/
+/firebase-debug.log
 
 # typescript
 *.tsbuildinfo
