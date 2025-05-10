@@ -4,9 +4,11 @@ import {
   landUnits,
   seaUnits,
   unitDescriptions,
+} from '@/app/how-to/units-page/unit-info/units';
+import {
   unitSkills,
   unitStats,
-} from '@/app/data/units';
+} from '@/app/how-to/units-page/unit-info/unitStats';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page-icons.scss';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import React, { useState } from 'react';
