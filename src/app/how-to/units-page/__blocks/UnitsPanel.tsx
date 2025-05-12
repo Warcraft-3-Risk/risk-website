@@ -1,8 +1,7 @@
-import React from 'react';
-
 import '@/core/SCSS/base/layout/page/units-page/p-units-page-images.scss';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import Image from 'next/image';
+import React from 'react';
 
 interface UnitPanelProps {
   unitId: string | null;
@@ -33,7 +32,19 @@ const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
       <div className="units-page-panel-content">
         <h1 className="units-page-panel-title">Meet the</h1>
         <h2 className="units-page-panel-title">{unit.name}</h2>
-        <p className="units-page-panel-description">{unit.description}</p>
+
+        <div className="units-page-panel-description">
+          {unit.description.split('\n\n').map((paragraph, pIdx) => (
+            <p key={pIdx}>
+              {paragraph.split('\n').map((line, lIdx, arr) => (
+                <React.Fragment key={lIdx}>
+                  {line}
+                  {lIdx < arr.length - 1 && <br />}
+                </React.Fragment>
+              ))}
+            </p>
+          ))}
+        </div>
       </div>
 
       <div className="units-page-panel-image-container">

@@ -48,7 +48,7 @@
     "watchus.liveTagline": "WE GO LIVE EVERY WEEK"
   },
   "patchnotes": {
-    "patchreleasenotes.title": "PATCH RELEASE NOTES",
+    "patchreleasenotes.title": "PATCH NOTES",
     "patchreleasenotes.subtitle": "Latest Updates",
     "patchreleasenotes.viewmore": "View more",
     "patchreleasenotes.nodata": "No patch notes available at the moment.",
@@ -57,8 +57,8 @@
     "patchreleasenotes.loading": "loading..."
   },
   "leaderboards": {
-    "leaderboardsection.title": "LEADER BOARDS",
-    "leaderboardsection.description": "Check out the top players and their rankings.",
+    "leaderboardsection.title": "LEADERBOARD",
+    "leaderboardsection.description": "Check out the top players in our 1vs1 category.",
     "leaderboardsection.viewmore": "View more",
     "leaderboardsection.nodata": "No players found",
     "leaderboardsection.loading": "Loading...",
@@ -66,7 +66,7 @@
     "leaderboardsection.next": "Next",
     "leaderboardsection.previous": "Prev",
     "leaderboardsection.pagination": "Page",
-    "leaderboardsection.of": "of",
+    "leaderboardsection.of": " of",
     "leaderboardsection.rank": "#",
     "leaderboardsection.player": "Player",
     "leaderboardsection.elo": "ELO",

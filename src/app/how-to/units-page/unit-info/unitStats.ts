@@ -12,17 +12,17 @@ export const unitStats: Record<
       value: '20 - 20',
       icon: '/images/icons/rifleman-damage-icon.webp',
     },
-    armor: { value: 0, icon: '/images/icons/rifleman-damage-icon.webp' },
+    armor: { value: 0, icon: '/images/icons/rifleman-armor-class.webp' },
   },
   medic: {
     health: { value: 250, icon: '/images/icons/health-icon.webp' },
-    attack: { value: '9 - 9', icon: '/images/icon-attack-sword.webp' },
-    armor: { value: 0, icon: '/images/icon  armor-shield.webp' },
+    attack: { value: '9 - 9', icon: '/images/icons/medic-damage-type.webp' },
+    armor: { value: 0, icon: '/images/icons/medic-armor-type.webp' },
   },
   mortar: {
     health: { value: 350, icon: '/images/icons/health-icon.webp' },
-    attack: { value: '25 - 25', icon: '/images/icon-attack-sword.webp' },
-    armor: { value: 0, icon: '/images/icon  armor-shield.webp' },
+    attack: { value: '25 - 25', icon: '/images/icons/mortar-damage-type.webp' },
+    armor: { value: 0, icon: '/images/icons/rifleman-armor-class.webp' },
   },
   roarer: {
     health: { value: 425, icon: '/images/icons/health-icon.webp' },
@@ -52,9 +52,5 @@ export const unitStats: Record<
 };
 
 export const unitSkills = {
-  rifleman: [
-    { icon: '/images/icons/rifleman-damage-icon.webp' },
-    { icon: '/images/icons/rifleman-damage-icon.webp' },
-  ],
   medic: [{ icon: '/images/icons/medic-skill-icon.webp' }],
 };

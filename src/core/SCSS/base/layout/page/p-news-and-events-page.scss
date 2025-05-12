@@ -1,14 +1,12 @@
 @import '../../vars.scss';
+@import '../../mixins.scss';
 
 .background {
   background-color: $background-blue;
 }
 
 .titletext {
-  font-family: 'titleFont', sans-serif;
-  font-weight: lighter;
-  text-transform: uppercase;
-  color: $cta-yellow;
+  @include hero-title;
 }
 
 .ReadMoreButton {

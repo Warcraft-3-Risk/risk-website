@@ -78,6 +78,14 @@
     height: 65px;
     margin-bottom: 0.5rem;
     background-size: cover;
+
+    img {
+      transition: transform 1.7s ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
 
   .units-page-navigation-city-icon {
@@ -86,6 +94,14 @@
     gap: 0.5rem;
     margin-bottom: 0.5rem;
     background-size: cover;
+
+    img {
+      transition: transform 1.7s ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
 
   .units-page-navigation-port-icon {
@@ -94,6 +110,14 @@
     gap: 0.5rem;
     margin-bottom: 0.5rem;
     background-size: cover;
+
+    img {
+      transition: transform 1.7s ease-in-out;
+    }
+
+    &:hover {
+      transform: scale(1.15);
+    }
   }
 }
 

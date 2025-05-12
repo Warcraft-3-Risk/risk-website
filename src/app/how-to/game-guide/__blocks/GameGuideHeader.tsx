@@ -1,5 +1,5 @@
-import React from 'react';
 import content from '@/app/data/content.json';
+import React from 'react';
 
 const gameGuideContent = content.gameguide;
 const GameGuideHeader: React.FC = () => {
@@ -7,7 +7,7 @@ const GameGuideHeader: React.FC = () => {
     <header className="backgroundimg relative bg-cover bg-center h-64">
       <div className="absolute inset-0 "></div>
       <div className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="gameguidetitle text-7xl font-bold">
+        <h1 className="gameguidetitle">
           {gameGuideContent['gameguide.title']}
         </h1>
       </div>

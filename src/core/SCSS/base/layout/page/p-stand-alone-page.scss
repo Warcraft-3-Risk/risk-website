@@ -1,4 +1,5 @@
 @import '@/core/SCSS/base/_vars.scss';
+@import '../../_mixins.scss';
 
 .bluebackground {
   background: $background-blue;
@@ -12,13 +13,7 @@
 }
 
 .standalone-header-title {
-  font-family: titleFont, sans-serif;
-  font-size: 5.25rem;
-  text-transform: uppercase;
-  color: $cta-yellow;
-  margin: 0 auto;
-  padding: 2rem 0;
-  text-shadow: 3px 3px 4px $background-blue;
+  @include hero-title;
 }
 
 .standalone-section {
@@ -41,6 +36,7 @@
 
 .standalone-description {
   font-family: textFont, sans-serif;
+  color: $background-sand;
   font-size: 2rem;
   width: 100%;
 }
@@ -183,6 +179,7 @@
     width: 80%;
     text-align: center;
     font-family: textFont, sans-serif;
+    color: $background-sand;
     font-size: 1.5rem;
   }
 }

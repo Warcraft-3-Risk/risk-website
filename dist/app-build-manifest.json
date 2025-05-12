@@ -16,30 +16,6 @@
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
-<<<<<<< HEAD
-    ],
-    "/how-to/units-page/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/how-to/units-page/page.css",
-      "static/chunks/app/how-to/units-page/page.js"
-    ],
-    "/leaderboards/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/leaderboards/page.css",
-      "static/chunks/app/leaderboards/page.js"
-    ],
-    "/how-to/game-guide/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/css/app/how-to/game-guide/page.css",
-      "static/chunks/app/how-to/game-guide/page.js"
-    ],
-    "/_not-found/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/_not-found/page.js"
     ],
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
@@ -52,13 +28,45 @@
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
     ],
+    "/patch-notes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/patch-notes/page.css",
+      "static/chunks/app/patch-notes/page.js"
+    ],
+    "/about-us/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/about-us/page.js"
+    ],
     "/stand-alone/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/stand-alone/page.css",
       "static/chunks/app/stand-alone/page.js"
-=======
->>>>>>> development
+    ],
+    "/_not-found/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/_not-found/page.js"
+    ],
+    "/how-to/units-page/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/how-to/units-page/page.css",
+      "static/chunks/app/how-to/units-page/page.js"
+    ],
+    "/how-to/game-guide/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/how-to/game-guide/page.css",
+      "static/chunks/app/how-to/game-guide/page.js"
+    ],
+    "/leaderboards/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/leaderboards/page.css",
+      "static/chunks/app/leaderboards/page.js"
     ]
   }
 }
