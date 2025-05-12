@@ -40,7 +40,7 @@ export default function PatchReleaseNotes({
       </div>
     );
   }
-
+  const patchNotesContent = content.patchnotes;
   return (
     <div className="background min-h-screen w-full flex flex-col items-center px-2 sm:px-4">
       {visibleReleases.map((release, index) => {
@@ -76,7 +76,7 @@ export default function PatchReleaseNotes({
                 rel="noopener noreferrer"
                 className="mt-3 inline-block text-sm sm:text-base"
               >
-                {content.patchnotes['patchreleasenotes.github']}
+                {patchNotesContent['patchreleasenotes.github']}
               </CTAButton>
             </div>
           </div>
@@ -89,7 +89,7 @@ export default function PatchReleaseNotes({
             router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
           }
         >
-          {content.patchnotes['patchreleasenotes.button.play']}
+          {patchNotesContent['patchreleasenotes.button.play']}
         </CTAButton>
         <CTAButton variant="readmore" onClick={onToggleExpanded}>
           {isExpanded ? 'SHOW LESS' : 'READ MORE'}

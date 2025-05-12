@@ -20,7 +20,6 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => setIsOpen((prev) => !prev);
 
-  // Lock body scroll when menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('overflow-hidden');
@@ -44,7 +43,6 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
         </button>
       </div>
 
-      {/* Backdrop */}
       <div
         className={cn(
           'fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
@@ -55,7 +53,6 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
         onClick={handleToggle}
       />
 
-      {/* Sidebar */}
       <div
         className={cn(
           'backgroundburger h-screen w-64 p-4 text-white',

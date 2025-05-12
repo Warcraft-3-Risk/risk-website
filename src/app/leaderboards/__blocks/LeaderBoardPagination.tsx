@@ -24,6 +24,7 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
       onPageChange(currentPage + 1);
     }
   };
+  const leaderboardContent = content.leaderboards;
 
   return (
     <div className="flex items-center justify-center space-x-4 mt-8">
@@ -33,12 +34,12 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
         disabled={currentPage === 1}
         className={currentPage === 1 ? 'is-disabled' : 'is-enabled'}
       >
-        {content.leaderboards['leaderboardsection.previous']}
+        {leaderboardContent['leaderboardsection.previous']}
       </CTAButton>
 
       <span className="text-white font-semibold">
-        {content.leaderboards['leaderboardsection.pagination']} {currentPage}{' '}
-        {content.leaderboards['leaderboardsection.of']} {totalPages}
+        {leaderboardContent['leaderboardsection.pagination']} {currentPage}
+        {leaderboardContent['leaderboardsection.of']} {totalPages}
       </span>
 
       <CTAButton
@@ -47,7 +48,7 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
         disabled={currentPage === totalPages}
         className={currentPage === totalPages ? 'is-disabled' : 'is-enabled'}
       >
-        {content.leaderboards['leaderboardsection.next']}
+        {leaderboardContent['leaderboardsection.next']}
       </CTAButton>
     </div>
   );

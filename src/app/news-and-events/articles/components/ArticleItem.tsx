@@ -21,8 +21,6 @@ const ArticleItem = ({ title, text, tags, publishedAt, imageUrl }: Article) => {
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
-  console.log('Image URL: ', imageUrl); // Debugging line
-
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
       <div className="sandborder flex flex-col-reverse md:flex-row border-8">

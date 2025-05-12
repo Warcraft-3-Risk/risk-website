@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
 
+const NewsAndEvents = content.newsandevents;
 const NewsAndEventsHeader: React.FC = () => {
   return (
     <div className="relative w-full h-[300px] flex items-center justify-center mb-4 overflow-hidden">
@@ -18,7 +19,7 @@ const NewsAndEventsHeader: React.FC = () => {
       </div>
 
       <h1 className="titletext text-[#f9c701] text-6xl font-bold z-1 relative text-center">
-        {content.newsandevents['newsandevents.title']}
+        {NewsAndEvents['newsandevents.title']}
       </h1>
     </div>
   );

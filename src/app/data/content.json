@@ -1,13 +1,4 @@
 {
-  "footer": {
-    "footer.AboutText": "About",
-    "footer.DiscordText": "Discord",
-    "footer.YouTubeText": "YouTube",
-    "footer.PrivacyText": "Privacy",
-    "footer.TermsText": "Terms",
-    "footer.ContactText": "Contact",
-    "footer.CompanyText": "WC3 - Risk Reforged"
-  },
   "home": {
     "home.title": "Welcome to Risk Reforged",
     "home.text": "A strategic game of conquest and diplomacy in Warcraft III"
@@ -18,14 +9,13 @@
     "notfound.text": "I'm sorry you've gone all this way for nothing",
     "notfound.back": "Travel back home"
   },
-  "standalone": {
-    "standalone.title": "STAND ALONE",
-    "standalone.text": "This is a showcase and a trailer for the game that is currently in development!",
-    "standalone.button": "Wanna see more?",
-    "standalone.click": "Click here"
+
+  "modals": {
+    "join": "Join our Discord community for more information and updates."
   },
   "newsandevents": {
     "newsandevents.title": "NEWS & EVENTS",
+    "newsandevents.readmore": "Read more",
     "newsandevents.text": "View all news →",
     "newsandevents.nodata": "Stay tuned for the latest news and upcoming events. Check back soon for updates!",
     "newsandevents.loading": "Loading...",
@@ -86,6 +76,13 @@
     "leaderboardsection.winrate": "Win Rate",
     "leaderboardsection.sigma": "Sigma"
   },
+  "leaderboardmobile": {
+    "elo": "ELO",
+    "wins": "Wins",
+    "losses": "Losses",
+    "winrate": "Win Rate",
+    "sigma": "Sigma"
+  },
   "gameguide": {
     "gameguide.title": "GAME GUIDE",
     "gameguide.subtitle": "Learn the game",
@@ -95,5 +92,139 @@
     "gameguide.howtoplay": "HOW TO PLAY",
     "gameguide.intro": "Risk Reforged is a game about conquering cities and ports across Europe. Win conditions vary depending on what game mode has been chosen, but what is common among all modes is that you have to capture 60% of all cities.",
     "gameguide.followup": "The following sections will help you familiarise yourself with the basic concepts and help you get on your way to dominate Europe in no time!"
+  },
+  "standalone": {
+    "standalone.header": "STAND ALONE",
+    "standalone.title": "STAND ALONE",
+    "standalone.text": "This is a showcase and a trailer for the game that is currently in development!",
+    "standalone.button": "Wanna see more?",
+    "standalone.click": "Click here",
+    "standalone.subtitleHeader": "The evolution of classic rts begins now",
+    "standalone.description": "The legacy of one of WarCraft III’s most iconic custom maps is being reborn. Bigger. Smarter. Stand-alone.\n\nWelcome to Stand Alone, a simplified, yet fiercely competitive real-time strategy (RTS) game inspired by the legendary Risk map from WarCraft III — and built from the ground up as a dedicated multiplayer experience. Set during the turbulent age of the Napoleonic Wars, this is a battlefield where tactics, trust, and timing mean everything.",
+    "standalone.following": "Support us now on Kickstarter and help bring Stand Alone to life — a new home for the RTS community, forged in strategy and fire.",
+    "standalone.icons.patreonAlt": "Patreon Icon",
+    "standalone.icons.kickstarterAlt": "Kickstarter Icon",
+    "standalone.icons.discordAlt": "Discord Icon"
+  },
+  "standaloneSegments": {
+    "title": "Not convinced yet?",
+    "intro": "Let’s break it down. Stand Alone is made for players who crave:",
+    "point1": "Big multiplayer battles – Up to 24 players in a single match. Alliances form and shatter in real time.",
+    "point2": "Strategic depth without micromanagement – Focus on what matters: gold, territory, trust, and timing.",
+    "point3": "Epic free-for-alls on a handcrafted European map filled with iconic cities and chokepoints.",
+    "point4": "Dynamic diplomacy – Backstab or be backstabbed. Nothing is permanent but your ambition.",
+    "point5": "A game with roots in the past and vision for the future – Designed by fans of the original WarCraft III Risk, refined for today’s gamers.",
+    "imageAlt": "Segment visual"
+  },
+  "standaloneFooter": {
+    "title": "Join our efforts",
+    "description": "Support us now on Kickstarter and help bring Stand Alone to life — a new home for the RTS community, forged in strategy and fire.",
+    "icons": {
+      "patreonAlt": "Patreon Icon",
+      "kickstarterAlt": "Kickstarter Icon",
+      "discordAlt": "Discord Icon"
+    }
+  },
+  "footer": {
+    "title": "Risk Reforged",
+    "description": "A community-driven Warcraft III project preserving and advancing custom maps.",
+    "links.title": "Links",
+    "links.contact": "Contact",
+    "links.privacy": "Privacy Policy",
+    "links.terms": "Terms of Service",
+    "links.faq": "FAQ",
+    "social.title": "Social",
+    "social.discord": "Discord",
+    "social.patreon": "Patreon",
+    "social.youtube": "YouTube",
+    "social.twitch": "Twitch",
+    "copyright": "All rights reserved."
+  },
+  "footerModals": {
+    "contact": {
+      "title": "Contact",
+      "content": [
+        "You can reach the Risk Reforged team through the following channels:",
+        {
+          "type": "link",
+          "label": "Join our community",
+          "href": "https://discord.gg/wc3risk",
+          "prefix": "Discord:"
+        },
+        "We're happy to help with bug reports, suggestions, or collaboration opportunities."
+      ]
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "content": [
+        {
+          "type": "section",
+          "title": "1. Information We Collect",
+          "text": "We do not collect personal data unless explicitly provided by you (e.g., through email or Discord)."
+        },
+        {
+          "type": "section",
+          "title": "2. Third-Party Services",
+          "text": "This site may link to external platforms (Discord, Patreon, etc.). Please refer to their respective policies for data handling."
+        },
+        {
+          "type": "section",
+          "title": "3. Cookies",
+          "text": "We may use essential cookies for basic functionality. We do not use tracking cookies or analytics tools that collect personally identifiable data."
+        }
+      ],
+      "effectiveTitle": "Effective Date",
+      "effectiveDate": "May 7, 2025"
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "content": [
+        {
+          "type": "paragraph",
+          "text": "Welcome to Risk Reforged. By accessing or using our website or services, you agree to be bound by the following Terms of Service."
+        },
+        {
+          "type": "section",
+          "title": "1. Use of the Website",
+          "text": "You agree to use the website only for lawful purposes. Do not engage in any activity that could damage or impair the site."
+        },
+        {
+          "type": "section",
+          "title": "2. Intellectual Property",
+          "text": "All content is the property of its respective creators. Risk Reforged respects Blizzard Entertainment’s rights and does not claim ownership over Warcraft III assets."
+        }
+      ],
+      "effectiveDate": "May 7, 2025"
+    },
+    "faq": {
+      "title": "FAQ",
+      "content": [
+        {
+          "question": "What is Risk Reforged?",
+          "answer": "Risk Reforged is a community-driven project to maintain and expand the Risk map genre within Warcraft III."
+        },
+        {
+          "question": "How can I contribute?",
+          "answer": "Join our Discord to collaborate, test, and share ideas.",
+          "link": { "href": "https://discord.gg/wc3risk", "label": "Discord" }
+        },
+        {
+          "question": "Is this project affiliated with Blizzard?",
+          "answer": "No. This is a fan-made project and is not affiliated with or endorsed by Blizzard Entertainment."
+        }
+      ]
+    }
+  },
+
+  "videoplayer": {
+    "play": "Play",
+    "pause": "Pause",
+    "mute": "Mute",
+    "unmute": "Unmute",
+    "fullscreen": "Fullscreen",
+    "exitFullscreen": "Exit Fullscreen",
+    "loading": "Loading...",
+    "error": "Error loading video",
+    "videosupport": "Your browser does not support the video tag."
   }
 }

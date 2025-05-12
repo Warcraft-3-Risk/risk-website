@@ -1,11 +1,12 @@
 import React from 'react';
-
+import content from '@/app/data/content.json';
 interface NewsExcerptProps {
   title: string;
   date: string;
   excerpt: string;
   link: string;
 }
+const NewsAndEvents = content.newsandevents;
 
 const NewsExcerpt: React.FC<NewsExcerptProps> = ({
   title,
@@ -22,7 +23,7 @@ const NewsExcerpt: React.FC<NewsExcerptProps> = ({
         href={link}
         className="mt-4 inline-block text-blue-600 hover:underline text-sm font-medium"
       >
-        Read more
+        {NewsAndEvents['newsandevents.readmore']}
       </a>
     </div>
   );

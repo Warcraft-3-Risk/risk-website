@@ -1,8 +1,8 @@
-import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 import Segment from '@/app/components/layout/sections/segment/Segment';
-import GameGuideFooter from './__blocks/GameGuideFooter';
-import GameGuideHeader from './__blocks/GameGuideHeader';
-import GameGuideSubTitle from './__blocks/GameGuideSubTitle';
+import GameGuideFooter from '@/app/how-to/game-guide/__blocks/GameGuideFooter';
+import GameGuideHeader from '@/app/how-to/game-guide/__blocks/GameGuideHeader';
+import GameGuideSubTitle from '@/app/how-to/game-guide/__blocks/GameGuideSubTitle';
 
 import '@/core/SCSS/base/layout/page/p-game-guide-page.scss';
 

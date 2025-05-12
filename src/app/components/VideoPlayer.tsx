@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '@/core/api/firebase';
+import content from '@/app/data/content.json';
 
+const videoContent = content.videoplayer;
 interface VideoPlayerProps {
   videoName: string;
   width?: number | string;
@@ -30,13 +32,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
   }, [videoName]);
 
   if (!videoURL) {
-    return <p>Loading video...</p>;
+    return <p>{videoContent['loading']}</p>;
   }
 
   return (
     <video width={width} height={height} controls preload="metadata">
       <source src={videoURL} type="video/mp4" />
-      Your browser does not support the video tag.
+      {videoContent['videosupport']}
     </video>
   );
 };

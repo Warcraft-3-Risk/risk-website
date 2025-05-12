@@ -6,7 +6,7 @@ export type Release = {
   html_url: string;
   created_at: string;
 };
-
+// Fetching client side
 export const fetchGithubReleases = async (): Promise<Release[]> => {
   try {
     const res = await fetch(

@@ -1,15 +1,14 @@
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 
 const StandAloneFooter = () => {
+  const footer = content.standaloneFooter;
+
   return (
     <footer className="stand-alone-footer">
-      <h2 className="stand-alone-footer-title">Join our efforts</h2>
+      <h2 className="stand-alone-footer-title">{footer.title}</h2>
       <div className="stand-alone-footer-following">
-        <p>
-          Support us now on Kickstarter and help bring Stand Alone to life — a
-          new home for the RTS community, forged in strategy and fire.
-        </p>
-        {/* Icons section */}
+        <p>{footer.description}</p>
       </div>
       <div className="standalone-icons">
         <div className="icon-item">
@@ -20,7 +19,7 @@ const StandAloneFooter = () => {
           >
             <Image
               src="/images/patreon-gul.webp"
-              alt="Icon 1"
+              alt={footer.icons.patreonAlt}
               className="patreon-icon"
               width={32}
               height={32}
@@ -35,7 +34,7 @@ const StandAloneFooter = () => {
           >
             <Image
               src="/images/kickstarter-gul.webp"
-              alt="Icon 2"
+              alt={footer.icons.kickstarterAlt}
               className="kickstarter-icon"
               width={256}
               height={256}
@@ -52,7 +51,7 @@ const StandAloneFooter = () => {
               src="/images/Discord.svg"
               width={32}
               height={32}
-              alt="Icon 3"
+              alt={footer.icons.discordAlt}
               className="discord-icon"
             />
           </a>

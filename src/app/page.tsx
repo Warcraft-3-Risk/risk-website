@@ -3,12 +3,12 @@
 import { useState, useEffect } from 'react';
 import articlesData from '@/app/data/articles.json';
 
-import HeroSection from '@/app/components/layout/sections/newsandevents/HeroSection';
-import LeaderBoardSection from '@/app/components/layout/sections/newsandevents/LeaderBoardSection';
-import NewsSection from '@/app/components/layout/sections/newsandevents/NewsSection';
-import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
-import WatchUsSection from '@/app/components/layout/sections/newsandevents/WatchUsSection';
-import SpecialMentionsSection from '@/app/components/layout/sections/newsandevents/SpecialMentionsSection';
+import HeroSection from '@/app/components/layout/sections/HeroSection';
+import LeaderBoardSection from '@/app/components/layout/sections/LeaderBoardSection';
+import NewsSection from '@/app/components/layout/sections/NewsSection';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
+import WatchUsSection from '@/app/components/layout/sections/WatchUsSection';
+import SpecialMentionsSection from '@/app/components/layout/sections/SpecialMentionsSection';
 
 interface Article {
   id: number;
