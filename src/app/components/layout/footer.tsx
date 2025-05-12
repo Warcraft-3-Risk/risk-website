@@ -150,7 +150,7 @@ const Footer: React.FC = () => {
                   className="footer__link"
                 >
                   <IconImage
-                    src="/images/Youtube_Symbol_gule.webp"
+                    src="/images/YouTube_Symbol_gule.webp"
                     alt={footerContent['social.youtube']}
                   />{' '}
                   {footerContent['social.youtube']}
