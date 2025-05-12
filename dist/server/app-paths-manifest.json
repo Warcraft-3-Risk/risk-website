@@ -1,8 +1,14 @@
 {
+<<<<<<< HEAD
   "/leaderboards/page": "app/leaderboards/page.js",
   "/how-to/units-page/page": "app/how-to/units-page/page.js",
   "/stand-alone/page": "app/stand-alone/page.js",
   "/page": "app/page.js",
   "/_not-found/page": "app/_not-found/page.js",
   "/news-and-events/page": "app/news-and-events/page.js"
+=======
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
+>>>>>>> af79a6279bbd11276ded07e79fbb9a251f00c49c
 }

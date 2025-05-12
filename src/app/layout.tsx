@@ -8,6 +8,7 @@ import { Navbar } from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/footer';
 import { Home, Newspaper, Users } from 'lucide-react';
 import { Toaster } from 'sonner';
+import ScrollToTopButton from '@/app/components/layout/ScrollToTop';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -84,13 +85,12 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <main className="flex-1 md:ml-64">
               <Navbar />
-
               {children}
               <Footer />
             </main>
           </div>
         </div>
-
+        <ScrollToTopButton />
         <Toaster richColors closeButton position="top-right" />
       </body>
     </html>

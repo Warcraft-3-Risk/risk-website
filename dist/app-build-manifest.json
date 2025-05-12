@@ -17,6 +17,7 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
+<<<<<<< HEAD
     "/news-and-events/layout": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
@@ -45,10 +46,13 @@
       "static/css/app/stand-alone/page.css",
       "static/chunks/app/stand-alone/page.js"
     ],
+=======
+>>>>>>> af79a6279bbd11276ded07e79fbb9a251f00c49c
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/_not-found/page.js"
+<<<<<<< HEAD
     ],
     "/how-to/units-page/page": [
       "static/chunks/webpack.js",
@@ -67,6 +71,8 @@
       "static/chunks/main-app.js",
       "static/css/app/leaderboards/page.css",
       "static/chunks/app/leaderboards/page.js"
+=======
+>>>>>>> af79a6279bbd11276ded07e79fbb9a251f00c49c
     ]
   }
 }
