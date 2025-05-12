@@ -1,5 +1,10 @@
 @import '../vars.scss';
 
 .navbg {
-  background-color: rgba($background-blue, 0.9);
+  background-color: $footer-background;
+}
+
+.navbarlogo {
+  width: 100%;
+  height: 100%;
 }

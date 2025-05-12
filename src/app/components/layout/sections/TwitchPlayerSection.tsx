@@ -14,10 +14,8 @@ const TwitchPlayerSection: React.FC = () => {
   const nextSlide = () => {
     setCurrent((prev) => (prev === channels.length - 1 ? 0 : prev + 1));
   };
-  //* fix?: This value could stay like this hardcoded, or we make it a .env file later on. For better practice
   const parentDomain = 'risk-reforged.web.app';
 
-  // TODO: Carousel slider functionality
   return (
     <section className="Section_Background">
       <div className="relative mt-8 flex justify-center items-center">

@@ -25,6 +25,8 @@ const NewsPage = () => {
     ? sortedArticles
     : sortedArticles.slice(0, 3);
 
+  const NewsAndEvents = content.newsandevents;
+  const NewsSection = content.newssection;
   return (
     <>
       <div className="news-page-container background min-h-screen">
@@ -35,6 +37,7 @@ const NewsPage = () => {
             <ul className="hidden md:flex flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItem
+                  imageUrl={article.imageUrl}
                   key={article.id}
                   id={article.id}
                   title={article.title}
@@ -49,6 +52,7 @@ const NewsPage = () => {
             <ul className="flex md:hidden flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItemMobile
+                  imageUrl={article.imageUrl}
                   key={article.id}
                   id={article.id}
                   title={article.title}
@@ -62,7 +66,7 @@ const NewsPage = () => {
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
-                {content.newsandevents['newsandevents.button.play']}
+                {NewsAndEvents['newsandevents.button.play']}
               </CTAButton>
 
               {articlesData.length > 3 && (
@@ -77,7 +81,7 @@ const NewsPage = () => {
           </div>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
-            {content.newssection['newssection.title']}
+            {NewsSection['newssection.title']}
           </p>
         )}
 
@@ -93,7 +97,7 @@ const NewsPage = () => {
           <TournamentCalendar />
         </div>
 
-        <div className="block md:hidden">
+        <div className="block md:hidden w-full">
           <TournamentCalendarMobile />
         </div>
       </div>

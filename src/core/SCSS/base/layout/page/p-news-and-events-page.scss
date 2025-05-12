@@ -33,8 +33,8 @@
 }
 
 .PlayNowButton {
-  width: 150px;
-  height: 40px;
+  width: 150px !important;
+  height: 40px !important;
   background-color: $cta-blue;
   font-family: titleFont, sans-serif;
   color: $background-sand;
@@ -57,12 +57,20 @@
   font-family: 'textFont', sans-serif;
   color: $background-sand;
   max-width: 1000px;
+  @media screen and (max-width: 768px) {
+    font-size: 1.2rem;
+  }
 }
 
 .flavourtitle {
   font-family: 'titleFont', sans-serif;
   text-transform: uppercase;
   color: $cta-yellow;
+
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    text-wrap: pretty;
+  }
 }
 
 .ctabuttons {

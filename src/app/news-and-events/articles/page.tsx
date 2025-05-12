@@ -32,6 +32,7 @@ const NewsPage = () => {
           <ul className="space-y-6">
             {articlesToDisplay.map((article) => (
               <ArticleItem
+                imageUrl={article.imageUrl}
                 key={article.id}
                 id={article.id}
                 title={article.title}

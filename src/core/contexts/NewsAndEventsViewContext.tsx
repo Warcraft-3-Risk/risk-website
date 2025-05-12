@@ -10,6 +10,7 @@ interface Article {
   tags: string[];
   author: string;
   text: string;
+  imageUrl: string;
 }
 
 interface NewsContextProps {

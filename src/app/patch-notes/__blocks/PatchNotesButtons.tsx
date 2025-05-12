@@ -14,7 +14,7 @@ const PatchNotesButtons = ({
   isExpanded,
 }: PatchNotesButtonsProps) => {
   const router = useRouter();
-
+  const patchNotesContent = content.patchnotes;
   return (
     <div className="ctabuttons flex gap-4 justify-end w-full mt-10">
       <CTAButton
@@ -23,7 +23,7 @@ const PatchNotesButtons = ({
           router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
         }
       >
-        {content.patchnotes['patchreleasenotes.button.play']}
+        {patchNotesContent['patchreleasenotes.button.play']}
       </CTAButton>
       <CTAButton variant="readmore" onClick={onToggleExpanded}>
         {isExpanded ? 'SHOW LESS' : 'READ MORE'}

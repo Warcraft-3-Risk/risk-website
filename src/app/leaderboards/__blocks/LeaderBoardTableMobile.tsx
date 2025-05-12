@@ -1,6 +1,7 @@
 import React from 'react';
 import { LeaderboardEntry } from '@/core/utils/UseRealLeaderboard';
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 
 interface Props {
@@ -14,6 +15,8 @@ const LeaderboardTableMobile: React.FC<Props> = ({
   startIndex,
   calculateWinRate,
 }) => {
+  const labels = content.leaderboardmobile;
+
   return (
     <div className="space-y-2">
       {currentItems.map((item, index) => (
@@ -29,7 +32,9 @@ const LeaderboardTableMobile: React.FC<Props> = ({
                 width={20}
                 height={20}
               />
-              <span className="elotext text-sm">ELO: {item.elo}</span>
+              <span className="elotext text-sm">
+                {labels.elo}: {item.elo}
+              </span>
             </div>
 
             <span className="username text-sm font-semibold truncate max-w-[100px]">
@@ -38,10 +43,18 @@ const LeaderboardTableMobile: React.FC<Props> = ({
           </div>
 
           <div className="cardtext grid grid-cols-2 gap-y-1 mt-2 text-xs">
-            <div>Wins: {item.wins}</div>
-            <div>Losses: {item.losses}</div>
-            <div>Win Rate: {calculateWinRate(item.wins, item.losses)}</div>
-            <div>Sigma: {item.sigma?.toFixed(2)}</div>
+            <div>
+              {labels.wins}: {item.wins}
+            </div>
+            <div>
+              {labels.losses}: {item.losses}
+            </div>
+            <div>
+              {labels.winrate}: {calculateWinRate(item.wins, item.losses)}
+            </div>
+            <div>
+              {labels.sigma}: {item.sigma?.toFixed(2)}
+            </div>
           </div>
         </div>
       ))}

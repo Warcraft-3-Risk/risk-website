@@ -1,4 +1,3 @@
-// hooks/useLeaderboardData.ts
 import rawData from '@/app/data/players.json';
 
 export interface LeaderboardEntry {

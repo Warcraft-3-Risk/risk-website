@@ -1,11 +1,62 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+'use client';
+
+import content from '@/app/data/content.json';
+import '@/core/SCSS/base/layout/l-calendar.scss';
 import '@/core/SCSS/base/sections/s-footer-section.scss';
 import { FileText, Mail, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();
+
+  const [modalContent, setModalContent] = useState<React.ReactNode | null>(
+    null,
+  );
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const footerContent = content.footer;
+  const footerModals = content.footerModals;
+
+  const openModal = (modalType: 'contact' | 'privacy' | 'terms' | 'faq') => {
+    const modalData = footerModals[modalType];
+    const modalTitle = modalData.title;
+    const modalBody = modalData.content.map((item: any, index: number) => {
+      if (item.type === 'link') {
+        return (
+          <p key={index}>
+            <strong>{item.prefix}</strong>{' '}
+            <a href={item.href} target="_blank" rel="noopener noreferrer">
+              {item.label}
+            </a>
+          </p>
+        );
+      }
+      if (item.type === 'section') {
+        return (
+          <div key={index}>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </div>
+        );
+      }
+      if (item.type === 'paragraph') {
+        return <p key={index}>{item.text}</p>;
+      }
+      return null;
+    });
+
+    setModalContent(
+      <>
+        <h2 className="modal-header">{modalTitle}</h2>
+        <div className="footertext">{modalBody}</div>
+      </>,
+    );
+    setIsModalOpen(true);
+  };
 
   const IconImage = ({ src, alt }: { src: string; alt: string }) => (
     <Image
@@ -21,46 +72,48 @@ const Footer: React.FC = () => {
     <footer className="footer py-12 px-6 w-full">
       <div className="mx-auto w-full px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
-          {/* Brand Info */}
           <div className="footer__column space-y-3">
-            <h4 className="text-lg font-semibold">Risk Reforged</h4>
-            <p className="footertext text-sm">
-              A community-driven Warcraft III project preserving and advancing
-              custom maps.
-            </p>
+            <h4 className="text-lg font-semibold">{footerContent.title}</h4>
+            <p className="footertext text-sm">{footerContent.description}</p>
           </div>
 
-          {/* Links */}
           <div className="footer__column">
-            <h4 className="text-lg font-semibold mb-3">Links</h4>
-            <ul className="text-sm">
-              <li>
-                <Link href="/contact" className="footer__link">
-                  <Mail /> Contact
-                </Link>
+            <h4 className="text-lg font-semibold mb-3">
+              {footerContent['links.title']}
+            </h4>
+            <ul className="text-sm space-y-2">
+              <li
+                className="cursor-pointer footer__link"
+                onClick={() => openModal('contact')}
+              >
+                <Mail /> {footerContent['links.contact']}
               </li>
-              <li>
-                <Link href="/privacy" className="footer__link">
-                  <ShieldCheck /> Privacy Policy
-                </Link>
+              <li
+                className="cursor-pointer footer__link"
+                onClick={() => openModal('privacy')}
+              >
+                <ShieldCheck /> {footerContent['links.privacy']}
               </li>
-              <li>
-                <Link href="/terms" className="footer__link">
-                  <FileText /> Terms of Service
-                </Link>
+              <li
+                className="cursor-pointer footer__link"
+                onClick={() => openModal('terms')}
+              >
+                <FileText /> {footerContent['links.terms']}
               </li>
-              <li>
-                <Link href="/faq" className="footer__link">
-                  <FileText /> FAQ
-                </Link>
+              <li
+                className="cursor-pointer footer__link"
+                onClick={() => openModal('faq')}
+              >
+                <FileText /> {footerContent['links.faq']}
               </li>
             </ul>
           </div>
 
-          {/* Social */}
           <div className="footer__column">
-            <h4 className="text-lg font-semibold mb-3">Social</h4>
-            <ul className="text-sm">
+            <h4 className="text-lg font-semibold mb-3">
+              {footerContent['social.title']}
+            </h4>
+            <ul className="text-sm space-y-2">
               <li>
                 <Link
                   href="https://discord.gg/wc3risk"
@@ -68,7 +121,11 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/Discord.svg" alt="Discord" /> Discord
+                  <IconImage
+                    src="/images/Discord.svg"
+                    alt={footerContent['social.discord']}
+                  />{' '}
+                  {footerContent['social.discord']}
                 </Link>
               </li>
               <li>
@@ -78,8 +135,11 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/patreon-gul.webp" alt="Patreon" />{' '}
-                  Patreon
+                  <IconImage
+                    src="/images/patreon-gul.webp"
+                    alt={footerContent['social.patreon']}
+                  />{' '}
+                  {footerContent['social.patreon']}
                 </Link>
               </li>
               <li>
@@ -91,9 +151,9 @@ const Footer: React.FC = () => {
                 >
                   <IconImage
                     src="/images/Youtube_Symbol_gule.webp"
-                    alt="YouTube"
+                    alt={footerContent['social.youtube']}
                   />{' '}
-                  YouTube
+                  {footerContent['social.youtube']}
                 </Link>
               </li>
               <li>
@@ -103,19 +163,27 @@ const Footer: React.FC = () => {
                   rel="noopener noreferrer"
                   className="footer__link"
                 >
-                  <IconImage src="/images/twitch-gule.webp" alt="Twitch" />{' '}
-                  Twitch
+                  <IconImage
+                    src="/images/twitch-gule.webp"
+                    alt={footerContent['social.twitch']}
+                  />{' '}
+                  {footerContent['social.twitch']}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Copyright */}
           <div className="footer__column footertext text-sm">
-            <p>&copy; {year} Risk Reforged. All rights reserved.</p>
+            <p>
+              &copy; {year} {footerContent['copyright']}
+            </p>
           </div>
         </div>
       </div>
+
+      {isModalOpen && (
+        <Modal onClose={() => setIsModalOpen(false)}>{modalContent}</Modal>
+      )}
     </footer>
   );
 };

@@ -1,18 +1,28 @@
 @import '../_vars.scss';
 
-.PlayNowButton {
+%BaseCTAButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 150px;
   height: 40px;
-  background-color: $cta-blue;
   font-family: titleFont, sans-serif;
-  color: $background-sand;
+  font-size: 1.2rem;
   text-transform: uppercase;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
 
   p {
-    font-size: 1.2rem;
-    text-align: center;
     margin: 0;
   }
+}
+
+.PlayNowButton {
+  @extend %BaseCTAButton;
+  background-color: $cta-blue;
+  color: $background-sand;
 
   &:hover {
     background-color: $blue-hover;
@@ -22,18 +32,9 @@
 }
 
 .ReadMoreButton {
-  width: 150px;
-  height: 40px;
+  @extend %BaseCTAButton;
   background-color: $cta-yellow;
-  font-family: titleFont, sans-serif;
   color: $background-blue;
-  text-transform: uppercase;
-
-  p {
-    font-size: 1.2rem;
-    text-align: center;
-    margin: 0;
-  }
 
   &:hover {
     background-color: $yellow-hover;
@@ -42,10 +43,34 @@
   }
 }
 
+.ExternalLinkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $cta-yellow;
+  color: $background-blue;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  font-family: 'titleFont', sans-serif;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: $yellow-hover;
+    color: $background-blue;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
 .PaginationButton {
-  padding: 0.5rem 1.25rem; // px-5 py-2
+  padding: 0.5rem 1.25rem;
   font-weight: 500;
-  border-radius: 0.375rem; // rounded-md
+  border-radius: 0.375rem;
   transition: background-color 0.2s ease;
 
   &.is-disabled {
@@ -59,7 +84,7 @@
     color: black;
 
     &:hover {
-      background-color: #eab308; // equivalent to Tailwind's yellow-600
+      background-color: #eab308;
     }
   }
 }

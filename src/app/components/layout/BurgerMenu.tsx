@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
@@ -20,6 +20,18 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => setIsOpen((prev) => !prev);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, [isOpen]);
+
   return (
     <>
       <div className="burgerbox">
@@ -30,32 +42,33 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           <Menu className="h-6 w-6" />
         </button>
       </div>
+
       <div
         className={cn(
-          'fixed inset-0 z-40 bg-black bg-opacity-40 transition-opacity md:hidden',
+          'fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
           isOpen
-            ? 'opacity-100 pointer-events-auto'
-            : 'opacity-0 pointer-events-none',
+            ? 'opacity-100 pointer-events-auto z-40'
+            : 'opacity-0 pointer-events-none z-0',
         )}
         onClick={handleToggle}
       />
 
       <div
         className={cn(
-          'backgroundburger h-full w-64 p-4 text-white pl-[23px]',
+          'backgroundburger h-screen w-64 p-4 text-white',
           'flex flex-col gap-4 transition-transform duration-300 ease-in-out',
-          'fixed top-0 left-0 md:fixed md:top-0 md:left-0 md:z-100',
-          isOpen ? 'translate-x-0' : '-translate-x-full',
+          'fixed top-0 left-0 touch-none overflow-y-auto',
+          isOpen ? 'translate-x-0 z-50' : '-translate-x-full z-50',
           'md:translate-x-0 md:z-auto',
         )}
       >
         <div className="flex justify-end p-4 md:hidden">
           <button onClick={handleToggle}>
-            <X className="h-6 w-6 text-white" />
+            <X className="h-8 w-8 text-[#f9c701]" />
           </button>
         </div>
 
-        <nav className="flex mt-[25rem] flex-col gap-4">
+        <nav className="flex mt-[16rem] flex-col gap-4">
           {items.map((item) => (
             <Link
               key={item.title}

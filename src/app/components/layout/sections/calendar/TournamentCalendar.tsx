@@ -1,15 +1,13 @@
-import React, { useState } from 'react';
-import { getTournamentDates } from '@/core/hooks/leaderboard/useLeaderboardData';
-import { convertToUserTimeZone, formatDate } from '@/core/utils/dateUtils';
+'use client';
+
+import React from 'react';
+import { convertToUserTimeZone } from '@/core/utils/dateUtils';
 import Modal from '@/app/components/layout/Modal';
+import useMonthlyTournamentCalendar, {
+  Tournament,
+} from '@/core/hooks/calendar/useMonthlyTournamentCalendar';
 import 'react-calendar/dist/Calendar.css';
 import '@/core/SCSS/base/layout/l-calendar.scss';
-
-interface Tournament {
-  date: string;
-  name: string;
-  time: string;
-}
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
@@ -21,52 +19,17 @@ const TournamentCalendar: React.FC = () => {
     { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
   ];
 
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  const [tournamentsOnDate, setTournamentsOnDate] = useState<Tournament[]>([]);
-  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
-  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
-
-  const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
-  const lastDayOfMonth = new Date(currentYear, currentMonth + 1, 0);
-
-  const tournamentDates = getTournamentDates(tournaments);
-
-  const daysInMonth = Array.from(
-    { length: lastDayOfMonth.getDate() },
-    (_, i) => new Date(Date.UTC(currentYear, currentMonth, i + 1)),
-  );
-
-  const handleDateClick = (date: Date) => {
-    setSelectedDate(date);
-    const formattedDate = formatDate(date);
-
-    const filteredTournaments = tournaments.filter(
-      (tournament) => tournament.date === formattedDate,
-    );
-    setTournamentsOnDate(filteredTournaments);
-  };
-
-  const isTournamentDate = (date: Date) => {
-    return tournamentDates.includes(formatDate(date));
-  };
-
-  const handlePreviousMonth = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(11);
-      setCurrentYear((prevYear) => prevYear - 1);
-    } else {
-      setCurrentMonth((prevMonth) => prevMonth - 1);
-    }
-  };
-
-  const handleNextMonth = () => {
-    if (currentMonth === 11) {
-      setCurrentMonth(0);
-      setCurrentYear((prevYear) => prevYear + 1);
-    } else {
-      setCurrentMonth((prevMonth) => prevMonth + 1);
-    }
-  };
+  const {
+    selectedDate,
+    tournamentsOnDate,
+    firstDayOfMonth,
+    daysInMonth,
+    handleDateClick,
+    isTournamentDate,
+    handlePreviousMonth,
+    handleNextMonth,
+    setSelectedDate,
+  } = useMonthlyTournamentCalendar(tournaments);
 
   return (
     <div className="calendar-container">

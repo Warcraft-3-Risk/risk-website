@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import content from '@/app/data/content.json';
 
+const patchNotesContent = content.patchnotes;
+
 export default function PatchNotesHeader() {
   return (
     <div className="relative w-full h-[300px] flex items-center justify-center mb-4 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
-          src="/images/testimage.webp"
+          src="/images/patch_notes_hero.webp"
           alt="Background"
           fill
           style={{ objectFit: 'cover' }}
@@ -18,7 +20,7 @@ export default function PatchNotesHeader() {
       </div>
 
       <h1 className="titletext text-[#f9c701] text-8xl font-bold z-10 relative text-center">
-        {content.patchnotes['patchreleasenotes.title']}
+        {patchNotesContent['patchreleasenotes.title']}
       </h1>
     </div>
   );

@@ -24,6 +24,9 @@
   color: $cta-yellow;
   font-family: 'titleFont', sans-serif;
   text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 }
 
 .subtitle {
