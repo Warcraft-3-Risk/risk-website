@@ -29,3 +29,11 @@
   background-color: $background-blue;
   z-index: 100;
 }
+
+.navIcons {
+  margin-top: 22rem;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 17rem;
+  }
+}
