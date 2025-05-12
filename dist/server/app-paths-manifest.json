@@ -1,1 +1,9 @@
-{}
+{
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/page": "app/page.js",
+  "/how-to/units-page/page": "app/how-to/units-page/page.js",
+  "/how-to/game-guide/page": "app/how-to/game-guide/page.js",
+  "/stand-alone/page": "app/stand-alone/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/news-and-events/page": "app/news-and-events/page.js"
+}
