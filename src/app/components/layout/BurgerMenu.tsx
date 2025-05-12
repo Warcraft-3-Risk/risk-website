@@ -1,10 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import '@/core/SCSS/base/layout/l-burgermenu.scss';
+import { cn } from '@/lib/utils';
 import { Menu, X } from 'lucide-react';
 import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import '@/core/SCSS/base/layout/l-burgermenu.scss';
+import React, { useEffect, useState } from 'react';
 
 interface SidebarItem {
   title: string;
@@ -21,7 +21,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   const handleToggle = () => setIsOpen((prev) => !prev);
 
   useEffect(() => {
-    if (isOpen) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+    if (isMobile && isOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -68,7 +70,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           </button>
         </div>
 
-        <nav className="flex mt-[16rem] flex-col gap-4">
+        <nav className="navIcons flex flex-col gap-4">
           {items.map((item) => (
             <Link
               key={item.title}

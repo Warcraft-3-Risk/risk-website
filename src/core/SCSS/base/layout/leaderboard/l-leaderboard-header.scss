@@ -1,4 +1,10 @@
 @import '../../vars.scss';
+@import '../../mixins.scss';
+
+.leaderboard-header-title {
+  @include hero-title;
+}
+
 .subtitle {
   font-family: 'textFont', sans-serif;
   font-size: 1.2rem;

@@ -1,5 +1,5 @@
 export const landUnits = [
-  { id: 'rifleman', label: 'Rifleman', iconClass: 'icon-rifleman' },
+  { id: 'rifleman', label: 'Riflemen', iconClass: 'icon-rifleman' },
   { id: 'medic', label: 'Medic', iconClass: 'icon-medic' },
   { id: 'mortar', label: 'Mortar', iconClass: 'icon-mortar' },
   { id: 'roarer', label: 'Roarer', iconClass: 'icon-roarer' },
@@ -30,23 +30,23 @@ export const unitDescriptions: Record<
   { name: string; description: string; image?: string; imageClass?: string }
 > = {
   rifleman: {
-    name: 'Rifleman',
+    name: 'Riflemen',
     description:
-      'The brave Dwarven Riflemen have faithfully protected their mountain kingdom of Khaz Modan for hundreds of years. Yet they have once again offered their weapons and skills to the Alliance of Lordaeron. Using the legendary Single-shot Blunderbuss Longrifles, Riflemen are excellent marksmen and can shoot both land based and airborne opponents.',
+      'The brave Dwarven Riflemen have faithfully protected their mountain kingdom of Khaz Modan for hundreds of years. Yet they have once again offered their weapons and skills to the Alliance of Lordaeron. \n\nUsing the legendary Single-shot Blunderbuss Longrifles, Riflemen are excellent marksmen and can shoot both land based and airborne opponents.',
     image: '/images/rifleman.webp',
     imageClass: 'units-page-panel-rifleman-image',
   },
   medic: {
     name: 'Medic',
     description:
-      'Priests can be a very important part of a Human army. While Healing and Dispel can be very useful many prefer Priests for their Inner Fire ability. Inner Fire can be an alternative to Orc Shaman Bloodlust and especially useful in team games. Healing can help return units to full health saving you the cost of replacing them. Dispel Magic is useful for countering powerful spells such as Bloodlust and Slow. Dispel Magic is also useful against Skeleton and other summoned units.',
+      'Priests can be a very important part of a Human army. While Healing and Dispel can be very useful many prefer Priests for their Inner Fire ability. Inner Fire can be an alternative to Orc Shaman Bloodlust and especially useful in team games. \n\nHealing can help return units to full health saving you the cost of replacing them. Dispel Magic is useful for countering powerful spells such as Bloodlust and Slow. Dispel Magic is also useful against Skeleton and other summoned units.',
     image: '/images/Medic-unit.webp',
     imageClass: 'units-page-panel-medic-image',
   },
   mortar: {
     name: 'Mortar',
     description:
-      'Armed with their innovative exploding shells, the stalwart Mortar Teams of Ironforge are capable of blasting apart enemy ranks from long range. These fearless dwarves are masters of explosive devices and relish in pounding fortified enemy emplacements to dust.Mortar Teams have the largest area of effect damage of all the siege units. Mortar Teams are good at killing buildings. Bring them along when you are assaulting an enemy town. Mortar Teams cannot attack air units.',
+      'Armed with their innovative exploding shells, the stalwart Mortar Teams of Ironforge are capable of blasting apart enemy ranks from long range. These fearless dwarves are masters of explosive devices and relish in pounding fortified enemy emplacements to dust. \n\nMortar Teams have the largest area of effect damage of all the siege units. Mortar Teams are good at killing buildings. Bring them along when you are assaulting an enemy town. Mortar Teams cannot attack air units.',
     image: '/images/Mortar-unit.webp',
     imageClass: 'units-page-panel-mortar-image',
   },

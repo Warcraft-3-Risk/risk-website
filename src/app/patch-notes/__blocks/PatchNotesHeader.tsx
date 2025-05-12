@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import content from '@/app/data/content.json';
+import Image from 'next/image';
 
 const patchNotesContent = content.patchnotes;
 
@@ -19,7 +19,7 @@ export default function PatchNotesHeader() {
         <div className="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-b from-transparent to-[#1b3449]" />
       </div>
 
-      <h1 className="titletext text-[#f9c701] text-8xl font-bold z-10 relative text-center">
+      <h1 className="patch-notes-header-title z-10 relative text-center">
         {patchNotesContent['patchreleasenotes.title']}
       </h1>
     </div>

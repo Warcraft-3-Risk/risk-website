@@ -1,6 +1,11 @@
 @import '../vars.scss';
+@import '../mixins.scss';
 
-.titletext {
+.patch-notes-header-title {
+  @include hero-title;
+}
+
+.patch-version {
   font-family: 'titleFont', sans-serif;
   font-weight: lighter;
   text-shadow: 0px 0px 5px rgb(0, 1, 48);
@@ -27,7 +32,7 @@
 
 // Yellow Theme
 .yellow-theme {
-  .titletext {
+  .patch-version {
     color: $cta-yellow;
   }
 
@@ -47,7 +52,7 @@
 
 // Sand Theme
 .sand-theme {
-  .titletext {
+  .patch-version {
     color: $background-sand;
   }
 

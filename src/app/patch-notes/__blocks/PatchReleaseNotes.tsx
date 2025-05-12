@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-import { CircleAlert } from 'lucide-react';
-import '@/core/SCSS/base/layout/l-patch-notes.scss';
 import CTAButton from '@/app/components/ui/CTAButtons';
-import router from 'next/router';
-import content from '@/app/data/content.json';
-import { fetchGithubReleases, Release } from '@/core/utils/githubReleases';
 import LoadingSpinner from '@/app/components/ui/LoadingSpinner';
+import content from '@/app/data/content.json';
+import '@/core/SCSS/base/layout/l-patch-notes.scss';
+import { fetchGithubReleases, Release } from '@/core/utils/githubReleases';
+import { CircleAlert } from 'lucide-react';
+import router from 'next/router';
+import { useEffect, useState } from 'react';
 
 interface PatchReleaseNotesProps {
   isExpanded: boolean;
@@ -53,9 +53,9 @@ export default function PatchReleaseNotes({
             className={`releasebox w-full sm:w-3/4 ${variantClass} mb-16`}
           >
             <div className="p-2 themed-border">
-              <div className="spurgt flex lg:flex-row sm:flex-row sm:items-center gap-4 sm:gap-10">
+              <div className="flex lg:flex-row sm:flex-row sm:items-center gap-4 sm:gap-10">
                 <CircleAlert className="scale-150 sm:scale-200 ml-1 sm:ml-5 themed-icon mt-2 sm:mt-5" />
-                <h2 className="titletext text-2xl sm:text-4xl font-bold mt-2 sm:mt-5">
+                <h2 className="patch-version text-2xl sm:text-4xl font-bold mt-2 sm:mt-5">
                   {release.name}
                 </h2>
               </div>

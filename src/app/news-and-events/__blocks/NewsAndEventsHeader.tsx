@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
 import content from '@/app/data/content.json';
+import Image from 'next/image';
+import React from 'react';
 
 const NewsAndEvents = content.newsandevents;
 const NewsAndEventsHeader: React.FC = () => {
@@ -18,9 +18,7 @@ const NewsAndEventsHeader: React.FC = () => {
         <div className="absolute bottom-0 left-0 w-full h-60 bg-gradient-to-b from-transparent to-[#1b3449]" />
       </div>
 
-      <h1 className="titletext text-[#f9c701] text-6xl font-bold z-1 relative text-center">
-        {NewsAndEvents['newsandevents.title']}
-      </h1>
+      <h1 className="titletext z-1">{NewsAndEvents['newsandevents.title']}</h1>
     </div>
   );
 };

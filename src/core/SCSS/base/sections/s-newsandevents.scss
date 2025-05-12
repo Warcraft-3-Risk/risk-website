@@ -1,28 +1,28 @@
 @import '../_vars.scss';
 
 .Section_Background {
-  background-color: $background-sand;
-  color: $background-blue;
+  background-color: $background-blue;
+  color: $background-sand;
 }
 
 .WatchUs_Text {
   font-family: 'titleFont', sans-serif;
   font-weight: lighter;
   text-transform: uppercase;
-  color: $background-blue;
+  color: $background-sand;
   text-align: center;
   margin-bottom: 16px;
 }
 
 .WatchUs_Subtext {
   font-family: 'textFont', sans-serif;
-  color: $background-blue;
+  color: $background-sand;
   margin-bottom: 16px;
 }
 
 .WatchUs_Block {
-  background-color: $background-sand;
-  color: $background-blue;
+  background-color: $background-blue;
+  color: $background-sand;
 }
 
 .carousel-container {

@@ -1,4 +1,5 @@
 @import '../../vars.scss';
+@import '../../mixins.scss';
 
 .bluebackground {
   background-color: $background-blue;
@@ -14,16 +15,10 @@
 }
 
 .gameguidetitle {
-  font-family: 'titleFont', sans-serif;
-  font-weight: lighter;
-  text-transform: uppercase;
-  color: $cta-yellow;
-  text-align: center;
-  margin-bottom: 16px;
+  @include hero-title;
 }
 
 .game-guide-section {
-  //   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
 }
