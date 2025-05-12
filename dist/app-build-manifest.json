@@ -16,6 +16,7 @@
       "static/chunks/main-app.js",
       "static/css/app/page.css",
       "static/chunks/app/page.js"
+<<<<<<< HEAD
     ],
     "/how-to/units-page/page": [
       "static/chunks/webpack.js",
@@ -56,6 +57,8 @@
       "static/chunks/main-app.js",
       "static/css/app/stand-alone/page.css",
       "static/chunks/app/stand-alone/page.js"
+=======
+>>>>>>> development
     ]
   }
 }
