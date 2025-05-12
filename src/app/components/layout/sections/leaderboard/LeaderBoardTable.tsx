@@ -6,7 +6,7 @@ import '@/core/SCSS/base/layout/leaderboard/l-leaderboard.scss';
 import content from '@/app/data/content.json';
 
 const LeaderBoardTable: React.FC = () => {
-  const topLeaders = useLeaderboardData(5); // Fetch top 5 by elo
+  const topLeaders = useLeaderboardData(5);
 
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;

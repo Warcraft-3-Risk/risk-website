@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import content from '@/app/data/content.json';
 
+const ModalContent = content.modals;
 interface ModalProps {
   children: React.ReactNode;
   onClose: () => void;
@@ -17,9 +19,7 @@ const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
         </button>
         {children}
         <div className="discord-button">
-          <p className="discord-text">
-            Join our Discord community for more information and updates.
-          </p>
+          <p className="discord-text">{ModalContent['join']}</p>
           <a
             href="https://discord.com/invite/wc3risk"
             target="_blank"

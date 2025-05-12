@@ -30,7 +30,6 @@ export default function HeroSection() {
     return () => observer.disconnect();
   }, [hasAutoplayed]);
 
-  // Mute/unmute toggle
   const toggleMute = () => {
     const iframe = iframeRef.current;
     if (!iframe) return;

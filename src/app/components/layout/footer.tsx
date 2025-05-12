@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
   );
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Extract footer content and modal content from content.json
   const footerContent = content.footer;
   const footerModals = content.footerModals;
 

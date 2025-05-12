@@ -3,7 +3,7 @@ import React from 'react';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
-import TwitchPlayerSection from '@/app/components/layout/sections/newsandevents/TwitchPlayerSection';
+import TwitchPlayerSection from '@/app/components/layout/sections/TwitchPlayerSection';
 const SpecialMentionsContent = content.specialmentions;
 const SpecialMentionsSection: React.FC = () => {
   return (

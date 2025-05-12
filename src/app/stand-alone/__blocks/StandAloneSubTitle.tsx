@@ -2,19 +2,21 @@ import Image from 'next/image';
 import React from 'react';
 import content from '@/app/data/content.json';
 
+const SubTitle = content.standalone;
+
 const StandAloneSubTitle: React.FC = () => {
   return (
     <section className="standalone-section">
       <h2 className="standalone-title">
-        {content.standalone['standalone.subtitleHeader']}
+        {SubTitle['standalone.subtitleHeader']}
       </h2>
       <div className="standalone-text">
         <p className="standalone-description">
-          {content.standalone['standalone.description']}
+          {SubTitle['standalone.description']}
         </p>
       </div>
       <div className="standalone-following">
-        <p>{content.standalone['standalone.following']}</p>
+        <p>{SubTitle['standalone.following']}</p>
       </div>
       <div className="standalone-icons">
         <div className="icon-item">
@@ -25,7 +27,7 @@ const StandAloneSubTitle: React.FC = () => {
           >
             <Image
               src="/images/patreon-gul.webp"
-              alt={content.standalone['standalone.icons.patreonAlt']}
+              alt={SubTitle['standalone.icons.patreonAlt']}
               className="patreon-icon"
               width={32}
               height={32}

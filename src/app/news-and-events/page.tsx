@@ -25,6 +25,8 @@ const NewsPage = () => {
     ? sortedArticles
     : sortedArticles.slice(0, 3);
 
+  const NewsAndEvents = content.newsandevents;
+  const NewsSection = content.newssection;
   return (
     <>
       <div className="news-page-container background min-h-screen">
@@ -64,7 +66,7 @@ const NewsPage = () => {
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <CTAButton variant="play" href="/play-now">
-                {content.newsandevents['newsandevents.button.play']}
+                {NewsAndEvents['newsandevents.button.play']}
               </CTAButton>
 
               {articlesData.length > 3 && (
@@ -79,7 +81,7 @@ const NewsPage = () => {
           </div>
         ) : (
           <p className="text-gray-600 dark:text-gray-400 text-center mt-10">
-            {content.newssection['newssection.title']}
+            {NewsSection['newssection.title']}
           </p>
         )}
 

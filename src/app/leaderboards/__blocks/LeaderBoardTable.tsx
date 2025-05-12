@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useLeaderboardData } from '@/core/utils/UseRealLeaderboard';
-import LeaderBoardPagination from './LeaderBoardPagination';
+import LeaderBoardPagination from '@/app/leaderboards/__blocks/LeaderBoardPagination';
 import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTableMobile';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 import content from '@/app/data/content.json';

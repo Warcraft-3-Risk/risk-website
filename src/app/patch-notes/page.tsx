@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import PatchReleaseNotes from '@/app/patch-notes/__blocks/PatchReleaseNotes';
 import PatchNotesHeader from '@/app/patch-notes/__blocks/PatchNotesHeader';
-import CommunitySection from '@/app/components/layout/sections/newsandevents/CommunitySection';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 
 export default function Page() {
   const [isExpanded, setIsExpanded] = useState(false);

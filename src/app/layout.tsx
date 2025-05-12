@@ -50,11 +50,17 @@ const navItems = [
     href: '/how-to/game-guide',
     icon: <Users className="w-4 h-4" />,
   },
+  {
+    title: 'Leaderboard',
+    href: '/leaderboards',
+    icon: <Users className="w-4 h-4" />,
+  },
 ];
 
 export const metadata: Metadata = {
   title: 'Risk Reforged',
-  description: 'A Website created for Risk Reforged, in WC3.',
+  description:
+    'Risk Reforged - A Game of Strategy and Diplomacy. Designed to create a feeling of nostalgia while providing a modern gaming experience.',
 };
 
 export default function RootLayout({
