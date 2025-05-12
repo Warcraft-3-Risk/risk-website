@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import Image from 'next/image';
-import { Mail, ShieldCheck, FileText } from 'lucide-react';
-import '@/core/SCSS/base/sections/s-footer-section.scss';
-import '@/core/SCSS/base/layout/l-calendar.scss';
-import Modal from './Modal';
 import content from '@/app/data/content.json';
+import '@/core/SCSS/base/layout/l-calendar.scss';
+import '@/core/SCSS/base/sections/s-footer-section.scss';
+import { FileText, Mail, ShieldCheck } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
+import React, { useState } from 'react';
+import Modal from './Modal';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();

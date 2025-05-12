@@ -1,13 +1,13 @@
-import React from 'react';
 import { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import React from 'react';
 import './globals.css';
 
 import BurgerMenu from '@/app/components/layout/BurgerMenu';
 import { Navbar } from '@/app/components/layout/Navbar';
 import Footer from '@/app/components/layout/footer';
-import { Toaster } from 'sonner';
 import { Home, Newspaper, Users } from 'lucide-react';
+import { Toaster } from 'sonner';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -53,6 +53,11 @@ const navItems = [
   {
     title: 'Leaderboard',
     href: '/leaderboards',
+    icon: <Users className="w-4 h-4" />,
+  },
+  {
+    title: 'Units',
+    href: '/how-to/units-page',
     icon: <Users className="w-4 h-4" />,
   },
 ];
