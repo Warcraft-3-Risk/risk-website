@@ -213,3 +213,7 @@
     }
   }
 }
+
+.units-page-stats-skills-fallback {
+  @include info-text;
+}

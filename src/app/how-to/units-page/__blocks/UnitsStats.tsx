@@ -48,17 +48,23 @@ const UnitsStats: React.FC<UnitsStatsProps> = ({
       <div className="units-page-stats-skills">
         <div className="units-page-stats-skills-content">
           <h2 className="units-page-stats-skills-title">Skills</h2>
-          <div className="skills-icons flex gap-2">
-            {skills.map((skill, index) => (
-              <Image
-                key={index}
-                src={skill.icon}
-                alt={`Skill ${index + 1}`}
-                width={48}
-                height={48}
-              />
-            ))}
-          </div>
+          {skills && skills.length > 0 ? (
+            <div className="skills-icons flex gap-2">
+              {skills.map((skill, index) => (
+                <Image
+                  key={index}
+                  src={skill.icon}
+                  alt={`Skill ${index + 1}`}
+                  width={48}
+                  height={48}
+                />
+              ))}
+            </div>
+          ) : (
+            <p className="units-page-stats-skills-fallback">
+              This unit has no unique skills.
+            </p>
+          )}
         </div>
       </div>
     </section>

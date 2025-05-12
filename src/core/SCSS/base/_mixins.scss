@@ -16,3 +16,10 @@
   margin: 0 auto;
   padding: 2rem 0;
 }
+
+@mixin info-text {
+  font-family: textFont, sans-serif;
+  font-size: 1.25rem;
+  color: $background-sand;
+  margin: 0 auto;
+}
