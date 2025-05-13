@@ -25,6 +25,24 @@
     right: 55px;
   }
 
+  .units-page-panel-general-image {
+    @media (max-width: 768px) {
+      transform: scale(0.8);
+    }
+  }
+
+  .units-page-panel-transport-ship-image {
+    transform: scale(0.8);
+
+    @media (max-width: 768px) {
+      transform: scale(0.6);
+
+      &:hover {
+        transform: scale(0.7);
+      }
+    }
+  }
+
   img {
     transition: transform 0.7s ease-in-out;
 
