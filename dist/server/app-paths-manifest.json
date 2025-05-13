@@ -1,8 +1,9 @@
 {
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/how-to/units-page/page": "app/how-to/units-page/page.js",
-  "/patch-notes/page": "app/patch-notes/page.js",
   "/leaderboards/page": "app/leaderboards/page.js",
+  "/patch-notes/page": "app/patch-notes/page.js",
+  "/how-to/units-page/page": "app/how-to/units-page/page.js",
   "/page": "app/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
   "/news-and-events/page": "app/news-and-events/page.js"
 }
