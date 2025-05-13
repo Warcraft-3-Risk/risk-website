@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import '@/core/SCSS/base/layout/l-Navbar.scss';
 
 export function Navbar() {
@@ -10,13 +11,15 @@ export function Navbar() {
         <div className="w-10 sm:w-12" />
         <div className="flex flex-1">
           <div className="relative w-32 sm:w-44 h-10 sm:h-12">
-            <Image
-              src="/images/rr-logo.svg"
-              alt="Site Logo"
-              layout="fill"
-              objectFit="contain"
-              priority
-            />
+            <Link href="/">
+              <Image
+                src="/images/rr-logo.svg"
+                alt="Site Logo"
+                layout="fill"
+                objectFit="contain"
+                priority
+              />
+            </Link>
           </div>
         </div>
 
