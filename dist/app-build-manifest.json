@@ -17,6 +17,15 @@
       "static/css/app/how-to/game-guide/page.css",
       "static/chunks/app/how-to/game-guide/page.js"
     ],
+<<<<<<< HEAD
+=======
+    "/how-to/units-page/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/how-to/units-page/page.css",
+      "static/chunks/app/how-to/units-page/page.js"
+    ],
+>>>>>>> 582c7777be69ba09fc42d1380b7403fa9e3e87b9
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
