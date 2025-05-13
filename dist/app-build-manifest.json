@@ -38,6 +38,35 @@
       "static/chunks/main-app.js",
       "static/css/app/news-and-events/page.css",
       "static/chunks/app/news-and-events/page.js"
+    ],
+    "/leaderboards/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/leaderboards/page.css",
+      "static/chunks/app/leaderboards/page.js"
+    ],
+    "/how-to/game-guide/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/how-to/game-guide/page.css",
+      "static/chunks/app/how-to/game-guide/page.js"
+    ],
+    "/stand-alone/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/stand-alone/page.css",
+      "static/chunks/app/stand-alone/page.js"
+    ],
+    "/about-us/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/about-us/page.js"
+    ],
+    "/patch-notes/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/patch-notes/page.css",
+      "static/chunks/app/patch-notes/page.js"
     ]
   }
 }
