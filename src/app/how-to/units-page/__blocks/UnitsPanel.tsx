@@ -14,7 +14,7 @@ interface UnitPanelProps {
 const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
   if (!unitId || !data[unitId]) {
     return (
-      <div className="units-page-panel">
+      <div className="units-page-panel hidden md:block">
         <div className="units-page-panel-content">
           <h2 className="units-page-panel-title">Units</h2>
           <p className="units-page-panel-description">

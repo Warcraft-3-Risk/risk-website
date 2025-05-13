@@ -1,6 +1,10 @@
 {
+<<<<<<< HEAD
   "/favicon.ico/route": "app/favicon.ico/route.js",
   "/page": "app/page.js",
   "/_not-found/page": "app/_not-found/page.js",
+=======
+  "/how-to/units-page/page": "app/how-to/units-page/page.js",
+>>>>>>> 47b4c49e1041397e7d1931805bca4b620729ab46
   "/news-and-events/page": "app/news-and-events/page.js"
 }

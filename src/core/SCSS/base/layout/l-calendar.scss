@@ -189,10 +189,41 @@
 
   .days-container {
     display: flex;
-    overflow-x: auto;
     gap: 0.75rem;
     padding-bottom: 0.5rem;
-    -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS devices
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    /* Webkit-based browsers (Chrome, Edge, Safari) */
+    &::-webkit-scrollbar {
+      height: 16px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: #f0f0f0;
+      border-radius: 4px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $cta-blue;
+      border-radius: 4px;
+      border: 2px solid transparent; // creates some padding
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #555;
+    }
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: $cta-blue transparent;
+    &::-moz-scrollbar-thumb {
+      background-color: $cta-blue;
+      border-radius: 4px;
+      border: 2px solid transparent; // creates some padding
+      background-clip: content-box;
+    }
   }
 
   .day {
