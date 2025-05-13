@@ -1,12 +1,12 @@
 'use client';
 
-import React, { useState } from 'react';
-import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
-import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import { Button } from '@/app/components/ui/shadcn/button';
-import Link from 'next/link';
-import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
+import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
+import TournamentCalendar from '@/app/tournament/__blocks/TournamentCalendar';
+import { useNews } from '@/core/contexts/NewsAndEventsViewContext';
 import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const NewsPage = () => {
   const { articles } = useNews();

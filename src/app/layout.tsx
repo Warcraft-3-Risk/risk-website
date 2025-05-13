@@ -5,10 +5,10 @@ import './globals.css';
 
 import BurgerMenu from '@/app/components/layout/BurgerMenu';
 import { Navbar } from '@/app/components/layout/Navbar';
-import Footer from '@/app/components/layout/footer';
-import { Home, Newspaper, Users } from 'lucide-react';
-import { Toaster } from 'sonner';
 import ScrollToTopButton from '@/app/components/layout/ScrollToTop';
+import Footer from '@/app/components/layout/footer';
+import { Home, Newspaper, Trophy, Users } from 'lucide-react';
+import { Toaster } from 'sonner';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -30,6 +30,11 @@ const navItems = [
     title: 'News and Events',
     href: '/news-and-events',
     icon: <Newspaper className="w-4 h-4" />,
+  },
+  {
+    title: 'Tournaments',
+    href: '/tournament',
+    icon: <Trophy className="w-4 h-4" />,
   },
   {
     title: 'Patch Notes',

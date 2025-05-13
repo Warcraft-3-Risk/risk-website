@@ -1,17 +1,13 @@
 'use client';
 
-import React, { useState } from 'react';
-import content from '@/app/data/content.json';
+import CTAButton from '@/app/components/ui/CTAButtons';
 import articlesData from '@/app/data/articles.json';
+import content from '@/app/data/content.json';
+import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
 import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import ArticleItemMobile from '@/app/news-and-events/articles/components/ArticleItemMobile';
-import TournamentCalendar from '@/app/components/layout/sections/calendar/TournamentCalendar';
 import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
-import '@/core/SCSS/base/layout/l-calendar.scss';
-import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
-import NewsAndEventsFlavour from '@/app/news-and-events/__blocks/NewsAndEventsFlavour';
-import CTAButton from '@/app/components/ui/CTAButtons';
-import TournamentCalendarMobile from '@/app/components/layout/sections/calendar/TournamentCalendarMobile';
+import { useState } from 'react';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -33,7 +29,7 @@ const NewsPage = () => {
         <NewsAndEventsHeader />
 
         {articlesToDisplay.length > 0 ? (
-          <div className="mb-10 w-full p-6">
+          <div className=" w-full p-6">
             <ul className="hidden md:flex flex-col space-y-6 items-center justify-center">
               {articlesToDisplay.map((article) => (
                 <ArticleItem
@@ -84,22 +80,6 @@ const NewsPage = () => {
             {NewsSection['newssection.title']}
           </p>
         )}
-
-        <div className="container p-4">
-          <h2>
-            <NewsAndEventsFlavour />
-          </h2>
-        </div>
-      </div>
-
-      <div className="tournament-calendar px-4 mb-10">
-        <div className="hidden md:block">
-          <TournamentCalendar />
-        </div>
-
-        <div className="block md:hidden w-full">
-          <TournamentCalendarMobile />
-        </div>
       </div>
     </>
   );
