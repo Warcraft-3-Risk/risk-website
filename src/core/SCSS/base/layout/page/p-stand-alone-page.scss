@@ -24,6 +24,10 @@
   margin: 1rem 4rem;
   padding: 2rem;
   background: $background-blue;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    padding: 1rem;
+  }
 }
 
 .standalone-title {
@@ -32,6 +36,10 @@
   text-transform: uppercase;
   width: 65%;
   color: $cta-yellow;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 2.5rem;
+  }
 }
 
 .standalone-description {
@@ -39,6 +47,9 @@
   color: $background-sand;
   font-size: 2rem;
   width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .standalone-text {
@@ -46,6 +57,9 @@
   flex-direction: column;
   gap: 1rem;
   font-family: textFont, sans-serif;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .standalone-following {
@@ -55,6 +69,9 @@
   font-family: textFont, sans-serif;
   font-size: 2rem;
   color: $cta-yellow;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .standalone-icons {
@@ -67,6 +84,8 @@
 
   @media (max-width: 768px) {
     flex-direction: column;
+    gap: 0;
+    padding-bottom: 50px;
   }
 }
 
@@ -135,6 +154,10 @@
     &:hover {
       transform: scale(1.1);
     }
+    @media screen and (max-width: 768px) {
+      width: 20rem;
+      height: 10rem;
+    }
   }
 
   .discord-icon {
@@ -146,6 +169,10 @@
     &:hover {
       transform: scale(1.1);
     }
+    @media screen and (max-width: 768px) {
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   .patreon-icon {
@@ -156,6 +183,10 @@
 
     &:hover {
       transform: scale(1.1);
+    }
+    @media screen and (max-width: 768px) {
+      width: 4rem;
+      height: 5rem;
     }
   }
 }
@@ -173,6 +204,9 @@
     text-transform: uppercase;
     color: $cta-yellow;
     padding-bottom: 2rem;
+    @media screen and (max-width: 768px) {
+      font-size: 2.5rem;
+    }
   }
 
   &-following {
@@ -181,6 +215,9 @@
     font-family: textFont, sans-serif;
     color: $background-sand;
     font-size: 1.5rem;
+  }
+  p {
+    padding-bottom: 5rem;
   }
 }
 
