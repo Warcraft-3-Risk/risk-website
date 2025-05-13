@@ -25,6 +25,12 @@
     right: 55px;
   }
 
+  .units-page-panel-general-image {
+    @media (max-width: 768px) {
+      transform: scale(0.8);
+    }
+  }
+
   img {
     transition: transform 0.7s ease-in-out;
 
