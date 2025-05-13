@@ -7,7 +7,17 @@ import BurgerMenu from '@/app/components/layout/BurgerMenu';
 import { Navbar } from '@/app/components/layout/Navbar';
 import ScrollToTopButton from '@/app/components/layout/ScrollToTop';
 import Footer from '@/app/components/layout/footer';
-import { Home, Newspaper, Trophy, Users } from 'lucide-react';
+import {
+  Binary,
+  CircleHelp,
+  Gamepad2,
+  Home,
+  Medal,
+  Newspaper,
+  Swords,
+  Trophy,
+  Users,
+} from 'lucide-react';
 import { Toaster } from 'sonner';
 
 const geistSans = Geist({
@@ -24,47 +34,48 @@ const navItems = [
   {
     title: 'Home',
     href: '/',
-    icon: <Home className="w-4 h-4" />,
+    icon: <Home className="w-6 h-6" />,
   },
   {
     title: 'News and Events',
     href: '/news-and-events',
-    icon: <Newspaper className="w-4 h-4" />,
-  },
-  {
-    title: 'Tournaments',
-    href: '/tournament',
-    icon: <Trophy className="w-4 h-4" />,
+    icon: <Newspaper className="w-6 h-6" />,
   },
   {
     title: 'Patch Notes',
     href: '/patch-notes',
-    icon: <Newspaper className="w-4 h-4" />,
-  },
-  {
-    title: 'About Us',
-    href: '/about-us',
-    icon: <Users className="w-4 h-4" />,
+    icon: <Binary className="w-6 h-6" />,
   },
   {
     title: 'Stand Alone',
     href: '/stand-alone',
-    icon: <Users className="w-4 h-4" />,
+    icon: <Swords className="w-6 h-6" />,
   },
+  {
+    title: 'Tournaments',
+    href: '/tournament',
+    icon: <Trophy className="w-6 h-6" />,
+  },
+
   {
     title: 'Game Guide',
     href: '/how-to/game-guide',
-    icon: <Users className="w-4 h-4" />,
+    icon: <Gamepad2 className="w-6 h-6" />,
   },
   {
     title: 'Leaderboard',
     href: '/leaderboards',
-    icon: <Users className="w-4 h-4" />,
+    icon: <Medal className="w-6 h-6" />,
   },
   {
     title: 'Units',
     href: '/how-to/units-page',
-    icon: <Users className="w-4 h-4" />,
+    icon: <Users className="w-6 h-6" />,
+  },
+  {
+    title: 'About Us',
+    href: '/about-us',
+    icon: <CircleHelp className="w-6 h-6" />,
   },
 ];
 
