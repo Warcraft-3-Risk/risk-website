@@ -17,15 +17,12 @@
       "static/css/app/page.css",
       "static/chunks/app/page.js"
     ],
-<<<<<<< HEAD
-=======
     "/how-to/units-page/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/css/app/how-to/units-page/page.css",
       "static/chunks/app/how-to/units-page/page.js"
     ],
->>>>>>> 47b4c49e1041397e7d1931805bca4b620729ab46
     "/_not-found/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

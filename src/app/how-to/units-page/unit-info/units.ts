@@ -83,12 +83,13 @@ export const unitDescriptions: Record<
   'transport-ship': {
     name: 'Transport Ship',
     description: 'Carries troops across water.',
-    image: '/images/rifleman.webp',
+    image: '/images/icons/TransportShip_icon.webp',
+    imageClass: 'units-page-panel-transport-ship-image',
   },
   'armoured-transport-ship': {
     name: 'Armoured Transport Ship',
     description: 'Heavily protected transport vessel.',
-    image: '/images/rifleman.webp',
+    image: '/images/icons/Armoured_Transport_Ship_image.webp',
   },
   'warship-a': {
     name: 'Warship A',
