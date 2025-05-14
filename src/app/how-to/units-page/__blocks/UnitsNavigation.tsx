@@ -11,15 +11,26 @@ import {
 } from '@/app/how-to/units-page/unit-info/unitStats';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page-icons.scss';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import UnitsPanel from './UnitsPanel';
 import UnitsStats from './UnitsStats';
 
 const UnitsNavigation: React.FC = () => {
   const [activeType, setActiveType] = useState<'type1' | 'type2'>('type1');
   const [activeUnit, setActiveUnit] = useState<string | null>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   const currentUnits = activeType === 'type1' ? landUnits : seaUnits;
+
+  useEffect(() => {
+    if (activeUnit && panelRef.current) {
+      const offset = -100; // You can adjust this offset
+      const top =
+        panelRef.current.getBoundingClientRect().top + window.scrollY + offset;
+
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }, [activeUnit]);
 
   return (
     <>
@@ -63,14 +74,14 @@ const UnitsNavigation: React.FC = () => {
               <li key={unit.id}>
                 <a
                   href={`#${unit.id}`}
-                  className={`units-page-navigation-forest ${activeUnit === unit.id ? 'active' : ''}`}
+                  className={`units-page-navigation-unitinfo ${activeUnit === unit.id ? 'active' : ''}`}
                   onClick={(e) => {
                     e.preventDefault();
                     setActiveUnit(unit.id);
                   }}
                 >
                   <span
-                    className={`units-page-navigation-forest-icon ${unit.iconClass}`}
+                    className={`units-page-navigation-unitinfo-icon ${unit.iconClass}`}
                   />
                   {unit.label}
                 </a>
@@ -79,13 +90,14 @@ const UnitsNavigation: React.FC = () => {
           </ul>
         </div>
       </nav>
-
-      <UnitsPanel unitId={activeUnit} data={unitDescriptions} />
-      <UnitsStats
-        unitId={activeUnit}
-        statsData={unitStats}
-        skillsData={unitSkills}
-      />
+      <div ref={panelRef}>
+        <UnitsPanel unitId={activeUnit} data={unitDescriptions} />
+        <UnitsStats
+          unitId={activeUnit}
+          statsData={unitStats}
+          skillsData={unitSkills}
+        />
+      </div>
     </>
   );
 };

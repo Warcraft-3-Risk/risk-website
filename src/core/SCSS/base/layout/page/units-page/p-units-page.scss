@@ -65,7 +65,7 @@
 
 .units-page-navigation-city,
 .units-page-navigation-port,
-.units-page-navigation-forest {
+.units-page-navigation-unitinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +73,7 @@
   width: 100px;
   text-align: center;
 
-  .units-page-navigation-forest-icon {
+  .units-page-navigation-unitinfo-icon {
     width: 65px;
     height: 65px;
     margin-bottom: 0.5rem;
