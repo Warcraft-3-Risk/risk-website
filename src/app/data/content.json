@@ -226,5 +226,11 @@
     "loading": "Loading...",
     "error": "Error loading video",
     "videosupport": "Your browser does not support the video tag."
+  },
+  "aboutus": {
+    "title": "RISK REFORGED",
+    "subtitle": "Who are we?",
+    "description": "The legacy of one of Warcraft III's most iconic custom maps is being reborn. Bigger. Smarter. Stand-alone.",
+    "welcome": "Welcome to Stand Alone, a simplified, yet fiercely competitive real-time strategy (RTS) game inspired by the legendary Risk map from Warcraft III — and built from the ground up as a dedicated multiplayer experience. Set during the turbulent age of the Napoleonic Wars, this is a battlefield where tactics, trust, and timing mean everything."
   }
 }
