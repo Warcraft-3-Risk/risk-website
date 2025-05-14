@@ -11,3 +11,26 @@
     padding: 1rem;
   }
 }
+
+.stand-alone-subtitle {
+  font-family: titleFont, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+}
+
+.stand-alone-description {
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  font-size: 1rem;
+  width: 100%;
+
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
