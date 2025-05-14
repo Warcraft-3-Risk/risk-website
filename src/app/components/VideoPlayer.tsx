@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getDownloadURL, ref } from 'firebase/storage';
-import { storage } from '@/core/api/firebase';
 import content from '@/app/data/content.json';
+import { storage } from '@/core/api/firebase';
+import { getDownloadURL, ref } from 'firebase/storage';
+import React, { useEffect, useState } from 'react';
 
 const videoContent = content.videoplayer;
 interface VideoPlayerProps {

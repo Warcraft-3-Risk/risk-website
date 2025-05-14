@@ -1,8 +1,8 @@
 'use client';
 
-import { useEffect, useState, forwardRef } from 'react';
-import { getDownloadURL, ref as storageRef } from 'firebase/storage';
 import { storage } from '@/core/api/firebase';
+import { getDownloadURL, ref as storageRef } from 'firebase/storage';
+import { forwardRef, useEffect, useState } from 'react';
 
 export interface SmartVideoProps {
   path: string;

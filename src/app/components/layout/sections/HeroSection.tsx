@@ -1,9 +1,9 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import '@/core/SCSS/base/sections/s-hero-section.scss';
 import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
 
 export default function HeroSection() {
   const [isInView, setIsInView] = useState(false);
