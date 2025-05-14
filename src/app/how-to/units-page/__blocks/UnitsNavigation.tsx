@@ -24,7 +24,7 @@ const UnitsNavigation: React.FC = () => {
 
   useEffect(() => {
     if (activeUnit && panelRef.current) {
-      const offset = -100; // You can adjust this offset
+      const offset = -100;
       const top =
         panelRef.current.getBoundingClientRect().top + window.scrollY + offset;
 
