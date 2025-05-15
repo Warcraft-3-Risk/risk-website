@@ -3,6 +3,7 @@
 
 .leaderboard-header-title {
   @include hero-title;
+  padding: 0;
 }
 
 .subtitle {
@@ -10,5 +11,5 @@
   font-size: 1.2rem;
   font-weight: 400;
   color: $background-sand;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
