@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
+import content from '@/app/data/content.json';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -15,10 +16,14 @@ const TwitchPlayerSection: React.FC = () => {
     setCurrent((prev) => (prev === channels.length - 1 ? 0 : prev + 1));
   };
   const parentDomain = 'risk-reforged.web.app';
+  const SpecialMentionsContent = content.specialmentions;
 
   return (
-    <section className="Section_Background">
-      <div className="relative mt-8 flex justify-center items-center">
+    <section className="background relative">
+      <h2 className="titletext text-center">
+        {SpecialMentionsContent['specialmentions.title']}
+      </h2>
+      <div className="relative mt-8 flex justify-center items-center pb-52">
         <button
           onClick={prevSlide}
           className="button-prev"

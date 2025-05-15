@@ -8,7 +8,7 @@ const StandAloneSection: React.FC = () => {
   return (
     <section className="stand-alone-section">
       <div className="container mx-auto px-4">
-        <h2 className="titletext text-7xl font-bold text-center">
+        <h2 className="stand-alone-title mt-10 text-center">
           {StandAloneContent['standalone.title']}
         </h2>
         <p className="stand-alone-subtitle text-2xl font-semibold text-center mb-8">
@@ -17,7 +17,7 @@ const StandAloneSection: React.FC = () => {
       </div>
       <div className="container mx-auto px-4">
         <div className="text-center">
-          <p className="stand-alone-description text-2xl font-semibold mb-8">
+          <p className="stand-alone-description mb-8 text-start">
             {StandAloneContent['standalone.description']}
           </p>
         </div>
