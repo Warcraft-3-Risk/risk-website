@@ -83,7 +83,7 @@ export default function PatchReleaseNotes({
           </div>
         );
       })}
-      <div className="ctabuttons flex gap-4 justify-end w-full mt-10">
+      <div className="ctabuttons flex gap-4 justify-end w-full">
         <CTAButton
           variant="play"
           onClick={() =>
