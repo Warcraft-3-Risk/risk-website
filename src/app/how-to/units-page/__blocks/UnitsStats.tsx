@@ -7,7 +7,7 @@ interface UnitsStatsProps {
     string,
     {
       health: { value: number; icon: string };
-      attack: { value: string; icon: string };
+      attack: { value: number; icon: string };
       armor: { value: number; icon: string };
     }
   >;

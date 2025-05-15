@@ -43,6 +43,18 @@
     }
   }
 
+  .units-page-panel-admiral-image {
+    transform: scale(0.9);
+
+    @media (max-width: 768px) {
+      transform: scale(0.8);
+
+      &:hover {
+        transform: scale(0.9);
+      }
+    }
+  }
+
   img {
     transition: transform 0.7s ease-in-out;
 
