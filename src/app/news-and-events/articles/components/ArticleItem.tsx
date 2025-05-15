@@ -21,9 +21,18 @@ const ArticleItem = ({ title, text, tags, publishedAt, imageUrl }: Article) => {
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('.expand-btn')) return;
+    toggleExpanded();
+  };
+
   return (
     <li className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-16 shadow-lg">
-      <div className="sandborder flex flex-col-reverse md:flex-row border-8">
+      <div
+        className="sandborder flex flex-col-reverse md:flex-row border-8 cursor-pointer"
+        onClick={handleCardClick}
+      >
         <div className="p-6 flex-1 z-1 relative">
           <div className="flex items-center justify-between">
             <h2 className="title text-2xl font-bold mb-1">{title}</h2>
@@ -49,8 +58,11 @@ const ArticleItem = ({ title, text, tags, publishedAt, imageUrl }: Article) => {
               className="rounded-none object-cover"
             />
             <button
-              onClick={toggleExpanded}
-              className="expand-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                toggleExpanded();
+              }}
+              className="expand-btn absolute bottom-4 right-4 z-10"
               aria-label="Toggle article"
             >
               <ChevronDown
