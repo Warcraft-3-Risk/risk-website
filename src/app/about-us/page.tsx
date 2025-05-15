@@ -10,7 +10,7 @@ const AboutPage = () => {
     <div className="maincontainer">
       <div className="about-text">
         <h2 className="">{AboutUs['subtitle']}</h2>
-        <h1 className="text-3xl mb-12">{AboutUs['title']}</h1>
+        <h1 className="about-us-title mb-12">{AboutUs['title']}</h1>
         <div className="about-description-text">
           <p className="about-description mb-12">{AboutUs['description']}</p>
 
