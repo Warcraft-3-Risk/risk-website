@@ -55,6 +55,47 @@ export const unitStats: Record<
     attack: { value: '64 - 64', icon: '/images/icons/mortar-damage-type.webp' },
     armor: { value: 0, icon: '/images/icons/armor-light-icon.webp' },
   },
+  marine: {
+    health: { value: 215, icon: '/images/icons/health-icon.webp' },
+    attack: {
+      value: '14 - 14',
+      icon: '/images/icons/rifleman-damage-icon.webp',
+    },
+    armor: { value: 0, icon: '/images/icons/armor-light-icon.webp' },
+  },
+  admiral: {
+    health: { value: 900, icon: '/images/icons/health-icon.webp' },
+    attack: { value: '48 - 48', icon: '/images/icons/attack-normal-icon.webp' },
+    armor: { value: 0, icon: '/images/icons/medic-armor-type.webp' },
+  },
+  'transport-ship': {
+    health: { value: 300, icon: '/images/icons/health-icon.webp' },
+    attack: { value: '0 - 0', icon: '/images/icons/medic-damage-type.webp' },
+    armor: { value: 0, icon: '/images/icons/armor-heavy-icon.webp' },
+  },
+  'armoured-transport-ship': {
+    health: { value: 800, icon: '/images/icons/health-icon.webp' },
+    attack: { value: '0 - 0', icon: '/images/icons/medic-damage-type.webp' },
+    armor: { value: 0, icon: '/images/icons/armor-heavy-icon.webp' },
+  },
+  'warship-a': {
+    health: { value: 550, icon: '/images/icons/health-icon.webp' },
+    attack: { value: '38 - 38', icon: '/images/icons/attack-normal-icon.webp' },
+    armor: { value: 0, icon: '/images/icons/armor-heavy-icon.webp' },
+  },
+  'warship-b': {
+    health: { value: 2000, icon: '/images/icons/health-icon.webp' },
+    attack: { value: '98 - 98', icon: '/images/icons/attack-normal-icon.webp' },
+    armor: { value: 0, icon: '/images/icons/armor-heavy-icon.webp' },
+  },
+  'battleship-ss': {
+    health: { value: 5000, icon: '/images/icons/health-icon.webp' },
+    attack: {
+      value: '138 - 138',
+      icon: '/images/icons/attack-normal-icon.webp',
+    },
+    armor: { value: 0, icon: '/images/icons/armor-heavy-icon.webp' },
+  },
 };
 
 export const unitSkills = {
