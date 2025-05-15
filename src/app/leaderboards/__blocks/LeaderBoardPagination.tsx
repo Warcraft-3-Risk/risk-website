@@ -37,7 +37,7 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
         {leaderboardContent['leaderboardsection.previous']}
       </CTAButton>
 
-      <span className="text-white font-semibold">
+      <span className="leaderboard_next_text">
         {leaderboardContent['leaderboardsection.pagination']} {currentPage}
         {leaderboardContent['leaderboardsection.of']} {totalPages}
       </span>

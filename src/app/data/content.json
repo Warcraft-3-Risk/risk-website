@@ -41,6 +41,13 @@
     "specialmentions.player2": "Soxus Twitch",
     "specialmentions.player3": "Bokuz Twitch"
   },
+
+  "standalonesection": {
+    "standalone.title": "STAND ALONE",
+    "standalone.subtitle": "The evolution of classic RTS begins now",
+    "standalone.description": "We have our own game in developement! Stand Alone is a simplified, yet fiercely competitive real-time strategy (RTS) game inspired by the legendary Risk map from WarCraft III — and built from the ground up as a dedicated multiplayer experience. Set during the turbulent age of the Napoleonic Wars, this is a battlefield where tactics, trust, and timing mean everything.",
+    "standalone.button": "Support us!"
+  },
   "watchus": {
     "watchus.title": "WATCH OUR TOURNAMENTS",
     "watchus.subtitle": "CATCH US LIVE",
@@ -226,5 +233,11 @@
     "loading": "Loading...",
     "error": "Error loading video",
     "videosupport": "Your browser does not support the video tag."
+  },
+  "aboutus": {
+    "title": "RISK REFORGED",
+    "subtitle": "Who are we?",
+    "description": "The legacy of one of Warcraft III's most iconic custom maps is being reborn. Bigger. Smarter. Stand-alone.",
+    "welcome": "Welcome to Stand Alone, a simplified, yet fiercely competitive real-time strategy (RTS) game inspired by the legendary Risk map from Warcraft III — and built from the ground up as a dedicated multiplayer experience. Set during the turbulent age of the Napoleonic Wars, this is a battlefield where tactics, trust, and timing mean everything."
   }
 }

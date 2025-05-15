@@ -2,6 +2,7 @@
 
 .bgblue {
   background-color: $background-blue;
+  padding: 6rem 0;
 }
 
 .cta-icons {
@@ -14,13 +15,14 @@
   text-transform: uppercase;
   color: $cta-yellow;
   text-align: center;
-  margin-bottom: 16px;
+  margin-bottom: 5px;
+  font-size: 2.5rem;
 }
 
 .communitytext {
   font-family: 'textFont', sans-serif;
   color: $background-sand;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
-  margin-bottom: 16px;
+  margin-bottom: 35px;
 }

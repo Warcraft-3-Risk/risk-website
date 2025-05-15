@@ -10,17 +10,19 @@ export const landUnits = [
 ];
 
 export const seaUnits = [
+  { id: 'marine', label: 'Marine', iconClass: 'icon-marine' },
+  { id: 'admiral', label: 'Admiral', iconClass: 'icon-admiral' },
   { id: 'transport-ship', label: 'TS', iconClass: 'icon-transport-ship' },
   {
     id: 'armoured-transport-ship',
     label: 'ATS',
     iconClass: 'icon-armoured-transport-ship',
   },
-  { id: 'warship-a', label: 'Warship A', iconClass: 'icon-warship-a' },
-  { id: 'warship-b', label: 'Warship B', iconClass: 'icon-warship-b' },
+  { id: 'warship-a', label: 'WarshipA', iconClass: 'icon-warship-a' },
+  { id: 'warship-b', label: 'WarshipB', iconClass: 'icon-warship-b' },
   {
     id: 'battleship-ss',
-    label: 'Battleship SS',
+    label: 'BattleshipSS',
     iconClass: 'icon-battleship-ss',
   },
 ];
@@ -79,6 +81,18 @@ export const unitDescriptions: Record<
     description: 'High-durability unit with strong firepower.',
     image: '/images/Tank-unit.webp',
     imageClass: 'units-page-panel-tank-image',
+  },
+  marine: {
+    name: 'Marine',
+    description: 'Versatile unit with both ranged and melee attacks.',
+    image: '/images/icons/marine-unit.webp',
+    imageClass: 'units-page-panel-marine-image',
+  },
+  admiral: {
+    name: 'Admiral',
+    description: 'Leads naval forces with strategic advantage.',
+    image: '/images/icons/admiral-unit.webp',
+    imageClass: 'units-page-panel-admiral-image',
   },
   'transport-ship': {
     name: 'Transport Ship',

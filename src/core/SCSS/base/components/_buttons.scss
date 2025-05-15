@@ -75,17 +75,19 @@
   cursor: pointer;
 
   &.is-disabled {
-    background-color: #1b3449;
-    color: white;
+    background-color: $background-blue;
+    color: $background-sand;
     cursor: not-allowed;
+    font-family: "textFont";
   }
 
   &.is-enabled {
-    background-color: #f9c701;
-    color: black;
+    background-color: $cta-yellow;
+    color: $background-blue;
+    font-family: "textFont";
 
     &:hover {
-      background-color: #eab308;
+      background-color: #ffe26d;
     }
   }
 }

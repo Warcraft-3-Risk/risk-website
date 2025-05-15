@@ -9,6 +9,7 @@ import NewsSection from '@/app/components/layout/sections/NewsSection';
 import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 import WatchUsSection from '@/app/components/layout/sections/WatchUsSection';
 import SpecialMentionsSection from '@/app/components/layout/sections/SpecialMentionsSection';
+import StandAloneSection from '@/app/components/layout/sections/StandAloneSection';
 
 interface Article {
   id: number;
@@ -41,6 +42,7 @@ export default function HomePage() {
       <HeroSection />
       <LeaderBoardSection />
       <NewsSection articles={articles} />
+      <StandAloneSection />
       <CommunitySection />
       <WatchUsSection />
       <SpecialMentionsSection />
