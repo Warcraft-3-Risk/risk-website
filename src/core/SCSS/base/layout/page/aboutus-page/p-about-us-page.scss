@@ -1,0 +1,74 @@
+@import '../../../vars.scss';
+@import '../../../mixins.scss';
+
+.maincontainer {
+  background-color: $background-blue;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+.about-us-title {
+  @include about-us-title;
+  padding: 2rem 0;
+  text-shadow: 3px 3px 4px $background-blue;
+}
+
+.about-text {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  padding-left: 4rem;
+  @media screen and (max-width: 768px) {
+    padding-left: 1rem;
+    padding-top: 0;
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-family: titleFont, sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: $cta-yellow;
+  }
+}
+
+.about-description {
+  display: flex;
+  flex-direction: column;
+  background: $background-blue;
+
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    padding-bottom: 20px;
+  }
+}
+
+.about-description-text {
+  font-family: textFont, sans-serif;
+  font-size: 1.25rem;
+  color: $background-sand;
+  margin: 0 auto;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.about-description-welcome {
+  font-family: textFont, sans-serif;
+  font-size: 1.25rem;
+  color: $background-sand;
+  padding-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+    padding-bottom: 40px;
+  }
+}
+
+.world img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}

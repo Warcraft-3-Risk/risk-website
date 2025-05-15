@@ -39,3 +39,10 @@
   color: $background-sand;
   margin: 0 auto;
 }
+
+@mixin about-us-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
