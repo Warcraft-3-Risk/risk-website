@@ -8,8 +8,8 @@ import '@/core/SCSS/base/layout/l-calendar.scss';
 
 const TournamentsPage: React.FC = () => {
   return (
-    <div className="tournament-calendar px-4 mb-10">
-      <div className="container p-4">
+    <div className="tournament-calendar px-4 mb-25">
+      <div className="container pt-15 pb-10">
         <h2>
           <NewsAndEventsFlavour />
         </h2>
