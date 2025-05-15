@@ -1,6 +1,12 @@
 @import '../vars.scss';
 @import '../mixins.scss';
 
+.patchnotes-parent {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 1rem;
+}
+
 .patch-notes-header-title {
   @include hero-title;
 }

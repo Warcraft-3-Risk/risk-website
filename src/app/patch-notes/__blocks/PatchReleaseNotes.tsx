@@ -68,16 +68,17 @@ export default function PatchReleaseNotes({
                 {release.body?.slice(0, 800) || 'No description provided.'}
                 {release.body && release.body.length > 800 && '...'}
               </div>
-
-              <CTAButton
-                variant="externalLink"
-                href={release.html_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-block text-sm sm:text-base"
-              >
-                {patchNotesContent['patchreleasenotes.github']}
-              </CTAButton>
+              <div className="patchnotes-parent">
+                <CTAButton
+                  variant="externalLink"
+                  href={release.html_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-block text-sm sm:text-base"
+                  >
+                  {patchNotesContent['patchreleasenotes.github']}
+                </CTAButton>
+              </div>
             </div>
           </div>
         );
