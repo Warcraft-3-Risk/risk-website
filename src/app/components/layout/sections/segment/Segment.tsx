@@ -1,10 +1,10 @@
 'use client';
 
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
-import { getDownloadURL, ref } from 'firebase/storage';
 import { storage } from '@/core/api/firebase';
 import '@/core/SCSS/base/layout/l-segment.scss';
+import { getDownloadURL, ref } from 'firebase/storage';
+import Image from 'next/image';
+import React, { useEffect, useState } from 'react';
 
 type SegmentProps = {
   index: number;
@@ -25,7 +25,7 @@ const Segment: React.FC<SegmentProps> = ({
   video,
   videoUrl,
 }) => {
-  const isEven = index % 2 === 0;
+  const isEven = index % 2 !== 0;
   const [firebaseVideoUrl, setFirebaseVideoUrl] = useState<string | null>(null);
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Segment: React.FC<SegmentProps> = ({
       </div>
 
       <div className="w-full md:w-1/2 flex justify-center items-center relative">
-        <div className="relative w-full h-64 md:h-full shadow-lg overflow-hidden">
+        <div className="relative w-full h-64 md:h-full overflow-hidden">
           {video && firebaseVideoUrl ? (
             <video
               src={firebaseVideoUrl}
