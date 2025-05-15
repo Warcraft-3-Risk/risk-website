@@ -64,7 +64,7 @@ export default function LeaderBoardSection() {
                     <td className="contexttext px-6 py-4">{index + 1}</td>
                     <td className="contexttext px-6 py-4">{item.username}</td>
                     <td className="contexttext px-6 py-4">
-                      {item.elo.toFixed(2)}
+                      {Math.round(item.elo)}
                     </td>
                     <td className="contexttext px-6 py-4">{item.wins}</td>
                     <td className="contexttext px-6 py-4">{item.losses}</td>
