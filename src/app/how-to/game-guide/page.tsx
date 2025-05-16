@@ -55,14 +55,14 @@ const segments = [
     description:
       'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     video: true,
-    videoUrl: '/video/Step2_720.mp4',
+    videoUrl: '/video/Step5_720.mp4',
   },
   {
     title: 'TREE CUTTING',
     description:
       'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     video: true,
-    videoUrl: '/video/Step2_720.mp4',
+    videoUrl: '/video/Step4_720.mp4',
   },
 ];
 
