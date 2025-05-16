@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
 import content from '@/app/data/content.json';
+import Image from 'next/image';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -27,6 +28,22 @@ const TwitchPlayerSection: React.FC = () => {
       <div className="watch-us-tagline text-xl sm:text-2xl gap-4 sm:gap-6">
         <p>{watchusContent['watchus.liveTagline']}</p>
       </div>
+      <div className="flex gap-6 sm:gap-8 justify-center mt-7 sm:mt-6">
+          <Image
+            src="/images/YouTube_Symbol_gule.webp"
+            alt="YouTube"
+            width={64}
+            height={64}
+            className="w-12 sm:w-[76px] h-auto"
+          />
+          <Image
+            src="/images/twitch-gule.webp"
+            alt="Twitch"
+            width={64}
+            height={64}
+            className="w-12 sm:w-[76px] h-auto"
+          />
+        </div>
       <div className="relative mt-8 flex justify-center items-center pb-52">
         <button
           onClick={prevSlide}

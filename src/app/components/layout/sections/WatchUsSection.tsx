@@ -1,5 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
@@ -16,22 +15,6 @@ const WatchUsSection: React.FC = () => {
         <p className="watch-us-description text-base sm:text-lg mb-6 md:justify-start flex">
           {watchusContent['watchus.description']}
         </p>
-        <div className="flex gap-6 sm:gap-8 justify-start md:justify-start mt-4 sm:mt-6">
-          <Image
-            src="/images/YouTube_Symbol_gule.webp"
-            alt="YouTube"
-            width={64}
-            height={64}
-            className="w-12 sm:w-[76px] h-auto"
-          />
-          <Image
-            src="/images/twitch-gule.webp"
-            alt="Twitch"
-            width={64}
-            height={64}
-            className="w-12 sm:w-[76px] h-auto"
-          />
-        </div>
       </div>
     </section>
   );
