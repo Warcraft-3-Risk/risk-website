@@ -42,10 +42,10 @@ export default function HomePage() {
       <HeroSection />
       <LeaderBoardSection />
       <NewsSection articles={articles} />
-      <StandAloneSection />
-      <CommunitySection />
       <WatchUsSection />
       <SpecialMentionsSection />
+      <StandAloneSection />
+      <CommunitySection />
     </div>
   );
 }

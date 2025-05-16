@@ -1,20 +1,17 @@
 import React from 'react';
 
-import content from '@/app/data/content.json';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
 import TwitchPlayerSection from '@/app/components/layout/sections/TwitchPlayerSection';
-const SpecialMentionsContent = content.specialmentions;
 const SpecialMentionsSection: React.FC = () => {
   return (
-    <section className="Section_Background">
+    <section className="Section_Background relative">
+      <div className="absolute top-0 left-0 w-full h-96 bg-gradient-to-t from-transparent to-[#1b3449] pointer-events-none z-0" />
+
       <div className="container mx-auto px-4">
-        <h2 className="titletext text-7xl font-bold text-center">
-          {SpecialMentionsContent['specialmentions.title']}
-        </h2>
-      </div>
-      <div className="flex justify-center space-x-[100px] mt-8 text-center">
-        <TwitchPlayerSection />
+        <div className="flex justify-center space-x-[100px] text-center">
+          <TwitchPlayerSection />
+        </div>
       </div>
     </section>
   );

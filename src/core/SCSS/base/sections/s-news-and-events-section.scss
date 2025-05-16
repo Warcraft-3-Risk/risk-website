@@ -2,7 +2,11 @@
 @import '../mixins.scss';
 
 .NewsSection {
+  background-image: url('/images/newsandeventssection.webp');
   background-color: $background-blue;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .naetitle {

@@ -2,14 +2,15 @@
 
 import '@/core/SCSS/base/layout/l-burgermenu.scss';
 import { cn } from '@/lib/utils';
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
 interface SidebarItem {
   title: string;
-  href: string;
+  href?: string;
   icon?: React.ReactNode;
+  children?: SidebarItem[];
 }
 
 interface BurgerMenuProps {
@@ -18,7 +19,15 @@ interface BurgerMenuProps {
 
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [expandedItems, setExpandedItems] = useState<string[]>([]);
+
   const handleToggle = () => setIsOpen((prev) => !prev);
+
+  const toggleExpand = (title: string) => {
+    setExpandedItems((prev) =>
+      prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title],
+    );
+  };
 
   useEffect(() => {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
@@ -71,17 +80,55 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
         </div>
 
         <nav className="navIcons flex flex-col gap-4">
-          {items.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
-              onClick={handleToggle}
-            >
-              {item.icon}
-              <span>{item.title}</span>
-            </Link>
-          ))}
+          {items.map((item) => {
+            const hasChildren = item.children && item.children.length > 0;
+            const isExpanded = expandedItems.includes(item.title);
+
+            return (
+              <div key={item.title}>
+                <div
+                  className={cn(
+                    'flex items-center gap-3 hover:text-yellow-400 cursor-pointer transition-colors',
+                  )}
+                  onClick={() => {
+                    if (hasChildren) {
+                      toggleExpand(item.title);
+                    } else {
+                      setIsOpen(false);
+                    }
+                  }}
+                >
+                  {item.icon}
+                  <span>{item.title}</span>
+                  {hasChildren && (
+                    <ChevronDown
+                      className={cn(
+                        'transition-transform duration-300',
+                        isExpanded && 'rotate-180',
+                      )}
+                    />
+                  )}
+                </div>
+                {hasChildren && isExpanded && (
+                  <div className="ml-6 mt-2 flex flex-col gap-2">
+                    {item.children!.map((child) => (
+                      <Link
+                        key={child.title}
+                        href={child.href || '#'}
+                        className="flex items-center gap-2 text-sm text-gray-300 hover:text-yellow-400"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {child.icon && (
+                          <span className="flex-shrink-0">{child.icon}</span>
+                        )}
+                        <span>{child.title}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </nav>
       </div>
     </>

@@ -7,6 +7,7 @@
   padding: 2rem 0;
   text-shadow: 3px 3px 4px $background-blue;
   text-align: center;
+  z-index: 100;
 
   @media (max-width: 768px) {
     font-size: 3.25rem;
@@ -45,4 +46,20 @@
   font-size: 3.5rem;
   text-transform: uppercase;
   color: $cta-yellow;
+}
+
+@mixin stand-alone-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+
+@mixin twitch-player-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  margin: 0 auto;
+  padding: 2rem 0;
 }

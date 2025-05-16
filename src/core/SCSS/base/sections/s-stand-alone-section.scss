@@ -1,4 +1,5 @@
 @import '../vars.scss';
+@import '../mixins.scss';
 
 .stand-alone-section {
   display: flex;
@@ -10,6 +11,9 @@
     margin: 0;
     padding: 1rem;
   }
+}
+.stand-alone-title {
+  @include stand-alone-title;
 }
 
 .stand-alone-subtitle {

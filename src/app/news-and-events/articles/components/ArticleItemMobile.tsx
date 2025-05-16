@@ -27,9 +27,18 @@ const ArticleItemMobile = ({
 
   const toggleExpanded = () => setExpanded((prev) => !prev);
 
+  const handleCardClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLElement;
+    if (target.closest('.expand-btn')) return;
+    toggleExpanded();
+  };
+
   return (
     <li className="newsbox relative text-white overflow-hidden mb-8 rounded-lg md:hidden">
-      <div className="sandborder flex flex-col border-8">
+      <div
+        className="sandborder flex flex-col border-8 cursor-pointer"
+        onClick={handleCardClick}
+      >
         <div className="relative h-48 w-full">
           {imageUrl && (
             <Image
@@ -41,7 +50,10 @@ const ArticleItemMobile = ({
             />
           )}
           <button
-            onClick={toggleExpanded}
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleExpanded();
+            }}
             className="expand-btn absolute bottom-2 right-2 z-10 bg-black bg-opacity-50 rounded-full p-1"
             aria-label="Toggle article"
           >

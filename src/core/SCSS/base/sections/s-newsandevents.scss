@@ -1,25 +1,53 @@
 @import '../_vars.scss';
+@import '../_mixins.scss';
 
 .Section_Background {
+  background-image: url('/images/twitchsection.webp');
   background-color: $background-blue;
   color: $background-sand;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.WatchUs_Text {
+.titletext {
+  @include twitch-player-title;
+  padding-top: 100px;
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: 8px;
+  }
+}
+
+.watch-us-title {
   font-family: 'titleFont', sans-serif;
   font-weight: lighter;
   text-transform: uppercase;
-  color: $background-sand;
+  color: $cta-yellow;
   text-align: center;
   margin-bottom: 16px;
 }
 
-.WatchUs_Subtext {
+.watch-us-subtitle {
   font-family: 'textFont', sans-serif;
-  color: $background-sand;
+  color: $cta-yellow;
   margin-bottom: 16px;
 }
 
+.watch-us-description {
+  font-family: 'textFont', sans-serif;
+  color: $cta-yellow;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.watch-us-tagline {
+  font-family: 'textFont', sans-serif;
+  color: $cta-yellow;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
 .WatchUs_Block {
   background-color: $background-blue;
   color: $background-sand;

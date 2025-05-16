@@ -16,7 +16,6 @@ import {
   Newspaper,
   Swords,
   Trophy,
-  Users,
 } from 'lucide-react';
 import { Toaster } from 'sonner';
 
@@ -56,21 +55,26 @@ const navItems = [
     href: '/tournament',
     icon: <Trophy className="w-6 h-6" />,
   },
-
   {
-    title: 'Game Guide',
-    href: '/how-to/game-guide',
+    title: 'Game',
     icon: <Gamepad2 className="w-6 h-6" />,
+    children: [
+      {
+        title: 'Game Guide',
+        href: '/how-to/game-guide',
+        icon: <Gamepad2 className="w-6 h-6" />,
+      },
+      {
+        title: 'Units',
+        href: '/how-to/units-page',
+        icon: <Gamepad2 className="w-6 h-6" />,
+      },
+    ],
   },
   {
     title: 'Leaderboard',
     href: '/leaderboards',
     icon: <Medal className="w-6 h-6" />,
-  },
-  {
-    title: 'Units',
-    href: '/how-to/units-page',
-    icon: <Users className="w-6 h-6" />,
   },
   {
     title: 'About Us',

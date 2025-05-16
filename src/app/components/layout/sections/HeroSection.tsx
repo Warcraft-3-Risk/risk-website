@@ -10,6 +10,7 @@ export default function HeroSection() {
   const [showVideo, setShowVideo] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [hasAutoplayed, setHasAutoplayed] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   useEffect(() => {
@@ -47,6 +48,23 @@ export default function HeroSection() {
     setIsMuted(!isMuted);
   };
 
+  const togglePlayPause = () => {
+    const iframe = iframeRef.current;
+    if (!iframe) return;
+
+    const action = isPaused ? 'playVideo' : 'pauseVideo';
+    iframe.contentWindow?.postMessage(
+      JSON.stringify({
+        event: 'command',
+        func: action,
+        args: [],
+      }),
+      '*',
+    );
+
+    setIsPaused(!isPaused);
+  };
+
   const getYouTubeSrc = () => {
     return `https://www.youtube.com/embed/mZabLiyguSU?autoplay=1&mute=${isMuted ? 1 : 0}&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&showinfo=0&controls=0`;
   };
@@ -65,13 +83,14 @@ export default function HeroSection() {
               allowFullScreen
             ></iframe>
 
-            <CTAButton
-              variant="readmore"
-              onClick={toggleMute}
-              className="absolute z-10 top-4 left-4"
-            >
-              {isMuted ? 'Unmute' : 'Mute'}
-            </CTAButton>
+            <div className="absolute bottom-4 left-4 z-10 flex gap-4">
+              <CTAButton variant="readmore" onClick={toggleMute}>
+                {isMuted ? 'Unmute' : 'Mute'}
+              </CTAButton>
+              <CTAButton variant="readmore" onClick={togglePlayPause}>
+                {isPaused ? 'Play' : 'Pause'}
+              </CTAButton>
+            </div>
           </>
         ) : (
           <Image
