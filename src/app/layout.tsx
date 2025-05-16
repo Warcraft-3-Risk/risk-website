@@ -14,6 +14,8 @@ import {
   Home,
   Medal,
   Newspaper,
+  NotebookPen,
+  ShieldUser,
   Swords,
   Trophy,
 } from 'lucide-react';
@@ -56,18 +58,18 @@ const navItems = [
     icon: <Trophy className="w-6 h-6" />,
   },
   {
-    title: 'Game',
+    title: 'How To Play',
     icon: <Gamepad2 className="w-6 h-6" />,
     children: [
       {
         title: 'Game Guide',
         href: '/how-to/game-guide',
-        icon: <Gamepad2 className="w-6 h-6" />,
+        icon: <NotebookPen className="w-6 h-6" />,
       },
       {
         title: 'Units',
         href: '/how-to/units-page',
-        icon: <Gamepad2 className="w-6 h-6" />,
+        icon: <ShieldUser className="w-6 h-6" />,
       },
     ],
   },

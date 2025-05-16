@@ -1,6 +1,10 @@
+'use client';
+
 import '@/core/SCSS/base/layout/page/p-stand-alone-page.scss';
 import Image from 'next/image';
-import React from 'react';
+import { storage } from '@/core/api/firebase';
+import { getDownloadURL, ref } from 'firebase/storage';
+import React, { useEffect, useState } from 'react';
 
 type SegmentProps = {
   index: number;
@@ -22,7 +26,22 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
   videoUrl,
 }) => {
   const isEven = index % 2 !== 0;
+  const [firebaseVideoUrl, setFirebaseVideoUrl] = useState<string | null>(null);
 
+  useEffect(() => {
+    const fetchVideoUrl = async () => {
+      if (video && videoUrl) {
+        try {
+          const videoRef = ref(storage, videoUrl);
+          const url = await getDownloadURL(videoRef);
+          setFirebaseVideoUrl(url);
+        } catch (error) {
+          console.error('Error loading video from Firebase Storage:', error);
+        }
+      }
+    };
+    fetchVideoUrl();
+  }, [video, videoUrl]);
   return (
     <div className={`segment-container ${!isEven ? 'reverse' : ''}`}>
       <div
@@ -35,9 +54,9 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
 
       <div className="segment-media-wrapper">
         <div className="segment-media">
-          {video && videoUrl ? (
+          {video && firebaseVideoUrl ? (
             <video
-              src={videoUrl}
+              src={firebaseVideoUrl}
               className="segment-video"
               autoPlay
               muted

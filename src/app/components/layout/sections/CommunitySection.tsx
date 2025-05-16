@@ -18,7 +18,7 @@ const CommunitySection: React.FC = () => {
 
         <div className="flex flex-wrap justify-center items-center gap-10">
           <a
-            href="https://discord.com/invite/your-server"
+            href="https://discord.gg/wc3risk"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"
@@ -31,7 +31,7 @@ const CommunitySection: React.FC = () => {
             />
           </a>
           <a
-            href="https://youtube.com/@yourchannel"
+            href="https://www.youtube.com/@riskreforged"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"
@@ -44,7 +44,7 @@ const CommunitySection: React.FC = () => {
             />
           </a>
           <a
-            href="https://twitch.tv/yourchannel"
+            href="https://www.twitch.tv/riskreforged"
             target="_blank"
             rel="noopener noreferrer"
             className="transition-transform transform hover:scale-110"

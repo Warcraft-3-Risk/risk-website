@@ -2,8 +2,10 @@ import React from 'react';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-stand-alone-section.scss';
+import CTAButton from '@/app/components/ui/CTAButtons';
 
 const StandAloneContent = content.standalonesection;
+
 const StandAloneSection: React.FC = () => {
   return (
     <section className="stand-alone-section">
@@ -20,6 +22,11 @@ const StandAloneSection: React.FC = () => {
           <p className="stand-alone-description mb-8 text-start">
             {StandAloneContent['standalone.description']}
           </p>
+        </div>
+        <div className="justify-end flex">
+          <CTAButton variant="readmore" href="/stand-alone">
+            {StandAloneContent['standalone.button']}
+          </CTAButton>
         </div>
       </div>
     </section>

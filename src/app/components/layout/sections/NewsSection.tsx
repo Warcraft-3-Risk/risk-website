@@ -35,7 +35,6 @@ export default function NewsSection({ articles }: NewsSectionProps) {
 
   return (
     <section className="NewsSection relative py-12 px-6">
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-t from-transparent to-[#1b3449] pointer-events-none z-10" />
       <div className="container mx-auto">
         <div className="flex justify-start flex-col md:flex-row items-center mb-8">
           <h2 className="naetitle text-4xl z-50 font-bold mb-4 md:mb-0">

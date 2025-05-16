@@ -1,5 +1,5 @@
 import CommunitySection from '@/app/components/layout/sections/CommunitySection';
-import Segment from '@/app/components/layout/sections/segment/Segment';
+import SegmentReverse from '@/app/components/layout/sections/segment/SegmentReverse';
 import GameGuideFooter from '@/app/how-to/game-guide/__blocks/GameGuideFooter';
 import GameGuideHeader from '@/app/how-to/game-guide/__blocks/GameGuideHeader';
 import GameGuideSubTitle from '@/app/how-to/game-guide/__blocks/GameGuideSubTitle';
@@ -23,13 +23,6 @@ const segments = [
     videoUrl: '/video/tacc.mp4',
   },
   {
-    title: 'CAPTURING YOUR FIRST COUNTRY',
-    description:
-      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
-    video: true,
-    videoUrl: '/video/Step2_720.mp4',
-  },
-  {
     title: 'YOUR FIRST PAYCHECK',
     description:
       'To gain income you need to control a whole country at the end of a turn. You can see the timer both the timer (Clock icon) and the turn counter (Hourglass icon) to the right of your gold. You will always have a base income of 4 gold each turn, but you can increase this by capturing more countries!',
@@ -51,11 +44,25 @@ const segments = [
     videoUrl: '/video/Step5_720.mp4',
   },
   {
-    title: 'DIPLOMACTY IS KING!',
+    title: 'DIPLOMACY IS KING!',
     description:
       'Chat is essential in Risk, make sure to use it and read it. Diplomacy is key. Make sure to peace other players, but also be ready to be backstabbed when you are vulnerable.',
     video: true,
     videoUrl: '/video/Step6_720.mp4',
+  },
+  {
+    title: 'BOATS',
+    description:
+      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
+    video: true,
+    videoUrl: '/video/Step2_720.mp4',
+  },
+  {
+    title: 'TREE CUTTING',
+    description:
+      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
+    video: true,
+    videoUrl: '/video/Step2_720.mp4',
   },
 ];
 
@@ -65,7 +72,7 @@ export default function GameGuide() {
       <GameGuideHeader />
       <GameGuideSubTitle />
       {segments.map((segment, index) => (
-        <Segment key={index} index={index} {...segment} />
+        <SegmentReverse key={index} index={index} {...segment} />
       ))}
       <GameGuideFooter />
       <CommunitySection />

@@ -6,7 +6,7 @@
   color: $background-sand;
 }
 
-.backgroundimg {
+.backgroundggimg {
   background-image: url('/images/gameguide.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -34,9 +34,9 @@
 .game-guide-text {
   font-family: 'textFont', sans-serif;
   color: $background-sand;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
-  max-width: 800px;
+  max-width: 1000px;
 }
 
 .game-guide-description {
@@ -44,8 +44,10 @@
 }
 
 .game-guide-following {
-  font-size: 1rem;
+  font-family: 'textFont', sans-serif;
+  font-size: 1.25rem;
   line-height: 1.5;
+  max-width: 1000px;
 }
 
 .game-guide-essential {

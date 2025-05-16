@@ -71,12 +71,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="footer py-12 px-6 w-full">
       <div className="mx-auto w-full px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 text-center md:text-left">
-          <div className="footer__column space-y-3">
-            <h4 className="text-lg font-semibold">{footerContent.title}</h4>
-            <p className="footertext text-sm">{footerContent.description}</p>
-          </div>
-
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left">
           <div className="footer__column">
             <h4 className="text-lg font-semibold mb-3">
               {footerContent['links.title']}
@@ -173,7 +168,19 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          <div className="footer__column footertext text-sm">
+          <div className="footer__column footertext text-sm flex flex-col items-center md:items-start">
+            <div className="mb-3">
+              <Image
+                src="/images/rr-logo.svg"
+                alt="Footer Logo"
+                width={360}
+                height={360}
+                className="footer__logo"
+              />
+            </div>
+            <div className="footer__column space-y-3">
+              <p className="footertext text-sm">{footerContent.description}</p>
+            </div>
             <p>
               &copy; {year} {footerContent['copyright']}
             </p>

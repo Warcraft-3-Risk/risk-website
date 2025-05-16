@@ -6,8 +6,10 @@
 }
 
 .backgroundimg {
-  background-image: url('/images/gameguide.jpg');
+  background-image: url('/images/herostandalone.webp');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 50vh;
   width: 100%;
 }
@@ -254,7 +256,6 @@
 
     @media (min-width: 768px) {
       text-align: right;
-      align-items: flex-start;
     }
   }
 
@@ -263,7 +264,6 @@
 
     @media (min-width: 768px) {
       text-align: left;
-      align-items: flex-end;
     }
   }
 }

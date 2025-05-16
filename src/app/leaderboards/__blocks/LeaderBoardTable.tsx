@@ -68,7 +68,7 @@ const LeaderBoardTable: React.FC = () => {
                   </td>
                   <td className="contexttext px-6 py-4">{item.username}</td>
                   <td className="contexttext px-6 py-4">
-                    {item.elo.toFixed(2)}
+                    {item.elo.toFixed(0)}
                   </td>
                   <td className="contexttext px-6 py-4">{item.wins}</td>
                   <td className="contexttext px-6 py-4">{item.losses}</td>

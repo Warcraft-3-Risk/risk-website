@@ -31,7 +31,6 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
   useEffect(() => {
     const isMobile = window.matchMedia('(max-width: 768px)').matches;
-
     if (isMobile && isOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
@@ -86,32 +85,34 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
             return (
               <div key={item.title}>
-                <div
-                  className={cn(
-                    'flex items-center gap-3 hover:text-yellow-400 cursor-pointer transition-colors',
-                  )}
-                  onClick={() => {
-                    if (hasChildren) {
-                      toggleExpand(item.title);
-                    } else {
-                      setIsOpen(false);
-                    }
-                  }}
-                >
-                  {item.icon}
-                  <span>{item.title}</span>
-                  {hasChildren && (
+                {hasChildren ? (
+                  <div
+                    className="flex items-center gap-3 hover:text-yellow-400 cursor-pointer transition-colors"
+                    onClick={() => toggleExpand(item.title)}
+                  >
+                    {item.icon}
+                    <span>{item.title}</span>
                     <ChevronDown
                       className={cn(
                         'transition-transform duration-300',
                         isExpanded && 'rotate-180',
                       )}
                     />
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.href || '#'}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
+                  >
+                    {item.icon}
+                    <span>{item.title}</span>
+                  </Link>
+                )}
+
                 {hasChildren && isExpanded && (
                   <div className="ml-6 mt-2 flex flex-col gap-2">
-                    {item.children!.map((child) => (
+                    {item.children?.map((child) => (
                       <Link
                         key={child.title}
                         href={child.href || '#'}

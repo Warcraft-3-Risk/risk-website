@@ -2,9 +2,9 @@
 @import '../_mixins.scss';
 
 .Section_Background {
-  background-image: url('/images/twitchsection.webp');
+  background-image: url('/images/livestreamsection.webp');
   background-color: $background-blue;
-  color: $background-sand;
+  background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
 }

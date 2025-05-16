@@ -19,7 +19,7 @@ const TwitchPlayerSection: React.FC = () => {
   const SpecialMentionsContent = content.specialmentions;
 
   return (
-    <section className="background relative">
+    <section className="background">
       <h2 className="titletext text-center">
         {SpecialMentionsContent['specialmentions.title']}
       </h2>
