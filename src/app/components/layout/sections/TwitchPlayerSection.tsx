@@ -17,12 +17,16 @@ const TwitchPlayerSection: React.FC = () => {
   };
   const parentDomain = 'risk-reforged.web.app';
   const SpecialMentionsContent = content.specialmentions;
+  const watchusContent = content.watchus;
 
   return (
     <section className="background">
       <h2 className="titletext text-center">
         {SpecialMentionsContent['specialmentions.title']}
       </h2>
+      <div className="watch-us-tagline flex text-xl sm:text-2xl gap-4 sm:gap-6 justify-start md:justify-start mt-8">
+        <p>{watchusContent['watchus.liveTagline']}</p>
+      </div>
       <div className="relative mt-8 flex justify-center items-center pb-52">
         <button
           onClick={prevSlide}

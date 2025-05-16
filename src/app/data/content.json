@@ -50,10 +50,10 @@
   },
   "watchus": {
     "watchus.title": "WATCH OUR TOURNAMENTS",
-    "watchus.subtitle": "CATCH US LIVE",
     "watchus.description": "Tune in our official YouTube and Twitch channels for weekly tournament streams packed with excitement and entertainment.",
-    "watchus.liveTagline": "WE GO LIVE EVERY WEEK"
+    "watchus.liveTagline": "We go live every week!"
   },
+
   "patchnotes": {
     "patchreleasenotes.title": "PATCH NOTES",
     "patchreleasenotes.subtitle": "Latest Updates",

@@ -7,6 +7,8 @@
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
 }
 
 .titletext {
@@ -36,7 +38,7 @@
 .watch-us-description {
   font-family: 'textFont', sans-serif;
   color: $cta-yellow;
-  font-size: 1rem;
+  font-size: 1.5rem;
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -44,10 +46,11 @@
 .watch-us-tagline {
   font-family: 'textFont', sans-serif;
   color: $cta-yellow;
-  font-size: 1rem;
+  font-size: 2rem;
   line-height: 1.5;
   margin-bottom: 16px;
 }
+
 .WatchUs_Block {
   background-color: $background-blue;
   color: $background-sand;
