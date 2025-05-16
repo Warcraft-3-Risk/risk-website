@@ -27,14 +27,14 @@ const segments = [
     description:
       'To gain income you need to control a whole country at the end of a turn. You can see the timer both the timer (Clock icon) and the turn counter (Hourglass icon) to the right of your gold. You will always have a base income of 4 gold each turn, but you can increase this by capturing more countries!',
     video: true,
-    videoUrl: '/video/Step3_720.mp4',
+    videoUrl: '/video/Step2_720.mp4',
   },
   {
     title: 'EXPANDING FOR BEGINNERS',
     description:
       'It is best to start with smaller countries to gain income quickly. Start with 2 or 3 city/port countries. Try to expand in a way that will keep your countries connected.',
     video: true,
-    videoUrl: '/video/Step4_720.mp4',
+    videoUrl: '/video/Step3_720.mp4',
   },
   {
     title: 'FREE SPAWNS',
@@ -55,14 +55,14 @@ const segments = [
     description:
       'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     video: true,
-    videoUrl: '/video/Step2_720.mp4',
+    videoUrl: '/video/Step5_720.mp4',
   },
   {
     title: 'TREE CUTTING',
     description:
       'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
     video: true,
-    videoUrl: '/video/Step2_720.mp4',
+    videoUrl: '/video/Step4_720.mp4',
   },
 ];
 
