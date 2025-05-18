@@ -51,16 +51,23 @@ const segments = [
     videoUrl: '/video/Step6_720.mp4',
   },
   {
-    title: 'BOATS',
+    title: 'SHIPS AND TRANSPORTS',
     description:
-      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
+      'Land based conflicts are cute, but be aware of the dangers from the sea! Combat ships can be built at Ports and can be used to contest other players across the oceans. You may also use transport ships to invade enemy ports. Be aware that you may only load and unload units from pebbled terrain that surround ports',
     video: true,
     videoUrl: '/video/Step5_720.mp4',
   },
   {
+    title: 'SWAPPING DEFENDERS',
+    description:
+      'When your city or port defender is low on health, you can swap them our with a fresh unit. This ensures that your cities are not quickly lost to a sneak attack. On the other hand, you can also use this to increase your momentum, by using healthier units to engage enemies. The choice is yours!',
+    video: true,
+    videoUrl: '/video/Step6_720.mp4',
+  },
+  {
     title: 'TREE CUTTING',
     description:
-      'In order to win, you have to capture countries! Countries consists of cities and ports, and they have to be captured for you to increase your influence. Look for a country in which you own one of its cities or ports. Train 4 riflemen and capture it! Once captured, the country is yours!',
+      'Your enemy will take advantage of the terrain to reduce the combat effectiveness of your army. Mortars can effectively blow away that terrain - at least the tree part - allowing you to even the playing field. Mortars can ground target their mortar fire. The trees in the center of the AOE will take most of the damage, as such, consider moving the target area as you cut trees.',
     video: true,
     videoUrl: '/video/Step4_720.mp4',
   },

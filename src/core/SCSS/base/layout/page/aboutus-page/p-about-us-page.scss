@@ -9,7 +9,7 @@
 
 .about-us-title {
   @include about-us-title;
-  padding: 2rem 0;
+ 
   text-shadow: 3px 3px 4px $background-blue;
 }
 
@@ -20,6 +20,7 @@
   font-family: textFont, sans-serif;
   color: $background-sand;
   padding-left: 4rem;
+  padding-right: 3rem;
   @media screen and (max-width: 768px) {
     padding-left: 1rem;
     padding-top: 0;
