@@ -25,7 +25,7 @@ const StandAloneSegments: React.FC = () => {
       <div className="w-full md:w-1/2 flex justify-center items-center relative">
         <div className="relative w-full h-64 md:h-full overflow-hidden">
           <Image
-            src="/images/testimage.jpg"
+            src="/images/StandAlone_1.webp"
             alt={segment.imageAlt}
             fill
             className="object-cover z-0 w-full h-full"
