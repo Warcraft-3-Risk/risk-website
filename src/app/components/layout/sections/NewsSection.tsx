@@ -2,9 +2,9 @@
 
 import CTAButton from '@/app/components/ui/CTAButtons';
 import content from '@/app/data/content.json';
-import Image from 'next/image';
-import '@/core/SCSS/base/sections/s-news-and-events-section.scss';
 import '@/core/SCSS/base/layout/l-article-items.scss';
+import '@/core/SCSS/base/sections/s-news-and-events-section.scss';
+import Image from 'next/image';
 
 interface Article {
   id: number;
@@ -37,7 +37,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
     <section className="NewsSection relative py-12 px-6">
       <div className="container mx-auto">
         <div className="flex justify-start flex-col md:flex-row items-center mb-8">
-          <h2 className="naetitle text-4xl z-50 font-bold mb-4 md:mb-0">
+          <h2 className="naetitle text-4xl z-40 font-bold mb-4 md:mb-0">
             {newsSection['newssection.title']}
           </h2>
         </div>
