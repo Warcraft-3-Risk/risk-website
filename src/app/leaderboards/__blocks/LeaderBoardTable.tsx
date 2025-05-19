@@ -61,7 +61,7 @@ const LeaderBoardTable: React.FC = () => {
               {currentItems.map((item, index) => (
                 <tr
                   key={item.id}
-                  className="odd:bg-[#0C2A46] even:bg-[#123456] hover:bg-[#1A4A6D] transition"
+                  className="fade-in-up odd:bg-[#0C2A46] even:bg-[#123456] hover:bg-[#1A4A6D] transition"
                 >
                   <td className="contexttext px-6 py-4">
                     {startIndex + index + 1}

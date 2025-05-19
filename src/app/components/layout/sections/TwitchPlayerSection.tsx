@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useInView } from '@/core/hooks/useInView'; // your hook path
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
 import content from '@/app/data/content.json';
@@ -6,8 +7,12 @@ import Image from 'next/image';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const { ref, isVisible } = useInView<HTMLDivElement>(0.2);
 
   const channels = ['babusox', 'babusox', 'babusox'];
+  const parentDomain = 'risk-reforged.web.app';
+  const SpecialMentionsContent = content.specialmentions;
+  const watchusContent = content.watchus;
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? channels.length - 1 : prev - 1));
@@ -16,9 +21,6 @@ const TwitchPlayerSection: React.FC = () => {
   const nextSlide = () => {
     setCurrent((prev) => (prev === channels.length - 1 ? 0 : prev + 1));
   };
-  const parentDomain = 'risk-reforged.web.app';
-  const SpecialMentionsContent = content.specialmentions;
-  const watchusContent = content.watchus;
 
   return (
     <section className="background">
@@ -29,22 +31,28 @@ const TwitchPlayerSection: React.FC = () => {
         <p>{watchusContent['watchus.liveTagline']}</p>
       </div>
       <div className="flex gap-6 sm:gap-8 justify-center mt-7 sm:mt-6">
-          <Image
-            src="/images/YouTube_Symbol_gule.webp"
-            alt="YouTube"
-            width={64}
-            height={64}
-            className="w-12 sm:w-[76px] h-auto"
-          />
-          <Image
-            src="/images/twitch-gule.webp"
-            alt="Twitch"
-            width={64}
-            height={64}
-            className="w-12 sm:w-[76px] h-auto"
-          />
-        </div>
-      <div className="relative mt-8 flex justify-center items-center pb-52">
+        <Image
+          src="/images/YouTube_Symbol_gule.webp"
+          alt="YouTube"
+          width={64}
+          height={64}
+          className="w-12 sm:w-[76px] h-auto"
+        />
+        <Image
+          src="/images/twitch-gule.webp"
+          alt="Twitch"
+          width={64}
+          height={64}
+          className="w-12 sm:w-[76px] h-auto"
+        />
+      </div>
+
+      <div
+        ref={ref}
+        className={`relative mt-8 flex justify-center items-center pb-52 duration-700 ease-out
+          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+        `}
+      >
         <button
           onClick={prevSlide}
           className="button-prev"

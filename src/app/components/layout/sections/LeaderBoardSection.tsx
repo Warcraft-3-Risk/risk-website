@@ -9,7 +9,6 @@ import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTable
 
 export default function LeaderBoardSection() {
   const topLeaders = useLeaderboardData(5);
-
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;
     return total === 0 ? '0%' : `${Math.round((wins / total) * 100)}%`;
