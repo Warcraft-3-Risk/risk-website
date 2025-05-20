@@ -1,8 +1,7 @@
-import React from 'react';
-import { LeaderboardEntry } from '@/core/utils/UseRealLeaderboard';
-import Image from 'next/image';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
+import { LeaderboardEntry } from '@/core/utils/UseRealLeaderboard';
+import React from 'react';
 
 interface Props {
   currentItems: LeaderboardEntry[];
@@ -26,12 +25,7 @@ const LeaderboardTableMobile: React.FC<Props> = ({
               <span className="w-5 text-sm font-medium">
                 {startIndex + index + 1}
               </span>
-              <Image
-                src="/images/twitch-tile.svg"
-                alt="icon"
-                width={20}
-                height={20}
-              />
+              {/* <Image  alt="icon" width={20} height={20} /> */}
               <span className="elotext text-sm">
                 {labels.elo}: {item.elo}
               </span>
