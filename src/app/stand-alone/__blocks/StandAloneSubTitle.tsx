@@ -41,7 +41,7 @@ const StandAloneSubTitle: React.FC = () => {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/kickstarter-gul.webp"
+              src="/images/kickstarter-gul.svg"
               alt="Icon 2"
               className="kickstarter-icon"
               width={256}

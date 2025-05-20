@@ -1,15 +1,27 @@
+'use client';
+
 import Image from 'next/image';
+import { useInView } from '@/core/hooks/useInView';
 import content from '@/app/data/content.json';
 
 const StandAloneFooter = () => {
   const footer = content.standaloneFooter;
+  const { ref, isVisible } = useInView<HTMLDivElement>(0.8);
 
   return (
     <footer className="stand-alone-footer">
-      <h2 className="stand-alone-footer-title">{footer.title}</h2>
-      <div className="stand-alone-footer-following">
-        <p>{footer.description}</p>
+      <div
+        ref={ref}
+        className={`transition-all duration-700 ease-out justify-center flex flex-col items-center text-center 
+          ${isVisible ? 'opacity-100' : 'opacity-0'}
+        `}
+      >
+        <h2 className="stand-alone-footer-title">{footer.title}</h2>
+        <div className="stand-alone-footer-following">
+          <p>{footer.description}</p>
+        </div>
       </div>
+
       <div className="standalone-icons">
         <div className="icon-item">
           <a
@@ -33,7 +45,7 @@ const StandAloneFooter = () => {
             rel="noopener noreferrer"
           >
             <Image
-              src="/images/kickstarter-gul.webp"
+              src="/images/kickstarter-gul.svg"
               alt={footer.icons.kickstarterAlt}
               className="kickstarter-icon"
               width={256}
