@@ -34,7 +34,10 @@
 .ReadMoreButton {
   @extend %BaseCTAButton;
   background-color: $cta-yellow;
-  color: $background-blue;
+  p {
+    color: $background-blue;
+    font-family: titleFont, sans-serif;
+  }
 
   &:hover {
     background-color: $yellow-hover;
@@ -78,13 +81,13 @@
     background-color: $background-blue;
     color: $background-sand;
     cursor: not-allowed;
-    font-family: "textFont";
+    font-family: 'textFont';
   }
 
   &.is-enabled {
     background-color: $cta-yellow;
     color: $background-blue;
-    font-family: "textFont";
+    font-family: 'textFont';
 
     &:hover {
       background-color: #ffe26d;

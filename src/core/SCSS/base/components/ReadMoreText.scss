@@ -1,0 +1,19 @@
+@import '../_vars.scss';
+
+.readmorebutton {
+  top: 25px;
+  font-family: 'titleFont', sans-serif;
+  font-size: 1rem;
+  color: $background-blue !important;
+  background-color: $cta-yellow;
+  text-decoration: none;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+
+  &:hover {
+    background-color: $yellow-hover;
+    color: $cta-blue;
+    cursor: pointer;
+  }
+}
