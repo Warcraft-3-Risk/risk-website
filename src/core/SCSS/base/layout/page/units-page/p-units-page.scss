@@ -12,7 +12,7 @@
   width: 100%;
 
   &-title {
-    @include units-title;
+    @include small-title;
   }
 }
 
@@ -267,5 +267,5 @@
 }
 
 .units-page-stats-skills-fallback {
-  @include info-text;
+  @include description-text;
 }

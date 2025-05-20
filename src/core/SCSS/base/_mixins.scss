@@ -1,4 +1,4 @@
-@mixin hero-title {
+@mixin large-title {
   font-family: titleFont, sans-serif;
   font-size: 5.25rem;
   text-transform: uppercase;
@@ -14,7 +14,7 @@
   }
 }
 
-@mixin units-title {
+@mixin small-title {
   font-family: titleFont, sans-serif;
   font-size: 5.25rem;
   text-transform: uppercase;
@@ -25,40 +25,34 @@
   text-align: center;
 }
 
-@mixin section-title {
+@mixin smaller-title {
   font-family: titleFont, sans-serif;
-  font-size: 3.5rem;
+  font-size: 3.25rem;
   text-transform: uppercase;
   color: $cta-yellow;
   margin: 0 auto;
   padding: 2rem 0;
+  text-shadow: 3px 3px 4px $background-blue;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+    padding: 1rem 0;
+    text-shadow: none;
+    width: 100%;
+  }
 }
 
-@mixin info-text {
+@mixin section-left-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+}
+
+@mixin description-text {
   font-family: textFont, sans-serif;
   font-size: 1.25rem;
   color: $background-sand;
-  margin: 0 auto;
-}
-
-@mixin about-us-title {
-  font-family: titleFont, sans-serif;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  color: $cta-yellow;
-}
-
-@mixin stand-alone-title {
-  font-family: titleFont, sans-serif;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  color: $cta-yellow;
-}
-
-@mixin twitch-player-title {
-  font-family: titleFont, sans-serif;
-  font-size: 3.5rem;
-  text-transform: uppercase;
-  color: $cta-yellow;
   margin: 0 auto;
 }

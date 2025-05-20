@@ -10,12 +10,8 @@
 }
 
 .titletext {
-  @include twitch-player-title;
+  @include smaller-title;
   padding-top: 100px;
-  @media screen and (max-width: 768px) {
-    font-size: 2rem;
-    margin-bottom: 8px;
-  }
 }
 
 .watch-us-title {
