@@ -1,18 +1,40 @@
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/sections/s-community-section.scss';
+import { useInView } from '@/core/hooks/useInView';
 
 const communityContent = content.communitysection;
 
 const CommunitySection: React.FC = () => {
+  const { ref: titleRef, isVisible: isTitleVisible } =
+    useInView<HTMLHeadingElement>(0.2);
+  const { ref: subtitleRef, isVisible: isSubtitleVisible } =
+    useInView<HTMLParagraphElement>(0.2);
+
   return (
     <section className="bgblue py-12">
       <div className="container mx-auto px-4">
-        <h2 className="communitytitle text-3xl font-bold text-center text-yellow-500 mb-6">
+        <h2
+          ref={titleRef}
+          className={`communitytitle text-3xl font-bold text-center text-yellow-500 mb-6 transition-all duration-700 ease-out transform ${
+            isTitleVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-6'
+          }`}
+        >
           {communityContent['communitysection.title']}
         </h2>
-        <p className="communitytext text-center text-white mb-8">
+        <p
+          ref={subtitleRef}
+          className={`communitytext text-center text-white mb-8 transition-all duration-700 ease-out transform ${
+            isSubtitleVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-6'
+          }`}
+        >
           {communityContent['communitysection.subtitle']}
         </p>
 

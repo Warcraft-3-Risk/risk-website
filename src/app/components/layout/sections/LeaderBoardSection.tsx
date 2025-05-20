@@ -6,9 +6,11 @@ import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-section.scss';
 import CTAButton from '@/app/components/ui/CTAButtons';
 import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTableMobile';
+import { useInView } from '@/core/hooks/useInView';
 
 export default function LeaderBoardSection() {
   const topLeaders = useLeaderboardData(5);
+
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;
     return total === 0 ? '0%' : `${Math.round((wins / total) * 100)}%`;
@@ -16,17 +18,46 @@ export default function LeaderBoardSection() {
 
   const leaderboardContent = content.leaderboards;
 
+  const { ref: titleRef, isVisible: isTitleVisible } =
+    useInView<HTMLHeadingElement>();
+  const { ref: descRef, isVisible: isDescVisible } =
+    useInView<HTMLParagraphElement>();
+  const { ref: tableRef, isVisible: isTableVisible } =
+    useInView<HTMLDivElement>();
+
   return (
     <section className="leaderboardbackground relative text-white py-12 px-6">
       <div className="container mx-auto">
-        <h2 className="lbtitle text-4xl font-bold mb-4">
+        <h2
+          ref={titleRef}
+          className={`lbtitle text-4xl font-bold mb-4 transition-all duration-700 ease-out transform ${
+            isTitleVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           {leaderboardContent['leaderboardsection.title']}
         </h2>
-        <p className="description mb-8">
+
+        <p
+          ref={descRef}
+          className={`description mb-8 transition-all duration-700 ease-out delay-100 transform ${
+            isDescVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           {leaderboardContent['leaderboardsection.description']}
         </p>
 
-        <div className="hidden md:block">
+        <div
+          ref={tableRef}
+          className={`hidden md:block transition-all duration-700 ease-out delay-200 transform ${
+            isTableVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <div className="tablecontainer overflow-x-auto w-full">
             <table className="sandborder w-full text-white">
               <thead>

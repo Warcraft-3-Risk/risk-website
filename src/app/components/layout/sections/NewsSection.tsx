@@ -5,6 +5,7 @@ import content from '@/app/data/content.json';
 import Image from 'next/image';
 import '@/core/SCSS/base/sections/s-news-and-events-section.scss';
 import '@/core/SCSS/base/layout/l-article-items.scss';
+import { useInView } from '@/core/hooks/useInView';
 
 interface Article {
   id: number;
@@ -23,27 +24,30 @@ interface NewsSectionProps {
 export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles.length > 0 ? articles[0] : null;
   const newsSection = content.newssection;
-  if (!articles || articles.length === 0) {
-    return (
-      <section className="NewsSection py-12 px-6">
-        <div className="container mx-auto">
-          <p className="text-gray-600">{newsSection['newssection.none']}</p>
-        </div>
-      </section>
-    );
-  }
+
+  const { ref: titleRef, isVisible: isTitleVisible } =
+    useInView<HTMLHeadingElement>();
+  const { ref: buttonRef, isVisible: isButtonVisible } =
+    useInView<HTMLDivElement>();
 
   return (
     <section className="NewsSection relative py-12 px-6">
       <div className="container mx-auto">
         <div className="flex justify-start flex-col md:flex-row items-center mb-8">
-          <h2 className="naetitle text-4xl z-50 font-bold mb-4 md:mb-0">
+          <h2
+            ref={titleRef}
+            className={`naetitle text-4xl z-50 font-bold mb-4 md:mb-0 transition-all duration-700 ease-out transform ${
+              isTitleVisible
+                ? 'opacity-100 translate-y-0'
+                : 'opacity-0 translate-y-8'
+            }`}
+          >
             {newsSection['newssection.title']}
           </h2>
         </div>
 
-        {latestArticle && (
-          <div className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-8 shadow-lg">
+        {latestArticle ? (
+          <div className="newsbox relative bg-[#1b3449] text-white overflow-hidden mb-8 shadow-lg transition-all duration-700 ease-out translate-y-0 opacity-100">
             <div className="sandborder flex flex-col md:flex-row border-8">
               <div className="p-6 flex-1 relative">
                 <h2 className="title text-2xl font-bold mb-1">
@@ -77,9 +81,18 @@ export default function NewsSection({ articles }: NewsSectionProps) {
               )}
             </div>
           </div>
+        ) : (
+          <p className="text-gray-600">{newsSection['newssection.none']}</p>
         )}
 
-        <div className="flex justify-end mt-4">
+        <div
+          ref={buttonRef}
+          className={`flex justify-end mt-4 transition-all duration-700 ease-out delay-200 transform ${
+            isButtonVisible
+              ? 'opacity-100 translate-y-0'
+              : 'opacity-0 translate-y-8'
+          }`}
+        >
           <CTAButton
             href="/news-and-events"
             className="bg-[#0C2A46] text-[#efe5c7] px-4 py-2 font-medium hover:bg-opacity-90 transition-colors"

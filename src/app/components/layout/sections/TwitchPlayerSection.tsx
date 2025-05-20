@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useInView } from '@/core/hooks/useInView'; // your hook path
+import { useInView } from '@/core/hooks/useInView';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
 import content from '@/app/data/content.json';
@@ -7,7 +7,14 @@ import Image from 'next/image';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
-  const { ref, isVisible } = useInView<HTMLDivElement>(0.2);
+
+  const { ref: titleRef, isVisible: isTitleVisible } =
+    useInView<HTMLHeadingElement>(0.2);
+  const { ref: taglineRef, isVisible: isTaglineVisible } =
+    useInView<HTMLDivElement>(0.2);
+
+  const { ref: playerRef, isVisible: isPlayerVisible } =
+    useInView<HTMLDivElement>(0.2);
 
   const channels = ['babusox', 'babusox', 'babusox'];
   const parentDomain = 'risk-reforged.web.app';
@@ -24,33 +31,49 @@ const TwitchPlayerSection: React.FC = () => {
 
   return (
     <section className="background">
-      <h2 className="titletext text-center">
+      <h2
+        ref={titleRef}
+        className={`titletext text-center transition-all duration-700 ease-out transform ${
+          isTitleVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-6'
+        }`}
+      >
         {SpecialMentionsContent['specialmentions.title']}
       </h2>
-      <div className="watch-us-tagline text-xl sm:text-2xl gap-4 sm:gap-6">
+
+      <div
+        ref={taglineRef}
+        className={`watch-us-tagline text-xl sm:text-2xl gap-4 sm:gap-6 transition-all duration-700 ease-out transform ${
+          isTaglineVisible
+            ? 'opacity-100 translate-y-0'
+            : 'opacity-0 translate-y-6'
+        }`}
+      >
         <p>{watchusContent['watchus.liveTagline']}</p>
       </div>
+
       <div className="flex gap-6 sm:gap-8 justify-center mt-7 sm:mt-6">
         <Image
           src="/images/YouTube_Symbol_gule.webp"
           alt="YouTube"
-          width={64}
-          height={64}
-          className="w-12 sm:w-[76px] h-auto"
+          width={100}
+          height={80}
+          className="transition-transform duration-300 ease-in-out hover:scale-110"
         />
         <Image
           src="/images/twitch-gule.webp"
           alt="Twitch"
-          width={64}
-          height={64}
-          className="w-12 sm:w-[76px] h-auto"
+          width={80}
+          height={80}
+          className="transition-transform duration-300 ease-in-out hover:scale-110"
         />
       </div>
 
       <div
-        ref={ref}
+        ref={playerRef}
         className={`relative mt-8 flex justify-center items-center pb-52 duration-700 ease-out
-          ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
+          ${isPlayerVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}
         `}
       >
         <button
@@ -70,7 +93,7 @@ const TwitchPlayerSection: React.FC = () => {
               width="100%"
               height="100%"
               allowFullScreen
-            ></iframe>
+            />
           </div>
 
           <div
@@ -86,7 +109,7 @@ const TwitchPlayerSection: React.FC = () => {
                   src={`https://player.twitch.tv/?channel=${channel}&parent=${parentDomain}&autoplay=false`}
                   className="w-full h-full"
                   allowFullScreen
-                ></iframe>
+                />
               </div>
             ))}
           </div>

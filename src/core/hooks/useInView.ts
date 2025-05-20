@@ -5,7 +5,8 @@ export function useInView<T extends HTMLElement>(threshold = 0.1) {
   const ref = useRef<T | null>(null);
 
   useEffect(() => {
-    if (!ref.current) return;
+    const node = ref.current;
+    if (!node) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -17,7 +18,12 @@ export function useInView<T extends HTMLElement>(threshold = 0.1) {
       { threshold },
     );
 
-    observer.observe(ref.current);
+    observer.observe(node);
+
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      setIsVisible(true);
+      observer.disconnect();
+    }
 
     return () => observer.disconnect();
   }, [threshold]);

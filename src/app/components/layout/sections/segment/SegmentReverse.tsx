@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { storage } from '@/core/api/firebase';
 import { getDownloadURL, ref } from 'firebase/storage';
 import React, { useEffect, useState } from 'react';
+import { useInView } from '@/core/hooks/useInView';
 
 type SegmentProps = {
   index: number;
@@ -28,6 +29,8 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
   const isEven = index % 2 !== 0;
   const [firebaseVideoUrl, setFirebaseVideoUrl] = useState<string | null>(null);
 
+  const { ref: textRef, isVisible } = useInView<HTMLDivElement>(0.2);
+
   useEffect(() => {
     const fetchVideoUrl = async () => {
       if (video && videoUrl) {
@@ -42,10 +45,14 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
     };
     fetchVideoUrl();
   }, [video, videoUrl]);
+
   return (
     <div className={`segment-container ${!isEven ? 'reverse' : ''}`}>
       <div
-        className={`segment-content ${isEven ? 'align-right' : 'align-left'}`}
+        ref={textRef}
+        className={`segment-content transition-all duration-700 ease-out ${
+          isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        } ${isEven ? 'align-right' : 'align-left'}`}
       >
         <h2 className="segment-title">{title}</h2>
         <p className="segment-description">{description}</p>
@@ -71,7 +78,6 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
               className="segment-image"
             />
           ) : null}
-
           <div className={`segment-gradient ${isEven ? 'left' : 'right'}`} />
         </div>
       </div>
