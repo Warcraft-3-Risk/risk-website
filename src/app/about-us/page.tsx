@@ -2,6 +2,7 @@ import React from 'react';
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/page/aboutus-page/p-about-us-page.scss';
 import Image from 'next/image';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 
 const AboutUs = content.aboutus;
 
@@ -24,6 +25,9 @@ const AboutPage = () => {
           src={'/images/World.svg'}
           alt={''}
         ></Image>
+      </div>
+      <div className="about-us-following">
+        <CommunitySection />
       </div>
     </div>
   );

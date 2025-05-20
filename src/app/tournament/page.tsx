@@ -5,6 +5,7 @@ import TournamentCalendarMobile from '@/app/tournament/__blocks/TournamentCalend
 import NewsAndEventsFlavour from '@/app/tournament/__blocks/TournamentTextBlock';
 
 import '@/core/SCSS/base/layout/l-calendar.scss';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 
 const TournamentsPage: React.FC = () => {
   return (
@@ -20,6 +21,9 @@ const TournamentsPage: React.FC = () => {
 
       <div className="block md:hidden w-full">
         <TournamentCalendarMobile />
+      </div>
+      <div className="tournament-community">
+        <CommunitySection />
       </div>
     </div>
   );

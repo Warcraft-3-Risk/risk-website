@@ -8,6 +8,7 @@ import ArticleItem from '@/app/news-and-events/articles/components/ArticleItem';
 import ArticleItemMobile from '@/app/news-and-events/articles/components/ArticleItemMobile';
 import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
 import { useState } from 'react';
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
@@ -80,6 +81,10 @@ const NewsPage = () => {
             {NewsSection['newssection.title']}
           </p>
         )}
+      </div>
+
+      <div>
+        <CommunitySection />
       </div>
     </>
   );
