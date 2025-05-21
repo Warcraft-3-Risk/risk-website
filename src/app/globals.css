@@ -128,3 +128,8 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
+
+.prose input[type='checkbox'] {
+  accent-color: #0e7689;
+  cursor: pointer;
+}

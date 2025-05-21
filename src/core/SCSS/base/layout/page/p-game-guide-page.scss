@@ -91,3 +91,13 @@
   text-transform: uppercase;
   line-height: 1.5;
 }
+
+.segment-note {
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  font-size: 1rem;
+  line-height: 1.75;
+  padding: 0 2rem;
+  width: 100%;
+  text-wrap: pretty;
+}

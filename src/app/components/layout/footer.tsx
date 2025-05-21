@@ -8,7 +8,7 @@ import { FileText, Mail, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import Modal from './Modal';
+import Modal from '@/app/components/layout/Modal';
 
 const Footer: React.FC = () => {
   const year = new Date().getFullYear();

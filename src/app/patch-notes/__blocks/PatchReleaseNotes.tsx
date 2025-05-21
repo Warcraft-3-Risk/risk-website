@@ -8,6 +8,9 @@ import { fetchGithubReleases, Release } from '@/core/utils/githubReleases';
 import { CircleAlert } from 'lucide-react';
 import router from 'next/router';
 import { useEffect, useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import 'github-markdown-css/github-markdown.css';
 
 interface PatchReleaseNotesProps {
   isExpanded: boolean;
@@ -50,7 +53,10 @@ export default function PatchReleaseNotes({
         return (
           <div
             key={release.id}
-            className={`releasebox w-full sm:w-3/4 ${variantClass} mb-16`}
+            className={`
+              releasebox w-full sm:w-3/4 ${variantClass} mb-16
+              transition-all duration-700 ease-out
+            `}
           >
             <div className="p-2 themed-border">
               <div className="flex lg:flex-row sm:flex-row sm:items-center gap-4 sm:gap-10">
@@ -64,9 +70,15 @@ export default function PatchReleaseNotes({
                 {new Date(release.created_at).toDateString()}
               </span>
 
-              <div className="themed-text ml-2 sm:ml-4 mt-2 whitespace-pre-line text-sm sm:text-base">
-                {release.body?.slice(0, 800) || 'No description provided.'}
-                {release.body && release.body.length > 800 && '...'}
+              <div className="themed-text ml-2 sm:ml-4 mt-2">
+                <div className="markdown-body bg-[#1b3449]">
+                  <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {release.body || 'No description provided.'}
+                  </ReactMarkdown>
+                </div>
+                {release.body && release.body.length > 800 && (
+                  <span className="italic text-sm">...</span>
+                )}
               </div>
               <div className="patchnotes-parent">
                 <CTAButton
@@ -75,7 +87,7 @@ export default function PatchReleaseNotes({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-3 inline-block text-sm sm:text-base"
-                  >
+                >
                   {patchNotesContent['patchreleasenotes.github']}
                 </CTAButton>
               </div>
@@ -83,6 +95,7 @@ export default function PatchReleaseNotes({
           </div>
         );
       })}
+
       <div className="ctabuttons flex gap-4 justify-end w-full">
         <CTAButton
           variant="play"

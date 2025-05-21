@@ -1,4 +1,4 @@
-import rawData from './players.json';
+import rawData from '@/app/data/players.json';
 
 export interface LeaderboardEntry {
   id: number;

@@ -36,42 +36,86 @@
   background-color: $background-blue;
 }
 
-// Yellow Theme
 .yellow-theme {
-  .patch-version {
-    color: $cta-yellow;
-  }
-
-  .themed-text {
-    color: $cta-yellow;
-    font-family: 'textFont', serif;
-  }
-
-  .themed-icon {
-    color: $cta-yellow;
-  }
-
   .themed-border {
     border: 2px solid $cta-yellow;
   }
+
+  .markdown-body {
+    background-color: transparent;
+    color: $cta-yellow;
+
+    h2 {
+      color: $cta-yellow !important;
+      font-family: 'titleFont', sans-serif;
+      font-size: 1.25rem !important;
+      margin-top: 1.5rem;
+    }
+    p,
+    li,
+    ul,
+    ol,
+    a {
+      color: $cta-yellow !important;
+      font-family: 'textFont', serif;
+    }
+    ul {
+      padding-left: 1.5rem;
+      list-style-type: circle;
+      margin-left: 0;
+    }
+  }
+  .patch-version {
+    color: $cta-yellow;
+  }
+  .themed-icon {
+    color: $cta-yellow;
+  }
+
+  .themed-text {
+    color: $cta-yellow;
+    font-family: 'textFont', serif;
+  }
 }
 
-// Sand Theme
 .sand-theme {
+  .themed-border {
+    border: 2px solid $background-sand;
+  }
+
+  .markdown-body {
+    background-color: transparent;
+    color: $background-sand;
+
+    h2 {
+      color: $background-sand !important;
+      font-family: 'titleFont', sans-serif;
+      font-size: 1.25rem !important;
+      margin-top: 1.5rem;
+    }
+    p,
+    li,
+    ul,
+    ol,
+    a {
+      color: $background-sand !important;
+      font-family: 'textFont', serif;
+    }
+    ul {
+      padding-left: 1.5rem;
+      list-style-type: circle;
+      margin-left: 0;
+    }
+  }
   .patch-version {
+    color: $background-sand;
+  }
+  .themed-icon {
     color: $background-sand;
   }
 
   .themed-text {
     color: $background-sand;
     font-family: 'textFont', serif;
-  }
-
-  .themed-icon {
-    color: $background-sand;
-  }
-
-  .themed-border {
-    border: 2px solid $background-sand;
   }
 }
