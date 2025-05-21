@@ -21,7 +21,7 @@ const StandAloneSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
-          className={`stand-alone-title mt-10 text-center transition-all duration-700 ease-out transform ${
+          className={`stand-alone-title mt-18 text-center transition-all duration-700 ease-out transform ${
             isTitleVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
@@ -55,7 +55,7 @@ const StandAloneSection: React.FC = () => {
         </div>
         <div
           ref={buttonRef}
-          className={`justify-end flex transition-all duration-700 ease-out transform ${
+          className={`justify-end flex transition-all duration-700 ease-out transform mb-14 ${
             isButtonVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'

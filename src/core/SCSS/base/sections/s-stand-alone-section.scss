@@ -2,10 +2,13 @@
 @import '../mixins.scss';
 
 .stand-alone-section {
+  background-image: url('/images/standaloneherosection.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: $background-blue;
 
   @media screen and (max-width: 768px) {
     margin: 0;
