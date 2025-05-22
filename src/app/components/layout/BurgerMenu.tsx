@@ -4,6 +4,7 @@ import '@/core/SCSS/base/layout/l-burgermenu.scss';
 import { cn } from '@/lib/utils';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react';
 
 interface SidebarItem {
@@ -20,6 +21,7 @@ interface BurgerMenuProps {
 const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [expandedItems, setExpandedItems] = useState<string[]>([]);
+  const pathname = usePathname();
 
   const handleToggle = () => setIsOpen((prev) => !prev);
 
@@ -82,6 +84,10 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           {items.map((item) => {
             const hasChildren = item.children && item.children.length > 0;
             const isExpanded = expandedItems.includes(item.title);
+            const isActive =
+              item.href === '/'
+                ? pathname === '/'
+                : item.href && pathname.startsWith(item.href);
 
             return (
               <div key={item.title}>
@@ -103,7 +109,10 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
                   <Link
                     href={item.href || '#'}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 hover:text-yellow-400 transition-colors"
+                    className={cn(
+                      'flex items-center gap-3 transition-colors',
+                      isActive && 'active-link',
+                    )}
                   >
                     {item.icon}
                     <span>{item.title}</span>
@@ -112,19 +121,29 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
                 {hasChildren && isExpanded && (
                   <div className="ml-6 mt-2 flex flex-col gap-2">
-                    {item.children?.map((child) => (
-                      <Link
-                        key={child.title}
-                        href={child.href || '#'}
-                        className="flex items-center gap-2 text-sm text-gray-300 hover:text-yellow-400"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {child.icon && (
-                          <span className="flex-shrink-0">{child.icon}</span>
-                        )}
-                        <span>{child.title}</span>
-                      </Link>
-                    ))}
+                    {item.children?.map((child) => {
+                      const isChildActive =
+                        child.href && pathname.startsWith(child.href);
+
+                      return (
+                        <Link
+                          key={child.title}
+                          href={child.href || '#'}
+                          className={cn(
+                            'flex items-center gap-2 text-sm transition-colors',
+                            isChildActive
+                              ? 'active-link'
+                              : 'text-gray-300 hover:text-yellow-400',
+                          )}
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {child.icon && (
+                            <span className="flex-shrink-0">{child.icon}</span>
+                          )}
+                          <span>{child.title}</span>
+                        </Link>
+                      );
+                    })}
                   </div>
                 )}
               </div>

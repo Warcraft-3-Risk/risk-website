@@ -33,6 +33,15 @@
 .navIcons {
   margin-top: 23rem;
 
+  a.active-link {
+    color: $cta-yellow;
+    font-weight: 600;
+
+    svg {
+      color: $cta-yellow;
+    }
+  }
+
   @media screen and (max-width: 768px) {
     margin-top: 17rem;
   }
