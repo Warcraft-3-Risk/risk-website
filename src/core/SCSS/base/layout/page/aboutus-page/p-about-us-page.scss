@@ -70,3 +70,83 @@
   max-width: 100%;
   height: auto;
 }
+
+.about-what-we-do {
+  padding: 3rem 4rem;
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  background-color: $background-blue;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+
+  .summary-text {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    line-height: 1.75rem;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+
+  .section-heading {
+    font-size: 1.5rem;
+    font-family: titleFont, sans-serif;
+    color: $cta-yellow;
+    margin: 2rem 0 1.5rem 0;
+    text-transform: uppercase;
+  }
+
+  .what-we-do-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 2fr));
+  }
+
+  .what-we-do-item {
+    background-color: lighten($background-blue, 3%);
+    border-left: 4px solid $cta-yellow;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .what-we-do-title {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: $cta-yellow;
+      margin-bottom: 0.5rem;
+    }
+
+    .what-we-do-description {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: $background-sand;
+    }
+  }
+}
+
+.about-closing-statement {
+  padding: 3rem 4rem;
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  background-color: $background-blue;
+
+  @media screen and (max-width: 768px) {
+    padding: 2rem 1rem;
+  }
+
+  .closing-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    @media screen and (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+}
