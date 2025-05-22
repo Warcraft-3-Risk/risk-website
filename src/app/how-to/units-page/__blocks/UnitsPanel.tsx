@@ -1,3 +1,4 @@
+import ReadMoreText from '@/app/components/ReadMoreText';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page-images.scss';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import Image from 'next/image';
@@ -34,16 +35,7 @@ const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
         <h2 className="units-page-panel-title">{unit.name}</h2>
 
         <div className="units-page-panel-description">
-          {unit.description.split('\n\n').map((paragraph, pIdx) => (
-            <p key={pIdx}>
-              {paragraph.split('\n').map((line, lIdx, arr) => (
-                <React.Fragment key={lIdx}>
-                  {line}
-                  {lIdx < arr.length - 1 && <br />}
-                </React.Fragment>
-              ))}
-            </p>
-          ))}
+          <ReadMoreText text={unit.description} maxHeight={180} />
         </div>
       </div>
 

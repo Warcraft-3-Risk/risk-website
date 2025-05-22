@@ -6,7 +6,7 @@
     "author": "Microhive",
     "tags": ["Update"],
     "text": "The latest patch notes have been released, bringing a host of new features and bug fixes to enhance your gaming experience. Check out the details below to see what's new and improved.\n\n- New Features:\n  1. Added a new multiplayer mode: Battle Royale.\n  2. Introduced seasonal rewards for players who complete specific in-game challenges.\n\n- Bug Fixes:\n  1. Fixed an issue where some players were unable to join certain lobbies.\n  2. Resolved a bug causing character models to glitch during cutscenes.\n  3. Fixed audio desync issue in certain environments.\n\n- Improvements:\n  1. Improved matchmaking times in ranked modes.\n  2. Optimized graphics for smoother performance on lower-end systems.\n\nWe hope you enjoy the new updates! Stay tuned for more improvements in future patches.",
-    "imageUrl": "/images/coding_man.webp"
+    "imageUrl": "/images/news-and-events/coding_man.webp"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "author": "Poomonky",
     "tags": ["Tournament"],
     "text": "Join us for an intense night of strategy, alliances, and global domination in our upcoming online tournament. This Friday players will go head-to-head in a high-stakes battle for territorial control.\n\nWhether you're a seasoned tactician or just eager to test your strategic skills, this is your chance to prove yourself on the virtual battlefield. There will be negotiations, betrayals, and all-out war — only one will emerge victorious.\n\nDon’t miss your opportunity to be part of the action. Rally your wits, sharpen your tactics, and prepare for a night of unforgettable gameplay.\n\nThe war for the world begins April 11 at 21.00 CEST. Will you rise or fall?",
-    "imageUrl": "/images/rrt.webp"
+    "imageUrl": "/images/news-and-events/rrt.webp"
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "author": "thabooch",
     "tags": [" Community"],
     "text": "We are considering launching a dedicated website for our community. This platform will serve as a hub for news, updates, and discussions, bringing everyone closer together. Our goal is to create a space where players can share their experiences, provide feedback, and stay informed about the latest developments in the game. The website will feature forums for discussions, a blog for patch notes and announcements, and a gallery for showcasing community creations. Additionally, we plan to include a section for guides and tips to help players improve their skills. We want to hear your thoughts on this idea! What features would you like to see? Your input will help shape the future of this platform and ensure it meets the needs of our amazing community.",
-    "imageUrl": "/images/newwebsite.webp"
+    "imageUrl": "/images/news-and-events/newwebsite.webp"
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "author": "Microhive",
     "tags": ["Event"],
     "text": "We’re excited to announce one of our most anticipated in-game events — Double XP Weekend is just around the corner! From Saturday at 12:00 PM to Sunday at 11:59 PM, all players will earn double experience points across all game modes. Whether you’re grinding for that next level, unlocking powerful gear, or aiming for the top of the leaderboards, this is the perfect opportunity to accelerate your progress.\n\nSo clear your weekend plans and get ready for an action-packed experience. Whether you’re a seasoned veteran or a newcomer, Double XP Weekend is your time to shine. Don’t miss out — the event runs from Saturday 12:00 PM to Sunday 11:59 PM, local time. See you in-game!",
-    "imageUrl": "/images/DoubleXP.webp"
+    "imageUrl": "/images/news-and-events/DoubleXP.webp"
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "author": "thabooch",
     "tags": ["Community"],
     "text": "We’re incredibly proud of the creative talent in our community. In our first Community Art Showcase, we’re highlighting a selection of amazing fan creations submitted over the past month. From detailed character designs and imaginative map concepts to fun sketches and unique styles, your creativity continues to impress and inspire us.\n\nYou can view the full gallery now on our Discord server, where we’ve featured some of the standout submissions. Whether you’re an experienced artist or just love to draw for fun, we’d love to see your work too - submissions are now open for the next showcase!",
-    "imageUrl": "/images/CommunityArt.webp"
+    "imageUrl": "/images/news-and-events/CommunityArt.webp"
   },
   {
     "id": 6,
@@ -51,6 +51,6 @@
     "author": "Poomonky",
     "tags": ["Q&A"],
     "text": "Last week’s live Q&A with the developers was a blast, and we’re grateful to everyone who tuned in and sent in questions! During the session, we covered a wide range of topics - from upcoming balance changes and gameplay tweaks to sneak peeks at future content and long-term development plans.\n\nIf you weren’t able to catch it live, don’t worry - we’ve put together a full recap with all the highlights, including the most upvoted community questions and the dev team’s detailed responses. It’s a great way to stay in the loop and see how your feedback is helping shape the future of the game.\n\nCheck out the recap now to find out what’s coming next!",
-    "imageUrl": "/images/qanda.webp"
+    "imageUrl": "/images/news-and-events/qanda.webp"
   }
 ]
