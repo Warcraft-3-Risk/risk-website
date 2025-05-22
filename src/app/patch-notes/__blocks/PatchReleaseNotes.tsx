@@ -6,8 +6,8 @@ import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/l-patch-notes.scss';
 import { fetchGithubReleases, Release } from '@/core/utils/githubReleases';
 import { CircleAlert } from 'lucide-react';
-import router from 'next/router';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import 'github-markdown-css/github-markdown.css';
@@ -97,14 +97,14 @@ export default function PatchReleaseNotes({
       })}
 
       <div className="ctabuttons flex gap-4 justify-end w-full">
-        <CTAButton
-          variant="play"
-          onClick={() =>
-            router.push('https://www.youtube.com/watch?v=dQw4w9WgXcQ')
-          }
+        <Link
+          href="https://www.wc3maps.com/map/363463/Risk_Europe_2.07.40"
+          target="_blank"
         >
-          {patchNotesContent['patchreleasenotes.button.play']}
-        </CTAButton>
+          <CTAButton variant="play">
+            {patchNotesContent['patchreleasenotes.button.play']}
+          </CTAButton>
+        </Link>
         <CTAButton variant="readmore" onClick={onToggleExpanded}>
           {isExpanded ? 'SHOW LESS' : 'READ MORE'}
         </CTAButton>
