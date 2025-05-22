@@ -1,6 +1,7 @@
 'use client';
 
 import CTAButton from '@/app/components/ui/CTAButtons';
+import Link from 'next/link';
 import articlesData from '@/app/data/articles.json';
 import content from '@/app/data/content.json';
 import NewsAndEventsHeader from '@/app/news-and-events/__blocks/NewsAndEventsHeader';
@@ -62,10 +63,14 @@ const NewsPage = () => {
             </ul>
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
-              <CTAButton variant="play" href="/play-now">
-                {NewsAndEvents['newsandevents.button.play']}
-              </CTAButton>
-
+              <Link
+                href="https://www.wc3maps.com/map/363463/Risk_Europe_2.07.40"
+                target="_blank"
+              >
+                <CTAButton variant="play">
+                  {NewsAndEvents['newsandevents.button.play']}
+                </CTAButton>
+              </Link>
               {articlesData.length > 3 && (
                 <CTAButton
                   variant="readmore"

@@ -27,7 +27,7 @@ const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
   const leaderboardContent = content.leaderboards;
 
   return (
-    <div className="flex items-center justify-center space-x-4 mt-8">
+    <div className="flex items-center justify-center gap-12 mt-8">
       <CTAButton
         variant="pagination"
         onClick={handlePrevious}
