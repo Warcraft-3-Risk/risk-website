@@ -12,11 +12,6 @@ const AboutPage = () => {
       <div className="about-text">
         <h2>{AboutUs['subtitle']}</h2>
         <h1 className="about-us-title mb-12">{AboutUs['title']}</h1>
-
-        <div className="about-description-text">
-          <p className="about-description mb-12">{AboutUs['description']}</p>
-          <p className="about-description-welcome">{AboutUs['welcome']}</p>
-        </div>
       </div>
 
       <div className="about-what-we-do">
