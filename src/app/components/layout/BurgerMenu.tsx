@@ -110,7 +110,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
                     href={item.href || '#'}
                     onClick={() => setIsOpen(false)}
                     className={cn(
-                      'flex items-center gap-3 transition-colors',
+                      'dropdown flex items-center gap-3 transition-colors',
                       isActive && 'active-link',
                     )}
                   >
