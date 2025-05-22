@@ -8,9 +8,7 @@
 }
 
 .about-us-title {
-  @include about-us-title;
- 
-  text-shadow: 3px 3px 4px $background-blue;
+  @include section-left-title;
 }
 
 .about-text {

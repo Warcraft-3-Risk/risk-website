@@ -2,7 +2,7 @@
 @import '../../mixins.scss';
 
 .leaderboard-header-title {
-  @include hero-title;
+  @include large-title;
   padding: 0;
 }
 

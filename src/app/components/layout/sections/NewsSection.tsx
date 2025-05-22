@@ -2,10 +2,10 @@
 
 import CTAButton from '@/app/components/ui/CTAButtons';
 import content from '@/app/data/content.json';
-import Image from 'next/image';
-import '@/core/SCSS/base/sections/s-news-and-events-section.scss';
 import '@/core/SCSS/base/layout/l-article-items.scss';
+import '@/core/SCSS/base/sections/s-news-and-events-section.scss';
 import { useInView } from '@/core/hooks/useInView';
+import Image from 'next/image';
 
 interface Article {
   id: number;
