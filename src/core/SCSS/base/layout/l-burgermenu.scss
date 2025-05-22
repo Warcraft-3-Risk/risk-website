@@ -25,6 +25,14 @@
   color: $cta-yellow;
 }
 
+.backgroundburger span {
+  color: $background-sand;
+}
+
+.backgroundburger span:hover {
+  color: $cta-yellow;
+}
+
 .buttonbg {
   background-color: $background-blue;
   z-index: 100;
@@ -32,7 +40,7 @@
 
 .navIcons {
   margin-top: 23rem;
-
+  color: $background-sand;
   a.active-link {
     color: $cta-yellow;
     font-weight: 600;

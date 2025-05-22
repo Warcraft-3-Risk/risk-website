@@ -4,7 +4,7 @@ import React from 'react';
 const gameGuideContent = content.gameguide;
 const GameGuideHeader: React.FC = () => {
   return (
-    <header className="backgroundggimg relative bg-cover bg-center h-64">
+    <header className="backgroundggimg relative bg-cover bg-center h-96">
       <div className="absolute inset-0 "></div>
       <div className="relative z-10 flex items-center justify-center h-full">
         <h1 className="gameguidetitle">
