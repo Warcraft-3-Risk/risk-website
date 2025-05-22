@@ -140,6 +140,29 @@
       line-height: 1;
     }
   }
+
+  @media (min-width: 400px) and (max-width: 1234px) {
+    flex-direction: column;
+    padding-left: 0;
+
+    &-title {
+      font-size: 2.5rem;
+      padding-left: 1.25rem;
+    }
+
+    &-text {
+      font-size: 1.25rem;
+    }
+
+    &-item {
+      padding-bottom: 0;
+      padding-left: 1.25rem;
+    }
+
+    &-imageFader {
+      display: none;
+    }
+  }
 }
 
 .icon-item {
@@ -334,5 +357,9 @@
 
   &.right {
     background: linear-gradient(to right, transparent, #1b3449);
+  }
+
+  @media (min-width: 400px) and (max-width: 1234px) {
+    display: none;
   }
 }

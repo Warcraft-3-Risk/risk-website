@@ -53,7 +53,7 @@ const StandAloneSegments: React.FC = () => {
             fill
             className="object-cover z-0 w-full h-full"
           />
-          <div className="absolute inset-0 w-full h-full z-10 bg-gradient-to-l from-transparent to-[#1b3449]" />
+          <div className="stand-alone-list-segment-imageFader absolute inset-0 w-full h-full z-10 bg-gradient-to-l from-transparent to-[#1b3449]" />
         </div>
       </div>
     </section>

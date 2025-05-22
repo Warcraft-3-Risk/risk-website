@@ -19,9 +19,8 @@
   color: $background-sand;
   padding-left: 4rem;
   padding-right: 3rem;
-  @media screen and (max-width: 768px) {
+  @media (min-width: 400px) and (max-width: 1234px) {
     padding-left: 1rem;
-    padding-top: 0;
     font-size: 2.5rem;
   }
 
