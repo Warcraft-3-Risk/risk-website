@@ -35,7 +35,7 @@ const UnitsPanel: React.FC<UnitPanelProps> = ({ unitId, data }) => {
         <h2 className="units-page-panel-title">{unit.name}</h2>
 
         <div className="units-page-panel-description">
-          <ReadMoreText text={unit.description} maxHeight={180} />
+          <ReadMoreText text={unit.description} maxHeight={175} />
         </div>
       </div>
 

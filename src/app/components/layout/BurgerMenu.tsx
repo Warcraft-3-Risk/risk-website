@@ -32,7 +32,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
   };
 
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
     if (isMobile && isOpen) {
       document.body.classList.add('overflow-hidden');
     } else {

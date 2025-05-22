@@ -9,7 +9,7 @@ interface ReadMoreTextProps {
 
 const ReadMoreText: React.FC<ReadMoreTextProps> = ({
   text,
-  maxHeight = 175, // example max height
+  maxHeight = 175,
 }) => {
   const [expanded, setExpanded] = useState(false);
   const [isOverflowing, setIsOverflowing] = useState(false);
@@ -26,7 +26,7 @@ const ReadMoreText: React.FC<ReadMoreTextProps> = ({
       <div
         ref={textRef}
         className={`units-panel-transition overflow-hidden transition-all duration-500 ease-in-out ${
-          expanded ? 'max-h-[1000px]' : 'max-h-[160px]'
+          expanded ? 'max-h-[1000px]' : 'max-h-[143px]'
         }`}
       >
         <div className="whitespace-pre-line">
