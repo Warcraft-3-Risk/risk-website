@@ -170,13 +170,15 @@ const Footer: React.FC = () => {
 
           <div className="footer__column footertext text-sm flex flex-col items-center md:items-start">
             <div className="mb-3">
-              <Image
-                src="/images/rr-logo.svg"
-                alt="Footer Logo"
-                width={360}
-                height={360}
-                className="footer__logo"
-              />
+              <Link href="/">
+                <Image
+                  src="/images/rr-logo.svg"
+                  alt="Footer Logo"
+                  width={360}
+                  height={360}
+                  className="footer__logo"
+                />
+              </Link>
             </div>
             <div className="footer__column space-y-3">
               <p className="footertext text-sm">{footerContent.description}</p>
