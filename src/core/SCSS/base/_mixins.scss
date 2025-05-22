@@ -14,6 +14,17 @@
   }
 }
 
+@mixin medium-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.1rem;
+  text-transform: uppercase;
+  color: $cta-yellow;
+  margin: 0 auto;
+  padding: 2rem 0;
+  text-shadow: 3px 3px 4px $background-blue;
+  text-align: center;
+}
+
 @mixin small-title {
   font-family: titleFont, sans-serif;
   font-size: 5.25rem;
@@ -55,4 +66,5 @@
   font-size: 1.25rem;
   color: $background-sand;
   margin: 0 auto;
+  padding-bottom: 1rem;
 }

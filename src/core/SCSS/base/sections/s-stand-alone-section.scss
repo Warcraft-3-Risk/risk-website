@@ -16,12 +16,12 @@
   }
 }
 .stand-alone-title {
-  @include large-title;
+  @include medium-title;
 }
 
 .stand-alone-subtitle {
   font-family: titleFont, sans-serif;
-  font-size: 1rem;
+  font-size: 2rem;
   text-transform: uppercase;
   color: $cta-yellow;
 
@@ -32,10 +32,7 @@
 }
 
 .stand-alone-description {
-  font-family: textFont, sans-serif;
-  color: $background-sand;
-  font-size: 1rem;
-  width: 100%;
+  @include description-text;
 
   @media screen and (max-width: 768px) {
     font-size: 1.5rem;
