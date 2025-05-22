@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { ArrowUp, ArrowDown } from 'lucide-react';
+import '@/core/SCSS/base/components/_scrollbutton.scss';
 
 export default function ScrollButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -41,7 +42,7 @@ export default function ScrollButtons() {
       {showScrollTop && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#0E7689] text-[#EFE5C7] shadow-lg hover:bg-[#28A1B7] transition-colors"
+          className="scrollbutton fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#0E7689] text-[#EFE5C7] shadow-lg hover:bg-[#28A1B7] transition-colors"
           aria-label="Scroll to top"
         >
           <ArrowUp className="w-8 h-8" />
@@ -50,7 +51,7 @@ export default function ScrollButtons() {
       {showScrollBottom && (
         <button
           onClick={scrollToBottom}
-          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#0E7689] text-[#EFE5C7] shadow-lg hover:bg-[#28A1B7] transition-colors"
+          className="scrollbutton fixed bottom-6 right-6 z-50 p-3 rounded-full bg-[#0E7689] text-[#EFE5C7] shadow-lg hover:bg-[#28A1B7] transition-colors"
           aria-label="Scroll to bottom"
         >
           <ArrowDown className="w-8 h-8" />
