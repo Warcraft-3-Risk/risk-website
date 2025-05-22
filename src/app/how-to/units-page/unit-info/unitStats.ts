@@ -103,7 +103,7 @@ export const unitSkills = {
   mortar: [{ icon: '/images/icons/skills/AttackGround-icon.webp' }],
   roarer: [
     { icon: '/images/icons/skills/BattleRoar-icon.webp' },
-    { icon: '/images/icons/skills/DispelMagic-icon.webp' },
+    { icon: '/images/icons/skills/Dispelmagic-icon.webp' },
   ],
   knight: [{ icon: '/images/icons/skills/BloodLust-icon.webp' }],
   general: [
