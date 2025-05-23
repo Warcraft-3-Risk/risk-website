@@ -47,8 +47,8 @@ const segments = [
     title: 'DIPLOMACY IS KING!',
     description:
       'Chat is essential in Risk, make sure to use it and read it. Diplomacy is key. Make sure to peace other players, but also be ready to be backstabbed when you are vulnerable.',
-    video: true,
-    videoUrl: '/video/Step6_720.mp4',
+    image: true,
+    imageUrl: '/images/diplomacy.webp',
   },
   {
     title: 'SHIPS AND TRANSPORTS',
