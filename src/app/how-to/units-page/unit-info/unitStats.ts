@@ -63,6 +63,11 @@ export const unitStats: Record<
     },
     armor: { value: 0, icon: '/images/icons/skills/armor-light-icon.webp' },
   },
+  major: {
+    health: { value: 900, icon: '/images/icons/skills/health-icon.webp' },
+    attack: { value: 48, icon: '/images/icons/skills/attack-normal-icon.webp' },
+    armor: { value: 0, icon: '/images/icons/skills/medic-armor-type.webp' },
+  },
   admiral: {
     health: { value: 900, icon: '/images/icons/skills/health-icon.webp' },
     attack: { value: 48, icon: '/images/icons/skills/attack-normal-icon.webp' },
@@ -111,4 +116,5 @@ export const unitSkills = {
     { icon: '/images/icons/skills/BloodLust-icon.webp' },
   ],
   artillery: [{ icon: '/images/icons/skills/AttackGround-icon.webp' }],
+  major: [{ icon: '/images/icons/skills/BloodLust-icon.webp' }],
 };
