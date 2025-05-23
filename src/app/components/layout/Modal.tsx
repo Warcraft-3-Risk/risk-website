@@ -1,14 +1,26 @@
-import React from 'react';
-import Image from 'next/image';
 import content from '@/app/data/content.json';
+import Image from 'next/image';
+import React, { useEffect } from 'react';
 
 const ModalContent = content.modals;
+
 interface ModalProps {
   children: React.ReactNode;
   onClose: () => void;
 }
 
 const Modal: React.FC<ModalProps> = ({ children, onClose }) => {
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [onClose]);
+
   return (
     <div className="modal-overlay">
       <div className="modal-background" onClick={onClose}></div>
