@@ -1,15 +1,15 @@
 'use client';
 
-import { useState, useEffect } from 'react';
 import articlesData from '@/app/data/articles.json';
+import { useEffect, useState } from 'react';
 
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 import HeroSection from '@/app/components/layout/sections/HeroSection';
 import LeaderBoardSection from '@/app/components/layout/sections/LeaderBoardSection';
 import NewsSection from '@/app/components/layout/sections/NewsSection';
-import CommunitySection from '@/app/components/layout/sections/CommunitySection';
-import WatchUsSection from '@/app/components/layout/sections/WatchUsSection';
 import SpecialMentionsSection from '@/app/components/layout/sections/SpecialMentionsSection';
 import StandAloneSection from '@/app/components/layout/sections/StandAloneSection';
+import WatchUsSection from '@/app/components/layout/sections/WatchUsSection';
 interface Article {
   id: number;
   title: string;
@@ -43,8 +43,8 @@ export default function HomePage() {
       <NewsSection articles={articles} />
       <WatchUsSection />
       <SpecialMentionsSection />
-      <StandAloneSection />
       <CommunitySection />
+      <StandAloneSection />
     </div>
   );
 }

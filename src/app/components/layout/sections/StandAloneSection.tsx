@@ -1,9 +1,9 @@
-import React from 'react';
+import CTAButton from '@/app/components/ui/CTAButtons';
 import content from '@/app/data/content.json';
+import { useInView } from '@/core/hooks/useInView';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-stand-alone-section.scss';
-import CTAButton from '@/app/components/ui/CTAButtons';
-import { useInView } from '@/core/hooks/useInView';
+import React from 'react';
 const StandAloneContent = content.standalonesection;
 
 const StandAloneSection: React.FC = () => {
@@ -21,7 +21,7 @@ const StandAloneSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
-          className={`stand-alone-title mt-18 text-center transition-all duration-700 ease-out transform ${
+          className={`stand-alone-title mt-18 transition-all duration-700 ease-out transform ${
             isTitleVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
@@ -31,7 +31,7 @@ const StandAloneSection: React.FC = () => {
         </h2>
         <p
           ref={subtitleRef}
-          className={`stand-alone-subtitle text-2xl font-semibold text-center mb-8 transition-all duration-700 ease-out transform ${
+          className={`stand-alone-subtitle text-2xl font-semibold mb-8 transition-all duration-700 ease-out transform ${
             isSubtitleVisible
               ? 'opacity-100 translate-y-0'
               : 'opacity-0 translate-y-6'
