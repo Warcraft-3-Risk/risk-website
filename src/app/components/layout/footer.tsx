@@ -4,7 +4,7 @@
 import content from '@/app/data/content.json';
 import '@/core/SCSS/base/layout/l-calendar.scss';
 import '@/core/SCSS/base/sections/s-footer-section.scss';
-import { FileText, Mail, ShieldCheck } from 'lucide-react';
+import { FileText, Library, Mail, ShieldCheck } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                 className="cursor-pointer footer__link"
                 onClick={() => openModal('faq')}
               >
-                <FileText /> {footerContent['links.faq']}
+                <Library /> {footerContent['links.faq']}
               </li>
             </ul>
           </div>

@@ -57,7 +57,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
       <div
         className={cn(
-          'fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
+          'blurbackground fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
           isOpen
             ? 'opacity-100 pointer-events-auto z-40'
             : 'opacity-0 pointer-events-none z-0',

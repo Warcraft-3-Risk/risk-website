@@ -17,8 +17,7 @@
   flex-direction: column;
   font-family: textFont, sans-serif;
   color: $background-sand;
-  padding-left: 4rem;
-  padding-right: 3rem;
+  padding-left: 2.5rem;
   @media (min-width: 400px) and (max-width: 1234px) {
     padding-left: 1rem;
     font-size: 2.5rem;
@@ -72,7 +71,8 @@
 }
 
 .about-what-we-do {
-  padding: 3rem 4rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   font-family: textFont, sans-serif;
   color: $background-sand;
   background-color: $background-blue;
@@ -130,7 +130,8 @@
 }
 
 .about-closing-statement {
-  padding: 3rem 4rem;
+  padding-left: 2.5rem;
+  padding-top: 1.5rem;
   font-family: textFont, sans-serif;
   color: $background-sand;
   background-color: $background-blue;
@@ -142,8 +143,7 @@
   .closing-text {
     font-size: 1.25rem;
     line-height: 1.8;
-    text-align: center;
-    max-width: 800px;
+    text-align: start;
     margin: 0 auto;
     @media screen and (max-width: 768px) {
       font-size: 1rem;

@@ -16,7 +16,6 @@ const AboutPage = () => {
 
       <div className="about-what-we-do">
         <p className="summary-text mb-8">{AboutUs['summary']}</p>
-
         <h2 className="section-heading">{AboutUs['whatwedotitle']}</h2>
         <ul className="what-we-do-list">
           <li className="what-we-do-item">
