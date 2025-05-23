@@ -1,6 +1,5 @@
 'use client';
 
-import '@/core/SCSS/base/layout/page/p-stand-alone-page.scss';
 import Image from 'next/image';
 import { storage } from '@/core/api/firebase';
 import { getDownloadURL, ref } from 'firebase/storage';

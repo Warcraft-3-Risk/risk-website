@@ -66,15 +66,6 @@
   border-top: 1px solid $background-sand;
 }
 
-.segmenttitle {
-  font-family: 'titleFont', sans-serif;
-  font-weight: lighter;
-  text-transform: uppercase;
-  color: $cta-yellow;
-  text-align: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
-}
 .segmenttext {
   font-family: 'textFont', sans-serif;
   color: $background-sand;
@@ -83,6 +74,10 @@
   max-width: 800px;
   margin-bottom: 10%;
   text-wrap: balance;
+}
+
+.segment-title {
+  @include smaller-title;
 }
 
 .game-guide-footer {
@@ -97,7 +92,12 @@
   color: $background-sand;
   font-size: 1rem;
   line-height: 1.75;
-  padding: 0 2rem;
+  padding: 0 3.5rem 2rem 3.5rem;
   width: 100%;
   text-wrap: pretty;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    text-align: left;
+    padding: 2rem;
+  }
 }

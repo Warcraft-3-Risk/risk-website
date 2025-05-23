@@ -26,8 +26,8 @@ const segments = [
     title: 'YOUR FIRST PAYCHECK',
     description:
       'To gain income you need to control a whole country at the end of a turn. You can see the timer both the timer (Clock icon) and the turn counter (Hourglass icon) to the right of your gold. You will always have a base income of 4 gold each turn, but you can increase this by capturing more countries!',
-    video: true,
-    videoUrl: '/video/Step2_720.mp4',
+    image: true,
+    imageUrl: '/images/paycheck.webp',
   },
   {
     title: 'EXPANDING FOR BEGINNERS',
