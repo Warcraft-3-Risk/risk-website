@@ -8,3 +8,9 @@
   width: 100%;
   height: 100%;
 }
+
+@media (min-width: 400px) and (max-width: 1234px) {
+  .NavLogo {
+    margin: 0 0 0.5rem 1rem;
+  }
+}

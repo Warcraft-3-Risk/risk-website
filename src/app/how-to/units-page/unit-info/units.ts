@@ -105,7 +105,7 @@ export const unitDescriptions: Record<
   admiral: {
     name: 'Admiral',
     description:
-      'The Admiral is another melee naval unit, stronger than the Major. It boasts higher damage and hitpoints, and the "Beserk" ability. It is a powerful choice for leading naval assaults. \n\nStrengths: \nBuffs nearby sea units, Improves overall fleet performance, Can turn the tide of naval battles. \n\nWeaknesses: \nFragile and vulnerable, No offensive capabilities, Requires protection and positioning to maximize effectiveness.',
+      'The Admiral is another melee naval unit, stronger than the Major. It boasts higher damage and hitpoints, and the "Berserk" ability. It is a powerful choice for leading naval assaults. \n\nStrengths: \nBuffs nearby sea units, Improves overall fleet performance, Can turn the tide of naval battles. \n\nWeaknesses: \nFragile and vulnerable, No offensive capabilities, Requires protection and positioning to maximize effectiveness.',
     image: '/images/icons/characters/admiral-unit.webp',
     imageClass: 'units-page-panel-admiral-image',
   },

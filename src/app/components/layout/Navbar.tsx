@@ -1,15 +1,14 @@
 'use client';
-import React from 'react';
+import '@/core/SCSS/base/layout/l-Navbar.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import '@/core/SCSS/base/layout/l-Navbar.scss';
 
 export function Navbar() {
   return (
     <header className="navbg sticky top-0 z-50 backdrop-blur w-full">
       <div className="flex items-center justify-around px-4 sm:px-6 h-16">
         <div className="w-10 sm:w-12" />
-        <div className="flex flex-1">
+        <div className="NavLogo flex flex-1">
           <div className="relative w-32 sm:w-44 h-10 sm:h-12">
             <Link href="/">
               <Image
