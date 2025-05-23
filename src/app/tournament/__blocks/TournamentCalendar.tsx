@@ -1,22 +1,32 @@
 'use client';
 
-import React from 'react';
-import { convertToUserTimeZone } from '@/core/utils/dateUtils';
 import Modal from '@/app/components/layout/Modal';
 import useMonthlyTournamentCalendar, {
   Tournament,
 } from '@/core/hooks/calendar/useMonthlyTournamentCalendar';
-import 'react-calendar/dist/Calendar.css';
 import '@/core/SCSS/base/layout/l-calendar.scss';
+import { convertToUserTimeZone } from '@/core/utils/dateUtils';
+import React from 'react';
+import 'react-calendar/dist/Calendar.css';
 
 const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 
+// Calendar interprets the timezone of the date passed to it as local time, so we need to convert the date to UTC before passing it to the calendar.
+// This is a workaround to ensure that the date is interpreted correctly by the calendar.
 const TournamentCalendar: React.FC = () => {
   const tournaments: Tournament[] = [
-    { date: '2025-04-30', name: 'Spring Open 2025', time: '21:00:00' },
-    { date: '2025-05-02', name: 'Spring Open 2025', time: '21:00:00' },
-    { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
-    { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
+    { date: '2025-05-29', name: 'May Closer 2025', time: '21:00:00' },
+    { date: '2025-05-30', name: 'May Finals 2025', time: '21:00:00' },
+    { date: '2025-06-05', name: 'Summer Championship 2025', time: '22:00:00' },
+    { date: '2025-06-06', name: 'Summer Championship 2025', time: '20:00:00' },
+    { date: '2025-06-12', name: 'Casual Open Tournament', time: '21:00:00' },
+    { date: '2025-06-13', name: 'Advanced Invitational', time: '21:00:00' },
+    { date: '2025-06-19', name: 'Teams 3v3 Tournament 2025', time: '22:00:00' },
+    { date: '2025-06-20', name: 'Teams 2v2 Tournament 2025', time: '20:00:00' },
+    { date: '2025-06-26', name: 'Free-For-All', time: '21:00:00' },
+    { date: '2025-06-27', name: 'Wicked Tournament', time: '21:00:00' },
+    { date: '2025-06-08', name: 'Monday Fun-day', time: '22:00:00' },
+    { date: '2025-06-17', name: 'Wednesday Special', time: '20:00:00' },
   ];
 
   const {
