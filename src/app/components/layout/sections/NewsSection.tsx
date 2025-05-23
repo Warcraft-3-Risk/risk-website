@@ -36,7 +36,7 @@ export default function NewsSection({ articles }: NewsSectionProps) {
         <div className="flex justify-start flex-col md:flex-row items-center mb-8">
           <h2
             ref={titleRef}
-            className={`naetitle text-4xl z-50 font-bold mb-4 md:mb-0 transition-all duration-700 ease-out transform ${
+            className={`naetitle text-4xl z-45 font-bold mb-4 md:mb-0 transition-all duration-700 ease-out transform ${
               isTitleVisible
                 ? 'opacity-100 translate-y-0'
                 : 'opacity-0 translate-y-8'
