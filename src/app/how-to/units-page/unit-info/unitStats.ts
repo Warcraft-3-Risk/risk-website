@@ -117,4 +117,5 @@ export const unitSkills = {
   ],
   artillery: [{ icon: '/images/icons/skills/AttackGround-icon.webp' }],
   major: [{ icon: '/images/icons/skills/BloodLust-icon.webp' }],
+  admiral: [{ icon: '/images/icons/skills/BattleRoar-icon.webp' }],
 };
