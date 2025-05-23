@@ -27,6 +27,16 @@ const TournamentCalendar: React.FC = () => {
     { date: '2025-06-27', name: 'Wicked Tournament', time: '21:00:00' },
     { date: '2025-06-08', name: 'Monday Fun-day', time: '22:00:00' },
     { date: '2025-06-17', name: 'Wednesday Special', time: '20:00:00' },
+    { date: '2025-07-01', name: 'Teams 3v3 Tournament 2025', time: '22:00:00' },
+    { date: '2025-07-04', name: 'Teams 3v3 Tournament 2025', time: '22:00:00' },
+    { date: '2025-07-05', name: 'Teams 2v2 Tournament 2025', time: '20:00:00' },
+    { date: '2025-07-11', name: 'Free-For-All', time: '21:00:00' },
+    { date: '2025-07-12', name: 'Wicked Tournament', time: '21:00:00' },
+    { date: '2025-07-14', name: 'Wicked Tournament', time: '21:00:00' },
+    { date: '2025-07-18', name: 'Monday Fun-day', time: '22:00:00' },
+    { date: '2025-07-19', name: 'Wednesday Special', time: '20:00:00' },
+    { date: '2025-07-30', name: 'Monday Fun-day', time: '22:00:00' },
+    { date: '2025-07-31', name: 'Wednesday Special', time: '20:00:00' },
   ];
 
   const {
