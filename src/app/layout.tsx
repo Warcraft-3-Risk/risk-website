@@ -35,53 +35,53 @@ const navItems = [
   {
     title: 'Home',
     href: '/',
-    icon: <Home className="w-6 h-6" />,
+    icon: <Home className="w-5 h-5" />,
   },
   {
     title: 'News and Events',
     href: '/news-and-events',
-    icon: <Newspaper className="w-6 h-6" />,
+    icon: <Newspaper className="w-5 h-5" />,
   },
   {
     title: 'Patch Notes',
     href: '/patch-notes',
-    icon: <Binary className="w-6 h-6" />,
+    icon: <Binary className="w-5 h-5" />,
   },
   {
     title: 'Stand Alone',
     href: '/stand-alone',
-    icon: <Swords className="w-6 h-6" />,
+    icon: <Swords className="w-5 h-5" />,
   },
   {
     title: 'Tournaments',
     href: '/tournament',
-    icon: <Trophy className="w-6 h-6" />,
+    icon: <Trophy className="w-5 h-5" />,
   },
   {
     title: 'How To Play',
-    icon: <Gamepad2 className="w-6 h-6" />,
+    icon: <Gamepad2 className="w-5 h-5" />,
     children: [
       {
         title: 'Game Guide',
         href: '/how-to/game-guide',
-        icon: <NotebookPen className="w-6 h-6" />,
+        icon: <NotebookPen className="w-5 h-5" />,
       },
       {
         title: 'Units',
         href: '/how-to/units-page',
-        icon: <ShieldUser className="w-6 h-6" />,
+        icon: <ShieldUser className="w-5 h-5" />,
       },
     ],
   },
   {
     title: 'Leaderboard',
     href: '/leaderboards',
-    icon: <Medal className="w-6 h-6" />,
+    icon: <Medal className="w-5 h-5" />,
   },
   {
     title: 'About Us',
     href: '/about-us',
-    icon: <CircleHelp className="w-6 h-6" />,
+    icon: <CircleHelp className="w-5 h-5" />,
   },
 ];
 

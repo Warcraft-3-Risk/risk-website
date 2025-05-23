@@ -14,10 +14,9 @@
 
   @media screen and (max-width: 768px) {
     background-color: transparent;
-    background-size: cover;
     background-position: center;
-    background-image: url('/images/castletower.webp');
-    background-repeat: no-repeat;
+    position: fixed;
+    width: 62.5%;
   }
 }
 .blurbackground {
