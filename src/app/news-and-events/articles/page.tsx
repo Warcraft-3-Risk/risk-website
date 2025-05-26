@@ -52,7 +52,9 @@ const NewsPage = () => {
         {articles.length > 3 && (
           <div className="flex justify-end space-x-4 mt-8">
             <Button className="PlayNowButton">
-              <Link href="/play-now">Play Now</Link>
+              <Link href="https://github.com/Warcraft-3-Risk/wc3-risk-system/releases/download/2.84/Risk.Europe.2.84.w3x">
+                Play Now
+              </Link>
             </Button>
 
             <Button className="ReadMoreButton" onClick={() => setShowAll(true)}>

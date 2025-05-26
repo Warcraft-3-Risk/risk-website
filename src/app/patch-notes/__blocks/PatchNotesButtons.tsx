@@ -16,7 +16,10 @@ const PatchNotesButtons = ({
   const patchNotesContent = content.patchnotes;
   return (
     <div className="ctabuttons flex gap-4 justify-end w-full mt-10">
-      <Link href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+      <Link
+        href="https://github.com/Warcraft-3-Risk/wc3-risk-system/releases/download/2.84/Risk.Europe.2.84.w3x"
+        target="_blank"
+      >
         <CTAButton variant="play">
           {patchNotesContent['patchreleasenotes.button.play']}
         </CTAButton>

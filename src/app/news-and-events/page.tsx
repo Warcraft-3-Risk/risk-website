@@ -67,7 +67,7 @@ const NewsPage = () => {
 
             <div className="ctabuttons flex justify-end items-end w-full mt-4">
               <Link
-                href="https://www.wc3maps.com/map/363463/Risk_Europe_2.07.40"
+                href="https://github.com/Warcraft-3-Risk/wc3-risk-system/releases/download/2.84/Risk.Europe.2.84.w3x"
                 target="_blank"
               >
                 <CTAButton variant="play">
