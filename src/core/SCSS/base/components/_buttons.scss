@@ -35,8 +35,9 @@
   @extend %BaseCTAButton;
   background-color: $cta-yellow;
   p {
-    color: $background-blue;
+    color: $background-blue !important;
     font-family: titleFont, sans-serif;
+    margin-bottom: 0 !important;
   }
 
   &:hover {
