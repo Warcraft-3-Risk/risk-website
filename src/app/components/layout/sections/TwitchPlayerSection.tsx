@@ -15,7 +15,7 @@ const TwitchPlayerSection: React.FC = () => {
 
   const { ref: playerRef, isVisible: isPlayerVisible } =
     useInView<HTMLDivElement>(0.2);
-
+  // Define the channels and parent domain for Twitch embeds, the channels can literally be anyone.
   const channels = ['babusox', 'babusox', 'babusox'];
   const parentDomain = 'risk-reforged.web.app';
   const SpecialMentionsContent = content.specialmentions;
@@ -62,7 +62,7 @@ const TwitchPlayerSection: React.FC = () => {
           className="transition-transform duration-300 ease-in-out hover:scale-110"
         />
         <Image
-          src="/images/twitch-gule.webp"
+          src="/images/twitch-icon_gule.webp"
           alt="Twitch"
           width={80}
           height={80}

@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
 
   const footerContent = content.footer;
   const footerModals = content.footerModals;
-
+  // this openModal function handles the opening of different modals based on the type passed to it.
   const openModal = (modalType: 'contact' | 'privacy' | 'terms' | 'faq') => {
     const modalData = footerModals[modalType];
     const modalTitle = modalData.title;
@@ -159,7 +159,7 @@ const Footer: React.FC = () => {
                   className="footer__link"
                 >
                   <IconImage
-                    src="/images/twitch-gule.webp"
+                    src="/images/twitch-icon_gule.webp"
                     alt={footerContent['social.twitch']}
                   />{' '}
                   {footerContent['social.twitch']}

@@ -7,7 +7,7 @@ import '@/core/SCSS/base/components/_scrollbutton.scss';
 export default function ScrollButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const [showScrollBottom, setShowScrollBottom] = useState(false);
-
+  // This useEffect hook listens for scroll events and determines whether to show the scroll buttons based on the scroll position.
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
