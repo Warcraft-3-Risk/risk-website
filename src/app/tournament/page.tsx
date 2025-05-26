@@ -12,10 +12,9 @@ const ResponsiveComponent = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    // Only runs on client
     const checkIsMobile = () => setIsMobile(window.innerWidth > 1024);
 
-    checkIsMobile(); // Run once on mount
+    checkIsMobile();
 
     window.addEventListener('resize', checkIsMobile);
     return () => window.removeEventListener('resize', checkIsMobile);
