@@ -21,6 +21,7 @@
 
 .PlayNowButton {
   @extend %BaseCTAButton;
+  font-family: titleFont, sans-serif;
   background-color: $cta-blue;
   color: $background-sand;
 
