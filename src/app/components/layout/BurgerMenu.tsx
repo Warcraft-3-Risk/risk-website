@@ -129,7 +129,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
                           key={child.title}
                           href={child.href || '#'}
                           className={cn(
-                            'flex items-center gap-2 text-xl lg:text-sm transition-colors',
+                            'flex items-center gap-2 text-sm lg:text-sm transition-colors',
                             isChildActive
                               ? 'active-link'
                               : 'text-gray-300 hover:text-yellow-400',
