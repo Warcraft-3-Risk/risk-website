@@ -16,11 +16,11 @@ interface Article {
   text: string;
   imageUrl?: string;
 }
-
+// This interface defines the structure of an article object used in the NewsSection component.
 interface NewsSectionProps {
   articles: Article[];
 }
-
+// the NewsSection component displays the latest news articles in a visually appealing format.
 export default function NewsSection({ articles }: NewsSectionProps) {
   const latestArticle = articles.length > 0 ? articles[0] : null;
   const newsSection = content.newssection;

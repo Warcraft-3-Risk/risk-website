@@ -4,7 +4,7 @@ import CTAButton from '@/app/components/ui/CTAButtons';
 import '@/core/SCSS/base/sections/s-hero-section.scss';
 import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
-
+// This component renders a hero section with a YouTube video that autoplays when in view.
 export default function HeroSection() {
   const [isInView, setIsInView] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -12,7 +12,7 @@ export default function HeroSection() {
   const [hasAutoplayed, setHasAutoplayed] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-
+  // This useEffect hook sets up an IntersectionObserver to detect when the HeroSection is in view.
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
