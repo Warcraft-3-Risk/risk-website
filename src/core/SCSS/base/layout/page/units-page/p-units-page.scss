@@ -267,8 +267,9 @@
     }
   }
 
-  @media (min-width: 400px) and (max-width: 1234px) {
+  @media (min-width: 343px) and (max-width: 1234px) {
     padding: 0;
+    gap: 2rem;
 
     &-block,
     &-skills {

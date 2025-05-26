@@ -12,7 +12,7 @@
   background-color: $background-blue;
   touch-action: none;
 
-  @media screen and (max-width: 768px) {
+  @media (min-width: 343px) and (max-width: 768px) {
     background-color: transparent;
     background-position: center;
     position: fixed;

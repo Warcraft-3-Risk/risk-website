@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import content from '@/app/data/content.json';
 import { useInView } from '@/core/hooks/useInView';
 import '@/core/SCSS/base/_vars.scss';
 import '@/core/SCSS/base/sections/s-newsandevents.scss';
-import content from '@/app/data/content.json';
 import Image from 'next/image';
+import React, { useState } from 'react';
 
 const TwitchPlayerSection: React.FC = () => {
   const [current, setCurrent] = useState(0);
@@ -30,7 +30,7 @@ const TwitchPlayerSection: React.FC = () => {
   };
 
   return (
-    <section className="background">
+    <section className="TwitchPlayer_Section">
       <h2
         ref={titleRef}
         className={`titletext text-center transition-all duration-700 ease-out transform ${
