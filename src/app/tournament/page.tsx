@@ -1,11 +1,29 @@
-import React from 'react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
 
 import TournamentCalendar from '@/app/tournament/__blocks/TournamentCalendar';
 import TournamentCalendarMobile from '@/app/tournament/__blocks/TournamentCalendarMobile';
 import NewsAndEventsFlavour from '@/app/tournament/__blocks/TournamentTextBlock';
 
-import '@/core/SCSS/base/layout/l-calendar.scss';
 import CommunitySection from '@/app/components/layout/sections/CommunitySection';
+import '@/core/SCSS/base/layout/l-calendar.scss';
+
+const ResponsiveComponent = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Only runs on client
+    const checkIsMobile = () => setIsMobile(window.innerWidth > 1024);
+
+    checkIsMobile(); // Run once on mount
+
+    window.addEventListener('resize', checkIsMobile);
+    return () => window.removeEventListener('resize', checkIsMobile);
+  }, []);
+
+  return isMobile ? <TournamentCalendar /> : <TournamentCalendarMobile />;
+};
 
 const TournamentsPage: React.FC = () => {
   return (
@@ -15,12 +33,8 @@ const TournamentsPage: React.FC = () => {
           <NewsAndEventsFlavour />
         </h2>
       </div>
-      <div className="hidden md:block">
-        <TournamentCalendar />
-      </div>
-
-      <div className="block md:hidden w-full">
-        <TournamentCalendarMobile />
+      <div className="tournament-calendar-container">
+        <ResponsiveComponent />
       </div>
       <div className="tournament-community">
         <CommunitySection />

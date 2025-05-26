@@ -1,20 +1,15 @@
 'use client';
 
-import React from 'react';
-import useTournamentCalendar, {
-  Tournament,
-} from '@/core/hooks/calendar/useTournamentCalendar';
-import { convertToUserTimeZone } from '@/core/utils/dateUtils';
 import Modal from '@/app/components/layout/Modal';
+import { tournamentDates } from '@/core/hooks/calendar/CalendarDates';
+import useTournamentCalendar from '@/core/hooks/calendar/useTournamentCalendar';
 import '@/core/SCSS/base/layout/l-calendar.scss';
+import { convertToUserTimeZone } from '@/core/utils/dateUtils';
+import React from 'react';
 
 const TournamentCalendarMobile: React.FC = () => {
-  const tournaments: Tournament[] = [
-    { date: '2025-04-30', name: 'Spring Open 2025', time: '21:00:00' },
-    { date: '2025-05-02', name: 'Spring Open 2025', time: '21:00:00' },
-    { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
-    { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
-  ];
+  const tournaments = tournamentDates;
+
   // This const is pulling from the useTournamentCalendar hook, which manages the state and logic for the tournament calendar.
   const {
     today,

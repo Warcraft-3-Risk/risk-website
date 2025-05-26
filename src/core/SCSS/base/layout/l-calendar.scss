@@ -10,6 +10,13 @@
   margin: auto;
   background-color: $background-blue;
   padding-bottom: 50px;
+
+  &-container {
+    width: 100%;
+    max-width: 1200px;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
 }
 
 .calendar-container {
@@ -179,8 +186,8 @@
 // Mobile Component Styling for Tournament Calendar
 .calendar-mobile-container {
   padding: 1rem;
-  max-width: 100%; // Ensure no overflow horizontally on small screens
-  box-sizing: border-box; // Ensure padding doesn't cause overflow
+  max-width: 100%;
+  box-sizing: border-box;
 
   h2 {
     font-size: 1.125rem;
@@ -193,6 +200,10 @@
     padding-bottom: 0.5rem;
     overflow-x: scroll;
     overflow-y: hidden;
+
+    @media screen and (min-width: 520px) {
+      justify-content: center;
+    }
 
     /* Webkit-based browsers (Chrome, Edge, Safari) */
     &::-webkit-scrollbar {
