@@ -1,10 +1,9 @@
 import CTAButton from '@/app/components/ui/CTAButtons';
-import '@/core/SCSS/base/components/ReadMoreText.scss';
 import React, { useEffect, useRef, useState } from 'react';
 
 interface ReadMoreTextProps {
   text: string;
-  maxHeight?: number; // max height in px when collapsed
+  maxHeight?: number;
 }
 
 const ReadMoreText: React.FC<ReadMoreTextProps> = ({
@@ -61,7 +60,7 @@ const ReadMoreText: React.FC<ReadMoreTextProps> = ({
         <CTAButton
           variant="readmore"
           onClick={() => setExpanded(!expanded)}
-          className="readmorebutton relative z-10 mt-2"
+          className=" relative z-10 mt-2"
         >
           {expanded ? 'Read less' : 'Read more'}
         </CTAButton>

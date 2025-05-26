@@ -1,9 +1,12 @@
 /**
  * Formats a date in DD-MM-YYYY format
  */
-export function formatDate(date: Date): string {
-  return date.toISOString().split('T')[0];
-}
+export const formatDate = (date: Date): string => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, '0');
+  const day = `${date.getDate()}`.padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
 
 export const getMonday = (date: Date): Date => {
   const d = new Date(date);
