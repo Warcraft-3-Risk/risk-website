@@ -107,17 +107,19 @@
 .button-prev {
   position: absolute;
   z-index: 10;
-  color: $cta-yellow;
-  background-color: black;
-  padding: 0.5rem;
-  border-radius: 0.25rem;
+  color: $background-blue;
+  background-color: $cta-yellow;
+  font-size: 1.5rem;
+  padding: 0 0.7rem 0.5rem 0.7rem;
+  cursor: pointer;
+  // border-radius: 0.25rem;
   transition: background-opacity 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
 
   &:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $yellow-hover;
   }
 }
 
