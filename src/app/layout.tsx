@@ -106,7 +106,7 @@ export default function RootLayout({
           <BurgerMenu items={navItems} />
 
           <div className="flex flex-col min-h-screen">
-            <main className="flex-1 lg:ml-64">
+            <main className="flex-1 lg:ml-64 md:ml-0">
               <Navbar />
               {children}
               <Footer />
