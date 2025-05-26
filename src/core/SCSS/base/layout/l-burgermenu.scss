@@ -12,11 +12,11 @@
   background-color: $background-blue;
   touch-action: none;
 
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     background-color: transparent;
     background-position: center;
     position: fixed;
-    width: 62.5%;
+    width: 40%;
   }
 }
 .blurbackground {
@@ -45,8 +45,9 @@
 }
 
 .navIcons {
-  margin-top: 23rem;
+  margin-top: 150%;
   color: $background-sand;
+  font-size: 1.2rem;
   a.active-link {
     color: $cta-yellow;
     font-weight: 600;
@@ -56,11 +57,18 @@
     }
   }
 
+  @media screen and (max-width: 1024px) {
+    margin-top: 33rem;
+    font-size: 1rem;
+  }
+
   @media screen and (max-width: 768px) {
-    margin-top: 17rem;
+    margin-top: 20rem;
+    font-size: 0.8rem;
   }
 
   @media screen and (max-width: 400px) {
     margin-top: 12rem;
+    font-size: 0.6rem;
   }
 }

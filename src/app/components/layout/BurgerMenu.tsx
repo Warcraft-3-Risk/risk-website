@@ -30,10 +30,9 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
       prev.includes(title) ? prev.filter((t) => t !== title) : [...prev, title],
     );
   };
-
   useEffect(() => {
-    const isMobile = window.matchMedia('(max-width: 1024px)').matches;
-    if (isMobile && isOpen) {
+    const isTabletOrMobile = window.matchMedia('(max-width: 1024px)').matches;
+    if (isTabletOrMobile && isOpen) {
       document.body.classList.add('overflow-hidden');
     } else {
       document.body.classList.remove('overflow-hidden');
@@ -49,7 +48,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
       <div className="burgerbox">
         <button
           onClick={handleToggle}
-          className="buttonbg fixed top-2 left-4 z-50 p-2 rounded-md text-white md:hidden"
+          className="buttonbg fixed top-2 left-4 z-50 p-2 rounded-md text-white lg:hidden"
         >
           <Menu className="h-6 w-6" />
         </button>
@@ -57,7 +56,8 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
       <div
         className={cn(
-          'blurbackground fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 md:hidden',
+          'blurbackground fixed inset-0 bg-black bg-opacity-60 backdrop-blur-sm transition-opacity duration-300 lg:hidden',
+
           isOpen
             ? 'opacity-100 pointer-events-auto z-40'
             : 'opacity-0 pointer-events-none z-0',
@@ -71,7 +71,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
           'flex flex-col gap-4 transition-transform duration-300 ease-in-out',
           'fixed top-0 left-0 touch-none overflow-y-auto',
           isOpen ? 'translate-x-0 z-50' : '-translate-x-full z-50',
-          'md:translate-x-0 md:z-auto',
+          'lg:translate-x-0 lg:z-auto',
         )}
       >
         <div className="flex justify-end p-4 md:hidden">
