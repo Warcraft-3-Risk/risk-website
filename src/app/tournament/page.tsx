@@ -2,11 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 
+import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 import TournamentCalendar from '@/app/tournament/__blocks/TournamentCalendar';
 import TournamentCalendarMobile from '@/app/tournament/__blocks/TournamentCalendarMobile';
 import NewsAndEventsFlavour from '@/app/tournament/__blocks/TournamentTextBlock';
-
-import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 import '@/core/SCSS/base/layout/l-calendar.scss';
 
 const ResponsiveComponent = () => {
