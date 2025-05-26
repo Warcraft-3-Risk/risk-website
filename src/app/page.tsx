@@ -23,7 +23,7 @@ interface Article {
 
 export default function HomePage() {
   const [articles, setArticles] = useState<Article[]>([]);
-
+  // Initialize articles state with an empty array
   useEffect(() => {
     const loadData = async () => {
       try {
