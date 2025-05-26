@@ -10,6 +10,8 @@ import NewsSection from '@/app/components/layout/sections/NewsSection';
 import SpecialMentionsSection from '@/app/components/layout/sections/SpecialMentionsSection';
 import StandAloneSection from '@/app/components/layout/sections/StandAloneSection';
 import WatchUsSection from '@/app/components/layout/sections/WatchUsSection';
+
+// Define the Article interface to match the structure of articles.json
 interface Article {
   id: number;
   title: string;

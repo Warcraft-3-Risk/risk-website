@@ -15,6 +15,7 @@ const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const TournamentCalendar: React.FC = () => {
   const tournaments = tournamentDates;
 
+  // This const is pulling from the useMonthlyTournamentCalendar hook, which manages the state and logic for the monthly tournament calendar.
   const {
     selectedDate,
     tournamentsOnDate,

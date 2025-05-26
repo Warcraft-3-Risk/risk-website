@@ -16,14 +16,14 @@ interface PatchReleaseNotesProps {
   isExpanded: boolean;
   onToggleExpanded: () => void;
 }
-
+// Fetches the latest GitHub releases for the project
 export default function PatchReleaseNotes({
   isExpanded,
   onToggleExpanded,
 }: PatchReleaseNotesProps) {
   const [releases, setReleases] = useState<Release[]>([]);
   const [loading, setLoading] = useState(true);
-
+  // useState to manage the loading state and releases data
   useEffect(() => {
     const getReleases = async () => {
       const data = await fetchGithubReleases();

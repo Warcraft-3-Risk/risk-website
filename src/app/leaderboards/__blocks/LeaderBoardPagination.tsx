@@ -7,7 +7,7 @@ interface LeaderBoardPaginationProps {
   totalPages: number;
   onPageChange: (page: number) => void;
 }
-
+// LeaderBoardPagination component to handle pagination in the leaderboard section
 const LeaderBoardPagination: React.FC<LeaderBoardPaginationProps> = ({
   currentPage,
   totalPages,

@@ -4,6 +4,7 @@ import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import Image from 'next/image';
 import React from 'react';
 
+// Define the props for the UnitsPanel component
 interface UnitPanelProps {
   unitId: string | null;
   data: Record<

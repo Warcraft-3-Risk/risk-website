@@ -85,3 +85,6 @@ const StandaloneSegment: React.FC<SegmentProps> = ({
 };
 
 export default StandaloneSegment;
+// This entire segment component is designed to be used in a stand-alone page or game-guide page, where each segment can either display an image or a video fetched from Firebase Storage.
+// The segments are styled to alternate their layout based on their index, and they animate into view when they come into the viewport.
+// The component is flexible enough to handle both media types and includes optional notes for additional context.

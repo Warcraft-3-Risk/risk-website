@@ -7,8 +7,12 @@ import LeaderboardTableMobile from '@/app/leaderboards/__blocks/LeaderBoardTable
 import '@/core/SCSS/base/layout/leaderboard/l-leaderboard-table.scss';
 import content from '@/app/data/content.json';
 
+// This component displays the leaderboard table with pagination
+// It fetches the leaderboard data and allows users to navigate through pages
+// ITEMS_PER_PAGE defines how many items are displayed per page
 const ITEMS_PER_PAGE = 10;
 
+// LeaderBoardTable component renders the leaderboard table with pagination
 const LeaderBoardTable: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const allLeaders = useLeaderboardData();
@@ -19,7 +23,7 @@ const LeaderBoardTable: React.FC = () => {
     startIndex,
     startIndex + ITEMS_PER_PAGE,
   );
-
+  // Function to calculate the win rate based on wins and losses
   const calculateWinRate = (wins: number, losses: number): string => {
     const total = wins + losses;
     return total === 0 ? '0%' : `${Math.round((wins / total) * 100)}%`;

@@ -12,16 +12,19 @@ import {
 import '@/core/SCSS/base/layout/page/units-page/p-units-page-icons.scss';
 import '@/core/SCSS/base/layout/page/units-page/p-units-page.scss';
 import React, { useEffect, useRef, useState } from 'react';
-import UnitsPanel from './UnitsPanel';
-import UnitsStats from './UnitsStats';
+import UnitsPanel from '@/app/how-to/units-page/__blocks/UnitsPanel';
+import UnitsStats from '@/app/how-to/units-page/__blocks/UnitsStats';
 
+// This component handles the navigation and display of units in the units page
 const UnitsNavigation: React.FC = () => {
   const [activeType, setActiveType] = useState<'type1' | 'type2'>('type1');
   const [activeUnit, setActiveUnit] = useState<string | null>(null);
   const panelRef = useRef<HTMLDivElement>(null);
 
   const currentUnits = activeType === 'type1' ? landUnits : seaUnits;
+  // The current units are determined by the active type (land or sea)
 
+  //This useEffect scrolls the page to the active unit when it changes
   useEffect(() => {
     if (activeUnit && panelRef.current) {
       const offset = -100;

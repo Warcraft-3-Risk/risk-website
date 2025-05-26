@@ -15,7 +15,7 @@ const TournamentCalendarMobile: React.FC = () => {
     { date: '2025-06-13', name: 'Summer Championship 2025', time: '22:00:00' },
     { date: '2025-05-01', name: 'Spring Casual Tournament', time: '20:00:00' },
   ];
-
+  // This const is pulling from the useTournamentCalendar hook, which manages the state and logic for the tournament calendar.
   const {
     today,
     selectedDate,
@@ -29,7 +29,7 @@ const TournamentCalendarMobile: React.FC = () => {
     isTournamentDate,
     setSelectedDate,
   } = useTournamentCalendar(tournaments);
-
+  // The useTournamentCalendar hook manages the state and logic for the tournament calendar.
   const formatDate = (date: Date) => date.toISOString().split('T')[0];
 
   return (

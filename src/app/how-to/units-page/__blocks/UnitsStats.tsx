@@ -13,7 +13,7 @@ interface UnitsStatsProps {
   >;
   skillsData: Record<string, { icon: string }[]>;
 }
-
+// UnitsStats component to display unit statistics and skills
 const UnitsStats: React.FC<UnitsStatsProps> = ({
   unitId,
   statsData,

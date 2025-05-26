@@ -11,6 +11,9 @@ import '@/core/SCSS/base/layout/page/p-news-and-events-page.scss';
 import { useState } from 'react';
 import CommunitySection from '@/app/components/layout/sections/CommunitySection';
 
+// This page displays the news and events section with articles'
+// It allows users to toggle between showing all articles or just the latest three
+// It also includes a community section at the bottom
 const NewsPage = () => {
   const [showAll, setShowAll] = useState(false);
 
