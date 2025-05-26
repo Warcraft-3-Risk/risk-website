@@ -1,4 +1,4 @@
-# 🏫 School Project — Frontend Architecture (Next.js + React)
+# Frontend Architecture (Next.js + React)
 
 Welcome to the codebase! This project is built using **Next.js** with **React** and **TypeScript** and is styled using **Tailwind CSS** and **SCSS**. The project is structured in a way that encourages modular, scalable, and maintainable code.
 
@@ -66,13 +66,15 @@ src/
 ├── app/
 │   ├── [route]/               # Pages (like leaderboards, dashboard, etc.)
 │   │   ├── __blocks/          # Page-specific components
-│   │   ├── context/           # Page-specific context providers
 │   │   └── page.tsx           # The actual page users will see
 │   ├── components/
 │   │   ├── ui/                # Reusable UI components (Buttons, Modals, etc.)
 │   │   └── layout/            # Global layout components (Navbar, Footer, etc.)
-│   ├── content/
-│   │   └── content.json       # Centralized text/literals (copy for the app)
+│   ├── data/
+│   │   ├── articles.json      # Articles and long-form content
+│   │   ├── content.json       # Centralized literals, strings, and text
+│   │   ├── LeaderBoardData.ts # Static leaderboard data (for testing)
+│   │   └── players.json       # Static player data (for testing)
 │   └── core/
 │       ├── constants/         # Constant values used app-wide
 │       ├── hooks/             # Custom React hooks
@@ -83,6 +85,12 @@ src/
 │       └── utils/             # Utility functions/helpers
 └── public/                    # Static assets (images, etc.)
 ```
+
+**Notes:**
+
+- The `data/` folder replaces the previous `content/` folder and now stores all text, articles, and static data.
+- Use `articles.json` for articles, `content.json` for literals and strings, and files like `LeaderBoardData.ts` or `players.json` for static/testing data.
+- All text and content updates should be made in the appropriate file within `data/`.
 
 ---
 
@@ -102,8 +110,6 @@ When creating a new page:
      - `LeaderBoardHeader.tsx`
      - `LeaderBoardTable.tsx`
      - `LeaderBoardPagination.tsx`
-
-   - `context/` — Any React context related to this page (if needed)
 
 ---
 
@@ -129,12 +135,11 @@ import Header from '../../../../components/layout/Header';
 
 Everything inside the `core/` folder is **shared logic** across the app:
 
-- **`constants/`** — Values like colors, breakpoints, app settings.
+- **`api/`** — Firebase configuation, can be used for other api handling.
+- **`contexts/`** — Which should handle the viewing context for each page. (Currently not using).
+- **`declaration/`** — Handles declarations such as SVG handling can be used for others.
 - **`hooks/`** — Custom React hooks (e.g., `useModal`, `useFetch`).
-- **`middleware/`** — For route protection or authentication.
 - **`scss/`** — Global styles, animations, and reusable SCSS files.
-- **`services/`** — API logic, business logic, or external integrations.
-- **`types/`** — TypeScript types/interfaces.
 - **`utils/`** — Helper functions or utility functions.
 
 ---
@@ -145,6 +150,8 @@ We have two main component directories:
 
 - **`components/ui/`** — Reusable UI components (e.g., buttons, modals, cards).
 - **`components/layout/`** — Global layout components (e.g., Navbar, Footer).
+- **`components/layout/sections`** — Which has a more designated point of usage, for smaller sections.
+- **`components/layout/sections/segment`** — Controls the segments on the Stand Alone page and Game Guide.
 
 For components that are **only** used on a specific page, place them in the corresponding `__blocks/` directory inside that page’s folder.
 
@@ -157,15 +164,18 @@ Our SCSS files are organized in the following way:
 ```bash
 scss/
 ├── base/
-│   └── _vars.scss            # Variables for the app
+│   ├── _vars.scss            # App-wide variables (colors, breakpoints, etc.)
+│   ├── _mixins.scss          # Global mixins for reuse
 ├── components/               # SCSS specific to individual components
 ├── layout/                   # Layout-related SCSS (header, footer, etc.)
+│   ├── leaderboard/          # Leaderboard-specific layout styles
+│   └── page/                 # Page-specific layout styles
 └── sections/                 # Section-specific styles (e.g., leaderboard, dashboard)
 ```
 
 **Important Notes:**
 
-- The only file used inside the **`base/`** folder is `_vars.scss`, which contains the app-wide variants (colors, breakpoints, etc.).
+- The only file used inside the **`base/`** folder is `_vars.scss`, which contains the app-wide variants (colors etc.).
 - **Section-specific styles** are prefixed with `s-`, **page-specific styles** are prefixed with `p-`, **layout styles** are prefixed with `l-`, and **leaderboard styles** are prefixed with `l-` inside the leaderboard folder.
 
 Example:
@@ -182,7 +192,7 @@ Example:
 All string literals, headings, labels, and other textual content are located in:
 
 ```bash
-src/app/content/content.json
+src/app/data/content.json
 ```
 
 This keeps the content centralized, making it easier to update and manage. Localization is handled through this structure, and any changes to text should be made here.
@@ -194,7 +204,6 @@ This keeps the content centralized, making it easier to update and manage. Local
 - **Framework:** [Next.js](https://nextjs.org/)
 - **Frontend:** React + TypeScript
 - **Styling:** Tailwind CSS + SCSS (for custom styling and animations)
-- **State Management:** React Context (per page)
 - **Project Structure:** Modular with aliasing (`@/`)
 
 ---
