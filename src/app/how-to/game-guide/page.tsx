@@ -5,6 +5,7 @@ import GameGuideHeader from '@/app/how-to/game-guide/__blocks/GameGuideHeader';
 import GameGuideSubTitle from '@/app/how-to/game-guide/__blocks/GameGuideSubTitle';
 
 import '@/core/SCSS/base/layout/page/p-game-guide-page.scss';
+import '@/core/SCSS/base/layout/page/p-stand-alone-page.scss';
 
 const segments = [
   {
@@ -47,7 +48,7 @@ const segments = [
     title: 'DIPLOMACY IS KING!',
     description:
       'Chat is essential in Risk, make sure to use it and read it. Diplomacy is key. Make sure to peace other players, but also be ready to be backstabbed when you are vulnerable.',
-    image: true,
+    image: false,
     imageUrl: '/images/diplomacy.webp',
   },
   {
