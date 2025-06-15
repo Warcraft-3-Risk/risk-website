@@ -1,0 +1,372 @@
+@import '@/core/SCSS/base/_vars.scss';
+@import '../../_mixins.scss';
+
+.bluebackground {
+  background: $background-blue;
+}
+
+.backgroundimg {
+  background-image: url('/images/stand-alone/herostandalone.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 50vh;
+  width: 100%;
+}
+
+.standalone-header-title {
+  @include large-title;
+}
+
+.standalone-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin: 1rem 4rem;
+  padding: 2rem;
+  background: $background-blue;
+  @media screen and (max-width: 768px) {
+    margin: 0;
+    padding: 1rem;
+  }
+}
+
+.standalone-title {
+  font-family: titleFont, sans-serif;
+  font-size: 3.25rem;
+  text-transform: uppercase;
+  width: 65%;
+  color: $cta-yellow;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+}
+
+.standalone-description {
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  font-size: 2rem;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.standalone-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: textFont, sans-serif;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.standalone-following {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: textFont, sans-serif;
+  font-size: 2rem;
+  color: $cta-yellow;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
+
+.standalone-icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0;
+    padding-bottom: 50px;
+  }
+}
+
+.stand-alone-list-segment {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background: $background-blue;
+  border-top: 2px solid $background-sand;
+  border-bottom: 2px solid $background-sand;
+  padding-left: 3.25rem;
+
+  &-title {
+    font-family: titleFont, sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    width: 100%;
+    color: $cta-yellow;
+    padding: 2.5rem 2rem 2.5rem 0;
+  }
+
+  &-item {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 7.5rem;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-left: 0;
+    }
+  }
+
+  &-text {
+    position: relative;
+    padding-left: 3rem;
+    padding-bottom: 1.5rem;
+    font-family: textFont, sans-serif;
+    font-size: 1.3rem;
+    color: $background-sand;
+    text-wrap: balance;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: -0.45em;
+      font-size: 7rem;
+      color: $cta-yellow;
+      line-height: 1;
+    }
+  }
+
+  @media (min-width: 400px) and (max-width: 1234px) {
+    flex-direction: column;
+    padding-left: 0;
+
+    &-title {
+      font-size: 2.5rem;
+      padding-left: 1.25rem;
+    }
+
+    &-text {
+      font-size: 1.25rem;
+      padding-right: 1rem;
+    }
+
+    &-item {
+      padding-bottom: 0;
+      padding-left: 1.25rem;
+    }
+
+    &-imageFader {
+      display: none;
+    }
+  }
+}
+
+.icon-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .kickstarter-icon {
+    width: 24rem;
+    height: 12rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media screen and (max-width: 768px) {
+      width: 20rem;
+      height: 10rem;
+    }
+  }
+
+  .discord-icon {
+    width: 6rem;
+    height: 6rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media screen and (max-width: 768px) {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+
+  .patreon-icon {
+    width: 5rem;
+    height: 6rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+    @media screen and (max-width: 768px) {
+      width: 4rem;
+      height: 5rem;
+    }
+  }
+}
+
+.stand-alone-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5rem;
+
+  &-title {
+    font-family: titleFont, sans-serif;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: $cta-yellow;
+    padding-bottom: 2rem;
+    @media screen and (max-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &-following {
+    width: 80%;
+    text-align: center;
+    font-family: textFont, sans-serif;
+    color: $background-sand;
+    font-size: 1.5rem;
+  }
+  p {
+    padding-bottom: 5rem;
+  }
+}
+
+.segment-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid $background-sand;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  &.reverse {
+    @media (min-width: 768px) {
+      flex-direction: row-reverse;
+    }
+  }
+}
+
+.segment-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 20;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  &.align-left {
+    text-align: right;
+
+    @media (min-width: 768px) {
+      text-align: right;
+    }
+  }
+
+  &.align-right {
+    text-align: left;
+
+    @media (min-width: 768px) {
+      text-align: left;
+    }
+  }
+}
+
+.segment-title {
+  @include smaller-title;
+  @media screen and (max-width: 768px) {
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 2rem 0 2rem;
+  }
+}
+
+.segment-description {
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  font-size: 1.15rem;
+  line-height: 1.75;
+  padding: 2rem;
+  width: 100%;
+  text-wrap: pretty;
+  @media screen and (max-width: 768px) {
+    text-align: left;
+    font-size: 1rem;
+    padding-left: 2rem;
+  }
+}
+
+.segment-note {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+.segment-media-wrapper {
+  width: 100%;
+  position: relative;
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+}
+
+.segment-media {
+  position: relative;
+  width: 100%;
+  height: 16rem;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    height: 100%;
+  }
+}
+
+.segment-video,
+.segment-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.segment-gradient {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+
+  &.left {
+    background: linear-gradient(to left, transparent, #1b3449);
+  }
+
+  &.right {
+    background: linear-gradient(to right, transparent, #1b3449);
+  }
+
+  @media (min-width: 300px) and (max-width: 1234px) {
+    display: none;
+  }
+}

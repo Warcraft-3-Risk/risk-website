@@ -45,7 +45,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
   return (
     <>
-      <div className="burgerbox">
+      <div className="burgerbox ">
         <button
           onClick={handleToggle}
           className="buttonbg fixed top-2 left-4 z-50 p-2 rounded-md text-white lg:hidden"
@@ -66,6 +66,7 @@ const BurgerMenu: React.FC<BurgerMenuProps> = ({ items }) => {
 
       <div
         className={cn(
+          'lg:hidden',
           'backgroundburger h-screen w-64 p-4 text-white',
           'flex flex-col gap-4 transition-transform duration-300 ease-in-out',
           'fixed top-0 left-0 touch-none overflow-y-auto',

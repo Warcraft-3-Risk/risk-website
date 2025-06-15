@@ -100,6 +100,10 @@
     "gameguide.intro": "Risk Reforged is a game about conquering cities and ports across Europe. Win conditions vary depending on what game mode has been chosen, but what is common among all modes is that you have to capture 60% of all cities.",
     "gameguide.followup": "The following sections will help you familiarise yourself with the basic concepts and help you get on your way to dominate Europe in no time!"
   },
+  "front": {
+    "front.header": "Welcome to the Official WarCraft III Risk Community",
+    "front.subheader": "Join thousands of players in strategic conquest – from competitive ladder to casual weekend battles."
+  },
   "standalone": {
     "standalone.header": "STAND ALONE",
     "standalone.title": "STAND ALONE",

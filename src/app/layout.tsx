@@ -105,8 +105,8 @@ export default function RootLayout({
         <div className="relative min-h-screen">
           <BurgerMenu items={navItems} />
 
-          <div className="flex flex-col min-h-screen">
-            <main className="flex-1 lg:ml-64 md:ml-0">
+          <div className="w-full flex justify-center bluebackground">
+            <main className="w-full max-w-screen-xl">
               <Navbar />
               {children}
               <Footer />
