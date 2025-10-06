@@ -5,9 +5,9 @@ import '@/app/front/styles/front-header.scss';
 const Header = content.front;
 const FrontHeader: React.FC = () => {
   return (
-    <header className="relative bg-cover bg-center bg-[url('/images/wallpaper.png'))]">
+    <header className="relative bg-cover bg-center bg-[url('/images/wallpaper.png'))] min-h-[70vh]">
       <div className="absolute inset-0"></div>
-      <div className="relative z-10 flex items-center flex-col justify-center h-full">
+      <div className="relative z-10 flex items-center flex-col justify-center h-full py-20">
         <h1 className="front-header-title">
           {Header['front.header']}
         </h1>

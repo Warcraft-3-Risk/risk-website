@@ -4,7 +4,7 @@ import FrontPage from './front/page';
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen w-full">
+    <div className="w-full">
       <FrontPage />
     </div>
   );

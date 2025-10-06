@@ -2,6 +2,7 @@
 import '@/core/SCSS/base/layout/l-Navbar.scss';
 import Image from 'next/image';
 import Link from 'next/link';
+import LiveLobbiesIndicator from './LiveLobbiesIndicator';
 
 export function Navbar() {
   return (
@@ -23,6 +24,7 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center space-x-2 sm:space-x-4">
+          <LiveLobbiesIndicator />
           <a
             href="https://discord.com/invite/wc3risk"
             target="_blank"

@@ -5,9 +5,9 @@ import '@/app/front/styles/w3c-section.scss';
 const Header = content.w3c;
 const W3CSection: React.FC = () => {
   return (
-    <header className="relative bg-cover bg-center bg-[url(/images/logos/medium-logotype.png)]">
+    <header className="relative bg-cover bg-center bg-[url(/images/logos/medium-logotype.png)] min-h-[60vh]">
       <div className="absolute inset-0 "></div>
-      <div className="relative z-10 flex items-center flex-col justify-center h-full">
+      <div className="relative z-10 flex items-center flex-col justify-center h-full py-16">
         <h1 className="w3c-section-title">
           {Header['w3c.header']}
         </h1>
