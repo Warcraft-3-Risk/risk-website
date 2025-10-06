@@ -1,0 +1,11 @@
+// Front page specific styles
+@import '@/core/SCSS/base/vars';
+@import '@/core/SCSS/base/mixins';
+
+.w3c-section-title {
+  @include large-title;
+}
+
+.w3c-section-subtitle {
+  @include description-text;
+}

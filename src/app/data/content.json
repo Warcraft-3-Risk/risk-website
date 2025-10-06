@@ -101,8 +101,15 @@
     "gameguide.followup": "The following sections will help you familiarise yourself with the basic concepts and help you get on your way to dominate Europe in no time!"
   },
   "front": {
-    "front.header": "Welcome to the Official WarCraft III Risk Community",
-    "front.subheader": "Join thousands of players in strategic conquest – from competitive ladder to casual weekend battles."
+    "front.header": "Risk Reforged",
+    "front.subheader": "Join thousands of players in strategic conquest – from competitive ladder to casual weekend battles.",
+    "front.button.play": "Play",
+    "front.button.tutorial": "Tutorial",
+    "front.summary": "Risk Reforged is a modern take on the classic Risk experience, built within Warcraft III. Developed and supported by the Official Risk Community, we’re a global group of strategy enthusiasts who gather to battle, collaborate, and grow together."
+  },
+  "w3c": {
+    "w3c.header": "Now on W3Champions!",
+    "w3c.subheader": "Risk is now available as a custom game on W3Champions, the premier platform for Warcraft III competitive play."
   },
   "standalone": {
     "standalone.header": "STAND ALONE",

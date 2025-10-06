@@ -14,8 +14,12 @@
   width: 100%;
 }
 
-.standalone-header-title {
+.header-title {
   @include large-title;
+}
+
+.header-subtitle {
+  @include description-text;
 }
 
 .standalone-section {

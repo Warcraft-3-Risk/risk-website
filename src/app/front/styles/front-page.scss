@@ -1,0 +1,8 @@
+// Front page specific styles
+@import '@/core/SCSS/base/vars';
+@import '@/core/SCSS/base/mixins';
+
+// FrontHeader component styles
+.bluebackground {
+  background: $background-blue;
+}

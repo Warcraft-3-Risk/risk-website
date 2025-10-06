@@ -1,0 +1,21 @@
+// Front page specific styles
+@import '@/core/SCSS/base/vars';
+@import '@/core/SCSS/base/mixins';
+
+.stand-alone-section-title {
+  @include medium-title;
+}
+
+.stand-alone-section-subtitle {
+  @include description-text;
+}
+
+.stand-alone-section-description {
+  font-family: textFont, sans-serif;
+  color: $background-sand;
+  font-size: 2rem;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+}
